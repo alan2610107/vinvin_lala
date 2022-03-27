@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       https://www.springframework.org/schema/context/spring-context.xsd
+       https://www.springframework.org/schema/util
+       https://www.springframework.org/schema/util/spring-util.xsd">
+
+    <context:property-placeholder location="classpath:distributionRedis.properties" ignore-unresolvable="true"/>
+    <!--掃描service下的包-->
+    <context:component-scan base-package="com.kuang.config"/>
+
+    <!-- Redis连接池的配置 -->
+<!--    <bean id="distributionJedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">-->
+<!--        <property name="maxTotal" value="${redis.maxTotal}" />-->
+<!--        <property name="maxIdle" value="${redis.maxIdle}" />-->
+<!--        <property name="minIdle" value="${redis.minIdle}" />-->
+<!--        <property name="maxWaitMillis" value="${redis.maxWaitMillis}" />-->
+<!--        <property name="testOnBorrow" value="${redis.testOnBorrow}" />-->
+
+<!--    </bean>-->
+
+    <bean id="distributionRedisStandaloneConfiguration" class="org.springframework.data.redis.connection.RedisStandaloneConfiguration">
+        <property name="hostName" value="${Dredis.ip}" />
+        <property name="port" value="${redis.port}" />
+<!--        <property name="password" value="${Dredis.pass}"/>-->
+
+    </bean>
+<!--    <bean id="distributionConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory" p:password="${Dredis.pass}">-->
+<!--        <constructor-arg name="standaloneConfig" ref="distributionRedisStandaloneConfiguration"></constructor-arg>-->
+<!--    </bean>-->
+    <bean id="distributionConnectionFactory" class="org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory" p:password="${Dredis.pass}">
+        <constructor-arg name="redisConfiguration" ref="distributionRedisStandaloneConfiguration"></constructor-arg>
+    </bean>
+    <!--手动设置 key  与 value的序列化方式-->
+    <!-- 序列化器：能够把我们储存的key与value做序列化处理的对象，是一个类似于converter的工具。
+           可以实现传入的java对象->redis可以识别的数据类型。 如：字符串。
+           默认的Serializer是StringRedisSerializer。
+           设定默认的序列化器是字符串序列化器，原因是redis可以存储的数据只有字符串和字节数组。
+           一般来说，我们代码中操作的数据对象都是java对象。
+           如果代码中，使用的数据载体就是字符串对象，那么使用Jackson2JsonRedisSerializer来做序列化器是否会有问题？
+           如果jackson插件的版本不合适，有错误隐患的话，可能将字符串数据转换为json字符串 -> {chars:[], bytes:[]}
+           使用StringRedisSerializer就没有这个问题。不处理字符串转换的。认为代码中操作的key和value都是字符串。
+        -->
+<!--     配置默认的序列化器 -->
+<!--     keySerializer、valueSerializer 配置Redis中的String类型key与value的序列化器 -->
+<!--     HashKeySerializer、HashValueSerializer 配置Redis中的Hash类型key与value的序列化器 -->
+    <bean id="keySerializer" class="org.springframework.data.redis.serializer.StringRedisSerializer"/>
+    <bean id="valueSerializer" class="org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer"/>
+
+<!--     配置jedis模板-->
+    <bean id="distributionRedisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
+        <property name="connectionFactory" ref="distributionConnectionFactory"/>
+        <!-- 配置默认的序列化策略,非hash的value和hashValue都有效-->
+        <property name="defaultSerializer" ref="valueSerializer"/>
+
+        <property name="keySerializer" ref="keySerializer"/>
+        <property name="hashKeySerializer" ref="keySerializer"/>
+    </bean>
+<!--使用spring定義的緩存空間-->
+<!--    <bean id="cacheManager" class="org.springframework.cache.support.SimpleCacheManager">-->
+<!--        <property name="caches">-->
+<!--            <set>-->
+<!--                <bean class="org.springframework.cache.concurrent.ConcurrentMapCacheFactoryBean">-->
+<!--                    <property name="name" value="cutelittlepiggyCache"/>-->
+<!--                </bean>-->
+
+<!--            </set>-->
+<!--        </property>-->
+<!--    </bean>-->
+
+<!--使用redis做緩存-->
+<!--    <bean id="cacheManager" class="org.springframework.data.redis.cache.RedisCacheManager" factory-method="create" c:connectionFactory-ref="connectionFactory"/>-->
+
+
+
+
+
+
+
+
+</beans>
