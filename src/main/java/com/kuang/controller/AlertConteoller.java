@@ -3,6 +3,7 @@ package com.kuang.controller;
 import com.alibaba.fastjson.JSONObject;
 import com.kuang.pojo.*;
 import com.kuang.service.VinService;
+import lombok.extern.slf4j.Slf4j;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -18,7 +19,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
-
+@Slf4j
 @Controller
 @RequestMapping("/alert")
 public class AlertConteoller {
@@ -47,7 +48,7 @@ public class AlertConteoller {
                 if(vinItem != null){
                     vinItemCountMap.put(vinItem.getId(), vinItem.getItemCount());
                 }else {
-                    System.out.println("Null vinItem ==>"+vinAlert.getId());
+                    log.warn("Null vinItem ==>"+vinAlert.getId());
                 }
 
             }
