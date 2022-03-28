@@ -3,6 +3,7 @@ package com.kuang.controller;
 import com.kuang.pojo.ApplyItem;
 import com.kuang.pojo.ApplyItemSec;
 import com.kuang.pojo.User;
+import com.kuang.service.ApplyControllerService;
 import com.kuang.service.VinService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -12,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.List;
@@ -23,8 +25,11 @@ public class ApplyController {
     @Qualifier("VinServiceImpl")
     private VinService vinService;
 
-    @Autowired
+    @Resource
     private ThreadPoolTaskExecutor taskExecutor;
+
+    @Resource
+    private ApplyControllerService applyControllerService;
 
 
     @RequestMapping("/toApplyItem")
@@ -62,22 +67,6 @@ public class ApplyController {
         }
     }
 
-    public HashMap<String,String> getStatusMap(){
-        HashMap<String,String> statusMap = new HashMap<>();
-        statusMap.put("NOT_SHIP","未動作");
-        statusMap.put("BUY","已採購");
-        statusMap.put("ARRIVE","已送達");
-
-        return statusMap;
-    }
-    public HashMap<String,String> getConfirmResultMap(){
-        HashMap<String,String> confirmResultMap = new HashMap<>();
-        confirmResultMap.put("confirmed","已通過");
-        confirmResultMap.put("refuse","未通過");
-
-        return confirmResultMap;
-    }
-
 
     @RequestMapping("/showApplyItem")
     public String showApplyItem(@RequestParam String location, Model model, HttpSession session){
@@ -85,21 +74,13 @@ public class ApplyController {
         if (vinService.ifAccess(user, location)) {
             List<ApplyItem> applyItemList = vinService.queryApplyItembyLocation(location);
             String warehouse = vinService.queryRealWarehouseName(location).getRealname();
-//            HashMap<String,String> statusMap = new HashMap<>();
-//            statusMap.put("NOT_SHIP","未動作");
-//            statusMap.put("BUY","已買");
-//            statusMap.put("ARRIVE","已送達");
-//
-//            HashMap<String,String> confirmResultMap = new HashMap<>();
-//            confirmResultMap.put("confirmed","已通過");
-//            confirmResultMap.put("refuse","未通過");
             System.out.println(applyItemList);
             model.addAttribute("applyItemList", applyItemList);
             model.addAttribute("mainWarehouse", "apply");
             model.addAttribute("logLocation", "showApplyItem?location="+location);
             model.addAttribute("warehouse", warehouse + "物料申請清單");
-            model.addAttribute("statusMap", getStatusMap());
-            model.addAttribute("confirmResultMap", getConfirmResultMap());
+            model.addAttribute("statusMap", applyControllerService.getStatusMap());
+            model.addAttribute("confirmResultMap", applyControllerService.getConfirmResultMap());
 
             return "showApplyItem";
         } else {
@@ -165,9 +146,8 @@ public class ApplyController {
             String warehouse = vinService.queryRealWarehouseName(location).getRealname();
             model.addAttribute("applyItem", vinService.queryApplyItembyLogID(logID));
             model.addAttribute("warehouseMap", vinService.getWarehouseMap());
-            model.addAttribute("statusMap", getStatusMap());
+            model.addAttribute("statusMap", applyControllerService.getStatusMap());
             model.addAttribute("warehouse", warehouse + "物料採購");
-//            model.addAttribute("confirmResultMap", getConfirmResultMap());
             return "buyApplyItem";
         } else {
             model.addAttribute("msg", "哭哭！沒有權限！");
@@ -175,31 +155,6 @@ public class ApplyController {
         }
     }
 
-    public void autoAddApplyItemSec(ApplyItem applyItem){
-        taskExecutor.submit(new Runnable() {
-            @Override
-            public void run() {
-                String month = applyItem.getMonth();
-                String store = applyItem.getLocation();
-                String id = store + "_" + month;
-                int ifExist = 0;
-                ifExist = vinService.ifExistApplyItemSec(id);
-                if(ifExist > 0){
-                    ApplyItemSec applyItemSec = vinService.queryApplyItemSecbyID(id);
-                    applyItemSec.setTotalPrice(applyItemSec.getTotalPrice() + applyItem.getTotalPrice());
-                    vinService.updateApplyItemSec(applyItemSec);
-                }else {
-                    ApplyItemSec applyItemSec = new ApplyItemSec();
-                    applyItemSec.setId(id);
-                    applyItemSec.setMonth(month);
-                    applyItemSec.setStore(store);
-                    applyItemSec.setTotalPrice(applyItem.getTotalPrice());
-                    vinService.addApplyItemSec(applyItemSec);
-                }
-
-            }
-        });
-    }
 
 
     @RequestMapping("/buyApplyItem")
@@ -214,7 +169,7 @@ public class ApplyController {
             ApplyItem OriginalApplyItem = vinService.queryApplyItembyLogID(applyItem.getLogID());
             ApplyItem toApplyItemSec = new ApplyItem(applyItem);
             toApplyItemSec.setTotalPrice(applyItem.getTotalPrice() - OriginalApplyItem.getTotalPrice());
-            autoAddApplyItemSec(toApplyItemSec);
+            applyControllerService.autoAddApplyItemSec(toApplyItemSec);
 
 
             vinService.updateApplyItem(applyItem);
