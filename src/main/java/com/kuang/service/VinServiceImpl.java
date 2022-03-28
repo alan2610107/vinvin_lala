@@ -6391,55 +6391,6 @@ public class VinServiceImpl implements VinService{
                 }
                 break;
             case "commercialthing":
-                switch (location){
-                    case "main0":
-                        addcommercialIteminMain0(vinItem);
-                        break;
-                    case "main1":
-                        addcommercialIteminMain1(vinItem);
-                        break;
-                    case "main2":
-                        addcommercialIteminMain2(vinItem);
-                        break;
-                    case "shop1":
-                        addcommercialIteminShop1(vinItem);
-                        break;
-                    case "shop2":
-                        addcommercialIteminShop2(vinItem);
-                        break;
-                    case "shop3":
-                        addcommercialIteminShop3(vinItem);
-                        break;
-                    case "shop4":
-                        addcommercialIteminShop4(vinItem);
-                        break;
-                    case "shop5":
-                        addcommercialIteminShop5(vinItem);
-                        break;
-                    case "shop6":
-                        addcommercialIteminShop6(vinItem);
-                        break;
-                    case "shop7":
-                        addcommercialIteminShop7(vinItem);
-                        break;
-                    case "shop8":
-                        addcommercialIteminShop8(vinItem);
-                        break;
-                    case "shop9":
-                        addcommercialIteminShop9(vinItem);
-                        break;
-                    case "shop10":
-                        addcommercialIteminShop10(vinItem);
-                        break;
-                    case "shop11":
-                        addcommercialIteminShop11(vinItem);
-                        break;
-                    case "shop12":
-                        addcommercialIteminShop12(vinItem);
-                        break;
-
-                }
-                break;
             case "commercial":
                 switch (location){
                     case "main0":
@@ -6487,6 +6438,7 @@ public class VinServiceImpl implements VinService{
                     case "shop12":
                         addcommercialIteminShop12(vinItem);
                         break;
+
                 }
                 break;
             case "other":
