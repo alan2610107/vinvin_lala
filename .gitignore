@@ -3,3 +3,4 @@
 /web/WEB-INF/jsp2/
 /target/
 *.rdb
+.DS_Store
