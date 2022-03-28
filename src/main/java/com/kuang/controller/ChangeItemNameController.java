@@ -42,7 +42,6 @@ public class ChangeItemNameController {
         User user = (User) session.getAttribute("user");
         int userLevel = user.getLevel();
         if(userLevel == 1000){
-//            List<Item> item = vinService.queryAllItem();
             List<Item> itemTool = vinService.queryAllItembyCategory("tool");
             List<Item> itemSmallTool = vinService.queryAllItembyCategory("smalltool");
             List<Item> itemFood = vinService.queryAllItembyCategory("food");
@@ -81,7 +80,7 @@ public class ChangeItemNameController {
     }
 
     @RequestMapping("/changeItemName")
-    public String changeItemName(Item item, HttpServletRequest request, @RequestParam String category, @RequestParam("file") CommonsMultipartFile file){
+    public String changeItemName(Item item, HttpServletRequest request, @RequestParam String category, @RequestParam("file") CommonsMultipartFile file) throws IOException {
         System.out.println(item);
         System.out.println(category);
 
@@ -89,16 +88,7 @@ public class ChangeItemNameController {
         String newItemName = item.getItemName();
 
         if(!file.isEmpty()){
-            taskExecutor.submit(new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        fileUploadService.fileUpload(file, request, id,"/fruitInvoice");
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-            });
+            fileUploadService.fileUpload(file, request, id,"/fruitInvoice");
         }
 
         //更新item數據庫
