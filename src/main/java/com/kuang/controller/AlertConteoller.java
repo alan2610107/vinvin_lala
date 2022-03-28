@@ -31,7 +31,7 @@ public class AlertConteoller {
     private RedisTemplate redisTemplate;
 
     @RequestMapping("/showAlert")
-    public String alertMain0(Model model, HttpSession session, @RequestParam String location){
+    public String showAlert(Model model, HttpSession session, @RequestParam String location){
         User user = (User) session.getAttribute("user");
         if (user.getLevel()==1000){
             Date day=new Date();
@@ -60,7 +60,6 @@ public class AlertConteoller {
             model.addAttribute("warehouse",realname);
             model.addAttribute("mainWarehouse","alert");
             model.addAttribute("logLocation","showAlert?location="+location);
-
             return "alert";
 
         }else {
