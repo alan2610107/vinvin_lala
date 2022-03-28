@@ -2,3 +2,4 @@
 /out/
 /web/WEB-INF/jsp2/
 /target/
+*.rdb
