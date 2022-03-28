@@ -2516,7 +2516,7 @@
     </update>
 
     <update id="updatecommercialIteminMain0" parameterType="VinItem">
-        update vinvin.mainWarehouse0_commercialItem set itemName=#{itemName},itemCount=#{itemCount},memo=#{memo},brand=#{brand},singlePrice=#{singlePrice},totalPrice=#{totalPrice}
+        update vinvin.mainWarehouse0_commercialItem set itemCount=#{itemCount},memo=#{memo},singlePrice=#{singlePrice},totalPrice=#{totalPrice}
         where id=#{id};
     </update>
 
@@ -2620,45 +2620,45 @@
              left join vinvin.supplier supplier on supplier.supplierID=item.supplierID;
     </select>
 
-    <select id="queryIteminMain0ByName" resultType="VinItem" parameterType="String">
-        SELECT * from vinvin.mainWarehouse0_tool where itemName=#{itemName};
-    </select>
+<!--    <select id="queryIteminMain0ByName" resultType="VinItem" parameterType="String">-->
+<!--        SELECT * from vinvin.mainWarehouse0_tool where itemName=#{itemName};-->
+<!--    </select>-->
 
-    <select id="querySmallIteminMain0ByName" resultType="VinItem" parameterType="String">
-        SELECT * from vinvin.mainWarehouse0_smallTool where itemName=#{itemName};
-    </select>
+<!--    <select id="querySmallIteminMain0ByName" resultType="VinItem" parameterType="String">-->
+<!--        SELECT * from vinvin.mainWarehouse0_smallTool where itemName=#{itemName};-->
+<!--    </select>-->
 
-    <select id="queryFoodinMain0ByName" resultType="VinItem" parameterType="String">
-        SELECT * from vinvin.mainWarehouse0_food where itemName=#{itemName};
-    </select>
+<!--    <select id="queryFoodinMain0ByName" resultType="VinItem" parameterType="String">-->
+<!--        SELECT * from vinvin.mainWarehouse0_food where itemName=#{itemName};-->
+<!--    </select>-->
 
-    <select id="querycommercialIteminMain0ByName" resultType="VinItem" parameterType="String">
-        SELECT * from vinvin.mainWarehouse0_commercialItem where itemName=#{itemName};
-    </select>
+<!--    <select id="querycommercialIteminMain0ByName" resultType="VinItem" parameterType="String">-->
+<!--        SELECT * from vinvin.mainWarehouse0_commercialItem where itemName=#{itemName};-->
+<!--    </select>-->
 
-    <select id="queryothersinMain0ByName" resultType="VinItem" parameterType="String">
-        SELECT * from vinvin.mainWarehouse0_others where itemName=#{itemName};
-    </select>
+<!--    <select id="queryothersinMain0ByName" resultType="VinItem" parameterType="String">-->
+<!--        SELECT * from vinvin.mainWarehouse0_others where itemName=#{itemName};-->
+<!--    </select>-->
 
-    <select id="queryItemNuminMain0byID" resultType="VinItem" parameterType="String">
-        select * from vinvin.mainWarehouse0_tool where id=#{id};
-    </select>
+<!--    <select id="queryItemNuminMain0byID" resultType="VinItem" parameterType="String">-->
+<!--        select * from vinvin.mainWarehouse0_tool where id=#{id};-->
+<!--    </select>-->
 
-    <select id="querySmallItemNuminMain0byID" resultType="VinItem" parameterType="String">
-        select * from vinvin.mainWarehouse0_smallTool where id=#{id};
-    </select>
+<!--    <select id="querySmallItemNuminMain0byID" resultType="VinItem" parameterType="String">-->
+<!--        select * from vinvin.mainWarehouse0_smallTool where id=#{id};-->
+<!--    </select>-->
 
-    <select id="queryFoodNuminMain0byID" resultType="VinItem" parameterType="String">
-        select * from vinvin.mainWarehouse0_food where id=#{id};
-    </select>
+<!--    <select id="queryFoodNuminMain0byID" resultType="VinItem" parameterType="String">-->
+<!--        select * from vinvin.mainWarehouse0_food where id=#{id};-->
+<!--    </select>-->
 
-    <select id="querycommercialItemNuminMain0byID" resultType="VinItem" parameterType="String">
-        select * from vinvin.mainWarehouse0_commercialItem where id=#{id};
-    </select>
+<!--    <select id="querycommercialItemNuminMain0byID" resultType="VinItem" parameterType="String">-->
+<!--        select * from vinvin.mainWarehouse0_commercialItem where id=#{id};-->
+<!--    </select>-->
 
-    <select id="queryothersNuminMain0byID" resultType="VinItem" parameterType="String">
-        select * from vinvin.mainWarehouse0_others where id=#{id};
-    </select>
+<!--    <select id="queryothersNuminMain0byID" resultType="VinItem" parameterType="String">-->
+<!--        select * from vinvin.mainWarehouse0_others where id=#{id};-->
+<!--    </select>-->
 
     <select id="ifItemExistinMain0" resultType="int">
         select count(*) from vinvin.mainWarehouse0_tool where id=#{id} limit 1;

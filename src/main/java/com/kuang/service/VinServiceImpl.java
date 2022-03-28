@@ -3941,46 +3941,46 @@ public class VinServiceImpl implements VinService{
     public List<VinItem> queryAllothersinMain0() {
         return vinMapper.queryAllothersinMain0();
     }
-    @Override
-    public VinItem queryIteminMain0ByName(String itemName) {
-        return vinMapper.queryIteminMain0ByName(itemName);
-    }
-    @Override
-    public VinItem querySmallIteminMain0ByName(String itemName) {
-        return vinMapper.querySmallIteminMain0ByName(itemName);
-    }
-    @Override
-    public VinItem queryFoodinMain0ByName(String itemName) {
-        return vinMapper.queryFoodinMain0ByName(itemName);
-    }
-    @Override
-    public VinItem querycommercialIteminMain0ByName(String itemName) {
-        return vinMapper.querycommercialIteminMain0ByName(itemName);
-    }
-    @Override
-    public VinItem queryothersinMain0ByName(String itemName) {
-        return vinMapper.queryothersinMain0ByName(itemName);
-    }
 //    @Override
-//    public VinItem queryItemNuminMain0byID(String id) {
-//        return vinMapper.queryItemNuminMain0byID(id);
+//    public VinItem queryIteminMain0ByName(String itemName) {
+//        return vinMapper.queryIteminMain0ByName(itemName);
 //    }
-    @Override
-    public VinItem querySmallItemNuminMain0byID(String id) {
-        return vinMapper.querySmallItemNuminMain0byID(id);
-    }
-    @Override
-    public VinItem queryFoodNuminMain0byID(String id) {
-        return vinMapper.queryFoodNuminMain0byID(id);
-    }
-    @Override
-    public VinItem querycommercialItemNuminMain0byID(String id) {
-        return vinMapper.querycommercialItemNuminMain0byID(id);
-    }
-    @Override
-    public VinItem queryothersNuminMain0byID(String id) {
-        return vinMapper.queryothersNuminMain0byID(id);
-    }
+//    @Override
+//    public VinItem querySmallIteminMain0ByName(String itemName) {
+//        return vinMapper.querySmallIteminMain0ByName(itemName);
+//    }
+//    @Override
+//    public VinItem queryFoodinMain0ByName(String itemName) {
+//        return vinMapper.queryFoodinMain0ByName(itemName);
+//    }
+//    @Override
+//    public VinItem querycommercialIteminMain0ByName(String itemName) {
+//        return vinMapper.querycommercialIteminMain0ByName(itemName);
+//    }
+//    @Override
+//    public VinItem queryothersinMain0ByName(String itemName) {
+//        return vinMapper.queryothersinMain0ByName(itemName);
+//    }
+////    @Override
+////    public VinItem queryItemNuminMain0byID(String id) {
+////        return vinMapper.queryItemNuminMain0byID(id);
+////    }
+//    @Override
+//    public VinItem querySmallItemNuminMain0byID(String id) {
+//        return vinMapper.querySmallItemNuminMain0byID(id);
+//    }
+//    @Override
+//    public VinItem queryFoodNuminMain0byID(String id) {
+//        return vinMapper.queryFoodNuminMain0byID(id);
+//    }
+//    @Override
+//    public VinItem querycommercialItemNuminMain0byID(String id) {
+//        return vinMapper.querycommercialItemNuminMain0byID(id);
+//    }
+//    @Override
+//    public VinItem queryothersNuminMain0byID(String id) {
+//        return vinMapper.queryothersNuminMain0byID(id);
+//    }
     @Override
     public int ifItemExistinMain0(String id) {
         return vinMapper.ifItemExistinMain0(id);
