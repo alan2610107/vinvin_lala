@@ -1,34 +1,22 @@
 package com.kuang.service;
 
-import com.alibaba.fastjson.JSON;
 import com.kuang.dao.VinMapper;
 import com.kuang.pojo.*;
 import lombok.extern.slf4j.Slf4j;
-import net.coobird.thumbnailator.Thumbnails;
-import org.apache.commons.io.FileUtils;
-//import org.apache.commons.io.FilenameUtils;
-import org.apache.commons.io.FilenameUtils;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.cache.annotation.Caching;
-import org.springframework.core.task.TaskExecutor;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
-import org.springframework.stereotype.Component;
 import org.springframework.ui.Model;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
-
 import javax.servlet.http.HttpServletRequest;
-import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.*;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
 
 @Slf4j
 public class VinServiceImpl implements VinService{
@@ -1716,10 +1704,7 @@ public class VinServiceImpl implements VinService{
     }
 
     @Override
-//    @Cacheable(value = { "cutelittlepiggyCache" },key="'FoodinShop1List'")
     public List<VinItem> queryAllFoodinShop1() {
-//        log.warn();("一級緩存測試一"+vinMapper.queryAllFoodinShop1());//能用到一級緩存
-//        log.warn();("一級緩存測試二"+vinMapper.queryAllFoodinShop1());//能用到一級緩存
         return vinMapper.queryAllFoodinShop1();
     }
 
