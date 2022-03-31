@@ -250,7 +250,7 @@
                                 <td class="table-customize2" style="color: #404e53;font-weight:bold">審核中...</td>
                             </c:if>
                             <c:if test="${vinLog.ifComplete.equals(false) && vinLog.ifConfirm.equals(true)}">
-                                <td class="table-customize2" style="color: #d0c6c2;font-weight:bold"><a href="${pageContext.request.contextPath}/receive/${logLocation}">注意收貨</a></td>
+                                <td class="table-customize2" style="color: #d0c6c2;font-weight:bold"><a href="${pageContext.request.contextPath}/receive/list?location=${logLocation}">注意收貨</a></td>
                             </c:if>
                             <c:if test="${vinLog.ifComplete.equals(true)}">
                                 <td class="table-customize2">已完成</td>
