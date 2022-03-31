@@ -361,7 +361,6 @@ public class RecieveController extends HttpServlet {
     @RequestMapping("/setExpiredDate")
     public String showExpiredForm(Model model, HttpSession session, @RequestParam String location) {
         User user = (User) session.getAttribute("user");
-        int userLevel = user.getLevel();
         if (vinService.ifAccess(user, location)) {
             List<Expired> expiredList = vinService.queryExpiredDatebyLocationTime(location, "123");
             model.addAttribute("expiredList", expiredList);
@@ -384,7 +383,6 @@ public class RecieveController extends HttpServlet {
     @RequestMapping("/updateExpiredDate")
     public String updateExpiredDate(@RequestParam("items[]") String items, @RequestParam String location, HttpSession session, Model model) {
         User user = (User) session.getAttribute("user");
-        int userLevel = user.getLevel();
         if (vinService.ifAccess(user, location)) {
             List<String> idList = new ArrayList<>();
             List<String> timeList = new ArrayList<>();
