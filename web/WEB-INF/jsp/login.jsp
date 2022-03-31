@@ -27,7 +27,7 @@
         <%--    top:0; bottom:0; left:0; right:0; margin:auto;">--%>
         <div class="col-md-offset-4 col-md-4">
             <br><br><br>
-            <form action="${pageContext.request.contextPath }/login" method="post">
+            <form action="${pageContext.request.contextPath}/login" onsubmit="return doSubmit()" method="post">
                 <div class="mb-3">
                     <label for="InputAccount" class="form-label">用户名</label>
                     <input type="text" name="uname" class="form-control" id="InputAccount">
@@ -49,6 +49,7 @@
 
     </div>
 </div>
+<script src="${pageContext.request.contextPath}/js/debounce.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"

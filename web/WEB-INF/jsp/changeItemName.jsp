@@ -29,7 +29,7 @@
             <h3>修改${item.itemName}的名稱</h3>
             <br><br>
 
-            <form action="${pageContext.request.contextPath}/change/changeItemName" method="post" enctype="multipart/form-data">
+            <form action="${pageContext.request.contextPath}/change/changeItemName" onsubmit="return doSubmit()" method="post" enctype="multipart/form-data">
                 <%--出現問題：我們提交了修改SQL請求，但是修改失敗，初次考慮是事務問題，配置完畢依舊失敗！--%>
                 <%--看一下SQL語句，能否執行成功：修改未完成--%>
                 <%--前端傳遞隱藏域--%>
@@ -77,6 +77,8 @@
 
 
 </div>
+<script src="${pageContext.request.contextPath}/js/debounce.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
         crossorigin="anonymous"></script>

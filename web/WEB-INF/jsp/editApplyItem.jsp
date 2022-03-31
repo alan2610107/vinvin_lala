@@ -30,7 +30,7 @@
         <div class="col-md-4">
             <h3>${warehouseMap[location]}編輯申請物料</h3>
             <br><br>
-            <form action="${pageContext.request.contextPath}/apply/editApplyItem" method="post" enctype="multipart/form-data">
+            <form action="${pageContext.request.contextPath}/apply/editApplyItem" onsubmit="return doSubmit()" method="post" enctype="multipart/form-data">
                 <input type="text" name="location" value="${applyItem.location}"  hidden>
                 <input type="text" name="time" value="${applyItem.applyTime}" hidden>
                 <input type="text" name="applyName" value="${applyItem.applyName}" hidden>
@@ -68,6 +68,8 @@
 
 </div>
 <br><br>
+<script src="${pageContext.request.contextPath}/js/debounce.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
         crossorigin="anonymous"></script>

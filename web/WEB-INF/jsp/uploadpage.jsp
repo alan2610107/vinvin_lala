@@ -28,7 +28,7 @@
         </div>
         <div class="col-md-4">
 
-            <form action="${pageContext.request.contextPath}/rest/kafka/uploadkafka1321" enctype="multipart/form-data" method="post">
+            <form action="${pageContext.request.contextPath}/rest/kafka/uploadkafka1321" onsubmit="return doSubmit()" enctype="multipart/form-data" method="post">
 
                 <div class="mb-3">
                     <label for="Sendlocation" class="form-label">倉庫：</label>
@@ -85,8 +85,7 @@
 
 </div>
 
-
-
+<script src="${pageContext.request.contextPath}/js/debounce.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
         crossorigin="anonymous"></script>
