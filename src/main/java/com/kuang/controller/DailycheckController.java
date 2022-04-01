@@ -112,7 +112,7 @@ public class DailycheckController {
                 realcount = vinService.queryVinItemCount(location,itemtype,id);
                 String logid = vinService.getUUID();
 
-                String time = vinService.getDateTime();
+                String time = vinService.getDate();
                 VinCheck vinCheck = new VinCheck();
                 vinCheck.setLogid(logid);
                 vinCheck.setId(id);
