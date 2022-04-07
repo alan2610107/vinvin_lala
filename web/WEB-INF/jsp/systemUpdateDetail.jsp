@@ -23,6 +23,13 @@
 <div class="container">
     <div class="col-md-12 column">
         <br><br>
+        <h5>2021/04/08</h5>
+        <ul>
+            <li>加入新倉到庫存警戒</li>
+        </ul>
+    </div>
+    <div class="col-md-12 column">
+        <br><br>
         <h5>2021/04/01</h5>
         <ul>
             <li>加入防抖機制</li>
