@@ -16,6 +16,11 @@
         /*color: white;*/
         background-color: #c2ccd0;
     }
+
+    .dropdown-menu {
+        height:50vh;
+        overflow:scroll;
+    }
 </style>
 
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -24,7 +29,7 @@
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 倉庫
             </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown" id="navbarSupportedContent1">
                 <li><a class="dropdown-item"
                        href="${pageContext.request.contextPath}/warehouse/allItem?location=main0">*总仓*</a>
                 </li>
