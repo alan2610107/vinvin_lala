@@ -17,7 +17,7 @@
         background-color: #c2ccd0;
     }
 
-    .dropdown-menu {
+    #dropdown-menu {
         height:50vh;
         overflow:scroll;
     }
@@ -29,7 +29,7 @@
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 倉庫
             </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown" id="navbarSupportedContent1">
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdown-menu">
                 <li><a class="dropdown-item"
                        href="${pageContext.request.contextPath}/warehouse/allItem?location=main0">*总仓*</a>
                 </li>
@@ -81,7 +81,7 @@
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 紀錄
             </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdown-menu">
                 <li><a class="dropdown-item"
                        href="${pageContext.request.contextPath}/log/warehouse?location=main0">*总仓*</a>
                 </li>
@@ -134,7 +134,7 @@
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 待入庫清單
             </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdown-menu">
                 <li><a class="dropdown-item"
                        href="${pageContext.request.contextPath}/receive/list?location=main0">*总仓*</a>
                 </li>
@@ -187,7 +187,7 @@
         <%--                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">--%>
         <%--                        待入庫例外--%>
         <%--                    </a>--%>
-        <%--                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">--%>
+        <%--                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdown-menu">--%>
         <%--                        <li><a class="dropdown-item"--%>
         <%--                               href="${pageContext.request.contextPath}/receive/error?location=main1">东莞总部</a>--%>
         <%--                        </li>--%>
@@ -222,7 +222,7 @@
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 日盤
             </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdown-menu">
                 <li><a class="dropdown-item"
                        href="${pageContext.request.contextPath}/dailycheck/toDailyCheck?location=main0">*总仓*</a>
                 </li>
@@ -274,7 +274,7 @@
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 新增轉移審核
             </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdown-menu">
                 <li><a class="dropdown-item"
                        href="${pageContext.request.contextPath}/confirm/listnotpass?location=main0">*总仓*</a>
                 </li>
@@ -327,7 +327,7 @@
         <%--                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">--%>
         <%--                        日盤結果--%>
         <%--                    </a>--%>
-        <%--                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">--%>
+        <%--                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdown-menu">--%>
         <%--                        <li><a class="dropdown-item"--%>
         <%--                               href="${pageContext.request.contextPath}/dailycheck/result?location=main1">东莞总部</a>--%>
         <%--                        </li>--%>
@@ -361,7 +361,7 @@
         <%--                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">--%>
         <%--                        庫存警戒--%>
         <%--                    </a>--%>
-        <%--                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">--%>
+        <%--                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdown-menu">--%>
         <%--                        <li><a class="dropdown-item"--%>
         <%--                               href="${pageContext.request.contextPath}/alert/main1">东莞总部</a>--%>
         <%--                        </li>--%>
@@ -395,7 +395,7 @@
         <%--                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">--%>
         <%--                        修改--%>
         <%--                    </a>--%>
-        <%--                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">--%>
+        <%--                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdown-menu">--%>
         <%--                        <li><a class="dropdown-item"--%>
         <%--                               href="${pageContext.request.contextPath}/change/showAllItem">修改名稱</a>--%>
         <%--                        </li>--%>
@@ -405,7 +405,7 @@
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 報廢審核
             </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdown-menu">
                 <li><a class="dropdown-item"
                        href="${pageContext.request.contextPath}/dump/showdumplog?location=main0&function=notpass">*总仓*</a>
                 </li>
@@ -457,7 +457,7 @@
         <%--                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">--%>
         <%--                        上傳水果運單--%>
         <%--                    </a>--%>
-        <%--                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">--%>
+        <%--                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdown-menu">--%>
         <%--                        <li><a class="dropdown-item"--%>
         <%--                               href="${pageContext.request.contextPath}/invoice/toAdd?location=main1">东莞总部</a>--%>
         <%--                        </li>--%>
@@ -491,7 +491,7 @@
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 水果運單紀錄
             </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdown-menu">
                 <li><a class="dropdown-item"
                        href="${pageContext.request.contextPath}/invoice/show?location=main0">*总仓*</a>
                 </li><li><a class="dropdown-item"
@@ -543,7 +543,7 @@
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     報貨
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdown-menu">
                     <li><a class="dropdown-item"
                            href="${pageContext.request.contextPath}/apply/showApplyItem?location=main0">*总仓*</a>
                     </li>
