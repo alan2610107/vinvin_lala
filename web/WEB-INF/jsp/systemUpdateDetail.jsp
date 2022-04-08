@@ -27,6 +27,7 @@
         <ul>
             <li>加入东莞广发金融和深圳豪方天际到庫存警戒</li>
             <li>深圳豪方天际庫存錄入</li>
+            <li>Fix : 下拉選單超過螢幕問題</li>
         </ul>
     </div>
     <div class="col-md-12 column">
