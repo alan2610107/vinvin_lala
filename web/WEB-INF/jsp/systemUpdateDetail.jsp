@@ -23,6 +23,14 @@
 <div class="container">
     <div class="col-md-12 column">
         <br><br>
+        <h5>2021/04/15</h5>
+        <ul>
+            <li>Fix : 自己轉移給自己的問題</li>
+            <li>Fix : 查詢庫存時id可能為空的問題</li>
+        </ul>
+    </div>
+    <div class="col-md-12 column">
+        <br><br>
         <h5>2021/04/08</h5>
         <ul>
             <li>加入东莞广发金融和深圳豪方天际到庫存警戒</li>
