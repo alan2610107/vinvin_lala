@@ -52,11 +52,10 @@
                     <select name="Warehouse" class="form-select" id="Sendlocation" aria-label="Default select example" required>
                         <option value="">請選擇座標</option>
                         <c:forEach var="warehouseElement" items="${warehouseMap.keySet()}">
-                            <c:if test="${!location.equals(warehouseElement) || !warehouseElement.equals('outside') && !warehouseElement.equals('trashcan')}">
+                            <c:if test="${!warehouseElement.equals(location)}">
                                 <c:if test="${!warehouseElement.equals('outside') && !warehouseElement.equals('trashcan')}">
                                     <option value="${warehouseElement}">${warehouseMap[warehouseElement]}</option>
                                 </c:if>
-
                             </c:if>
 
                         </c:forEach>
