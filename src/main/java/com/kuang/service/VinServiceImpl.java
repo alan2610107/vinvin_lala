@@ -6675,7 +6675,7 @@ public class VinServiceImpl implements VinService{
     }
 
     @Override
-    public VinItem getVinItem(String location, String category, String id) {
+    public VinItem getVinItem(String location, @NotNull String category, @NotNull String id) {
         VinItem vinItem = null;
         switch (category) {
             case "tool":
@@ -7642,6 +7642,19 @@ public class VinServiceImpl implements VinService{
                 break;
         }
         return itemCount;
+    }
+
+    @Override
+    public Map<String, String> getCategoryMap() {
+        Map<String, String> categoryMap = new HashMap<>();
+        categoryMap.put("tool","設備");
+        categoryMap.put("smalltool","小器具");
+        categoryMap.put("food","物料");
+        categoryMap.put("commercial","宣传物料");
+        categoryMap.put("commercialthing","宣传物料");
+        categoryMap.put("other","其他");
+
+        return categoryMap;
     }
 
 
