@@ -191,6 +191,7 @@ public class KryApi {
         warehouseList.add("shop9");
         warehouseList.add("shop10");
         warehouseList.add("shop11");
+        warehouseList.add("shop12");
         shopIdList.add(870305696L);
         shopIdList.add(870305697L);
         shopIdList.add(870331916L);
@@ -202,6 +203,7 @@ public class KryApi {
         shopIdList.add(870387582L);
         shopIdList.add(870387577L);
         shopIdList.add(870387585L);
+        shopIdList.add(870387576L);
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
         Date now=new Date();
