@@ -6,141 +6,141 @@
 <mapper namespace="com.kuang.dao.VinMapper">
 <!--    <cache></cache>-->
     <insert id="addIteminMain1" parameterType="VinItem">
-        insert into vinvin.mainWarehouse1_tool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.mainWarehouse1_tool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
     <insert id="addIteminMain2" parameterType="VinItem">
-        insert into vinvin.mainWarehouse2_tool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.mainWarehouse2_tool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
     <insert id="addIteminShop1" parameterType="VinItem">
-        insert into vinvin.shopWarehouse1_tool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse1_tool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
     <insert id="addIteminShop2" parameterType="VinItem">
-        insert into vinvin.shopWarehouse2_tool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse2_tool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
     <insert id="addIteminShop3" parameterType="VinItem">
-        insert into vinvin.shopWarehouse3_tool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse3_tool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
     <insert id="addIteminShop4" parameterType="VinItem">
-        insert into vinvin.shopWarehouse4_tool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse4_tool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
     <insert id="addIteminShop5" parameterType="VinItem">
-        insert into vinvin.shopWarehouse5_tool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse5_tool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
     <insert id="addIteminShop6" parameterType="VinItem">
-        insert into vinvin.shopWarehouse6_tool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse6_tool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
     <insert id="addIteminShop7" parameterType="VinItem">
-        insert into vinvin.shopWarehouse7_tool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse7_tool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
 
     <insert id="addSmallIteminMain1" parameterType="VinItem">
-        insert into vinvin.mainWarehouse1_smallTool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.mainWarehouse1_smallTool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
     <insert id="addSmallIteminMain2" parameterType="VinItem">
-        insert into vinvin.mainWarehouse2_smallTool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.mainWarehouse2_smallTool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
     <insert id="addSmallIteminShop1" parameterType="VinItem">
-        insert into vinvin.shopWarehouse1_smallTool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse1_smallTool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
     <insert id="addSmallIteminShop2" parameterType="VinItem">
-        insert into vinvin.shopWarehouse2_smallTool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse2_smallTool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
     <insert id="addSmallIteminShop3" parameterType="VinItem">
-        insert into vinvin.shopWarehouse3_smallTool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse3_smallTool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
     <insert id="addSmallIteminShop4" parameterType="VinItem">
-        insert into vinvin.shopWarehouse4_smallTool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse4_smallTool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
     <insert id="addSmallIteminShop5" parameterType="VinItem">
-        insert into vinvin.shopWarehouse5_smallTool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse5_smallTool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
     <insert id="addSmallIteminShop6" parameterType="VinItem">
-        insert into vinvin.shopWarehouse6_smallTool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse6_smallTool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
     <insert id="addSmallIteminShop7" parameterType="VinItem">
-        insert into vinvin.shopWarehouse7_smallTool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse7_smallTool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
 
     <insert id="addFoodinMain1" parameterType="VinItem">
-        insert into vinvin.mainWarehouse1_food(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.mainWarehouse1_food(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
     <insert id="addFoodinMain2" parameterType="VinItem">
-        insert into vinvin.mainWarehouse2_food(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.mainWarehouse2_food(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
     <insert id="addFoodinShop1" parameterType="VinItem">
-        insert into vinvin.shopWarehouse1_food(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse1_food(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
     <insert id="addFoodinShop2" parameterType="VinItem">
-        insert into vinvin.shopWarehouse2_food(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse2_food(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
     <insert id="addFoodinShop3" parameterType="VinItem">
-        insert into vinvin.shopWarehouse3_food(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse3_food(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
     <insert id="addFoodinShop4" parameterType="VinItem">
-        insert into vinvin.shopWarehouse4_food(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse4_food(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
     <insert id="addFoodinShop5" parameterType="VinItem">
-        insert into vinvin.shopWarehouse5_food(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse5_food(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
     <insert id="addFoodinShop6" parameterType="VinItem">
-        insert into vinvin.shopWarehouse6_food(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse6_food(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
     <insert id="addFoodinShop7" parameterType="VinItem">
-        insert into vinvin.shopWarehouse7_food(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse7_food(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
     <insert id="addcommercialIteminMain1" parameterType="VinItem">
-        insert into vinvin.mainWarehouse1_commercialItem(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.mainWarehouse1_commercialItem(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
     <insert id="addcommercialIteminMain2" parameterType="VinItem">
-        insert into vinvin.mainWarehouse2_commercialItem(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.mainWarehouse2_commercialItem(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
     <insert id="addcommercialIteminShop1" parameterType="VinItem">
-        insert into vinvin.shopWarehouse1_commercialItem(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse1_commercialItem(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
     <insert id="addcommercialIteminShop2" parameterType="VinItem">
-        insert into vinvin.shopWarehouse2_commercialItem(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse2_commercialItem(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
     <insert id="addcommercialIteminShop3" parameterType="VinItem">
-        insert into vinvin.shopWarehouse3_commercialItem(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse3_commercialItem(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
     <insert id="addcommercialIteminShop4" parameterType="VinItem">
-        insert into vinvin.shopWarehouse4_commercialItem(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse4_commercialItem(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
     <insert id="addcommercialIteminShop5" parameterType="VinItem">
-        insert into vinvin.shopWarehouse5_commercialItem(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse5_commercialItem(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
     <insert id="addcommercialIteminShop6" parameterType="VinItem">
-        insert into vinvin.shopWarehouse6_commercialItem(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse6_commercialItem(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
     <insert id="addcommercialIteminShop7" parameterType="VinItem">
-        insert into vinvin.shopWarehouse7_commercialItem(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse7_commercialItem(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
     <insert id="addothersinMain1" parameterType="VinItem">
-        insert into vinvin.mainWarehouse1_others(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.mainWarehouse1_others(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
     <insert id="addothersinMain2" parameterType="VinItem">
-        insert into vinvin.mainWarehouse2_others(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.mainWarehouse2_others(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
     <insert id="addothersinShop1" parameterType="VinItem">
-        insert into vinvin.shopWarehouse1_others(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse1_others(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
     <insert id="addothersinShop2" parameterType="VinItem">
-        insert into vinvin.shopWarehouse2_others(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse2_others(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
     <insert id="addothersinShop3" parameterType="VinItem">
-        insert into vinvin.shopWarehouse3_others(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse3_others(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
     <insert id="addothersinShop4" parameterType="VinItem">
-        insert into vinvin.shopWarehouse4_others(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse4_others(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
     <insert id="addothersinShop5" parameterType="VinItem">
-        insert into vinvin.shopWarehouse5_others(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse5_others(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
     <insert id="addothersinShop6" parameterType="VinItem">
-        insert into vinvin.shopWarehouse6_others(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse6_others(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
     <insert id="addothersinShop7" parameterType="VinItem">
-        insert into vinvin.shopWarehouse7_others(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse7_others(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
 
 
@@ -2461,23 +2461,23 @@
 
 <!--main0-->
     <insert id="addIteminMain0" parameterType="VinItem">
-        insert into vinvin.mainWarehouse0_tool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.mainWarehouse0_tool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
 
     <insert id="addSmallIteminMain0" parameterType="VinItem">
-        insert into vinvin.mainWarehouse0_smallTool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.mainWarehouse0_smallTool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
 
     <insert id="addFoodinMain0" parameterType="VinItem">
-        insert into vinvin.mainWarehouse0_food(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.mainWarehouse0_food(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
 
     <insert id="addcommercialIteminMain0" parameterType="VinItem">
-        insert into vinvin.mainWarehouse0_commercialItem(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.mainWarehouse0_commercialItem(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
 
     <insert id="addothersinMain0" parameterType="VinItem">
-        insert into vinvin.mainWarehouse0_others(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.mainWarehouse0_others(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
 
     <delete id="deleteIteminMain0byId" parameterType="String">
@@ -2793,23 +2793,23 @@
 
     <!--shop8-->
     <insert id="addIteminShop8" parameterType="VinItem">
-        insert into vinvin.shopWarehouse8_tool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse8_tool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
 
     <insert id="addSmallIteminShop8" parameterType="VinItem">
-        insert into vinvin.shopWarehouse8_smallTool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse8_smallTool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
 
     <insert id="addFoodinShop8" parameterType="VinItem">
-        insert into vinvin.shopWarehouse8_food(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse8_food(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
 
     <insert id="addcommercialIteminShop8" parameterType="VinItem">
-        insert into vinvin.shopWarehouse8_commercialItem(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse8_commercialItem(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
 
     <insert id="addothersinShop8" parameterType="VinItem">
-        insert into vinvin.shopWarehouse8_others(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse8_others(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
 
     <delete id="deleteIteminShop8byId" parameterType="String">
@@ -3117,23 +3117,23 @@
 
     <!--shop9-->
     <insert id="addIteminShop9" parameterType="VinItem">
-        insert into vinvin.shopWarehouse9_tool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse9_tool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
 
     <insert id="addSmallIteminShop9" parameterType="VinItem">
-        insert into vinvin.shopWarehouse9_smallTool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse9_smallTool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
 
     <insert id="addFoodinShop9" parameterType="VinItem">
-        insert into vinvin.shopWarehouse9_food(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse9_food(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
 
     <insert id="addcommercialIteminShop9" parameterType="VinItem">
-        insert into vinvin.shopWarehouse9_commercialItem(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse9_commercialItem(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
 
     <insert id="addothersinShop9" parameterType="VinItem">
-        insert into vinvin.shopWarehouse9_others(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse9_others(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
 
     <delete id="deleteIteminShop9byId" parameterType="String">
@@ -3439,23 +3439,23 @@
 
     <!--shop10-->
     <insert id="addIteminShop10" parameterType="VinItem">
-        insert into vinvin.shopWarehouse10_tool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse10_tool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
 
     <insert id="addSmallIteminShop10" parameterType="VinItem">
-        insert into vinvin.shopWarehouse10_smallTool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse10_smallTool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
 
     <insert id="addFoodinShop10" parameterType="VinItem">
-        insert into vinvin.shopWarehouse10_food(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse10_food(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
 
     <insert id="addcommercialIteminShop10" parameterType="VinItem">
-        insert into vinvin.shopWarehouse10_commercialItem(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse10_commercialItem(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
 
     <insert id="addothersinShop10" parameterType="VinItem">
-        insert into vinvin.shopWarehouse10_others(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse10_others(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
 
     <delete id="deleteIteminShop10byId" parameterType="String">
@@ -3760,23 +3760,23 @@
 
     <!--shop11-->
     <insert id="addIteminShop11" parameterType="VinItem">
-        insert into vinvin.shopWarehouse11_tool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse11_tool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
 
     <insert id="addSmallIteminShop11" parameterType="VinItem">
-        insert into vinvin.shopWarehouse11_smallTool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse11_smallTool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
 
     <insert id="addFoodinShop11" parameterType="VinItem">
-        insert into vinvin.shopWarehouse11_food(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse11_food(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
 
     <insert id="addcommercialIteminShop11" parameterType="VinItem">
-        insert into vinvin.shopWarehouse11_commercialItem(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse11_commercialItem(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
 
     <insert id="addothersinShop11" parameterType="VinItem">
-        insert into vinvin.shopWarehouse11_others(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse11_others(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
 
     <delete id="deleteIteminShop11byId" parameterType="String">
@@ -4081,23 +4081,23 @@
 
     <!--shop12-->
     <insert id="addIteminShop12" parameterType="VinItem">
-        insert into vinvin.shopWarehouse12_tool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse12_tool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
 
     <insert id="addSmallIteminShop12" parameterType="VinItem">
-        insert into vinvin.shopWarehouse12_smallTool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse12_smallTool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
 
     <insert id="addFoodinShop12" parameterType="VinItem">
-        insert into vinvin.shopWarehouse12_food(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse12_food(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
 
     <insert id="addcommercialIteminShop12" parameterType="VinItem">
-        insert into vinvin.shopWarehouse12_commercialItem(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse12_commercialItem(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
 
     <insert id="addothersinShop12" parameterType="VinItem">
-        insert into vinvin.shopWarehouse12_others(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+        insert ignore into vinvin.shopWarehouse12_others(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
     </insert>
 
     <delete id="deleteIteminShop12byId" parameterType="String">
