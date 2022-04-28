@@ -23,6 +23,13 @@
 <div class="container">
     <div class="col-md-12 column">
         <br><br>
+        <h5>2021/04/29</h5>
+        <ul>
+            <li>Fix : 新增庫存物料重複項問題(insert ignore)</li>
+        </ul>
+    </div>
+    <div class="col-md-12 column">
+        <br><br>
         <h5>2021/04/15</h5>
         <ul>
             <li>Fix : 自己轉移給自己的問題</li>
