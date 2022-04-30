@@ -24,6 +24,9 @@ public class DailycheckControllerService {
     @Resource
     private QueryDailyCheckService queryDailyCheckService;
 
+    @Resource
+    QueryInventoryService queryInventoryService;
+
     /**
      * @apiNote Get Daily Check Result
      * @param location
@@ -89,120 +92,135 @@ public class DailycheckControllerService {
      * @param model
      * @param location
      */
-    public void toDailyCheck(Model model, String location) {
+    public void toDailyCheck(Model model, String location) throws ExecutionException, InterruptedException {
+        Future<List<VinItem>> futureTool = queryInventoryService.get(location, "tool");
+        Future<List<VinItem>> futureSmallTool = queryInventoryService.get(location, "smalltool");
+        Future<List<VinItem>> futureFood = queryInventoryService.get(location, "food");
+        Future<List<VinItem>> futureCommercial = queryInventoryService.get(location, "commercialthing");
+        Future<List<VinItem>> futureOther = queryInventoryService.get(location, "other");
+        if(!futureTool.isDone() && !futureSmallTool.isDone() && !futureFood.isDone() && !futureCommercial.isDone() && !futureOther.isDone()){
+            log.warn("task has not finished, please wait!");
+        }
+
         List<VinItem> listItem = null;
         List<VinItem> listSmallItem = null;
         List<VinItem> listFood = null;
         List<VinItem> listCommercialthing = null;
         List<VinItem> listOther = null;
-        switch (location) {
-            case "main0":
-                listItem = vinService.queryAllIteminMain0();
-                listSmallItem = vinService.queryAllSmallIteminMain0();
-                listFood = vinService.queryAllFoodinMain0();
-                listCommercialthing = vinService.queryAllcommercialIteminMain0();
-                listOther = vinService.queryAllothersinMain0();
-                break;
-            case "main1":
-                listItem = vinService.queryAllIteminMain1();
-                listSmallItem = vinService.queryAllSmallIteminMain1();
-                listFood = vinService.queryAllFoodinMain1();
-                listCommercialthing = vinService.queryAllcommercialIteminMain1();
-                listOther = vinService.queryAllothersinMain1();
-                break;
-            case "main2":
-                listItem = vinService.queryAllIteminMain2();
-                listSmallItem = vinService.queryAllSmallIteminMain2();
-                listFood = vinService.queryAllFoodinMain2();
-                listCommercialthing = vinService.queryAllcommercialIteminMain2();
-                listOther = vinService.queryAllothersinMain2();
-                break;
-            case "shop1":
-                listItem = vinService.queryAllIteminShop1();
-                listSmallItem = vinService.queryAllSmallIteminShop1();
-                listFood = vinService.queryAllFoodinShop1();
-                listCommercialthing = vinService.queryAllcommercialIteminShop1();
-                listOther = vinService.queryAllothersinShop1();
-                break;
-            case "shop2":
-                listItem = vinService.queryAllIteminShop2();
-                listSmallItem = vinService.queryAllSmallIteminShop2();
-                listFood = vinService.queryAllFoodinShop2();
-                listCommercialthing = vinService.queryAllcommercialIteminShop2();
-                listOther = vinService.queryAllothersinShop2();
-                break;
-            case "shop3":
-                listItem = vinService.queryAllIteminShop3();
-                listSmallItem = vinService.queryAllSmallIteminShop3();
-                listFood = vinService.queryAllFoodinShop3();
-                listCommercialthing = vinService.queryAllcommercialIteminShop3();
-                listOther = vinService.queryAllothersinShop3();
-                break;
-            case "shop4":
-                listItem = vinService.queryAllIteminShop4();
-                listSmallItem = vinService.queryAllSmallIteminShop4();
-                listFood = vinService.queryAllFoodinShop4();
-                listCommercialthing = vinService.queryAllcommercialIteminShop4();
-                listOther = vinService.queryAllothersinShop4();
-                break;
-            case "shop5":
-                listItem = vinService.queryAllIteminShop5();
-                listSmallItem = vinService.queryAllSmallIteminShop5();
-                listFood = vinService.queryAllFoodinShop5();
-                listCommercialthing = vinService.queryAllcommercialIteminShop5();
-                listOther = vinService.queryAllothersinShop5();
-                break;
-            case "shop6":
-                listItem = vinService.queryAllIteminShop6();
-                listSmallItem = vinService.queryAllSmallIteminShop6();
-                listFood = vinService.queryAllFoodinShop6();
-                listCommercialthing = vinService.queryAllcommercialIteminShop6();
-                listOther = vinService.queryAllothersinShop6();
-                break;
-            case "shop7":
-                listItem = vinService.queryAllIteminShop7();
-                listSmallItem = vinService.queryAllSmallIteminShop7();
-                listFood = vinService.queryAllFoodinShop7();
-                listCommercialthing = vinService.queryAllcommercialIteminShop7();
-                listOther = vinService.queryAllothersinShop7();
-                break;
-            case "shop8":
-                listItem = vinService.queryAllIteminShop8();
-                listSmallItem = vinService.queryAllSmallIteminShop8();
-                listFood = vinService.queryAllFoodinShop8();
-                listCommercialthing = vinService.queryAllcommercialIteminShop8();
-                listOther = vinService.queryAllothersinShop8();
-                break;
-            case "shop9":
-                listItem = vinService.queryAllIteminShop9();
-                listSmallItem = vinService.queryAllSmallIteminShop9();
-                listFood = vinService.queryAllFoodinShop9();
-                listCommercialthing = vinService.queryAllcommercialIteminShop9();
-                listOther = vinService.queryAllothersinShop9();
-                break;
-            case "shop10":
-                listItem = vinService.queryAllIteminShop10();
-                listSmallItem = vinService.queryAllSmallIteminShop10();
-                listFood = vinService.queryAllFoodinShop10();
-                listCommercialthing = vinService.queryAllcommercialIteminShop10();
-                listOther = vinService.queryAllothersinShop10();
-                break;
-            case "shop11":
-                listItem = vinService.queryAllIteminShop11();
-                listSmallItem = vinService.queryAllSmallIteminShop11();
-                listFood = vinService.queryAllFoodinShop11();
-                listCommercialthing = vinService.queryAllcommercialIteminShop11();
-                listOther = vinService.queryAllothersinShop11();
-                break;
-            case "shop12":
-                listItem = vinService.queryAllIteminShop12();
-                listSmallItem = vinService.queryAllSmallIteminShop12();
-                listFood = vinService.queryAllFoodinShop12();
-                listCommercialthing = vinService.queryAllcommercialIteminShop12();
-                listOther = vinService.queryAllothersinShop12();
-                break;
 
-        }
+        listItem = futureTool.get();
+        listFood = futureFood.get();
+        listSmallItem = futureSmallTool.get();
+        listCommercialthing = futureCommercial.get();
+        listOther = futureOther.get();
+//        switch (location) {
+//            case "main0":
+//                listItem = vinService.queryAllIteminMain0();
+//                listSmallItem = vinService.queryAllSmallIteminMain0();
+//                listFood = vinService.queryAllFoodinMain0();
+//                listCommercialthing = vinService.queryAllcommercialIteminMain0();
+//                listOther = vinService.queryAllothersinMain0();
+//                break;
+//            case "main1":
+//                listItem = vinService.queryAllIteminMain1();
+//                listSmallItem = vinService.queryAllSmallIteminMain1();
+//                listFood = vinService.queryAllFoodinMain1();
+//                listCommercialthing = vinService.queryAllcommercialIteminMain1();
+//                listOther = vinService.queryAllothersinMain1();
+//                break;
+//            case "main2":
+//                listItem = vinService.queryAllIteminMain2();
+//                listSmallItem = vinService.queryAllSmallIteminMain2();
+//                listFood = vinService.queryAllFoodinMain2();
+//                listCommercialthing = vinService.queryAllcommercialIteminMain2();
+//                listOther = vinService.queryAllothersinMain2();
+//                break;
+//            case "shop1":
+//                listItem = vinService.queryAllIteminShop1();
+//                listSmallItem = vinService.queryAllSmallIteminShop1();
+//                listFood = vinService.queryAllFoodinShop1();
+//                listCommercialthing = vinService.queryAllcommercialIteminShop1();
+//                listOther = vinService.queryAllothersinShop1();
+//                break;
+//            case "shop2":
+//                listItem = vinService.queryAllIteminShop2();
+//                listSmallItem = vinService.queryAllSmallIteminShop2();
+//                listFood = vinService.queryAllFoodinShop2();
+//                listCommercialthing = vinService.queryAllcommercialIteminShop2();
+//                listOther = vinService.queryAllothersinShop2();
+//                break;
+//            case "shop3":
+//                listItem = vinService.queryAllIteminShop3();
+//                listSmallItem = vinService.queryAllSmallIteminShop3();
+//                listFood = vinService.queryAllFoodinShop3();
+//                listCommercialthing = vinService.queryAllcommercialIteminShop3();
+//                listOther = vinService.queryAllothersinShop3();
+//                break;
+//            case "shop4":
+//                listItem = vinService.queryAllIteminShop4();
+//                listSmallItem = vinService.queryAllSmallIteminShop4();
+//                listFood = vinService.queryAllFoodinShop4();
+//                listCommercialthing = vinService.queryAllcommercialIteminShop4();
+//                listOther = vinService.queryAllothersinShop4();
+//                break;
+//            case "shop5":
+//                listItem = vinService.queryAllIteminShop5();
+//                listSmallItem = vinService.queryAllSmallIteminShop5();
+//                listFood = vinService.queryAllFoodinShop5();
+//                listCommercialthing = vinService.queryAllcommercialIteminShop5();
+//                listOther = vinService.queryAllothersinShop5();
+//                break;
+//            case "shop6":
+//                listItem = vinService.queryAllIteminShop6();
+//                listSmallItem = vinService.queryAllSmallIteminShop6();
+//                listFood = vinService.queryAllFoodinShop6();
+//                listCommercialthing = vinService.queryAllcommercialIteminShop6();
+//                listOther = vinService.queryAllothersinShop6();
+//                break;
+//            case "shop7":
+//                listItem = vinService.queryAllIteminShop7();
+//                listSmallItem = vinService.queryAllSmallIteminShop7();
+//                listFood = vinService.queryAllFoodinShop7();
+//                listCommercialthing = vinService.queryAllcommercialIteminShop7();
+//                listOther = vinService.queryAllothersinShop7();
+//                break;
+//            case "shop8":
+//                listItem = vinService.queryAllIteminShop8();
+//                listSmallItem = vinService.queryAllSmallIteminShop8();
+//                listFood = vinService.queryAllFoodinShop8();
+//                listCommercialthing = vinService.queryAllcommercialIteminShop8();
+//                listOther = vinService.queryAllothersinShop8();
+//                break;
+//            case "shop9":
+//                listItem = vinService.queryAllIteminShop9();
+//                listSmallItem = vinService.queryAllSmallIteminShop9();
+//                listFood = vinService.queryAllFoodinShop9();
+//                listCommercialthing = vinService.queryAllcommercialIteminShop9();
+//                listOther = vinService.queryAllothersinShop9();
+//                break;
+//            case "shop10":
+//                listItem = vinService.queryAllIteminShop10();
+//                listSmallItem = vinService.queryAllSmallIteminShop10();
+//                listFood = vinService.queryAllFoodinShop10();
+//                listCommercialthing = vinService.queryAllcommercialIteminShop10();
+//                listOther = vinService.queryAllothersinShop10();
+//                break;
+//            case "shop11":
+//                listItem = vinService.queryAllIteminShop11();
+//                listSmallItem = vinService.queryAllSmallIteminShop11();
+//                listFood = vinService.queryAllFoodinShop11();
+//                listCommercialthing = vinService.queryAllcommercialIteminShop11();
+//                listOther = vinService.queryAllothersinShop11();
+//                break;
+//            case "shop12":
+//                listItem = vinService.queryAllIteminShop12();
+//                listSmallItem = vinService.queryAllSmallIteminShop12();
+//                listFood = vinService.queryAllFoodinShop12();
+//                listCommercialthing = vinService.queryAllcommercialIteminShop12();
+//                listOther = vinService.queryAllothersinShop12();
+//                break;
+//
+//        }
         model.addAttribute("listItem", listItem);
         model.addAttribute("listSmallItem", listSmallItem);
         model.addAttribute("listFood", listFood);

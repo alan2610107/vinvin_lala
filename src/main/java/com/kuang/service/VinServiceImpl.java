@@ -5894,6 +5894,56 @@ public class VinServiceImpl implements VinService{
         return vinMapper.ifExistApplyItemSec(id);
     }
 
+    @Override
+    public int addItemCommercialSet(ItemSet itemSet) {
+        return vinMapper.addItemCommercialSet(itemSet);
+    }
+
+    @Override
+    public int addItemFoodSet(ItemSet itemSet) {
+        return vinMapper.addItemFoodSet(itemSet);
+    }
+
+    @Override
+    public int addItemOthersSet(ItemSet itemSet) {
+        return vinMapper.addItemOthersSet(itemSet);
+    }
+
+    @Override
+    public int addItemSmallToolSet(ItemSet itemSet) {
+        return vinMapper.addItemSmallToolSet(itemSet);
+    }
+
+    @Override
+    public int addItemToolSet(ItemSet itemSet) {
+        return vinMapper.addItemToolSet(itemSet);
+    }
+
+    @Override
+    public List<ItemSet> queryAllItemCommercialSet() {
+        return vinMapper.queryAllItemCommercialSet();
+    }
+
+    @Override
+    public List<ItemSet> queryAllItemFoodSet() {
+        return vinMapper.queryAllItemFoodSet();
+    }
+
+    @Override
+    public List<ItemSet> queryAllItemOthersSet() {
+        return vinMapper.queryAllItemOthersSet();
+    }
+
+    @Override
+    public List<ItemSet> queryAllItemSmallToolSet() {
+        return vinMapper.queryAllItemSmallToolSet();
+    }
+
+    @Override
+    public List<ItemSet> queryAllItemToolSet() {
+        return vinMapper.queryAllItemToolSet();
+    }
+
 
     //////////////////////////工具類!////////////////////////////////////////////////////////////////////////////////////////////////
     @Override
@@ -7366,6 +7416,7 @@ public class VinServiceImpl implements VinService{
                     case "food":
                         itemCount = queryFoodNuminMain0byId(id);
                         break;
+                    case "commercialthing":
                     case "commercial":
                         itemCount = querycommercialItemNuminMain0byId(id);
                         break;
@@ -7385,6 +7436,7 @@ public class VinServiceImpl implements VinService{
                     case "food":
                         itemCount = queryFoodNuminMain1byId(id);
                         break;
+                    case "commercialthing":
                     case "commercial":
                         itemCount = querycommercialItemNuminMain1byId(id);
                         break;
@@ -7404,6 +7456,7 @@ public class VinServiceImpl implements VinService{
                     case "food":
                         itemCount = queryFoodNuminMain2byId(id);
                         break;
+                    case "commercialthing":
                     case "commercial":
                         itemCount = querycommercialItemNuminMain2byId(id);
                         break;
@@ -7423,6 +7476,7 @@ public class VinServiceImpl implements VinService{
                     case "food":
                         itemCount = queryFoodNuminShop1byId(id);
                         break;
+                    case "commercialthing":
                     case "commercial":
                         itemCount = querycommercialItemNuminShop1byId(id);
                         break;
@@ -7442,6 +7496,7 @@ public class VinServiceImpl implements VinService{
                     case "food":
                         itemCount = queryFoodNuminShop2byId(id);
                         break;
+                    case "commercialthing":
                     case "commercial":
                         itemCount = querycommercialItemNuminShop2byId(id);
                         break;
@@ -7462,6 +7517,7 @@ public class VinServiceImpl implements VinService{
                         itemCount = queryFoodNuminShop3byId(id);
                         break;
                     case "commercial":
+                    case "commercialthing":
                         itemCount = querycommercialItemNuminShop3byId(id);
                         break;
                     case "other":
@@ -7481,6 +7537,7 @@ public class VinServiceImpl implements VinService{
                         itemCount = queryFoodNuminShop4byId(id);
                         break;
                     case "commercial":
+                    case "commercialthing":
                         itemCount = querycommercialItemNuminShop4byId(id);
                         break;
                     case "other":
@@ -7500,6 +7557,7 @@ public class VinServiceImpl implements VinService{
                         itemCount = queryFoodNuminShop5byId(id);
                         break;
                     case "commercial":
+                    case "commercialthing":
                         itemCount = querycommercialItemNuminShop5byId(id);
                         break;
                     case "other":
@@ -7519,6 +7577,7 @@ public class VinServiceImpl implements VinService{
                         itemCount = queryFoodNuminShop6byId(id);
                         break;
                     case "commercial":
+                    case "commercialthing":
                         itemCount = querycommercialItemNuminShop6byId(id);
                         break;
                     case "other":
@@ -7538,6 +7597,7 @@ public class VinServiceImpl implements VinService{
                         itemCount = queryFoodNuminShop7byId(id);
                         break;
                     case "commercial":
+                    case "commercialthing":
                         itemCount = querycommercialItemNuminShop7byId(id);
                         break;
                     case "other":
@@ -7557,6 +7617,7 @@ public class VinServiceImpl implements VinService{
                         itemCount = queryFoodNuminShop8byId(id);
                         break;
                     case "commercial":
+                    case "commercialthing":
                         itemCount = querycommercialItemNuminShop8byId(id);
                         break;
                     case "other":
@@ -7576,6 +7637,7 @@ public class VinServiceImpl implements VinService{
                         itemCount = queryFoodNuminShop9byId(id);
                         break;
                     case "commercial":
+                    case "commercialthing":
                         itemCount = querycommercialItemNuminShop9byId(id);
                         break;
                     case "other":
@@ -7595,6 +7657,7 @@ public class VinServiceImpl implements VinService{
                         itemCount = queryFoodNuminShop10byId(id);
                         break;
                     case "commercial":
+                    case "commercialthing":
                         itemCount = querycommercialItemNuminShop10byId(id);
                         break;
                     case "other":
@@ -7614,6 +7677,7 @@ public class VinServiceImpl implements VinService{
                         itemCount = queryFoodNuminShop11byId(id);
                         break;
                     case "commercial":
+                    case "commercialthing":
                         itemCount = querycommercialItemNuminShop11byId(id);
                         break;
                     case "other":
@@ -7633,6 +7697,7 @@ public class VinServiceImpl implements VinService{
                         itemCount = queryFoodNuminShop12byId(id);
                         break;
                     case "commercial":
+                    case "commercialthing":
                         itemCount = querycommercialItemNuminShop12byId(id);
                         break;
                     case "other":

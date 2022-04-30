@@ -1917,6 +1917,20 @@ public interface VinService {
     int updateApplyItemSec(ApplyItemSec applyItemSec);
     int ifExistApplyItemSec(String id);
 
+
+    int addItemCommercialSet(ItemSet itemSet);
+    int addItemFoodSet(ItemSet itemSet);
+    int addItemOthersSet(ItemSet itemSet);
+    int addItemSmallToolSet(ItemSet itemSet);
+    int addItemToolSet(ItemSet itemSet);
+
+    List<ItemSet> queryAllItemCommercialSet();
+    List<ItemSet> queryAllItemFoodSet();
+    List<ItemSet> queryAllItemOthersSet();
+    List<ItemSet> queryAllItemSmallToolSet();
+    List<ItemSet> queryAllItemToolSet();
+
+
     //////////////////////////工具類!////////////////////////////////////////////////////////////////////////////////////////////////
     boolean ifAccess(User user, String location);
 
@@ -1994,6 +2008,8 @@ public interface VinService {
     HashMap<String, String> getActionMap();
 
     int queryVinItemCount(String location, String category, String id);
+
+    Map<String,String> getCategoryMap();
 
 
 

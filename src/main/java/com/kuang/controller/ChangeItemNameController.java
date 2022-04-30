@@ -2,6 +2,8 @@ package com.kuang.controller;
 
 import com.kuang.pojo.*;
 import com.kuang.service.FileUploadService;
+import com.kuang.service.QueryInventoryService;
+import com.kuang.service.QueryItemService;
 import com.kuang.service.VinService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -12,6 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
+import redis.clients.jedis.search.Query;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -20,6 +23,8 @@ import java.io.IOException;
 import java.net.http.HttpRequest;
 import java.util.HashMap;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 
 @Controller
 @RequestMapping("/change")
@@ -37,16 +42,27 @@ public class ChangeItemNameController {
     @Resource
     private FileUploadService fileUploadService;
 
+    @Resource
+    private QueryItemService queryItemService;
+
     @RequestMapping("/showAllItem")
-    public String showAllItem(Model model, HttpSession session){
+    public String showAllItem(Model model, HttpSession session) throws ExecutionException, InterruptedException {
         User user = (User) session.getAttribute("user");
         int userLevel = user.getLevel();
         if(userLevel == 1000){
-            List<Item> itemTool = vinService.queryAllItembyCategory("tool");
-            List<Item> itemSmallTool = vinService.queryAllItembyCategory("smalltool");
-            List<Item> itemFood = vinService.queryAllItembyCategory("food");
-            List<Item> itemCommercial = vinService.queryAllItembyCategory("commercial");
-            List<Item> itemOther = vinService.queryAllItembyCategory("other");
+
+            Future<List<Item>> futureTool = queryItemService.getItemByCategory("tool");
+            Future<List<Item>> futureSmallTool = queryItemService.getItemByCategory("smalltool");
+            Future<List<Item>> futureFood = queryItemService.getItemByCategory("food");
+            Future<List<Item>> futureCommercial = queryItemService.getItemByCategory("commercial");
+            Future<List<Item>> futureOther = queryItemService.getItemByCategory("other");
+
+
+            List<Item> itemTool = futureTool.get();
+            List<Item> itemSmallTool = futureSmallTool.get();
+            List<Item> itemFood = futureFood.get();
+            List<Item> itemCommercial = futureCommercial.get();
+            List<Item> itemOther = futureOther.get();
 
             model.addAttribute("itemTool",itemTool);
             model.addAttribute("itemSmallTool",itemSmallTool);

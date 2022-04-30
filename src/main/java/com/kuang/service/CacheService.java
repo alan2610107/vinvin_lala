@@ -1,10 +1,13 @@
 package com.kuang.service;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.kuang.pojo.Expired;
 import com.kuang.pojo.Item;
+import com.kuang.pojo.ItemSet;
 import com.kuang.pojo.VinItem;
 import lombok.extern.slf4j.Slf4j;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -203,13 +206,77 @@ public class CacheService {
         return true;
     }
 
+    /**
+     *
+     * @param category
+     */
+    public void buildItemSetCache(@NotNull String category){
+        String key = "itemSet_"+category;
+        System.out.println("buildItemSetCache: " + key);
+        Boolean keyExist = redisTemplate.hasKey(key);
+        if(!keyExist){
+            List<ItemSet> itemSetList = null;
+            switch (category){
+                case "tool":
+                    log.warn("=====tool=====");
+                    itemSetList = vinService.queryAllItemToolSet();
+                    break;
+                case "smalltool":
+                    log.warn("=====smalltool=====");
+                    itemSetList = vinService.queryAllItemSmallToolSet();
+                    break;
+                case "food":
+                    log.warn("=====food=====");
+                    itemSetList = vinService.queryAllItemFoodSet();
+                    break;
+                case "commercialthing":
+                    log.warn("=====commercialthing=====");
+                    itemSetList = vinService.queryAllItemCommercialSet();
+                    break;
+                case "other":
+                    log.warn("=====other=====");
+                    itemSetList = vinService.queryAllItemOthersSet();
+                    break;
+            }
+//            System.out.println("itemSetList: "+itemSetList);
+            if(itemSetList != null && itemSetList.size() > 0){
+                log.warn("Set up itemSetList cache");
+                for (ItemSet itemSet : itemSetList) {
+                    redisTemplate.opsForZSet().add(key, itemSet.getItemID(), itemSetList.indexOf(itemSet));
+                }
+            }else {
+                log.warn("No itemSet List!!!!");
+            }
+        }
+
+    }
+
+    /**
+     *
+     * @param category
+     * @return
+     */
+    public Set<String> getItemSet(String category){
+        String key = "itemSet_"+category;
+        boolean exist = redisTemplate.hasKey(key);
+        if(!exist){
+            buildItemSetCache(category);
+        }
+        if(exist){
+            Set<String> itemSet = redisTemplate.opsForZSet().range(key, 0, -1);
+            return itemSet;
+        }
+
+        return null;
+    }
 
     /**
      *
      * @param key
      * @param vinItemList
      */
-    public void cacheable(String key, List<VinItem> vinItemList) {
+    public void cacheable(String key, List<VinItem> vinItemList, String category) {
+        buildItemSetCache(category);
         for (int i = 0; i < vinItemList.size(); i++) {
             VinItem vinItem = vinItemList.get(i);
 //            log.warn();(vinItem);
@@ -225,18 +292,31 @@ public class CacheService {
      * @param key
      * @return
      */
-    public List<VinItem> getVinItemCache(String key) {
-//        Set<String> hashkeys = redisTemplate.opsForHash().keys(key);
-        Set<String> hashkeys = redisTemplate.opsForZSet().range(key + "Set", 0, -1);
+    public List<VinItem> getVinItemCache(String key, String category) {
+        String itemSetKey = "itemSet_"+category;
+        Set<String> hashKeys = null;
+        if(redisTemplate.hasKey(itemSetKey)){
+            hashKeys = redisTemplate.opsForZSet().range(itemSetKey, 0, -1);
+        }else {
+            hashKeys = redisTemplate.opsForZSet().range(key + "Set", 0, -1);
+        }
+
         Map<String,String> vinItemMap = redisTemplate.opsForHash().entries(key);
+
         log.warn("=====Get vinItemCache=====");
         VinItem vinItemOutput = null;
         List<VinItem> vinItemList = new ArrayList<>();
-        for (String hashkey: hashkeys) {
+        for (String hashKey : hashKeys) {
+
+//            System.out.println(JSON.parseObject(vinItemMap.get(hashKey), VinItem.class));
 //            log.warn();(hashkey);
-            vinItemOutput = JSON.parseObject(vinItemMap.get(hashkey), VinItem.class);
+            if(vinItemMap.containsKey(hashKey)){
+                vinItemOutput = JSON.parseObject(vinItemMap.get(hashKey), VinItem.class);
 //            log.warn();(vinItemOutput);
-            vinItemList.add(vinItemOutput);
+                vinItemList.add(vinItemOutput);
+            }else {
+                System.out.println("No contain");
+            }
         }
         return vinItemList;
     }
@@ -251,7 +331,7 @@ public class CacheService {
     public void updateCache(String key, VinItem vinItem, String location, String category) {
         if(!redisTemplate.hasKey(key)){
             List<VinItem> vinItemList = vinService.getVinItemList(location, category);
-            cacheable(key, vinItemList);
+            cacheable(key, vinItemList, category);
         }
         String jsonString = JSON.toJSONString(vinItem);
         redisTemplate.opsForHash().put(key,vinItem.getId(),jsonString);
@@ -270,10 +350,11 @@ public class CacheService {
     public void addCache(String key, VinItem vinItem, String location, String category) {
         if(!redisTemplate.hasKey(key)){
             List<VinItem> vinItemList = vinService.getVinItemList(location, category);
-            cacheable(key, vinItemList);
+            cacheable(key, vinItemList, category);
         }
         String jsonString = JSON.toJSONString(vinItem);
-        redisTemplate.opsForHash().put(key,vinItem.getId(),jsonString);
+        redisTemplate.opsForHash().put(key, vinItem.getId(), jsonString);
+
         Long count = redisTemplate.opsForZSet().count(key + "Set", 0, Double.MAX_VALUE);
         redisTemplate.opsForZSet().add(key+"Set", vinItem.getId(), count);
 
@@ -501,6 +582,7 @@ public class CacheService {
         }
     }
 
+
     /**
      *
      * @param location
@@ -651,4 +733,41 @@ public class CacheService {
             return true;
         }
     }
+
+    public List<Item> getItemByCategory(String category){
+        if (category.equals("commercial")){
+            category = "commercialthing";
+        }
+        String key = "item_" + category;
+//        String itemSetKey = "itemSet_"+category;
+        boolean exist = redisTemplate.hasKey(key);
+        List<Item> output = new ArrayList<>();
+        if(!exist){
+            List<Item> itemList = null;
+            if(category.equals("commercialthing")){
+                itemList = vinService.queryAllItembyCategory("commercial");
+            }else {
+                itemList = vinService.queryAllItembyCategory(category);
+            }
+
+            for (Item item : itemList) {
+                redisTemplate.opsForHash().put(key, item.getItemID(), JSON.toJSONString(item));
+            }
+        }
+
+        Map<String, String> itemMap = redisTemplate.opsForHash().entries(key);
+        Set<String> itemSet = getItemSet(category);
+        if(itemSet != null){
+            for (String itemID : itemSet) {
+                output.add(JSONObject.parseObject(itemMap.get(itemID), Item.class));
+            }
+        }else {
+            for (String itemID : itemMap.keySet()) {
+                output.add(JSONObject.parseObject(itemMap.get(itemID), Item.class));
+            }
+        }
+        return output;
+    }
+
+
 }

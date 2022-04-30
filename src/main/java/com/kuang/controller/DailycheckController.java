@@ -55,9 +55,11 @@ public class DailycheckController {
     @Resource
     CacheService cacheService;
 
+
+
     //  日盤頁面
     @RequestMapping("/toDailyCheck")
-    public String toDailyCheck(Model model, HttpSession session, @RequestParam String location) {
+    public String toDailyCheck(Model model, HttpSession session, @RequestParam String location) throws ExecutionException, InterruptedException {
         User user = (User) session.getAttribute("user");
         if (vinService.ifAccess(user,location)) {
             dailycheckControllerService.toDailyCheck(model, location);
@@ -83,6 +85,8 @@ public class DailycheckController {
             List<String> itemNamesList = new ArrayList<>();
             List<String> itemBrandsList = new ArrayList<>();
             List<String> itemCountsList = new ArrayList<>();
+            System.out.println(itemtype);
+            System.out.println(location);
 //        List<String> memosList = new ArrayList<>();
             JSONArray jsonarray = JSONArray.parseArray(items);
             for (int i = 0; i < jsonarray.size(); i++) {
