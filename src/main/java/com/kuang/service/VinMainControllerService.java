@@ -149,8 +149,8 @@ public class VinMainControllerService {
      * @param category
      */
     public void update(VinItem updateVinItem, String location, String category){
-        String cacheKey = "vinItem" + category + "in" + location;
-        cacheService.updateCache(cacheKey,updateVinItem,location,category);
+//        String cacheKey = "vinItem" + category + "in" + location;
+        cacheService.updateCache(updateVinItem,location,category);
         if (category.equals("commercialthing")){
             vinService.kafkaDoUpdate(updateVinItem, "commercial", location);
         }else {
@@ -165,9 +165,9 @@ public class VinMainControllerService {
      * @param category
      */
     public void add(VinItem addVinItem, String location, String category){
-        String cacheKey = "vinItem" + category + "in" + location;
+//        String cacheKey = "vinItem" + category + "in" + location;
         String distributionCacheKey = location + "," + category + "," + addVinItem.getId();
-        cacheService.addCache(cacheKey, addVinItem, location, category);
+        cacheService.addCache(addVinItem, location, category);
         vinService.addVinItem(location, category, addVinItem);
         cacheService.deleteRedisLock(distributionCacheKey);
     }

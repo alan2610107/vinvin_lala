@@ -935,7 +935,7 @@ public class VinMainController extends HttpServlet{
             boolean ifSetLock = cacheService.setRedisLock(key, vinItem);
             if(ifSetLock){
                 deleteVinItem(location,category,id);
-                cacheService.deleteCache(cacheKey,id);
+                cacheService.deleteCache(id, location, category);
             }
             cacheService.waitRedisLock(key);
             return "redirect:/warehouse/allItem?location="+location;//重定向到我們的@RequestMapping("/allBook")請求

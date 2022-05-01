@@ -40,18 +40,17 @@ public class QueryInventoryService {
             log.warn("QueryAllThreadService==>" + location);
             String key = "vinItem" + category + "in" + location;
             log.warn("=========Startkey=>" + key);
-            Boolean ifKeyExist = redisTemplate.hasKey(key);
+            Boolean keyExist = redisTemplate.hasKey(key);
 
-            if (!ifKeyExist) {
-                log.warn("=====No cach, Strat to add cache and print the page=====");
-                vinItemList = vinService.getVinItemList(location,category);
-                cacheService.cacheable(key, vinItemList);
+            if (!keyExist) {
+                log.warn("=====No cache, Start to add cache and print the page=====");
+//                vinItemList = vinService.getVinItemList(location, category);
+                List<VinItem> finalVinItemList = vinService.getVinItemList(location, category);
 
-            } else {
-                log.warn("=====Print the page from cache=====");
-                vinItemList = cacheService.getVinItemCache(key);
-
+                cacheService.cacheable(finalVinItemList, category, location);
             }
+            log.warn("=====Print the page from cache=====");
+            vinItemList = cacheService.getVinItemCache(category, location);
             log.warn("=========Endkey=>" + key);
 
             return vinItemList;
