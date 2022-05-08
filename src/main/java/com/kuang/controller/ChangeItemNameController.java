@@ -1,10 +1,7 @@
 package com.kuang.controller;
 
 import com.kuang.pojo.*;
-import com.kuang.service.FileUploadService;
-import com.kuang.service.QueryInventoryService;
-import com.kuang.service.QueryItemService;
-import com.kuang.service.VinService;
+import com.kuang.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -14,14 +11,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
-import redis.clients.jedis.search.Query;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.net.http.HttpRequest;
-import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
@@ -45,6 +39,9 @@ public class ChangeItemNameController {
     @Resource
     private QueryItemService queryItemService;
 
+    @Resource
+    private CacheService cacheService;
+
     @RequestMapping("/showAllItem")
     public String showAllItem(Model model, HttpSession session) throws ExecutionException, InterruptedException {
         User user = (User) session.getAttribute("user");
@@ -63,6 +60,7 @@ public class ChangeItemNameController {
             List<Item> itemFood = futureFood.get();
             List<Item> itemCommercial = futureCommercial.get();
             List<Item> itemOther = futureOther.get();
+
 
             model.addAttribute("itemTool",itemTool);
             model.addAttribute("itemSmallTool",itemSmallTool);
@@ -124,6 +122,16 @@ public class ChangeItemNameController {
         String keyFinance = "FinanceitemFor" + category;
         redisTemplate.delete(keyFinance);
 
+
+        return "redirect:/change/showAllItem";
+    }
+
+    @RequestMapping("/delete")
+    public String deleteItem(@RequestParam String itemID, @RequestParam String category){
+        vinService.deleteItem(itemID);
+        vinService.deleteVinItemByCategoryAndItemID(category, itemID);
+        vinService.deleteItemSetByCategory(itemID, category);
+        cacheService.deleteAllItemCache(itemID);
 
         return "redirect:/change/showAllItem";
     }
