@@ -88,7 +88,7 @@
                             <td hidden>${listItem.id}</td>
                             <td>${listItem.itemName}</td>
                             <td>${listItem.brand}</td>
-                            <td><input type="text" name="itemCount" class="form-control" value="${listItem.itemCount}" style="padding: 0px 5px !important; border-top-width: 0px !important; border-bottom-width: 0px !important; width: 63px !important; border-right-width: 2px !important;" required></td>
+                            <td><input type="number" pattern="\d*" name="itemCount" class="form-control" value="${listItem.itemCount}" style="padding: 0px 5px !important; border-top-width: 0px !important; border-bottom-width: 0px !important; width: 63px !important; border-right-width: 2px !important;" required></td>
                             <td hidden>${listItem.singlePrice}</td>
                             <td hidden>${listItem.totalPrice}</td>
                             <td>${listItem.memo}</td>
@@ -177,7 +177,7 @@
                             <td hidden>${listFood.id}</td>
                             <td>${listFood.itemName}</td>
                             <td>${listFood.brand}</td>
-                            <td><input type="text" name="itemCount" class="form-control" value="${listFood.itemCount}" style="padding: 0px 5px !important; border-top-width: 0px !important; border-bottom-width: 0px !important; width: 63px !important; border-right-width: 2px !important;" required></td>
+                            <td><input type="number" pattern="\d*" name="itemCount" class="form-control" value="${listFood.itemCount}" style="padding: 0px 5px !important; border-top-width: 0px !important; border-bottom-width: 0px !important; width: 63px !important; border-right-width: 2px !important;" required></td>
                             <td hidden>${listFood.singlePrice}</td>
                             <td hidden>${listFood.totalPrice}</td>
                             <td>${listFood.memo}</td>
@@ -246,7 +246,7 @@
                             <td hidden>${listSmallItem.id}</td>
                             <td>${listSmallItem.itemName}</td>
                             <td>${listSmallItem.brand}</td>
-                            <td><input type="text" name="itemCount" class="form-control" value="${listSmallItem.itemCount}" style="padding: 0px 5px !important; border-top-width: 0px !important; border-bottom-width: 0px !important; width: 63px !important; border-right-width: 2px !important;" required></td>
+                            <td><input type="number" pattern="\d*" name="itemCount" class="form-control" value="${listSmallItem.itemCount}" style="padding: 0px 5px !important; border-top-width: 0px !important; border-bottom-width: 0px !important; width: 63px !important; border-right-width: 2px !important;" required></td>
                             <td hidden>${listSmallItem.singlePrice}</td>
                             <td hidden>${listSmallItem.totalPrice}</td>
                             <td>${listSmallItem.memo}</td>
@@ -327,7 +327,7 @@
                             <td hidden>${listCommercialItem.id}</td>
                             <td>${listCommercialItem.itemName}</td>
                             <td>${listCommercialItem.brand}</td>
-                            <td><input type="text" name="itemCount" class="form-control" value="${listCommercialItem.itemCount}" style="padding: 0px 5px !important; border-top-width: 0px !important; border-bottom-width: 0px !important; width: 63px !important; border-right-width: 2px !important;" required></td>
+                            <td><input type="number" pattern="\d*" name="itemCount" class="form-control" value="${listCommercialItem.itemCount}" style="padding: 0px 5px !important; border-top-width: 0px !important; border-bottom-width: 0px !important; width: 63px !important; border-right-width: 2px !important;" required></td>
                             <td hidden>${listCommercialItem.singlePrice}</td>
                             <td hidden>${listCommercialItem.totalPrice}</td>
                             <td>${listCommercialItem.memo}</td>
@@ -407,7 +407,7 @@
                             <td hidden>${listOtherItem.id}</td>
                             <td>${listOtherItem.itemName}</td>
                             <td>${listOtherItem.brand}</td>
-                            <td><input type="text" name="itemCount" class="form-control" value="${listOtherItem.itemCount}" style="padding: 0px 5px !important; border-top-width: 0px !important; border-bottom-width: 0px !important; width: 63px !important; border-right-width: 2px !important;" required></td>
+                            <td><input type="number" pattern="\d*" name="itemCount" class="form-control" value="${listOtherItem.itemCount}" style="padding: 0px 5px !important; border-top-width: 0px !important; border-bottom-width: 0px !important; width: 63px !important; border-right-width: 2px !important;" required></td>
                             <td hidden>${listOtherItem.singlePrice}</td>
                             <td hidden>${listOtherItem.totalPrice}</td>
                             <td>${listOtherItem.memo}</td>

@@ -251,7 +251,6 @@ public class RecieveController extends HttpServlet {
 //        List<String> receiveItemCountsList = new ArrayList<>();
         Map<String,String> receiveMap = new HashMap<>();
         JSONArray jsonarray = JSONArray.parseArray(items);
-
         for (int i = 0; i < jsonarray.size(); i++) {
             String logid = JSONArray.parseArray(jsonarray.getString(i).toLowerCase(Locale.ROOT)).get(1).toString();
             String receiveItemCount = JSONArray.parseArray(jsonarray.getString(i).toLowerCase(Locale.ROOT)).get(5).toString();

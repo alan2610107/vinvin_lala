@@ -209,24 +209,25 @@ public class VinMainController extends HttpServlet{
     public String toAdd(Model model, @RequestParam String location, @RequestParam String category, HttpSession session){
         User user = (User) session.getAttribute("user");
         if(vinService.ifAccess(user,location)){
-            String categoryCN = null;
-            switch (category){
-                case "tool":
-                    categoryCN = "設備";
-                    break;
-                case "smalltool":
-                    categoryCN = "小器具";
-                    break;
-                case "food":
-                    categoryCN = "物料";
-                    break;
-                case "commercialthing":
-                    categoryCN = "宣傳物料";
-                    break;
-                case "other":
-                    categoryCN = "其他";
-                    break;
-            }
+            Map<String, String> categoryMap = vinService.getCategoryMap();
+            String categoryCN = categoryMap.get(category);
+//            switch (category){
+//                case "tool":
+//                    categoryCN = "設備";
+//                    break;
+//                case "smalltool":
+//                    categoryCN = "小器具";
+//                    break;
+//                case "food":
+//                    categoryCN = "物料";
+//                    break;
+//                case "commercialthing":
+//                    categoryCN = "宣傳物料";
+//                    break;
+//                case "other":
+//                    categoryCN = "其他";
+//                    break;
+//            }
             vinService.toaddItem(location,"warehouse","add",categoryCN ,model, category);
 
             return "addItem";
@@ -241,7 +242,7 @@ public class VinMainController extends HttpServlet{
     //insert庫存
 
     @RequestMapping("/add")
-    public String add(VinItem items, @RequestParam("file") CommonsMultipartFile file, HttpServletRequest request, @RequestParam String location, @RequestParam String category, HttpSession session, Model model) throws IOException, InterruptedException {
+    public String add(@NotNull VinItem items, @RequestParam("file") CommonsMultipartFile file, HttpServletRequest request, @RequestParam String location, @RequestParam String category, HttpSession session, Model model) throws IOException, InterruptedException {
         User user = (User) session.getAttribute("user");
         if(vinService.ifAccess(user,location)){
             if (items != null){
@@ -946,6 +947,7 @@ public class VinMainController extends HttpServlet{
     }
 
 
+
     //查詢書籍
     //要跟前端的name一樣後端才能get
 
@@ -1036,6 +1038,9 @@ public class VinMainController extends HttpServlet{
 
 
     }
+
+
+
 //    @RequestMapping("/querysmalltool")
 //    public String querySmallTool(String queryItemName,Model model){
 //        VinItem vinItem = vinService.querySmallIteminMain1ByName(queryItemName);

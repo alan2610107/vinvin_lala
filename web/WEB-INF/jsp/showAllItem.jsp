@@ -160,10 +160,26 @@
 <body>
 <jsp:include page="navwithSearch.jsp"/>
 <div class="container">
-
     <div class="row clearfix">
         <div class="col-md-12 column">
-            <br><br><br>
+            <br><br>
+        </div>
+        <div class="row">
+
+            <div class="col-md-2">
+
+            </div>
+            <div class="col-md-8">
+                <ul>
+                    <li style="color: red">刪除會從所有倉庫刪除該物料(慎用)</li>
+                </ul>
+            </div>
+            <div class="col-md-2">
+
+            </div>
+        </div>
+        <div class="col-md-12 column">
+            <br>
             <div class="row">
                 <div class="col-md-2 column">
 
@@ -186,6 +202,7 @@
                                 <th>名稱</th>
                                 <th hidden>ID</th>
                                 <th></th>
+                                <th></th>
                             </tr>
                             </thead>
 
@@ -196,7 +213,12 @@
                                 <tr>
                                     <th class="table-customize" scope="row">${headCount}. ${itemTool.itemName}</th>
                                     <td class="table-customize2" hidden>${itemTool.itemID}</td>
-                                    <td class="table-customize2" style="width: 80px"><a class="btn btn-primary" href="${pageContext.request.contextPath}/change/toChangeItemName?id=${itemTool.itemID}">修改</a></td>
+                                    <td class="table-customize2" style="width: 80px">
+                                        <a class="btn btn-primary" href="${pageContext.request.contextPath}/change/toChangeItemName?id=${itemTool.itemID}" style="padding-bottom: 0px !important; padding-top: 0px !important;">修改</a>
+                                    </td>
+                                    <td class="table-customize2" style="width: 80px">
+                                        <a class="btn btn-danger" href="${pageContext.request.contextPath}/change/delete?itemID=${itemTool.itemID}&category=${itemTool.category}" style="padding-bottom: 0px !important; padding-top: 0px !important;">刪除</a>
+                                    </td>
                                 </tr>
                             </c:forEach>
                             </tbody>
@@ -207,11 +229,6 @@
 
                 </div>
             </div>
-
-
-
-
-
         </div>
         <div class="col-md-12 column">
             <br><br><br>
@@ -237,6 +254,7 @@
                                 <th>名稱</th>
                                 <th hidden>ID</th>
                                 <th></th>
+                                <th></th>
                             </tr>
                             </thead>
 
@@ -247,7 +265,12 @@
                                 <tr>
                                     <th class="table-customize" scope="row">${headCount}. ${itemFood.itemName}</th>
                                     <td class="table-customize2" hidden>${itemFood.itemID}</td>
-                                    <td class="table-customize2" style="width: 80px"><a class="btn btn-primary" href="${pageContext.request.contextPath}/change/toChangeItemName?id=${itemFood.itemID}">修改</a></td>
+                                    <td class="table-customize2" style="width: 80px">
+                                        <a class="btn btn-primary" href="${pageContext.request.contextPath}/change/toChangeItemName?id=${itemFood.itemID}" style="padding-bottom: 0px !important; padding-top: 0px !important;">修改</a>
+                                    </td>
+                                    <td class="table-customize2" style="width: 80px">
+                                        <a class="btn btn-danger" href="${pageContext.request.contextPath}/change/delete?itemID=${itemFood.itemID}&category=${itemFood.category}" style="padding-bottom: 0px !important; padding-top: 0px !important;">刪除</a>
+                                    </td>
                                 </tr>
                             </c:forEach>
                             </tbody>
@@ -288,6 +311,7 @@
                                 <th>名稱</th>
                                 <th hidden>ID</th>
                                 <th></th>
+                                <th></th>
                             </tr>
                             </thead>
 
@@ -298,7 +322,11 @@
                                 <tr>
                                     <th class="table-customize" scope="row">${headCount}. ${itemSmallTool.itemName}</th>
                                     <td class="table-customize2" hidden>${itemSmallTool.itemID}</td>
-                                    <td class="table-customize2" style="width: 80px"><a class="btn btn-primary" href="${pageContext.request.contextPath}/change/toChangeItemName?id=${itemSmallTool.itemID}">修改</a></td>
+                                    <td class="table-customize2" style="width: 80px">
+                                        <a class="btn btn-primary" href="${pageContext.request.contextPath}/change/toChangeItemName?id=${itemSmallTool.itemID}" style="padding-bottom: 0px !important; padding-top: 0px !important;">修改</a></td>
+                                    <td class="table-customize2" style="width: 80px">
+                                        <a class="btn btn-danger" href="${pageContext.request.contextPath}/change/delete?itemID=${itemSmallTool.itemID}&category=${itemSmallTool.category}" style="padding-bottom: 0px !important; padding-top: 0px !important;">刪除</a>
+                                    </td>
                                 </tr>
                             </c:forEach>
                             </tbody>
@@ -339,6 +367,7 @@
                                 <th>名稱</th>
                                 <th hidden>ID</th>
                                 <th></th>
+                                <th></th>
                             </tr>
                             </thead>
 
@@ -349,7 +378,12 @@
                                 <tr>
                                     <th class="table-customize" scope="row">${headCount}. ${itemCommercial.itemName}</th>
                                     <td class="table-customize2" hidden>${itemCommercial.itemID}</td>
-                                    <td class="table-customize2" style="width: 80px"><a class="btn btn-primary" href="${pageContext.request.contextPath}/change/toChangeItemName?id=${itemCommercial.itemID}">修改</a></td>
+                                    <td class="table-customize2" style="width: 80px">
+                                        <a class="btn btn-primary" href="${pageContext.request.contextPath}/change/toChangeItemName?id=${itemCommercial.itemID}" style="padding-bottom: 0px !important; padding-top: 0px !important;">修改</a>
+                                    </td>
+                                    <td class="table-customize2" style="width: 80px">
+                                        <a class="btn btn-danger" href="${pageContext.request.contextPath}/change/delete?itemID=${itemCommercial.itemID}&category=${itemCommercial.category}" style="padding-bottom: 0px !important; padding-top: 0px !important;">刪除</a>
+                                    </td>
                                 </tr>
                             </c:forEach>
                             </tbody>
@@ -390,6 +424,7 @@
                                 <th>名稱</th>
                                 <th hidden>ID</th>
                                 <th></th>
+                                <th></th>
                             </tr>
                             </thead>
 
@@ -400,7 +435,12 @@
                                 <tr>
                                     <th class="table-customize" scope="row">${headCount}. ${itemOther.itemName}</th>
                                     <td class="table-customize2" hidden>${itemOther.itemID}</td>
-                                    <td class="table-customize2" style="width: 80px"><a class="btn btn-primary" href="${pageContext.request.contextPath}/change/toChangeItemName?id=${itemOther.itemID}">修改</a></td>
+                                    <td class="table-customize2" style="width: 80px">
+                                        <a class="btn btn-primary" href="${pageContext.request.contextPath}/change/toChangeItemName?id=${itemOther.itemID}" style="padding-bottom: 0px !important; padding-top: 0px !important;">修改</a>
+                                    </td>
+                                    <td class="table-customize2" style="width: 80px">
+                                        <a class="btn btn-danger" href="${pageContext.request.contextPath}/change/delete?itemID=${itemOther.itemID}&category=${itemOther.category}" style="padding-bottom: 0px !important; padding-top: 0px !important;">刪除</a>
+                                    </td>
                                 </tr>
                             </c:forEach>
                             </tbody>
