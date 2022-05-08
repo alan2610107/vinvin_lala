@@ -226,6 +226,7 @@ public interface VinMapper {
     List<Item> queryAllItembyCategory(@Param("category") String category);
     Item queryAllItembyID(@Param("itemID") String id);
     int updateAllItem(Item item);
+    int deleteItem(String itemID);
 
     //供應商
     Supplier querySupplierbyID(@Param("supplierID") String supplierID);
@@ -1405,7 +1406,35 @@ public interface VinMapper {
     int updateApplyItemSec(ApplyItemSec applyItemSec);
     int ifExistApplyItemSec(String id);
 
+    int updateItemCommercialSet(ItemSet itemSet);
+    int updateItemFoodSet(ItemSet itemSet);
+    int updateItemOthersSet(ItemSet itemSet);
+    int updateItemSmallToolSet(ItemSet itemSet);
+    int updateItemToolSet(ItemSet itemSet);
+    int addItemCommercialSet(ItemSet itemSet);
+    int addItemFoodSet(ItemSet itemSet);
+    int addItemOthersSet(ItemSet itemSet);
+    int addItemSmallToolSet(ItemSet itemSet);
+    int addItemToolSet(ItemSet itemSet);
 
+
+    int addItemCommercialSetSimple(ItemSet itemSet);
+    int addItemFoodSetSimple(ItemSet itemSet);
+    int addItemOthersSetSimple(ItemSet itemSet);
+    int addItemSmallToolSetSimple(ItemSet itemSet);
+    int addItemToolSetSimple(ItemSet itemSet);
+
+    List<ItemSetWithItemName> queryAllItemCommercialSet();
+    List<ItemSetWithItemName> queryAllItemFoodSet();
+    List<ItemSetWithItemName> queryAllItemOthersSet();
+    List<ItemSetWithItemName> queryAllItemSmallToolSet();
+    List<ItemSetWithItemName> queryAllItemToolSet();
+
+    int deleteItemCommercialSet(String itemID);
+    int deleteItemFoodSet(String itemID);
+    int deleteItemOthersSet(String itemID);
+    int deleteItemSmallToolSet(String itemID);
+    int deleteItemToolSet(String itemID);
 
 
 

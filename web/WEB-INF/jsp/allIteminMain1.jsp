@@ -181,7 +181,7 @@
                 <c:if test="${userLevel == 1000}">
                     <div class="btn-group">
                         <button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            新增
+                            物料新增
                         </button>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item"
@@ -201,6 +201,28 @@
                             </li>
                         </ul>
                     </div>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            調整物料順序
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item"
+                                   href="${pageContext.request.contextPath}/item/showItemSet?category=tool">設備順序</a>
+                            </li>
+                            <li><a class="dropdown-item"
+                                   href="${pageContext.request.contextPath}/item/showItemSet?category=food">材料順序</a>
+                            </li>
+                            <li><a class="dropdown-item"
+                                   href="${pageContext.request.contextPath}/item/showItemSet?category=smalltool">小器具順序</a>
+                            </li>
+                            <li><a class="dropdown-item"
+                                   href="${pageContext.request.contextPath}/item/showItemSet?category=commercialthing">宣传物料順序</a>
+                            </li>
+                            <li><a class="dropdown-item"
+                                   href="${pageContext.request.contextPath}/item/showItemSet?category=other">其他順序</a>
+                            </li>
+                        </ul>
+                    </div>
                 </c:if>
                 <div class="btn-group">
                     <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
@@ -208,7 +230,7 @@
                     </button>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item"
-                               href="${pageContext.request.contextPath}/apply/toApplyItem?location=${mainWarehouseEN}">物料申請</a>
+                               href="${pageContext.request.contextPath}/apply/toApplyItem?location=${mainWarehouseEN}&category=food">物料申請</a>
                         </li>
                         <li><a class="dropdown-item"
                                href="${pageContext.request.contextPath}/apply/showApplyItem?location=${mainWarehouseEN}">申請查詢</a>
@@ -232,7 +254,7 @@
 
 
         <div class="col-md-12 column">
-            <br><br><br>
+            <br><br>
             <div class="row">
                 <div class="col-md-4 column">
                     <h4>設備</h4>

@@ -1,10 +1,6 @@
 package com.kuang.service;
 
 import com.kuang.pojo.*;
-import org.apache.ibatis.annotations.Param;
-import org.springframework.cache.annotation.CacheEvict;
-import org.springframework.cache.annotation.Cacheable;
-import org.springframework.cache.annotation.Caching;
 import org.springframework.ui.Model;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
@@ -377,6 +373,7 @@ public interface VinService {
     Item queryAllItembyID(String id);
 
     int updateAllItem(Item item);
+    int deleteItem(String itemID);
 
 
     //供應商
@@ -1917,18 +1914,34 @@ public interface VinService {
     int updateApplyItemSec(ApplyItemSec applyItemSec);
     int ifExistApplyItemSec(String id);
 
-
+    int updateItemCommercialSet(ItemSet itemSet);
+    int updateItemFoodSet(ItemSet itemSet);
+    int updateItemOthersSet(ItemSet itemSet);
+    int updateItemSmallToolSet(ItemSet itemSet);
+    int updateItemToolSet(ItemSet itemSet);
     int addItemCommercialSet(ItemSet itemSet);
     int addItemFoodSet(ItemSet itemSet);
     int addItemOthersSet(ItemSet itemSet);
     int addItemSmallToolSet(ItemSet itemSet);
     int addItemToolSet(ItemSet itemSet);
 
-    List<ItemSet> queryAllItemCommercialSet();
-    List<ItemSet> queryAllItemFoodSet();
-    List<ItemSet> queryAllItemOthersSet();
-    List<ItemSet> queryAllItemSmallToolSet();
-    List<ItemSet> queryAllItemToolSet();
+    int addItemCommercialSetSimple(ItemSet itemSet);
+    int addItemFoodSetSimple(ItemSet itemSet);
+    int addItemOthersSetSimple(ItemSet itemSet);
+    int addItemSmallToolSetSimple(ItemSet itemSet);
+    int addItemToolSetSimple(ItemSet itemSet);
+
+    List<ItemSetWithItemName> queryAllItemCommercialSet();
+    List<ItemSetWithItemName> queryAllItemFoodSet();
+    List<ItemSetWithItemName> queryAllItemOthersSet();
+    List<ItemSetWithItemName> queryAllItemSmallToolSet();
+    List<ItemSetWithItemName> queryAllItemToolSet();
+
+    int deleteItemCommercialSet(String itemID);
+    int deleteItemFoodSet(String itemID);
+    int deleteItemOthersSet(String itemID);
+    int deleteItemSmallToolSet(String itemID);
+    int deleteItemToolSet(String itemID);
 
 
     //////////////////////////工具類!////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1976,10 +1989,20 @@ public interface VinService {
 //    VinLog getLogbylogid(String location, String logid);
 //    void updateLogbylogid(String location, VinLog vinLog);
     int ifExist(String location, String category, String id);
+
+    void deleteVinItem(String location, String category, String itemID);
+
+    void deleteVinItemByCategoryAndItemID(String category, String itemID);
+
     void addVinItem(String location, String category, VinItem vinItem);
 
     int getConfirmCount(String location, String category, String action1, String action2);
     int getReceiveCount(String location, String category);
+
+    void addItemSetSimpleByCategory(Item item);
+    void addItemSetByCategory(ItemSet itemSet, String category);
+    void deleteItemSetByCategory(String itemID, String category);
+    List<ItemSetWithItemName> queryItemSetByCategory(String category);
 //
 //    void decreaseNotReceiveCount(String location);
 //    void decreaseNotConfirmCount(String location);

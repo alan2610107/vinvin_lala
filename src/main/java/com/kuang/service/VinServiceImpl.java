@@ -1109,6 +1109,11 @@ public class VinServiceImpl implements VinService{
     }
 
     @Override
+    public int deleteItem(String itemID) {
+        return vinMapper.deleteItem(itemID);
+    }
+
+    @Override
     public Supplier querySupplierbyID(String supplierID) {
         return vinMapper.querySupplierbyID(supplierID);
     }
@@ -5895,6 +5900,31 @@ public class VinServiceImpl implements VinService{
     }
 
     @Override
+    public int updateItemCommercialSet(ItemSet itemSet) {
+        return vinMapper.updateItemCommercialSet(itemSet);
+    }
+
+    @Override
+    public int updateItemFoodSet(ItemSet itemSet) {
+        return vinMapper.updateItemFoodSet(itemSet);
+    }
+
+    @Override
+    public int updateItemOthersSet(ItemSet itemSet) {
+        return vinMapper.updateItemOthersSet(itemSet);
+    }
+
+    @Override
+    public int updateItemSmallToolSet(ItemSet itemSet) {
+        return vinMapper.updateItemSmallToolSet(itemSet);
+    }
+
+    @Override
+    public int updateItemToolSet(ItemSet itemSet) {
+        return vinMapper.updateItemToolSet(itemSet);
+    }
+
+    @Override
     public int addItemCommercialSet(ItemSet itemSet) {
         return vinMapper.addItemCommercialSet(itemSet);
     }
@@ -5920,28 +5950,78 @@ public class VinServiceImpl implements VinService{
     }
 
     @Override
-    public List<ItemSet> queryAllItemCommercialSet() {
+    public int addItemCommercialSetSimple(ItemSet itemSet) {
+        return vinMapper.addItemCommercialSetSimple(itemSet);
+    }
+
+    @Override
+    public int addItemFoodSetSimple(ItemSet itemSet) {
+        return vinMapper.addItemFoodSetSimple(itemSet);
+    }
+
+    @Override
+    public int addItemOthersSetSimple(ItemSet itemSet) {
+        return vinMapper.addItemOthersSetSimple(itemSet);
+    }
+
+    @Override
+    public int addItemSmallToolSetSimple(ItemSet itemSet) {
+        return vinMapper.addItemSmallToolSetSimple(itemSet);
+    }
+
+    @Override
+    public int addItemToolSetSimple(ItemSet itemSet) {
+        return vinMapper.addItemToolSetSimple(itemSet);
+    }
+
+    @Override
+    public List<ItemSetWithItemName> queryAllItemCommercialSet() {
         return vinMapper.queryAllItemCommercialSet();
     }
 
     @Override
-    public List<ItemSet> queryAllItemFoodSet() {
+    public List<ItemSetWithItemName> queryAllItemFoodSet() {
         return vinMapper.queryAllItemFoodSet();
     }
 
     @Override
-    public List<ItemSet> queryAllItemOthersSet() {
+    public List<ItemSetWithItemName> queryAllItemOthersSet() {
         return vinMapper.queryAllItemOthersSet();
     }
 
     @Override
-    public List<ItemSet> queryAllItemSmallToolSet() {
+    public List<ItemSetWithItemName> queryAllItemSmallToolSet() {
         return vinMapper.queryAllItemSmallToolSet();
     }
 
     @Override
-    public List<ItemSet> queryAllItemToolSet() {
+    public List<ItemSetWithItemName> queryAllItemToolSet() {
         return vinMapper.queryAllItemToolSet();
+    }
+
+    @Override
+    public int deleteItemCommercialSet(String itemID) {
+        return vinMapper.deleteItemCommercialSet(itemID);
+    }
+
+    @Override
+    public int deleteItemFoodSet(String itemID) {
+        return vinMapper.deleteItemFoodSet(itemID);
+    }
+
+    @Override
+    public int deleteItemOthersSet(String itemID) {
+        return vinMapper.deleteItemOthersSet(itemID);
+    }
+
+    @Override
+    public int deleteItemSmallToolSet(String itemID) {
+        return vinMapper.deleteItemSmallToolSet(itemID);
+    }
+
+    @Override
+    public int deleteItemToolSet(String itemID) {
+        return vinMapper.deleteItemToolSet(itemID);
     }
 
 
@@ -6273,8 +6353,271 @@ public class VinServiceImpl implements VinService{
 
 
     @Override
-    public void addVinItem(String location, String category, VinItem vinItem) {
+    public void deleteVinItem(@NotNull String location, @NotNull String category, @NotNull String itemID) {
+        switch (category){
+            case "tool":
+                switch (location){
+                    case "main0":
+                        deleteIteminMain0byId(itemID);
+                        break;
+                    case "main1":
+                        deleteIteminMain1byId(itemID);
+                        break;
+                    case "main2":
+                        deleteIteminMain2byId(itemID);
+                        break;
+                    case "shop1":
+                        deleteIteminShop1byId(itemID);
+                        break;
+                    case "shop2":
+                        deleteIteminShop2byId(itemID);
+                        break;
+                    case "shop3":
+                        deleteIteminShop3byId(itemID);
+                        break;
+                    case "shop4":
+                        deleteIteminShop4byId(itemID);
+                        break;
+                    case "shop5":
+                        deleteIteminShop5byId(itemID);
+                        break;
+                    case "shop6":
+                        deleteIteminShop6byId(itemID);
+                        break;
+                    case "shop7":
+                        deleteIteminShop7byId(itemID);
+                        break;
+                    case "shop8":
+                        deleteIteminShop8byId(itemID);
+                        break;
+                    case "shop9":
+                        deleteIteminShop9byId(itemID);
+                        break;
+                    case "shop10":
+                        deleteIteminShop10byId(itemID);
+                        break;
+                    case "shop11":
+                        deleteIteminShop11byId(itemID);
+                        break;
+                    case "shop12":
+                        deleteIteminShop12byId(itemID);
+                        break;
+                }
+                break;
+            case "smalltool":
+                switch (location){
+                    case "main0":
+                        deleteSmallIteminMain0byId(itemID);
+                        break;
+                    case "main1":
+                        deleteSmallIteminMain1byId(itemID);
+                        break;
+                    case "main2":
+                        deleteSmallIteminMain2byId(itemID);
+                        break;
+                    case "shop1":
+                        deleteSmallIteminShop1byId(itemID);
+                        break;
+                    case "shop2":
+                        deleteSmallIteminShop2byId(itemID);
+                        break;
+                    case "shop3":
+                        deleteSmallIteminShop3byId(itemID);
+                        break;
+                    case "shop4":
+                        deleteSmallIteminShop4byId(itemID);
+                        break;
+                    case "shop5":
+                        deleteSmallIteminShop5byId(itemID);
+                        break;
+                    case "shop6":
+                        deleteSmallIteminShop6byId(itemID);
+                        break;
+                    case "shop7":
+                        deleteSmallIteminShop7byId(itemID);
+                        break;
+                    case "shop8":
+                        deleteSmallIteminShop8byId(itemID);
+                        break;
+                    case "shop9":
+                        deleteSmallIteminShop9byId(itemID);
+                        break;
+                    case "shop10":
+                        deleteSmallIteminShop10byId(itemID);
+                        break;
+                    case "shop11":
+                        deleteSmallIteminShop11byId(itemID);
+                        break;
+                    case "shop12":
+                        deleteSmallIteminShop12byId(itemID);
+                        break;
 
+                }
+                break;
+            case "food":
+                switch (location){
+                    case "main0":
+                        deleteFoodinMain0byId(itemID);
+                        break;
+                    case "main1":
+                        deleteFoodinMain1byId(itemID);
+                        break;
+                    case "main2":
+                        deleteFoodinMain2byId(itemID);
+                        break;
+                    case "shop1":
+                        deleteFoodinShop1byId(itemID);
+                        break;
+                    case "shop2":
+                        deleteFoodinShop2byId(itemID);
+                        break;
+                    case "shop3":
+                        deleteFoodinShop3byId(itemID);
+                        break;
+                    case "shop4":
+                        deleteFoodinShop4byId(itemID);
+                        break;
+                    case "shop5":
+                        deleteFoodinShop5byId(itemID);
+                        break;
+                    case "shop6":
+                        deleteFoodinShop6byId(itemID);
+                        break;
+                    case "shop7":
+                        deleteFoodinShop7byId(itemID);
+                        break;
+                    case "shop8":
+                        deleteFoodinShop8byId(itemID);
+                        break;
+                    case "shop9":
+                        deleteFoodinShop9byId(itemID);
+                        break;
+                    case "shop10":
+                        deleteFoodinShop10byId(itemID);
+                        break;
+                    case "shop11":
+                        deleteFoodinShop11byId(itemID);
+                        break;
+                    case "shop12":
+                        deleteFoodinShop12byId(itemID);
+                        break;
+
+                }
+                break;
+            case "commercialthing":
+            case "commercial":
+                switch (location){
+                    case "main0":
+                        deletecommercialIteminMain0byId(itemID);
+                        break;
+                    case "main1":
+                        deletecommercialIteminMain1byId(itemID);
+                        break;
+                    case "main2":
+                        deletecommercialIteminMain2byId(itemID);
+                        break;
+                    case "shop1":
+                        deletecommercialIteminShop1byId(itemID);
+                        break;
+                    case "shop2":
+                        deletecommercialIteminShop2byId(itemID);
+                        break;
+                    case "shop3":
+                        deletecommercialIteminShop3byId(itemID);
+                        break;
+                    case "shop4":
+                        deletecommercialIteminShop4byId(itemID);
+                        break;
+                    case "shop5":
+                        deletecommercialIteminShop5byId(itemID);
+                        break;
+                    case "shop6":
+                        deletecommercialIteminShop6byId(itemID);
+                        break;
+                    case "shop7":
+                        deletecommercialIteminShop7byId(itemID);
+                        break;
+                    case "shop8":
+                        deletecommercialIteminShop8byId(itemID);
+                        break;
+                    case "shop9":
+                        deletecommercialIteminShop9byId(itemID);
+                        break;
+                    case "shop10":
+                        deletecommercialIteminShop10byId(itemID);
+                        break;
+                    case "shop11":
+                        deletecommercialIteminShop11byId(itemID);
+                        break;
+                    case "shop12":
+                        deletecommercialIteminShop12byId(itemID);
+                        break;
+
+                }
+                break;
+            case "other":
+                switch (location){
+                    case "main0":
+                        deleteothersinMain0byId(itemID);
+                        break;
+                    case "main1":
+                        deleteothersinMain1byId(itemID);
+                        break;
+                    case "main2":
+                        deleteothersinMain2byId(itemID);
+                        break;
+                    case "shop1":
+                        deleteothersinShop1byId(itemID);
+                        break;
+                    case "shop2":
+                        deleteothersinShop2byId(itemID);
+                        break;
+                    case "shop3":
+                        deleteothersinShop3byId(itemID);
+                        break;
+                    case "shop4":
+                        deleteothersinShop4byId(itemID);
+                        break;
+                    case "shop5":
+                        deleteothersinShop5byId(itemID);
+                        break;
+                    case "shop6":
+                        deleteothersinShop6byId(itemID);
+                        break;
+                    case "shop7":
+                        deleteothersinShop7byId(itemID);
+                        break;
+                    case "shop8":
+                        deleteothersinShop8byId(itemID);
+                        break;
+                    case "shop9":
+                        deleteothersinShop9byId(itemID);
+                        break;
+                    case "shop10":
+                        deleteothersinShop10byId(itemID);
+                        break;
+                    case "shop11":
+                        deleteothersinShop11byId(itemID);
+                        break;
+                    case "shop12":
+                        deleteothersinShop12byId(itemID);
+                        break;
+                }
+                break;
+        }
+    }
+
+    @Override
+    public void deleteVinItemByCategoryAndItemID(String category, String itemID) {
+        Set<String> warehouseList = getWarehouseMap().keySet();
+        for (String location : warehouseList) {
+            deleteVinItem(location, category, itemID);
+        }
+    }
+
+
+    @Override
+    public void addVinItem(String location, String category, VinItem vinItem) {
         switch (category){
             case "tool":
                 switch (location){
@@ -6635,22 +6978,117 @@ public class VinServiceImpl implements VinService{
 
         }
         return count;
-
     }
+
+    @Override
+    public void addItemSetSimpleByCategory(Item item){
+        String category = item.getCategory();
+        ItemSet itemSet = new ItemSet(-1, item.getItemID());
+        switch (category){
+            case "tool":
+                addItemToolSetSimple(itemSet);
+                break;
+            case "smalltool":
+                addItemSmallToolSetSimple(itemSet);
+                break;
+            case "food":
+                addItemFoodSetSimple(itemSet);
+                break;
+            case "commercial":
+            case "commercialthing":
+                addItemCommercialSetSimple(itemSet);
+                break;
+            case "other":
+                addItemOthersSetSimple(itemSet);
+                break;
+        }
+    }
+
+    @Override
+    public void addItemSetByCategory(ItemSet itemSet, String category){
+        switch (category){
+            case "tool":
+                addItemToolSet(itemSet);
+                break;
+            case "smalltool":
+                addItemSmallToolSet(itemSet);
+                break;
+            case "food":
+                addItemFoodSet(itemSet);
+                break;
+            case "commercial":
+            case "commercialthing":
+                addItemCommercialSet(itemSet);
+                break;
+            case "other":
+                addItemOthersSet(itemSet);
+                break;
+        }
+    }
+
+    @Override
+    public void deleteItemSetByCategory(String itemID, String category){
+        switch (category){
+            case "tool":
+                deleteItemToolSet(itemID);
+                break;
+            case "smalltool":
+                deleteItemSmallToolSet(itemID);
+                break;
+            case "food":
+                deleteItemFoodSet(itemID);
+                break;
+            case "commercial":
+            case "commercialthing":
+                deleteItemCommercialSet(itemID);
+                break;
+            case "other":
+                deleteItemOthersSet(itemID);
+                break;
+        }
+    }
+
+    @Override
+    public List<ItemSetWithItemName> queryItemSetByCategory(String category){
+        List<ItemSetWithItemName> itemSetList = null;
+        switch (category){
+            case "tool":
+                itemSetList = queryAllItemToolSet();
+                break;
+            case "smalltool":
+                itemSetList = queryAllItemSmallToolSet();
+                break;
+            case "food":
+                itemSetList = queryAllItemFoodSet();
+                break;
+            case "commercial":
+            case "commercialthing":
+                itemSetList = queryAllItemCommercialSet();
+                break;
+            case "other":
+                itemSetList = queryAllItemOthersSet();
+                break;
+        }
+
+        return  itemSetList;
+    }
+
+
 
     //檢查唯一id有沒有重複，沒有就創建新的，有就給予
     public void checkIfExistandAddinAllItem(VinItem vinItem){
         String itemName = vinItem.getItemName();
         String[] s = itemName.split("领用标准");
-        int ifExist = ifExistinAllItem(s[0]);
+        String mainItemName = s[0].trim();
+        int ifExist = ifExistinAllItem(mainItemName);
         int ifExistNameinSupplier = ifExistNameinSupplier(vinItem.getBrand());
         log.warn("ifExist==>"+ifExist);
         String ID = "";
         if(ifExist > 0){
-            ID = checkAllItem(s[0]);
+            ID = checkAllItem(mainItemName);
             vinItem.setId(ID);
         }else {
-            ID = UUID.randomUUID().toString().replace("-","");
+            ID = getUUID();
             vinItem.setId(ID);
             Item item = new Item();
             item.setItemID(ID);
@@ -6667,6 +7105,8 @@ public class VinServiceImpl implements VinService{
                 Supplier supplier = querySupplierbyName(vinItem.getBrand());
                 item.setSupplierID(supplier.getSupplierID());
             }
+            cacheService.addItemCategoryCache(item);
+            addItemSetSimpleByCategory(item);
             addAllItem(item);
         }
 
@@ -7400,6 +7840,8 @@ public class VinServiceImpl implements VinService{
 
         return actionMap;
     }
+
+
 
     @Override
     public int queryVinItemCount(String location, String category, String id) {

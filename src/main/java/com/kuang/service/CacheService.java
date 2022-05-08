@@ -2,10 +2,7 @@ package com.kuang.service;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.kuang.pojo.Expired;
-import com.kuang.pojo.Item;
-import com.kuang.pojo.ItemSet;
-import com.kuang.pojo.VinItem;
+import com.kuang.pojo.*;
 import lombok.extern.slf4j.Slf4j;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,6 +40,9 @@ public class CacheService {
     }
 
     public String getVinItemCategorySetCacheKey(String category) {
+        if(category.equals("commercial")){
+            category = "commercialthing";
+        }
         return "itemSet_" + category;
     }
 
@@ -210,6 +210,13 @@ public class CacheService {
         log.warn("Delete redis done! Unlock under this id : " + key);
     }
 
+    public void deleteItemSetCache(String category){
+        String vinItemCategorySetCacheKey = getVinItemCategorySetCacheKey(category);
+        redisTemplate.delete(vinItemCategorySetCacheKey);
+        log.warn("Delete: " + vinItemCategorySetCacheKey);
+        buildItemSetCache(category);
+    }
+
     /**
      *
      * @param key
@@ -232,14 +239,11 @@ public class CacheService {
      * @param category
      */
     public void buildItemSetCache(@NotNull String category){
-//        setVinItemCategorySetCacheKey(category);
-//        setCategory(category);
-//        String key = "itemSet_"+category;
         String vinItemCategorySetCacheKey = getVinItemCategorySetCacheKey(category);
         log.warn("buildItemSetCache: " + vinItemCategorySetCacheKey);
         Boolean keyExist = redisTemplate.hasKey(vinItemCategorySetCacheKey);
         if(!keyExist){
-            List<ItemSet> itemSetList = null;
+            List<ItemSetWithItemName> itemSetList = null;
             switch (category){
                 case "tool":
                     log.warn("=====tool=====");
@@ -282,9 +286,6 @@ public class CacheService {
      * @return
      */
     public Set<String> getItemSet(String category){
-//        setCategory(category);
-//        setVinItemCategorySetCacheKey(category);
-//        String key = "itemSet_"+category;
         String vinItemCategorySetCacheKey = getVinItemCategorySetCacheKey(category);
         boolean exist = redisTemplate.hasKey(vinItemCategorySetCacheKey);
         if(!exist){
@@ -305,15 +306,11 @@ public class CacheService {
      * @param location
      */
     public void cacheable(List<VinItem> vinItemList, String category, String location) {
-//        setLocation(location);
-//        setCategory(category);
-//        setVinItemLocationSetCacheKey(category, location);
-//        setVinItemLocationCacheKey(category, location);
         String vinItemLocationSetCacheKey = getVinItemLocationSetCacheKey(category, location);
         String vinItemLocationCacheKey = getVinItemLocationCacheKey(category, location);
         String vinItemCategorySetCacheKey = getVinItemCategorySetCacheKey(category);
+//        String vinItemCategoryCacheKey = getVinItemCategoryCacheKey(category);
         buildItemSetCache(category);
-//        String itemSetKey = "itemSet_"+category;
         boolean existVinItemCategorySet = redisTemplate.hasKey(vinItemCategorySetCacheKey);
         for (int i = 0; i < vinItemList.size(); i++) {
             VinItem vinItem = vinItemList.get(i);
@@ -335,9 +332,6 @@ public class CacheService {
      * @return
      */
     public List<VinItem> getVinItemCache(String category, String location) {
-//        setCategory(category);
-//        setLocation(location);
-//        String itemSetKey = "itemSet_"+category;
         String vinItemCategorySetCacheKey = getVinItemCategorySetCacheKey(category);
         String vinItemLocationSetCacheKey = getVinItemLocationSetCacheKey(category, location);
         String vinItemLocationCacheKey = getVinItemLocationCacheKey(category, location);
@@ -374,9 +368,6 @@ public class CacheService {
      * @param category
      */
     public void updateCache(VinItem vinItem, String location, String category) {
-//        setCategory(category);
-//        setLocation(location);
-//        String vinItemCategorySetCacheKey = getVinItemCategorySetCacheKey(category);
         String vinItemLocationSetCacheKey = getVinItemLocationSetCacheKey(category, location);
         String vinItemLocationCacheKey = getVinItemLocationCacheKey(category, location);
         boolean existVinItemLocationCache = redisTemplate.hasKey(vinItemLocationCacheKey);
@@ -396,36 +387,117 @@ public class CacheService {
 
     /**
      *
+     * @param item
+     */
+    public void addItemCategoryCache(Item item){
+        String category = item.getCategory();
+        String itemID = item.getItemID();
+        String vinItemCategorySetCacheKey = getVinItemCategorySetCacheKey(category);
+        String vinItemCategoryCacheKey = getVinItemCategoryCacheKey(category);
+        boolean existVinItemCategorySetCache = redisTemplate.hasKey(vinItemCategorySetCacheKey);
+        boolean existVinItemCategoryCacheKey = redisTemplate.hasKey(vinItemCategoryCacheKey);
+
+        if(existVinItemCategorySetCache){
+            Double score = redisTemplate.opsForZSet().score(vinItemCategorySetCacheKey, itemID); //不存在返回null
+            if(score == null) {
+                Long count = redisTemplate.opsForZSet().count(vinItemCategorySetCacheKey, 0, Double.MAX_VALUE);
+                redisTemplate.opsForZSet().add(vinItemCategorySetCacheKey, itemID, count);
+            }
+        }
+        if(existVinItemCategoryCacheKey){
+            if (!redisTemplate.opsForHash().hasKey(vinItemCategoryCacheKey, itemID)){
+                 String itemJSON = JSON.toJSONString(item);
+                redisTemplate.opsForHash().put(vinItemCategoryCacheKey, itemID, itemJSON);
+            }
+
+        }
+    }
+
+    /**
+     *
+     * @param vinItem
+     * @param category
+     * @param location
+     * @param vinItemJSON
+     */
+    public void addItemLocationCache(VinItem vinItem, String category, String location, String vinItemJSON){
+        String itemID = vinItem.getId();
+        String vinItemLocationSetCacheKey = getVinItemLocationSetCacheKey(category, location);
+        String vinItemLocationCacheKey = getVinItemLocationCacheKey(category, location);
+        boolean existVinItemLocationCache = redisTemplate.hasKey(vinItemLocationCacheKey);
+        boolean existVinItemLocationSetCache = redisTemplate.hasKey(vinItemLocationSetCacheKey);
+        if (vinItemJSON == null){
+            vinItemJSON = JSON.toJSONString(vinItem);
+        }
+
+        if(!existVinItemLocationCache){
+            List<VinItem> vinItemList = vinService.getVinItemList(location, category);
+            cacheable(vinItemList, category, location);
+        }else {
+            if (!redisTemplate.opsForHash().hasKey(vinItemLocationCacheKey, itemID)){
+                redisTemplate.opsForHash().put(vinItemLocationCacheKey, itemID, vinItemJSON);
+            }
+        }
+        if(existVinItemLocationSetCache){
+            Double score = redisTemplate.opsForZSet().score(vinItemLocationSetCacheKey, itemID); //不存在返回null
+            if(score == null){
+                Long count = redisTemplate.opsForZSet().count(vinItemLocationSetCacheKey, 0, Double.MAX_VALUE);
+                redisTemplate.opsForZSet().add(vinItemLocationSetCacheKey, itemID, count);
+            }
+        }
+
+
+
+    }
+
+    /**
+     *
      * @param vinItem
      * @param location
      * @param category
      */
     public void addCache(VinItem vinItem, String location, String category) {
-//        setCategory(category);
-//        setLocation(location);
-//        String vinItemLocationSetCacheKey = vinItemLocationCacheKey + "Set";
-//        String vinItemSetCache = "itemSet_" + category;
-        String vinItemCategorySetCacheKey = getVinItemCategorySetCacheKey(category);
-        String vinItemLocationSetCacheKey = getVinItemLocationSetCacheKey(category, location);
-        String vinItemLocationCacheKey = getVinItemLocationCacheKey(category, location);
-        boolean existVinItemLocationCache = redisTemplate.hasKey(vinItemLocationCacheKey);
-        boolean existVinItemLocationSetCache = redisTemplate.hasKey(vinItemLocationSetCacheKey);
-        boolean existVinItemSetCache = redisTemplate.hasKey(vinItemCategorySetCacheKey);
-        if(!existVinItemLocationCache){
-            List<VinItem> vinItemList = vinService.getVinItemList(location, category);
-            cacheable(vinItemList, category, location);
-        }
-        String jsonString = JSON.toJSONString(vinItem);
-        redisTemplate.opsForHash().put(vinItemLocationCacheKey, vinItem.getId(), jsonString);
-
-        if(existVinItemLocationSetCache){
-            Long count = redisTemplate.opsForZSet().count(vinItemLocationSetCacheKey, 0, Double.MAX_VALUE);
-            redisTemplate.opsForZSet().add(vinItemLocationSetCacheKey, vinItem.getId(), count);
-        }
-        if(existVinItemSetCache){
-            Long count = redisTemplate.opsForZSet().count(vinItemCategorySetCacheKey, 0, Double.MAX_VALUE);
-            redisTemplate.opsForZSet().add(vinItemCategorySetCacheKey, vinItem.getId(), count);
-        }
+//        String itemID = vinItem.getId();
+//        String vinItemCategorySetCacheKey = getVinItemCategorySetCacheKey(category);
+//        String vinItemLocationSetCacheKey = getVinItemLocationSetCacheKey(category, location);
+//        String vinItemLocationCacheKey = getVinItemLocationCacheKey(category, location);
+//        String vinItemCategoryCacheKey = getVinItemCategoryCacheKey(category);
+//        boolean existVinItemLocationCache = redisTemplate.hasKey(vinItemLocationCacheKey);
+//        boolean existVinItemLocationSetCache = redisTemplate.hasKey(vinItemLocationSetCacheKey);
+//        boolean existVinItemCategorySetCache = redisTemplate.hasKey(vinItemCategorySetCacheKey);
+//        boolean existVinItemCategoryCacheKey = redisTemplate.hasKey(vinItemCategoryCacheKey);
+//        if(!existVinItemLocationCache){
+//            List<VinItem> vinItemList = vinService.getVinItemList(location, category);
+//            cacheable(vinItemList, category, location);
+//        }
+        String vinItemJSON = JSON.toJSONString(vinItem);
+//        addItemCategoryCache(vinItem, category, vinItemJSON);
+        addItemLocationCache(vinItem, category, location, vinItemJSON);
+//        if(existVinItemLocationCache){
+//            if (!redisTemplate.opsForHash().hasKey(vinItemLocationCacheKey, itemID)){
+//                redisTemplate.opsForHash().put(vinItemLocationCacheKey, itemID, jsonString);
+//            }
+//        }
+//        if(existVinItemCategoryCacheKey){
+//            if (!redisTemplate.opsForHash().hasKey(vinItemCategoryCacheKey, itemID)){
+//                redisTemplate.opsForHash().put(vinItemCategoryCacheKey, itemID, jsonString);
+//            }
+//        }
+//        if(existVinItemLocationSetCache){
+//            Double score = redisTemplate.opsForZSet().score(vinItemLocationSetCacheKey, itemID); //不存在返回null
+//            if(score == null){
+//                Long count = redisTemplate.opsForZSet().count(vinItemLocationSetCacheKey, 0, Double.MAX_VALUE);
+//                redisTemplate.opsForZSet().add(vinItemLocationSetCacheKey, itemID, count);
+//            }
+//
+//        }
+//        if(existVinItemCategorySetCache){
+//            Double score = redisTemplate.opsForZSet().score(vinItemCategorySetCacheKey, itemID); //不存在返回null
+//            if(score == null) {
+//                Long count = redisTemplate.opsForZSet().count(vinItemCategorySetCacheKey, 0, Double.MAX_VALUE);
+//                redisTemplate.opsForZSet().add(vinItemCategorySetCacheKey, itemID, count);
+//            }
+//        }
 
 
 
@@ -444,29 +516,40 @@ public class CacheService {
 
     /**
      *
-     * @param id
+     * @param itemID
      * @param location
      * @param category
      */
-    public void deleteCache(String id, String location, String category){
-//        setLocation(location);
-//        setCategory(category);
+    public void deleteCache(String itemID, String location, String category){
         String vinItemCategorySetCacheKey = getVinItemCategorySetCacheKey(category);
         String vinItemLocationSetCacheKey = getVinItemLocationSetCacheKey(category, location);
         String vinItemLocationCacheKey = getVinItemLocationCacheKey(category, location);
-        boolean existVinItemLocationCache = redisTemplate.hasKey(vinItemLocationCacheKey);
+        boolean existVinItemLocationCache = redisTemplate.opsForHash().hasKey(vinItemLocationCacheKey, itemID);
         boolean existVinItemLocationSetCache = redisTemplate.hasKey(vinItemLocationSetCacheKey);
         boolean existVinItemSetCache = redisTemplate.hasKey(vinItemCategorySetCacheKey);
         if (existVinItemLocationCache){
-            redisTemplate.opsForHash().delete(vinItemLocationCacheKey, id);
+            redisTemplate.opsForHash().delete(vinItemLocationCacheKey, itemID);
         }
         if (existVinItemLocationSetCache){
-            redisTemplate.opsForZSet().remove(vinItemLocationSetCacheKey, id);
+            redisTemplate.opsForZSet().remove(vinItemLocationSetCacheKey, itemID); //不存在會被忽略
         }
         if (existVinItemSetCache){
-            redisTemplate.opsForZSet().remove(vinItemCategorySetCacheKey, id);
+            redisTemplate.opsForZSet().remove(vinItemCategorySetCacheKey, itemID); //不存在會被忽略
         }
+    }
 
+    /**
+     *
+     * @param itemID
+     */
+    public void deleteAllItemCache(String itemID){
+        Set<String> warehouseList = vinService.getWarehouseMap().keySet();
+        Set<String> categoryList = vinService.getCategoryMap().keySet();
+        for (String location : warehouseList) {
+            for (String category : categoryList) {
+                deleteCache(itemID, location, category);
+            }
+        }
     }
 
 

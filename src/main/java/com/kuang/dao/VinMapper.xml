@@ -681,6 +681,10 @@
     <update id="updateAllItem" parameterType="Item">
         update vinvin.item set itemName=#{itemName} where itemID=#{itemID};
     </update>
+    <delete id="deleteItem">
+        delete from vinvin.item where itemID=#{itemID};
+    </delete>
+
 
     <select id="querySupplierbyID" resultType="Supplier" parameterType="String">
         select * from vinvin.supplier where supplierID=#{supplierID};
@@ -4430,6 +4434,8 @@
     <delete id="deleteApplyItem" parameterType="String">
         delete from vinvin.applyItem where logID=#{logID};
     </delete>
+
+
     <update id="updateApplyItem" parameterType="ApplyItem">
         update vinvin.applyItem set itemName=#{itemName},count=#{count},confirm=#{confirm},confirmResult=#{confirmResult},shipID=#{shipID},status=#{status},singlePrice=#{singlePrice},totalPrice=#{totalPrice},purchaseTime=#{purchaseTime} where logID=#{logID};
     </update>
@@ -4446,9 +4452,103 @@
     <update id="updateApplyItemSec" parameterType="ApplyItemSec">
         update vinvin.applyItemSec set totalPrice=#{totalPrice} where id=#{id};
     </update>
+
     <select id="ifExistApplyItemSec" resultType="int" parameterType="String">
         select count(*) from vinvin.applyItemSec where id=#{id} limit 1;
     </select>
+
+
+
+    <update id="updateItemCommercialSet">
+        update vinvin.itemCommercialSet set id = id + 1 where id>=#{id} order by id desc;
+    </update>
+    <insert id="addItemCommercialSet">
+        insert ignore into vinvin.itemCommercialSet(id, itemID) VALUE (#{id}, #{itemID});
+    </insert>
+
+    <update id="updateItemFoodSet">
+        update vinvin.itemFoodSet set id = id + 1 where id>=#{id} order by id desc;
+    </update>
+    <insert id="addItemFoodSet">
+        insert ignore into vinvin.itemFoodSet(id, itemID) VALUE (#{id}, #{itemID});
+    </insert>
+
+    <update id="updateItemOthersSet">
+        update vinvin.itemOthersSet set id = id + 1 where id>=#{id} order by id desc;
+    </update>
+    <insert id="addItemOthersSet">
+        insert ignore into vinvin.itemOthersSet(id, itemID) VALUE (#{id}, #{itemID});
+    </insert>
+
+    <update id="updateItemSmallToolSet">
+        update vinvin.itemSmallToolSet set id = id + 1 where id>=#{id} order by id desc;
+    </update>
+    <insert id="addItemSmallToolSet">
+        insert ignore into vinvin.itemSmallToolSet(id, itemID) VALUE (#{id}, #{itemID});
+    </insert>
+
+    <update id="updateItemToolSet">
+        update vinvin.itemToolSet set id = id + 1 where id>=#{id} order by id desc;
+    </update>
+    <insert id="addItemToolSet">
+        insert ignore into vinvin.itemToolSet(id, itemID) VALUE (#{id}, #{itemID});
+    </insert>
+
+    <insert id="addItemCommercialSetSimple">
+        insert ignore into vinvin.itemCommercialSet(itemID) VALUE (#{itemID});
+    </insert>
+    <insert id="addItemFoodSetSimple">
+        insert ignore into vinvin.itemFoodSet(itemID) VALUE (#{itemID});
+    </insert>
+    <insert id="addItemOthersSetSimple">
+        insert ignore into vinvin.itemOthersSet(itemID) VALUE (#{itemID});
+    </insert>
+    <insert id="addItemSmallToolSetSimple">
+        insert ignore into vinvin.itemSmallToolSet(itemID) VALUE (#{itemID});
+    </insert>
+    <insert id="addItemToolSetSimple">
+        insert ignore into vinvin.itemToolSet(itemID) VALUE (#{itemID});
+    </insert>
+
+
+    <select id="queryAllItemCommercialSet" resultType="itemSetWithItemName">
+        select itemSet.*, item.itemName from vinvin.itemCommercialSet itemSet left join vinvin.item item on item.itemID=itemSet.itemID order by itemSet.id;
+    </select>
+    <select id="queryAllItemFoodSet" resultType="itemSetWithItemName">
+        select itemSet.*, item.itemName from vinvin.itemFoodSet itemSet left join vinvin.item item on item.itemID=itemSet.itemID order by itemSet.id;
+    </select>
+    <select id="queryAllItemOthersSet" resultType="itemSetWithItemName">
+        select itemSet.*, item.itemName from vinvin.itemOthersSet itemSet left join vinvin.item item on item.itemID=itemSet.itemID order by itemSet.id;
+    </select>
+    <select id="queryAllItemSmallToolSet" resultType="itemSetWithItemName">
+        select itemSet.*, item.itemName from vinvin.itemSmallToolSet itemSet left join vinvin.item item on item.itemID=itemSet.itemID order by itemSet.id;
+    </select>
+    <select id="queryAllItemToolSet" resultType="itemSetWithItemName">
+        select itemSet.*, item.itemName from vinvin.itemToolSet itemSet left join vinvin.item item on item.itemID=itemSet.itemID order by itemSet.id;
+    </select>
+
+    <delete id="deleteItemCommercialSet">
+        delete from vinvin.itemCommercialSet where itemID=#{itemID};
+    </delete>
+    <delete id="deleteItemFoodSet">
+        delete from vinvin.itemFoodSet where itemID=#{itemID};
+    </delete>
+    <delete id="deleteItemOthersSet">
+        delete from vinvin.itemOthersSet where itemID=#{itemID};
+    </delete>
+    <delete id="deleteItemSmallToolSet">
+        delete from vinvin.itemSmallToolSet where itemID=#{itemID};
+    </delete>
+    <delete id="deleteItemToolSet">
+        delete from vinvin.itemToolSet where itemID=#{itemID};
+    </delete>
+
+
+
+
+
+
+
 
 
 
