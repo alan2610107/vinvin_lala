@@ -23,6 +23,15 @@
 <div class="container">
     <div class="col-md-12 column">
         <br><br>
+        <h5>2021/05/08</h5>
+        <ul>
+            <li>優化物料按定義排序</li>
+            <li>新增調整物料順序模塊</li>
+            <li>新增刪除物料模塊</li>
+        </ul>
+    </div>
+    <div class="col-md-12 column">
+        <br><br>
         <h5>2021/05/01</h5>
         <ul>
             <li>Fix : 物料按定義排序</li>
