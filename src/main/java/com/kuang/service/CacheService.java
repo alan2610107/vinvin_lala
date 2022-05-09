@@ -522,21 +522,49 @@ public class CacheService {
      */
     public void deleteCache(String itemID, String location, String category){
         String vinItemCategorySetCacheKey = getVinItemCategorySetCacheKey(category);
+//        String vinItemLocationSetCacheKey = getVinItemLocationSetCacheKey(category, location);
+//        String vinItemLocationCacheKey = getVinItemLocationCacheKey(category, location);
+//        boolean existVinItemLocationCache = redisTemplate.opsForHash().hasKey(vinItemLocationCacheKey, itemID);
+//        boolean existVinItemLocationSetCache = redisTemplate.hasKey(vinItemLocationSetCacheKey);
+        boolean existVinItemSetCache = redisTemplate.hasKey(vinItemCategorySetCacheKey);
+//        if (existVinItemLocationCache){
+//            redisTemplate.opsForHash().delete(vinItemLocationCacheKey, itemID);
+//        }
+//        if (existVinItemLocationSetCache){
+//            redisTemplate.opsForZSet().remove(vinItemLocationSetCacheKey, itemID); //不存在會被忽略
+//        }
+        deletePartialCache(itemID, location, category);
+        if (existVinItemSetCache){
+            redisTemplate.opsForZSet().remove(vinItemCategorySetCacheKey, itemID); //不存在會被忽略
+        }
+    }
+
+
+    /**
+     *
+     * @param itemID
+     * @param location
+     * @param category
+     */
+    public void deletePartialCache(String itemID, String location, String category){
+//        String vinItemCategorySetCacheKey = getVinItemCategorySetCacheKey(category);
         String vinItemLocationSetCacheKey = getVinItemLocationSetCacheKey(category, location);
         String vinItemLocationCacheKey = getVinItemLocationCacheKey(category, location);
         boolean existVinItemLocationCache = redisTemplate.opsForHash().hasKey(vinItemLocationCacheKey, itemID);
         boolean existVinItemLocationSetCache = redisTemplate.hasKey(vinItemLocationSetCacheKey);
-        boolean existVinItemSetCache = redisTemplate.hasKey(vinItemCategorySetCacheKey);
+//        boolean existVinItemSetCache = redisTemplate.hasKey(vinItemCategorySetCacheKey);
         if (existVinItemLocationCache){
             redisTemplate.opsForHash().delete(vinItemLocationCacheKey, itemID);
         }
         if (existVinItemLocationSetCache){
             redisTemplate.opsForZSet().remove(vinItemLocationSetCacheKey, itemID); //不存在會被忽略
         }
-        if (existVinItemSetCache){
-            redisTemplate.opsForZSet().remove(vinItemCategorySetCacheKey, itemID); //不存在會被忽略
-        }
+//        if (existVinItemSetCache){
+//            redisTemplate.opsForZSet().remove(vinItemCategorySetCacheKey, itemID); //不存在會被忽略
+//        }
     }
+
+
 
     /**
      *
