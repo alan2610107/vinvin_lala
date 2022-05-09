@@ -654,263 +654,263 @@ public class VinMainController extends HttpServlet{
 
     //增刪改查的邏輯如果需要跟緩存配合就使能使用vinService，因為緩存的註解是寫在vinService
 
-    public void deleteVinItem(@NotNull String location, @NotNull String category, @NotNull String id) {
-        String key = location + "," + category + "," + id;;
-        switch (category) {
-            case "tool":
-                switch (location) {
-                    case "main0":
-                        vinService.deleteIteminMain0byId(id);
-                        break;
-                    case "main1":
-                        vinService.deleteIteminMain1byId(id);
-                        break;
-                    case "main2":
-                        vinService.deleteIteminMain2byId(id);
-                        break;
-                    case "shop1":
-                        vinService.deleteIteminShop1byId(id);
-                        break;
-                    case "shop2":
-                        vinService.deleteIteminShop2byId(id);
-                        break;
-                    case "shop3":
-                        vinService.deleteIteminShop3byId(id);
-                        break;
-                    case "shop4":
-                        vinService.deleteIteminShop4byId(id);
-                        break;
-                    case "shop5":
-                        vinService.deleteIteminShop5byId(id);
-                        break;
-                    case "shop6":
-                        vinService.deleteIteminShop6byId(id);
-                        break;
-                    case "shop7":
-                        vinService.deleteIteminShop7byId(id);
-                        break;
-                    case "shop8":
-                        vinService.deleteIteminShop8byId(id);
-                        break;
-                    case "shop9":
-                        vinService.deleteIteminShop9byId(id);
-                        break;
-                    case "shop10":
-                        vinService.deleteIteminShop10byId(id);
-                        break;
-                    case "shop11":
-                        vinService.deleteIteminShop11byId(id);
-                        break;
-                    case "shop12":
-                        vinService.deleteIteminShop12byId(id);
-                        break;
-                }
-
-                break;
-            case "smalltool":
-                switch (location) {
-                    case "main0":
-                        vinService.deleteSmallIteminMain0byId(id);
-                        break;
-                    case "main1":
-                        vinService.deleteSmallIteminMain1byId(id);
-                        break;
-                    case "main2":
-                        vinService.deleteSmallIteminMain2byId(id);
-                        break;
-                    case "shop1":
-                        vinService.deleteSmallIteminShop1byId(id);
-                        break;
-                    case "shop2":
-                        vinService.deleteSmallIteminShop2byId(id);
-                        break;
-                    case "shop3":
-                        vinService.deleteSmallIteminShop3byId(id);
-                        break;
-                    case "shop4":
-                        vinService.deleteSmallIteminShop4byId(id);
-                        break;
-                    case "shop5":
-                        vinService.deleteSmallIteminShop5byId(id);
-                        break;
-                    case "shop6":
-                        vinService.deleteSmallIteminShop6byId(id);
-                        break;
-                    case "shop7":
-                        vinService.deleteSmallIteminShop7byId(id);
-                        break;
-                    case "shop8":
-                        vinService.deleteSmallIteminShop8byId(id);
-                        break;
-                    case "shop9":
-                        vinService.deleteSmallIteminShop9byId(id);
-                        break;
-                    case "shop10":
-                        vinService.deleteSmallIteminShop10byId(id);
-                        break;
-                    case "shop11":
-                        vinService.deleteSmallIteminShop11byId(id);
-                        break;
-                    case "shop12":
-                        vinService.deleteSmallIteminShop12byId(id);
-                        break;
-                }
-
-                break;
-            case "food":
-                switch (location) {
-                    case "main0":
-                        vinService.deleteFoodinMain0byId(id);
-                        break;
-                    case "main1":
-                        vinService.deleteFoodinMain1byId(id);
-                        break;
-                    case "main2":
-                        vinService.deleteFoodinMain2byId(id);
-                        break;
-                    case "shop1":
-                        vinService.deleteFoodinShop1byId(id);
-                        break;
-                    case "shop2":
-                        vinService.deleteFoodinShop2byId(id);
-                        break;
-                    case "shop3":
-                        vinService.deleteFoodinShop3byId(id);
-                        break;
-                    case "shop4":
-                        vinService.deleteFoodinShop4byId(id);
-                        break;
-                    case "shop5":
-                        vinService.deleteFoodinShop5byId(id);
-                        break;
-                    case "shop6":
-                        vinService.deleteFoodinShop6byId(id);
-                        break;
-                    case "shop7":
-                        vinService.deleteFoodinShop7byId(id);
-                        break;
-                    case "shop8":
-                        vinService.deleteFoodinShop8byId(id);
-                        break;
-                    case "shop9":
-                        vinService.deleteFoodinShop9byId(id);
-                        break;
-                    case "shop10":
-                        vinService.deleteFoodinShop10byId(id);
-                        break;
-                    case "shop11":
-                        vinService.deleteFoodinShop11byId(id);
-                        break;
-                    case "shop12":
-                        vinService.deleteFoodinShop12byId(id);
-                        break;
-                }
-
-                break;
-            case "commercialthing":
-                switch (location) {
-                    case "main0":
-                        vinService.deletecommercialIteminMain0byId(id);
-                        break;
-                    case "main1":
-                        vinService.deletecommercialIteminMain1byId(id);
-                        break;
-                    case "main2":
-                        vinService.deletecommercialIteminMain2byId(id);
-                        break;
-                    case "shop1":
-                        vinService.deletecommercialIteminShop1byId(id);
-                        break;
-                    case "shop2":
-                        vinService.deletecommercialIteminShop2byId(id);
-                        break;
-                    case "shop3":
-                        vinService.deletecommercialIteminShop3byId(id);
-                        break;
-                    case "shop4":
-                        vinService.deletecommercialIteminShop4byId(id);
-                        break;
-                    case "shop5":
-                        vinService.deletecommercialIteminShop5byId(id);
-                        break;
-                    case "shop6":
-                        vinService.deletecommercialIteminShop6byId(id);
-                        break;
-                    case "shop7":
-                        vinService.deletecommercialIteminShop7byId(id);
-                        break;
-                    case "shop8":
-                        vinService.deletecommercialIteminShop8byId(id);
-                        break;
-                    case "shop9":
-                        vinService.deletecommercialIteminShop9byId(id);
-                        break;
-                    case "shop10":
-                        vinService.deletecommercialIteminShop10byId(id);
-                        break;
-                    case "shop11":
-                        vinService.deletecommercialIteminShop11byId(id);
-                        break;
-                    case "shop12":
-                        vinService.deletecommercialIteminShop12byId(id);
-                        break;
-                }
-
-                break;
-            case "other":
-                switch (location) {
-                    case "main0":
-                        vinService.deleteothersinMain0byId(id);
-                        break;
-                    case "main1":
-                        vinService.deleteothersinMain1byId(id);
-                        break;
-                    case "main2":
-                        vinService.deleteothersinMain2byId(id);
-                        break;
-                    case "shop1":
-                        vinService.deleteothersinShop1byId(id);
-                        break;
-                    case "shop2":
-                        vinService.deleteothersinShop2byId(id);
-                        break;
-                    case "shop3":
-                        vinService.deleteothersinShop3byId(id);
-                        break;
-                    case "shop4":
-                        vinService.deleteothersinShop4byId(id);
-                        break;
-                    case "shop5":
-                        vinService.deleteothersinShop5byId(id);
-                        break;
-                    case "shop6":
-                        vinService.deleteothersinShop6byId(id);
-                        break;
-                    case "shop7":
-                        vinService.deleteothersinShop7byId(id);
-                        break;
-                    case "shop8":
-                        vinService.deleteothersinShop8byId(id);
-                        break;
-                    case "shop9":
-                        vinService.deleteothersinShop9byId(id);
-                        break;
-                    case "shop10":
-                        vinService.deleteothersinShop10byId(id);
-                        break;
-                    case "shop11":
-                        vinService.deleteothersinShop11byId(id);
-                        break;
-                    case "shop12":
-                        vinService.deleteothersinShop12byId(id);
-                        break;
-                }
-
-                break;
-        }
-        cacheService.deleteRedisLock(key);
-
-    }
+//    public void deleteVinItem(@NotNull String location, @NotNull String category, @NotNull String id) {
+//        String key = location + "," + category + "," + id;;
+//        switch (category) {
+//            case "tool":
+//                switch (location) {
+//                    case "main0":
+//                        vinService.deleteIteminMain0byId(id);
+//                        break;
+//                    case "main1":
+//                        vinService.deleteIteminMain1byId(id);
+//                        break;
+//                    case "main2":
+//                        vinService.deleteIteminMain2byId(id);
+//                        break;
+//                    case "shop1":
+//                        vinService.deleteIteminShop1byId(id);
+//                        break;
+//                    case "shop2":
+//                        vinService.deleteIteminShop2byId(id);
+//                        break;
+//                    case "shop3":
+//                        vinService.deleteIteminShop3byId(id);
+//                        break;
+//                    case "shop4":
+//                        vinService.deleteIteminShop4byId(id);
+//                        break;
+//                    case "shop5":
+//                        vinService.deleteIteminShop5byId(id);
+//                        break;
+//                    case "shop6":
+//                        vinService.deleteIteminShop6byId(id);
+//                        break;
+//                    case "shop7":
+//                        vinService.deleteIteminShop7byId(id);
+//                        break;
+//                    case "shop8":
+//                        vinService.deleteIteminShop8byId(id);
+//                        break;
+//                    case "shop9":
+//                        vinService.deleteIteminShop9byId(id);
+//                        break;
+//                    case "shop10":
+//                        vinService.deleteIteminShop10byId(id);
+//                        break;
+//                    case "shop11":
+//                        vinService.deleteIteminShop11byId(id);
+//                        break;
+//                    case "shop12":
+//                        vinService.deleteIteminShop12byId(id);
+//                        break;
+//                }
+//
+//                break;
+//            case "smalltool":
+//                switch (location) {
+//                    case "main0":
+//                        vinService.deleteSmallIteminMain0byId(id);
+//                        break;
+//                    case "main1":
+//                        vinService.deleteSmallIteminMain1byId(id);
+//                        break;
+//                    case "main2":
+//                        vinService.deleteSmallIteminMain2byId(id);
+//                        break;
+//                    case "shop1":
+//                        vinService.deleteSmallIteminShop1byId(id);
+//                        break;
+//                    case "shop2":
+//                        vinService.deleteSmallIteminShop2byId(id);
+//                        break;
+//                    case "shop3":
+//                        vinService.deleteSmallIteminShop3byId(id);
+//                        break;
+//                    case "shop4":
+//                        vinService.deleteSmallIteminShop4byId(id);
+//                        break;
+//                    case "shop5":
+//                        vinService.deleteSmallIteminShop5byId(id);
+//                        break;
+//                    case "shop6":
+//                        vinService.deleteSmallIteminShop6byId(id);
+//                        break;
+//                    case "shop7":
+//                        vinService.deleteSmallIteminShop7byId(id);
+//                        break;
+//                    case "shop8":
+//                        vinService.deleteSmallIteminShop8byId(id);
+//                        break;
+//                    case "shop9":
+//                        vinService.deleteSmallIteminShop9byId(id);
+//                        break;
+//                    case "shop10":
+//                        vinService.deleteSmallIteminShop10byId(id);
+//                        break;
+//                    case "shop11":
+//                        vinService.deleteSmallIteminShop11byId(id);
+//                        break;
+//                    case "shop12":
+//                        vinService.deleteSmallIteminShop12byId(id);
+//                        break;
+//                }
+//
+//                break;
+//            case "food":
+//                switch (location) {
+//                    case "main0":
+//                        vinService.deleteFoodinMain0byId(id);
+//                        break;
+//                    case "main1":
+//                        vinService.deleteFoodinMain1byId(id);
+//                        break;
+//                    case "main2":
+//                        vinService.deleteFoodinMain2byId(id);
+//                        break;
+//                    case "shop1":
+//                        vinService.deleteFoodinShop1byId(id);
+//                        break;
+//                    case "shop2":
+//                        vinService.deleteFoodinShop2byId(id);
+//                        break;
+//                    case "shop3":
+//                        vinService.deleteFoodinShop3byId(id);
+//                        break;
+//                    case "shop4":
+//                        vinService.deleteFoodinShop4byId(id);
+//                        break;
+//                    case "shop5":
+//                        vinService.deleteFoodinShop5byId(id);
+//                        break;
+//                    case "shop6":
+//                        vinService.deleteFoodinShop6byId(id);
+//                        break;
+//                    case "shop7":
+//                        vinService.deleteFoodinShop7byId(id);
+//                        break;
+//                    case "shop8":
+//                        vinService.deleteFoodinShop8byId(id);
+//                        break;
+//                    case "shop9":
+//                        vinService.deleteFoodinShop9byId(id);
+//                        break;
+//                    case "shop10":
+//                        vinService.deleteFoodinShop10byId(id);
+//                        break;
+//                    case "shop11":
+//                        vinService.deleteFoodinShop11byId(id);
+//                        break;
+//                    case "shop12":
+//                        vinService.deleteFoodinShop12byId(id);
+//                        break;
+//                }
+//
+//                break;
+//            case "commercialthing":
+//                switch (location) {
+//                    case "main0":
+//                        vinService.deletecommercialIteminMain0byId(id);
+//                        break;
+//                    case "main1":
+//                        vinService.deletecommercialIteminMain1byId(id);
+//                        break;
+//                    case "main2":
+//                        vinService.deletecommercialIteminMain2byId(id);
+//                        break;
+//                    case "shop1":
+//                        vinService.deletecommercialIteminShop1byId(id);
+//                        break;
+//                    case "shop2":
+//                        vinService.deletecommercialIteminShop2byId(id);
+//                        break;
+//                    case "shop3":
+//                        vinService.deletecommercialIteminShop3byId(id);
+//                        break;
+//                    case "shop4":
+//                        vinService.deletecommercialIteminShop4byId(id);
+//                        break;
+//                    case "shop5":
+//                        vinService.deletecommercialIteminShop5byId(id);
+//                        break;
+//                    case "shop6":
+//                        vinService.deletecommercialIteminShop6byId(id);
+//                        break;
+//                    case "shop7":
+//                        vinService.deletecommercialIteminShop7byId(id);
+//                        break;
+//                    case "shop8":
+//                        vinService.deletecommercialIteminShop8byId(id);
+//                        break;
+//                    case "shop9":
+//                        vinService.deletecommercialIteminShop9byId(id);
+//                        break;
+//                    case "shop10":
+//                        vinService.deletecommercialIteminShop10byId(id);
+//                        break;
+//                    case "shop11":
+//                        vinService.deletecommercialIteminShop11byId(id);
+//                        break;
+//                    case "shop12":
+//                        vinService.deletecommercialIteminShop12byId(id);
+//                        break;
+//                }
+//
+//                break;
+//            case "other":
+//                switch (location) {
+//                    case "main0":
+//                        vinService.deleteothersinMain0byId(id);
+//                        break;
+//                    case "main1":
+//                        vinService.deleteothersinMain1byId(id);
+//                        break;
+//                    case "main2":
+//                        vinService.deleteothersinMain2byId(id);
+//                        break;
+//                    case "shop1":
+//                        vinService.deleteothersinShop1byId(id);
+//                        break;
+//                    case "shop2":
+//                        vinService.deleteothersinShop2byId(id);
+//                        break;
+//                    case "shop3":
+//                        vinService.deleteothersinShop3byId(id);
+//                        break;
+//                    case "shop4":
+//                        vinService.deleteothersinShop4byId(id);
+//                        break;
+//                    case "shop5":
+//                        vinService.deleteothersinShop5byId(id);
+//                        break;
+//                    case "shop6":
+//                        vinService.deleteothersinShop6byId(id);
+//                        break;
+//                    case "shop7":
+//                        vinService.deleteothersinShop7byId(id);
+//                        break;
+//                    case "shop8":
+//                        vinService.deleteothersinShop8byId(id);
+//                        break;
+//                    case "shop9":
+//                        vinService.deleteothersinShop9byId(id);
+//                        break;
+//                    case "shop10":
+//                        vinService.deleteothersinShop10byId(id);
+//                        break;
+//                    case "shop11":
+//                        vinService.deleteothersinShop11byId(id);
+//                        break;
+//                    case "shop12":
+//                        vinService.deleteothersinShop12byId(id);
+//                        break;
+//                }
+//
+//                break;
+//        }
+//        cacheService.deleteRedisLock(key);
+//
+//    }
 
     //刪除
 
@@ -935,8 +935,8 @@ public class VinMainController extends HttpServlet{
             });
             boolean ifSetLock = cacheService.setRedisLock(key, vinItem);
             if(ifSetLock){
-                deleteVinItem(location,category,id);
-                cacheService.deleteCache(id, location, category);
+                vinService.deleteVinItem(location,category,id);
+                cacheService.deletePartialCache(id, location, category);
             }
             cacheService.waitRedisLock(key);
             return "redirect:/warehouse/allItem?location="+location;//重定向到我們的@RequestMapping("/allBook")請求
