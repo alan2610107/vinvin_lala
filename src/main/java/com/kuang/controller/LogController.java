@@ -164,55 +164,6 @@ public class LogController extends HttpServlet {
         User user = (User) session.getAttribute("user");
         int userLevel = user.getLevel();
         if(vinService.ifAccess(user,location)){
-//            List<VinLog> vinLogList = null;
-//            switch (location){
-//                case "main0":
-//                    vinLogList = vinService.queryAllLoginmain0byItemid(id);
-//                    break;
-//                case "main1":
-//                    vinLogList = vinService.queryAllLoginmain1byItemid(id);
-//                    break;
-//                case "main2":
-//                    vinLogList = vinService.queryAllLoginmain2byItemid(id);
-//                    break;
-//                case "shop1":
-//                    vinLogList = vinService.queryAllLoginshop1byItemid(id);
-//                    break;
-//                case "shop2":
-//                    vinLogList = vinService.queryAllLoginshop2byItemid(id);
-//                    break;
-//                case "shop3":
-//                    vinLogList = vinService.queryAllLoginshop3byItemid(id);
-//                    break;
-//                case "shop4":
-//                    vinLogList = vinService.queryAllLoginshop4byItemid(id);
-//                    break;
-//                case "shop5":
-//                    vinLogList = vinService.queryAllLoginshop5byItemid(id);
-//                    break;
-//                case "shop6":
-//                    vinLogList = vinService.queryAllLoginshop6byItemid(id);
-//                    break;
-//                case "shop7":
-//                    vinLogList = vinService.queryAllLoginshop7byItemid(id);
-//                    break;
-//                case "shop8":
-//                    vinLogList = vinService.queryAllLoginshop8byItemid(id);
-//                    break;
-//                case "shop9":
-//                    vinLogList = vinService.queryAllLoginshop9byItemid(id);
-//                    break;
-//                case "shop10":
-//                    vinLogList = vinService.queryAllLoginshop10byItemid(id);
-//                    break;
-//                case "shop11":
-//                    vinLogList = vinService.queryAllLoginshop11byItemid(id);
-//                    break;
-//                case "shop12":
-//                    vinLogList = vinService.queryAllLoginshop12byItemid(id);
-//                    break;
-//
-//            }
             List<VinLog> vinLogList = logService.queryVinLog(id,location);
             VinItem vinItem = vinService.getVinItem(location, category, id);
             HashMap<String, String> locationHashMap = vinService.getWarehouseMap();

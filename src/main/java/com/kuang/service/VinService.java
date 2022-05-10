@@ -1843,6 +1843,88 @@ public interface VinService {
 
 
 
+    //shop13
+    int addIteminShop13(VinItem items);
+    int addFoodinShop13(VinItem items);
+    int addcommercialIteminShop13(VinItem items);
+    int addothersinShop13(VinItem items);
+    int addSmallIteminShop13(VinItem items);
+    int deleteIteminShop13byId(String id);
+    int deleteSmallIteminShop13byId(String id);
+    int deleteFoodinShop13byId(String id);
+    int deletecommercialIteminShop13byId(String id);
+    int deleteothersinShop13byId(String id);
+    int updateIteminShop13(VinItem items);
+    int updateSmallIteminShop13(VinItem items);
+    int updateFoodinShop13(VinItem items);
+    int updatecommercialIteminShop13(VinItem items);
+    int updateothersinShop13(VinItem items);
+    int sendIteminShop13(VinItem items);
+    int sendSmallIteminShop13(VinItem items);
+    int sendFoodinShop13(VinItem items);
+    int sendcommercialIteminShop13(VinItem items);
+    int sendothersinShop13(VinItem items);
+    VinItem queryIteminShop13byId(String id);
+    VinItem querySmallIteminShop13byId(String id);
+    VinItem queryFoodinShop13byId(String id);
+    VinItem querycommercialIteminShop13byId(String id);
+    VinItem queryothersinShop13byId(String id);
+    int queryItemNuminShop13byId(String id);
+    int querySmallItemNuminShop13byId(String id);
+    int queryFoodNuminShop13byId(String id);
+    int querycommercialItemNuminShop13byId(String id);
+    int queryothersNuminShop13byId(String id);
+    List<VinItem> queryAllIteminShop13();
+    List<VinItem> queryAllSmallIteminShop13();
+    List<VinItem> queryAllFoodinShop13();
+    List<VinItem> queryAllcommercialIteminShop13();
+    List<VinItem> queryAllothersinShop13();
+    //    VinItem queryIteminShop13ByName(String itemName);
+//    VinItem querySmallIteminShop13ByName(String itemName);
+//    VinItem queryFoodinShop13ByName(String itemName);
+//    VinItem querycommercialIteminShop13ByName(String itemName);
+//    VinItem queryothersinShop13ByName(String itemName);
+//    VinItem queryItemNuminShop13byID(String id);
+//    VinItem querySmallItemNuminShop13byID(String id);
+//    VinItem queryFoodNuminShop13byID(String id);
+//    VinItem querycommercialItemNuminShop13byID(String id);
+//    VinItem queryothersNuminShop13byID(String id);
+    int ifItemExistinShop13(String id);
+    int ifSmallItemExistinShop13(String id);
+    int ifFoodExistinShop13(String id);
+    int ifcommercialItemExistinShop13(String id);
+    int ifothersExistinShop13(String id);
+    int updateItembySendfromShop13(VinItem items);
+    int updateSmallItembySendfromShop13(VinItem items);
+    int updateFoodbySendfromShop13(VinItem items);
+    int updatecommercialItembySendfromShop13(VinItem items);
+    int updateothersbySendfromShop13(VinItem items);
+    int addloginShop13(VinLog log);
+    List<VinLog> queryCategoryLoginShop13(String category);
+    List<VinLog> queryCategoryandIfCompleteLoginShop13(String category, boolean ifComplete);
+    List<VinLog> queryCategoryReceiveinShop13(String category);
+    int countCategoryReceiveinShop13(String category);
+    List<VinLog> queryCategoryConfirminShop13(String category, String action, String action2);
+    int countCategoryConfirminShop13(String category, String action, String action2);
+    VinLog queryLoginshop13byid(String logid);
+    int updateLoginshop13byid(VinLog vinLog);
+    int deleteLoginShop13byLogid(String logid);
+    int addCheckinShop13(VinCheck vinCheck);
+    List<VinCheck> queryCheckinShop13(String category);
+    List<VinCheck> queryCheckwithTimeinShop13(String category, String time);
+    List<VinCheck> queryCheckwithTimeandIdinShop13(String category, String time, String id);
+    int updateCheckinShop13byid(VinCheck vinCheck);
+    List<VinCheck> queryCheckinShop13byID(String id);
+    List<VinItemSimple> querySumitemCountbytimeinShop13(String time);
+    int addSumitemCountinShop13(VinAlert vinAlert);
+    List<VinAlert> queryifAlertinShop13(String time);
+    VinLog queryLoginshop13byItemid(String id);
+    List<VinLog> queryAllLoginshop13byItemid(String id);
+    int updateItemNameAllLogbyidinShop13(VinLog vinLog);
+
+
+
+
 
 
 
@@ -2033,6 +2115,10 @@ public interface VinService {
     int queryVinItemCount(String location, String category, String id);
 
     Map<String,String> getCategoryMap();
+
+    List<VinAlert> getVinAlert(String location, String date);
+
+    void updateItemInWarehouse(String location, String category, VinItem vinItem);
 
 
 

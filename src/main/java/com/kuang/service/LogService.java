@@ -77,6 +77,9 @@ public class LogService {
             case "shop12":
                 vinLog = vinService.queryLoginshop12byid(logid);
                 break;
+            case "shop13":
+                vinLog = vinService.queryLoginshop13byid(logid);
+                break;
         }
 
         return vinLog;
@@ -130,6 +133,9 @@ public class LogService {
                 break;
             case "shop12":
                 vinService.updateLoginshop12byid(vinLog);
+                break;
+            case "shop13":
+                vinService.updateLoginshop13byid(vinLog);
                 break;
         }
     }
@@ -349,6 +355,9 @@ public class LogService {
             case "shop12":
                 vinService.addloginShop12(newVinLog);
                 break;
+            case "shop13":
+                vinService.addloginShop13(newVinLog);
+                break;
         }
     }
 
@@ -406,8 +415,68 @@ public class LogService {
             case "shop12":
                 vinLogList = vinService.queryAllLoginshop12byItemid(id);
                 break;
-
+            case "shop13":
+                vinLogList = vinService.queryAllLoginshop13byItemid(id);
+                break;
         }
         return vinLogList;
+    }
+
+    /**
+     *
+     * @param location
+     * @param logid
+     */
+    public void deleteLog(String location, String logid) {
+        switch (location) {
+            case "main0":
+                vinService.deleteLoginMain0byLogid(logid);
+                break;
+            case "main1":
+                vinService.deleteLoginMain1byLogid(logid);
+                break;
+            case "main2":
+                vinService.deleteLoginMain2byLogid(logid);
+                break;
+            case "shop1":
+                vinService.deleteLoginShop1byLogid(logid);
+                break;
+            case "shop2":
+                vinService.deleteLoginShop2byLogid(logid);
+                break;
+            case "shop3":
+                vinService.deleteLoginShop3byLogid(logid);
+                break;
+            case "shop4":
+                vinService.deleteLoginShop4byLogid(logid);
+                break;
+            case "shop5":
+                vinService.deleteLoginShop5byLogid(logid);
+                break;
+            case "shop6":
+                vinService.deleteLoginShop6byLogid(logid);
+                break;
+            case "shop7":
+                vinService.deleteLoginShop7byLogid(logid);
+                break;
+            case "shop8":
+                vinService.deleteLoginShop8byLogid(logid);
+                break;
+            case "shop9":
+                vinService.deleteLoginShop9byLogid(logid);
+                break;
+            case "shop10":
+                vinService.deleteLoginShop10byLogid(logid);
+                break;
+            case "shop11":
+                vinService.deleteLoginShop11byLogid(logid);
+                break;
+            case "shop12":
+                vinService.deleteLoginShop12byLogid(logid);
+                break;
+            case "shop13":
+                vinService.deleteLoginShop13byLogid(logid);
+                break;
+        }
     }
 }

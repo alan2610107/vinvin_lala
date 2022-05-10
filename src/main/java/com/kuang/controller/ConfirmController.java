@@ -150,6 +150,13 @@ public class ConfirmController {
                 confirmListCommercial = vinService.queryCategoryConfirminShop12("commercialthing", "newinput", "input");
                 confirmListOther = vinService.queryCategoryConfirminShop12("other", "newinput", "input");
                 break;
+            case "shop13":
+                confirmListTool = vinService.queryCategoryConfirminShop13("tool", "newinput", "input");
+                confirmListFood = vinService.queryCategoryConfirminShop13("food", "newinput", "input");
+                confirmListSmallTool = vinService.queryCategoryConfirminShop13("smalltool", "newinput", "input");
+                confirmListCommercial = vinService.queryCategoryConfirminShop13("commercialthing", "newinput", "input");
+                confirmListOther = vinService.queryCategoryConfirminShop13("other", "newinput", "input");
+                break;
         }
         confirmMap.put("confirmListTool", confirmListTool);
         confirmMap.put("confirmListSmallTool", confirmListSmallTool);

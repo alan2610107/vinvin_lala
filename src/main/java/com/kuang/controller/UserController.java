@@ -72,6 +72,8 @@ public class UserController {
                     return "redirect:/warehouse/allItem?location=shop11";
                 }else if(member.getLevel() == 12){
                     return "redirect:/warehouse/allItem?location=shop12";
+                }else if(member.getLevel() == 13){
+                    return "redirect:/warehouse/allItem?location=shop13";
                 }else if(member.getLevel() == 500){
                     return "redirect:/warehouse/allItem?location=shop10";
                 }else {

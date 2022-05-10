@@ -5668,6 +5668,320 @@ public class VinServiceImpl implements VinService{
     }
 
 
+    //shop13
+    @Override
+    public int addIteminShop13(VinItem items) {
+        return vinMapper.addIteminShop13(items);
+    }
+    @Override
+    public int addFoodinShop13(VinItem items) {
+        return vinMapper.addFoodinShop13(items);
+    }
+    @Override
+    public int addcommercialIteminShop13(VinItem items) {
+        return vinMapper.addcommercialIteminShop13(items);
+    }
+    @Override
+    public int addothersinShop13(VinItem items) {
+        return vinMapper.addothersinShop13(items);
+    }
+    @Override
+    public int addSmallIteminShop13(VinItem items) {
+        return vinMapper.addSmallIteminShop13(items);
+    }
+    @Override
+    public int deleteIteminShop13byId(String id) {
+        return vinMapper.deleteIteminShop13byId(id);
+    }
+    @Override
+    public int deleteSmallIteminShop13byId(String id) {
+        return vinMapper.deleteSmallIteminShop13byId(id);
+    }
+    @Override
+    public int deleteFoodinShop13byId(String id) {
+        return vinMapper.deleteFoodinShop13byId(id);
+    }
+    @Override
+    public int deletecommercialIteminShop13byId(String id) {
+        return vinMapper.deletecommercialIteminShop13byId(id);
+    }
+    @Override
+    public int deleteothersinShop13byId(String id) {
+        return vinMapper.deleteothersinShop13byId(id);
+    }
+    @Override
+    public int updateIteminShop13(VinItem items) {
+        return vinMapper.updateIteminShop13(items);
+    }
+    @Override
+    public int updateSmallIteminShop13(VinItem items) {
+        return vinMapper.updateSmallIteminShop13(items);
+    }
+    @Override
+    public int updateFoodinShop13(VinItem items) {
+        return vinMapper.updateFoodinShop13(items);
+    }
+    @Override
+    public int updatecommercialIteminShop13(VinItem items) {
+        return vinMapper.updatecommercialIteminShop13(items);
+    }
+    @Override
+    public int updateothersinShop13(VinItem items) {
+        return vinMapper.updateothersinShop13(items);
+    }
+    @Override
+    public int sendIteminShop13(VinItem items) {
+        return vinMapper.sendIteminShop13(items);
+    }
+    @Override
+    public int sendSmallIteminShop13(VinItem items) {
+        return vinMapper.sendSmallIteminShop13(items);
+    }
+    @Override
+    public int sendFoodinShop13(VinItem items) {
+        return vinMapper.sendFoodinShop13(items);
+    }
+    @Override
+    public int sendcommercialIteminShop13(VinItem items) {
+        return vinMapper.sendcommercialIteminShop13(items);
+    }
+    @Override
+    public int sendothersinShop13(VinItem items) {
+        return vinMapper.sendothersinShop13(items);
+    }
+    @Override
+    public VinItem queryIteminShop13byId(String id) {
+        return vinMapper.queryIteminShop13byId(id);
+    }
+    @Override
+    public VinItem querySmallIteminShop13byId(String id) {
+        return vinMapper.querySmallIteminShop13byId(id);
+    }
+    @Override
+    public VinItem queryFoodinShop13byId(String id) {
+        return vinMapper.queryFoodinShop13byId(id);
+    }
+    @Override
+    public VinItem querycommercialIteminShop13byId(String id) {
+        return vinMapper.querycommercialIteminShop13byId(id);
+    }
+    @Override
+    public VinItem queryothersinShop13byId(String id) {
+        return vinMapper.queryothersinShop13byId(id);
+    }
+    @Override
+    public int queryItemNuminShop13byId(String id) {
+        return vinMapper.queryItemNuminShop13byId(id);
+    }
+    @Override
+    public int querySmallItemNuminShop13byId(String id) {
+        return vinMapper.querySmallItemNuminShop13byId(id);
+    }
+    @Override
+    public int queryFoodNuminShop13byId(String id) {
+        return vinMapper.queryFoodNuminShop13byId(id);
+    }
+    @Override
+    public int querycommercialItemNuminShop13byId(String id) {
+        return vinMapper.querycommercialItemNuminShop13byId(id);
+    }
+    @Override
+    public int queryothersNuminShop13byId(String id) {
+        return vinMapper.queryothersNuminShop13byId(id);
+    }
+    @Override
+    public List<VinItem> queryAllIteminShop13() {
+        return vinMapper.queryAllIteminShop13();
+    }
+    @Override
+    public List<VinItem> queryAllSmallIteminShop13() {
+        return vinMapper.queryAllSmallIteminShop13();
+    }
+    @Override
+    public List<VinItem> queryAllFoodinShop13() {
+        return vinMapper.queryAllFoodinShop13();
+    }
+    @Override
+    public List<VinItem> queryAllcommercialIteminShop13() {
+        return vinMapper.queryAllcommercialIteminShop13();
+    }
+    @Override
+    public List<VinItem> queryAllothersinShop13() {
+        return vinMapper.queryAllothersinShop13();
+    }
+    //    @Override
+//    public VinItem queryIteminShop13ByName(String itemName) {
+//        return vinMapper.queryIteminShop13ByName(itemName);
+//    }
+//    @Override
+//    public VinItem querySmallIteminShop13ByName(String itemName) {
+//        return vinMapper.querySmallIteminShop13ByName(itemName);
+//    }
+//    @Override
+//    public VinItem queryFoodinShop13ByName(String itemName) {
+//        return vinMapper.queryFoodinShop13ByName(itemName);
+//    }
+//    @Override
+//    public VinItem querycommercialIteminShop13ByName(String itemName) {
+//        return vinMapper.querycommercialIteminShop13ByName(itemName);
+//    }
+//    @Override
+//    public VinItem queryothersinShop13ByName(String itemName) {
+//        return vinMapper.queryothersinShop13ByName(itemName);
+//    }
+//    @Override
+//    public VinItem queryItemNuminShop13byID(String id) {
+//        return vinMapper.queryItemNuminShop13byID(id);
+//    }
+//    @Override
+//    public VinItem querySmallItemNuminShop13byID(String id) {
+//        return vinMapper.querySmallItemNuminShop13byID(id);
+//    }
+//    @Override
+//    public VinItem queryFoodNuminShop13byID(String id) {
+//        return vinMapper.queryFoodNuminShop13byID(id);
+//    }
+//    @Override
+//    public VinItem querycommercialItemNuminShop13byID(String id) {
+//        return vinMapper.querycommercialItemNuminShop13byID(id);
+//    }
+//    @Override
+//    public VinItem queryothersNuminShop13byID(String id) {
+//        return vinMapper.queryothersNuminShop13byID(id);
+//    }
+    @Override
+    public int ifItemExistinShop13(String id) {
+        return vinMapper.ifItemExistinShop13(id);
+    }
+    @Override
+    public int ifSmallItemExistinShop13(String id) {
+        return vinMapper.ifSmallItemExistinShop13(id);
+    }
+    @Override
+    public int ifFoodExistinShop13(String id) {
+        return vinMapper.ifFoodExistinShop13(id);
+    }
+    @Override
+    public int ifcommercialItemExistinShop13(String id) {
+        return vinMapper.ifcommercialItemExistinShop13(id);
+    }
+    @Override
+    public int ifothersExistinShop13(String id) {
+        return vinMapper.ifothersExistinShop13(id);
+    }
+    @Override
+    public int updateItembySendfromShop13(VinItem items) {
+        return vinMapper.updateItembySendfromShop13(items);
+    }
+    @Override
+    public int updateSmallItembySendfromShop13(VinItem items) {
+        return vinMapper.updateSmallItembySendfromShop13(items);
+    }
+    @Override
+    public int updateFoodbySendfromShop13(VinItem items) {
+        return vinMapper.updateFoodbySendfromShop13(items);
+    }
+    @Override
+    public int updatecommercialItembySendfromShop13(VinItem items) {
+        return vinMapper.updatecommercialItembySendfromShop13(items);
+    }
+    @Override
+    public int updateothersbySendfromShop13(VinItem items) {
+        return vinMapper.updateothersbySendfromShop13(items);
+    }
+    @Override
+    public int addloginShop13(VinLog log) {
+        return vinMapper.addloginShop13(log);
+    }
+    @Override
+    public List<VinLog> queryCategoryLoginShop13(String category) {
+        return vinMapper.queryCategoryLoginShop13(category);
+    }
+    @Override
+    public List<VinLog> queryCategoryandIfCompleteLoginShop13(String category, boolean ifComplete) {
+        return vinMapper.queryCategoryandIfCompleteLoginShop13(category,ifComplete);
+    }
+    @Override
+    public List<VinLog> queryCategoryReceiveinShop13(String category) {
+        return vinMapper.queryCategoryReceiveinShop13(category);
+    }
+    @Override
+    public int countCategoryReceiveinShop13(String category) {
+        return vinMapper.countCategoryReceiveinShop13(category);
+    }
+    @Override
+    public List<VinLog> queryCategoryConfirminShop13(String category, String action, String action2) {
+        return vinMapper.queryCategoryConfirminShop13(category,action,action2);
+    }
+    @Override
+    public int countCategoryConfirminShop13(String category, String action, String action2) {
+        return vinMapper.countCategoryConfirminShop13(category,action,action2);
+    }
+    @Override
+    public VinLog queryLoginshop13byid(String logid) {
+        return vinMapper.queryLoginshop13byid(logid);
+    }
+    @Override
+    public int updateLoginshop13byid(VinLog vinLog) {
+        return vinMapper.updateLoginshop13byid(vinLog);
+    }
+    @Override
+    public int deleteLoginShop13byLogid(String logid) {
+        return vinMapper.deleteLoginShop13byLogid(logid);
+    }
+    @Override
+    public int addCheckinShop13(VinCheck vinCheck) {
+        return vinMapper.addCheckinShop13(vinCheck);
+    }
+    @Override
+    public List<VinCheck> queryCheckinShop13(String category) {
+        return vinMapper.queryCheckinShop13(category);
+    }
+    @Override
+    public List<VinCheck> queryCheckwithTimeinShop13(String category, String time) {
+        return vinMapper.queryCheckwithTimeinShop13(category,time);
+    }
+    @Override
+    public List<VinCheck> queryCheckwithTimeandIdinShop13(String category, String time, String id) {
+        return vinMapper.queryCheckwithTimeandIdinShop13(category,time,id);
+    }
+    @Override
+    public int updateCheckinShop13byid(VinCheck vinCheck) {
+        return vinMapper.updateCheckinShop13byid(vinCheck);
+    }
+    @Override
+    public List<VinCheck> queryCheckinShop13byID(String id) {
+        return vinMapper.queryCheckinShop13byID(id);
+    }
+    @Override
+    public List<VinItemSimple> querySumitemCountbytimeinShop13(String time) {
+        return vinMapper.querySumitemCountbytimeinShop13(time);
+    }
+
+    @Override
+    @CacheEvict(value = { "cutelittlepiggyCache" },key="'ifAlertinShop13List'")
+    public int addSumitemCountinShop13(VinAlert vinAlert) {
+        return vinMapper.addSumitemCountinShop13(vinAlert);
+    }
+
+    @Override
+    public List<VinAlert> queryifAlertinShop13(String time) {
+        return vinMapper.queryifAlertinShop13(time);
+    }
+    @Override
+    public VinLog queryLoginshop13byItemid(String id) {
+        return vinMapper.queryLoginshop13byItemid(id);
+    }
+    @Override
+    public List<VinLog> queryAllLoginshop13byItemid(String id) {
+        return vinMapper.queryAllLoginshop13byItemid(id);
+    }
+    @Override
+    public int updateItemNameAllLogbyidinShop13(VinLog vinLog) {
+        return vinMapper.updateItemNameAllLogbyidinShop13(vinLog);
+    }
+
+
     @Override
     public int addDumpItem(Dumplist dumplist) {
         return vinMapper.addDumpItem(dumplist);
@@ -6040,9 +6354,10 @@ public class VinServiceImpl implements VinService{
                 user.getLevel() == 9 && location.equals("shop9") ||
                 user.getLevel() == 10 && location.equals("shop10") ||
                 user.getLevel() == 11 && location.equals("shop11") ||
-                user.getLevel() == 12 && location.equals("shop12");
+                user.getLevel() == 12 && location.equals("shop12") ||
+                user.getLevel() == 13 && location.equals("shop13");
         boolean condition2 = user.getLevel() == 500 && (location.equals("main2") || location.equals("shop1") || location.equals("shop2") || location.equals("shop3") || location.equals("shop8") || location.equals("shop9") || location.equals("shop10") || location.equals("shop11"))
-                || user.getLevel() == 501 && (location.equals("main1") || location.equals("shop4") || location.equals("shop5") || location.equals("shop6") || location.equals("shop7") || location.equals("shop3") || location.equals("shop12"));
+                || user.getLevel() == 501 && (location.equals("main1") || location.equals("shop4") || location.equals("shop5") || location.equals("shop6") || location.equals("shop7") || location.equals("shop3") || location.equals("shop12") || location.equals("shop13"));
         return condition1 || condition2;
     }
 
@@ -6147,6 +6462,9 @@ public class VinServiceImpl implements VinService{
                     case "shop12":
                         ifexist = ifItemExistinShop12(id);
                         break;
+                    case "shop13":
+                        ifexist = ifItemExistinShop13(id);
+                        break;
                 }
                 break;
             case "smalltool":
@@ -6195,6 +6513,9 @@ public class VinServiceImpl implements VinService{
                         break;
                     case "shop12":
                         ifexist = ifSmallItemExistinShop12(id);
+                        break;
+                    case "shop13":
+                        ifexist = ifSmallItemExistinShop13(id);
                         break;
                 }
                 break;
@@ -6245,6 +6566,9 @@ public class VinServiceImpl implements VinService{
                     case "shop12":
                         ifexist = ifFoodExistinShop12(id);
                         break;
+                    case "shop13":
+                        ifexist = ifFoodExistinShop13(id);
+                        break;
                 }
                 break;
             case "commercialthing":
@@ -6294,6 +6618,9 @@ public class VinServiceImpl implements VinService{
                     case "shop12":
                         ifexist = ifcommercialItemExistinShop12(id);
                         break;
+                    case "shop13":
+                        ifexist = ifcommercialItemExistinShop13(id);
+                        break;
                 }
                 break;
             case "other":
@@ -6342,6 +6669,9 @@ public class VinServiceImpl implements VinService{
                         break;
                     case "shop12":
                         ifexist = ifothersExistinShop12(id);
+                        break;
+                    case "shop13":
+                        ifexist = ifothersExistinShop13(id);
                         break;
                 }
                 break;
@@ -6402,6 +6732,9 @@ public class VinServiceImpl implements VinService{
                     case "shop12":
                         deleteIteminShop12byId(itemID);
                         break;
+                    case "shop13":
+                        deleteIteminShop13byId(itemID);
+                        break;
                 }
                 break;
             case "smalltool":
@@ -6450,6 +6783,9 @@ public class VinServiceImpl implements VinService{
                         break;
                     case "shop12":
                         deleteSmallIteminShop12byId(itemID);
+                        break;
+                    case "shop13":
+                        deleteSmallIteminShop13byId(itemID);
                         break;
 
                 }
@@ -6500,6 +6836,9 @@ public class VinServiceImpl implements VinService{
                         break;
                     case "shop12":
                         deleteFoodinShop12byId(itemID);
+                        break;
+                    case "shop13":
+                        deleteFoodinShop13byId(itemID);
                         break;
 
                 }
@@ -6552,6 +6891,9 @@ public class VinServiceImpl implements VinService{
                     case "shop12":
                         deletecommercialIteminShop12byId(itemID);
                         break;
+                    case "shop13":
+                        deletecommercialIteminShop13byId(itemID);
+                        break;
 
                 }
                 break;
@@ -6601,6 +6943,9 @@ public class VinServiceImpl implements VinService{
                         break;
                     case "shop12":
                         deleteothersinShop12byId(itemID);
+                        break;
+                    case "shop13":
+                        deleteothersinShop13byId(itemID);
                         break;
                 }
                 break;
@@ -6666,6 +7011,9 @@ public class VinServiceImpl implements VinService{
                     case "shop12":
                         addIteminShop12(vinItem);
                         break;
+                    case "shop13":
+                        addIteminShop13(vinItem);
+                        break;
                 }
                 break;
             case "smalltool":
@@ -6714,6 +7062,9 @@ public class VinServiceImpl implements VinService{
                         break;
                     case "shop12":
                         addSmallIteminShop12(vinItem);
+                        break;
+                    case "shop13":
+                        addSmallIteminShop13(vinItem);
                         break;
 
                 }
@@ -6764,6 +7115,9 @@ public class VinServiceImpl implements VinService{
                         break;
                     case "shop12":
                         addFoodinShop12(vinItem);
+                        break;
+                    case "shop13":
+                        addFoodinShop13(vinItem);
                         break;
 
                 }
@@ -6816,6 +7170,9 @@ public class VinServiceImpl implements VinService{
                     case "shop12":
                         addcommercialIteminShop12(vinItem);
                         break;
+                    case "shop13":
+                        addcommercialIteminShop13(vinItem);
+                        break;
 
                 }
                 break;
@@ -6865,6 +7222,9 @@ public class VinServiceImpl implements VinService{
                         break;
                     case "shop12":
                         addothersinShop12(vinItem);
+                        break;
+                    case "shop13":
+                        addothersinShop13(vinItem);
                         break;
                 }
                 break;
@@ -6920,6 +7280,9 @@ public class VinServiceImpl implements VinService{
             case "shop12":
                 count = countCategoryConfirminShop12(category,action1,action2);
                 break;
+            case "shop13":
+                count = countCategoryConfirminShop13(category,action1,action2);
+                break;
 
         }
         return count;
@@ -6974,6 +7337,9 @@ public class VinServiceImpl implements VinService{
                 break;
             case "shop12":
                 count = countCategoryReceiveinShop12(category);
+                break;
+            case "shop13":
+                count = countCategoryReceiveinShop13(category);
                 break;
 
         }
@@ -7215,6 +7581,9 @@ public class VinServiceImpl implements VinService{
                     case "shop12":
                         vinItem = vinMapper.queryIteminShop12byId(id);
                         break;
+                    case "shop13":
+                        vinItem = vinMapper.queryIteminShop13byId(id);
+                        break;
 
                 }
 
@@ -7265,6 +7634,9 @@ public class VinServiceImpl implements VinService{
                         break;
                     case "shop12":
                         vinItem = vinMapper.querySmallIteminShop12byId(id);
+                        break;
+                    case "shop13":
+                        vinItem = vinMapper.querySmallIteminShop13byId(id);
                         break;
 
                 }
@@ -7317,6 +7689,9 @@ public class VinServiceImpl implements VinService{
                     case "shop12":
                         vinItem = vinMapper.queryFoodinShop12byId(id);
                         break;
+                    case "shop13":
+                        vinItem = vinMapper.queryFoodinShop13byId(id);
+                        break;
                 }
 
                 break;
@@ -7366,6 +7741,9 @@ public class VinServiceImpl implements VinService{
                         break;
                     case "shop12":
                         vinItem = vinMapper.querycommercialIteminShop12byId(id);
+                        break;
+                    case "shop13":
+                        vinItem = vinMapper.querycommercialIteminShop13byId(id);
                         break;
 
                 }
@@ -7417,6 +7795,9 @@ public class VinServiceImpl implements VinService{
                         break;
                     case "shop12":
                         vinItem = vinMapper.queryothersinShop12byId(id);
+                        break;
+                    case "shop13":
+                        vinItem = vinMapper.queryothersinShop13byId(id);
                         break;
                 }
 
@@ -7749,6 +8130,25 @@ public class VinServiceImpl implements VinService{
                         break;
                 }
                 break;
+            case "shop13":
+                switch (category) {
+                    case "tool":
+                        vinItemList = vinMapper.queryAllIteminShop13();
+                        break;
+                    case "smalltool":
+                        vinItemList = vinMapper.queryAllSmallIteminShop13();
+                        break;
+                    case "food":
+                        vinItemList = vinMapper.queryAllFoodinShop13();
+                        break;
+                    case "commercialthing":
+                        vinItemList = vinMapper.queryAllcommercialIteminShop13();
+                        break;
+                    case "other":
+                        vinItemList = vinMapper.queryAllothersinShop13();
+                        break;
+                }
+                break;
         }
 
         return vinItemList;
@@ -7802,6 +8202,9 @@ public class VinServiceImpl implements VinService{
                 break;
             case "shop12":
                 vinAlertList = queryifAlertinShop12(date);
+                break;
+            case "shop13":
+                vinAlertList = queryifAlertinShop13(date);
                 break;
         }
         return vinAlertList;
@@ -8147,6 +8550,26 @@ public class VinServiceImpl implements VinService{
                         break;
                 }
                 break;
+            case "shop13":
+                switch (category) {
+                    case "tool":
+                        itemCount = queryItemNuminShop13byId(id);
+                        break;
+                    case "smalltool":
+                        itemCount = querySmallItemNuminShop13byId(id);
+                        break;
+                    case "food":
+                        itemCount = queryFoodNuminShop13byId(id);
+                        break;
+                    case "commercial":
+                    case "commercialthing":
+                        itemCount = querycommercialItemNuminShop13byId(id);
+                        break;
+                    case "other":
+                        itemCount = queryothersNuminShop13byId(id);
+                        break;
+                }
+                break;
         }
         return itemCount;
     }
@@ -8162,6 +8585,329 @@ public class VinServiceImpl implements VinService{
         categoryMap.put("other","其他");
 
         return categoryMap;
+    }
+
+    @Override
+    public List<VinAlert> getVinAlert(String location, String date){
+        List<VinAlert> vinAlerts = null;
+        switch (location){
+            case "main0":
+                vinAlerts = queryifAlertinMain0(date);
+                break;
+            case "main1":
+                vinAlerts = queryifAlertinMain1(date);
+                break;
+            case "main2":
+                vinAlerts = queryifAlertinMain2(date);
+                break;
+            case "shop1":
+                vinAlerts = queryifAlertinShop1(date);
+                break;
+            case "shop2":
+                vinAlerts = queryifAlertinShop2(date);
+                break;
+            case "shop3":
+                vinAlerts = queryifAlertinShop3(date);
+                break;
+            case "shop4":
+                vinAlerts = queryifAlertinShop4(date);
+                break;
+            case "shop5":
+                vinAlerts = queryifAlertinShop5(date);
+                break;
+            case "shop6":
+                vinAlerts = queryifAlertinShop6(date);
+                break;
+            case "shop7":
+                vinAlerts = queryifAlertinShop7(date);
+                break;
+            case "shop8":
+                vinAlerts = queryifAlertinShop8(date);
+                break;
+            case "shop9":
+                vinAlerts = queryifAlertinShop9(date);
+                break;
+            case "shop10":
+                vinAlerts = queryifAlertinShop10(date);
+                break;
+            case "shop11":
+                vinAlerts = queryifAlertinShop11(date);
+                break;
+            case "shop12":
+                vinAlerts = queryifAlertinShop12(date);
+                break;
+            case "shop13":
+                vinAlerts = queryifAlertinShop13(date);
+                break;
+        }
+
+        return vinAlerts;
+    }
+
+    @Override
+    public void updateItemInWarehouse(String location, String category, VinItem vinItem) {
+        switch (category) {
+            case "tool":
+                switch (location) {
+                    case "main0":
+                        updateIteminMain0(vinItem);
+                        break;
+                    case "main1":
+                        updateIteminMain1(vinItem);
+                        break;
+                    case "main2":
+                        updateIteminMain2(vinItem);
+                        break;
+                    case "shop1":
+                        updateIteminShop1(vinItem);
+                        break;
+                    case "shop2":
+                        updateIteminShop2(vinItem);
+                        break;
+                    case "shop3":
+                        updateIteminShop3(vinItem);
+                        break;
+                    case "shop4":
+                        updateIteminShop4(vinItem);
+                        break;
+                    case "shop5":
+                        updateIteminShop5(vinItem);
+                        break;
+                    case "shop6":
+                        updateIteminShop6(vinItem);
+                        break;
+                    case "shop7":
+                        updateIteminShop7(vinItem);
+                        break;
+                    case "shop8":
+                        updateIteminShop8(vinItem);
+                        break;
+                    case "shop9":
+                        updateIteminShop9(vinItem);
+                        break;
+                    case "shop10":
+                        updateIteminShop10(vinItem);
+                        break;
+                    case "shop11":
+                        updateIteminShop11(vinItem);
+                        break;
+                    case "shop12":
+                        updateIteminShop12(vinItem);
+                        break;
+                    case "shop13":
+                        updateIteminShop13(vinItem);
+                        break;
+                }
+                break;
+            case "smalltool":
+                switch (location) {
+                    case "main0":
+                        updateSmallIteminMain0(vinItem);
+                        break;
+                    case "main1":
+                        updateSmallIteminMain1(vinItem);
+                        break;
+                    case "main2":
+                        updateSmallIteminMain2(vinItem);
+                        break;
+                    case "shop1":
+                        updateSmallIteminShop1(vinItem);
+                        break;
+                    case "shop2":
+                        updateSmallIteminShop2(vinItem);
+                        break;
+                    case "shop3":
+                        updateSmallIteminShop3(vinItem);
+                        break;
+                    case "shop4":
+                        updateSmallIteminShop4(vinItem);
+                        break;
+                    case "shop5":
+                        updateSmallIteminShop5(vinItem);
+                        break;
+                    case "shop6":
+                        updateSmallIteminShop6(vinItem);
+                        break;
+                    case "shop7":
+                        updateSmallIteminShop7(vinItem);
+                        break;
+                    case "shop8":
+                        updateSmallIteminShop8(vinItem);
+                        break;
+                    case "shop9":
+                        updateSmallIteminShop9(vinItem);
+                        break;
+                    case "shop10":
+                        updateSmallIteminShop10(vinItem);
+                        break;
+                    case "shop11":
+                        updateSmallIteminShop11(vinItem);
+                        break;
+                    case "shop12":
+                        updateSmallIteminShop12(vinItem);
+                        break;
+                    case "shop13":
+                        updateSmallIteminShop13(vinItem);
+                        break;
+                }
+                break;
+            case "food":
+                switch (location) {
+                    case "main0":
+                        updateFoodinMain0(vinItem);
+                        break;
+                    case "main1":
+                        updateFoodinMain1(vinItem);
+                        break;
+                    case "main2":
+                        updateFoodinMain2(vinItem);
+                        break;
+                    case "shop1":
+                        updateFoodinShop1(vinItem);
+                        break;
+                    case "shop2":
+                        updateFoodinShop2(vinItem);
+                        break;
+                    case "shop3":
+                        updateFoodinShop3(vinItem);
+                        break;
+                    case "shop4":
+                        updateFoodinShop4(vinItem);
+                        break;
+                    case "shop5":
+                        updateFoodinShop5(vinItem);
+                        break;
+                    case "shop6":
+                        updateFoodinShop6(vinItem);
+                        break;
+                    case "shop7":
+                        updateFoodinShop7(vinItem);
+                        break;
+                    case "shop8":
+                        updateFoodinShop8(vinItem);
+                        break;
+                    case "shop9":
+                        updateFoodinShop9(vinItem);
+                        break;
+                    case "shop10":
+                        updateFoodinShop10(vinItem);
+                        break;
+                    case "shop11":
+                        updateFoodinShop11(vinItem);
+                        break;
+                    case "shop12":
+                        updateFoodinShop12(vinItem);
+                        break;
+                    case "shop13":
+                        updateFoodinShop13(vinItem);
+                        break;
+                }
+                break;
+            case "commercial":
+                switch (location) {
+                    case "main0":
+                        updatecommercialIteminMain0(vinItem);
+                        break;
+                    case "main1":
+                        updatecommercialIteminMain1(vinItem);
+                        break;
+                    case "main2":
+                        updatecommercialIteminMain2(vinItem);
+                        break;
+                    case "shop1":
+                        updatecommercialIteminShop1(vinItem);
+                        break;
+                    case "shop2":
+                        updatecommercialIteminShop2(vinItem);
+                        break;
+                    case "shop3":
+                        updatecommercialIteminShop3(vinItem);
+                        break;
+                    case "shop4":
+                        updatecommercialIteminShop4(vinItem);
+                        break;
+                    case "shop5":
+                        updatecommercialIteminShop5(vinItem);
+                        break;
+                    case "shop6":
+                        updatecommercialIteminShop6(vinItem);
+                        break;
+                    case "shop7":
+                        updatecommercialIteminShop7(vinItem);
+                        break;
+                    case "shop8":
+                        updatecommercialIteminShop8(vinItem);
+                        break;
+                    case "shop9":
+                        updatecommercialIteminShop9(vinItem);
+                        break;
+                    case "shop10":
+                        updatecommercialIteminShop10(vinItem);
+                        break;
+                    case "shop11":
+                        updatecommercialIteminShop11(vinItem);
+                        break;
+                    case "shop12":
+                        updatecommercialIteminShop12(vinItem);
+                        break;
+                    case "shop13":
+                        updatecommercialIteminShop13(vinItem);
+                        break;
+                }
+                break;
+            case "other":
+                switch (location) {
+                    case "main0":
+                        updateothersinMain0(vinItem);
+                        break;
+                    case "main1":
+                        updateothersinMain1(vinItem);
+                        break;
+                    case "main2":
+                        updateothersinMain2(vinItem);
+                        break;
+                    case "shop1":
+                        updateothersinShop1(vinItem);
+                        break;
+                    case "shop2":
+                        updateothersinShop2(vinItem);
+                        break;
+                    case "shop3":
+                        updateothersinShop3(vinItem);
+                        break;
+                    case "shop4":
+                        updateothersinShop4(vinItem);
+                        break;
+                    case "shop5":
+                        updateothersinShop5(vinItem);
+                        break;
+                    case "shop6":
+                        updateothersinShop6(vinItem);
+                        break;
+                    case "shop7":
+                        updateothersinShop7(vinItem);
+                        break;
+                    case "shop8":
+                        updateothersinShop8(vinItem);
+                        break;
+                    case "shop9":
+                        updateothersinShop9(vinItem);
+                        break;
+                    case "shop10":
+                        updateothersinShop10(vinItem);
+                        break;
+                    case "shop11":
+                        updateothersinShop11(vinItem);
+                        break;
+                    case "shop12":
+                        updateothersinShop12(vinItem);
+                        break;
+                    case "shop13":
+                        updateothersinShop13(vinItem);
+                        break;
+                }
+                break;
+        }
     }
 
 

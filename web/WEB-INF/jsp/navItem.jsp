@@ -75,6 +75,9 @@
                 <li><a class="dropdown-item"
                        href="${pageContext.request.contextPath}/warehouse/allItem?location=shop12">深圳豪方天际</a>
                 </li>
+                <li><a class="dropdown-item"
+                       href="${pageContext.request.contextPath}/warehouse/allItem?location=shop13">深圳光明富森</a>
+                </li>
             </ul>
         </li>
         <li class="nav-item dropdown">
@@ -126,6 +129,9 @@
                 </li>
                 <li><a class="dropdown-item"
                        href="${pageContext.request.contextPath}/log/warehouse?location=shop12">深圳豪方天际</a>
+                </li>
+                <li><a class="dropdown-item"
+                       href="${pageContext.request.contextPath}/log/warehouse?location=shop13">深圳光明富森</a>
                 </li>
             </ul>
         </li>
@@ -179,6 +185,9 @@
                 </li>
                 <li><a class="dropdown-item"
                        href="${pageContext.request.contextPath}/receive/list?location=shop12">深圳豪方天际</a>
+                </li>
+                <li><a class="dropdown-item"
+                       href="${pageContext.request.contextPath}/receive/list?location=shop13">深圳光明富森</a>
                 </li>
             </ul>
         </li>
@@ -268,6 +277,9 @@
                 <li><a class="dropdown-item"
                        href="${pageContext.request.contextPath}/dailycheck/toDailyCheck?location=shop12">深圳豪方天际</a>
                 </li>
+                <li><a class="dropdown-item"
+                       href="${pageContext.request.contextPath}/dailycheck/toDailyCheck?location=shop13">深圳光明富森</a>
+                </li>
             </ul>
         </li>
         <li class="nav-item dropdown">
@@ -319,6 +331,9 @@
                 </li>
                 <li><a class="dropdown-item"
                        href="${pageContext.request.contextPath}/confirm/listnotpass?location=shop12">深圳豪方天际</a>
+                </li>
+                <li><a class="dropdown-item"
+                       href="${pageContext.request.contextPath}/confirm/listnotpass?location=shop13">深圳光明富森</a>
                 </li>
 
             </ul>
@@ -451,6 +466,9 @@
                 <li><a class="dropdown-item"
                        href="${pageContext.request.contextPath}/dump/showdumplog?location=shop12&function=notpass">深圳豪方天际</a>
                 </li>
+                <li><a class="dropdown-item"
+                       href="${pageContext.request.contextPath}/dump/showdumplog?location=shop13&function=notpass">深圳光明富森</a>
+                </li>
             </ul>
         </li>
         <%--                <li class="nav-item dropdown">--%>
@@ -536,6 +554,9 @@
                 <li><a class="dropdown-item"
                        href="${pageContext.request.contextPath}/invoice/show?location=shop12">深圳豪方天际</a>
                 </li>
+                <li><a class="dropdown-item"
+                       href="${pageContext.request.contextPath}/invoice/show?location=shop13">深圳光明富森</a>
+                </li>
             </ul>
         </li>
         <c:if test="${user.level==1000}">
@@ -588,6 +609,9 @@
                     </li>
                     <li><a class="dropdown-item"
                            href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop12">深圳豪方天际</a>
+                    </li>
+                    <li><a class="dropdown-item"
+                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop13">深圳光明富森</a>
                     </li>
                 </ul>
             </li>

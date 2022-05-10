@@ -2,6 +2,7 @@ package com.kuang.service;
 
 import com.kuang.pojo.Expired;
 import com.kuang.pojo.VinItem;
+import com.kuang.pojo.VinLog;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -9,7 +10,8 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Service
@@ -61,6 +63,62 @@ public class ReceiveControllerService {
                 }
             });
         }
+    }
+
+
+    public List<VinLog> queryReceiveByCategory(String location, String category) {
+        List<VinLog> receiveList = new ArrayList<>();
+        switch (location) {
+            case "main0":
+                receiveList = vinService.queryCategoryReceiveinMain0(category);
+                break;
+            case "main1":
+                receiveList = vinService.queryCategoryReceiveinMain1(category);
+                break;
+            case "main2":
+                receiveList = vinService.queryCategoryReceiveinMain2(category);
+                break;
+            case "shop1":
+                receiveList = vinService.queryCategoryReceiveinShop1(category);
+                break;
+            case "shop2":
+                receiveList = vinService.queryCategoryReceiveinShop2(category);
+                break;
+            case "shop3":
+                receiveList = vinService.queryCategoryReceiveinShop3(category);
+                break;
+            case "shop4":
+                receiveList = vinService.queryCategoryReceiveinShop4(category);
+                break;
+            case "shop5":
+                receiveList = vinService.queryCategoryReceiveinShop5(category);
+                break;
+            case "shop6":
+                receiveList = vinService.queryCategoryReceiveinShop6(category);
+                break;
+            case "shop7":
+                receiveList = vinService.queryCategoryReceiveinShop7(category);
+                break;
+            case "shop8":
+                receiveList = vinService.queryCategoryReceiveinShop8(category);
+                break;
+            case "shop9":
+                receiveList = vinService.queryCategoryReceiveinShop9(category);
+                break;
+            case "shop10":
+                receiveList = vinService.queryCategoryReceiveinShop10(category);
+                break;
+            case "shop11":
+                receiveList = vinService.queryCategoryReceiveinShop11(category);
+                break;
+            case "shop12":
+                receiveList = vinService.queryCategoryReceiveinShop12(category);
+                break;
+            case "shop13":
+                receiveList = vinService.queryCategoryReceiveinShop13(category);
+                break;
+        }
+        return receiveList;
     }
 
 

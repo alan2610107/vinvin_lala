@@ -45,59 +45,8 @@ public class RecieveController extends HttpServlet {
     private LogService logService;
 
     public List<VinLog> getRecieveList(String location, String category) {
-        List<VinLog> receiveList = new ArrayList<>();
-
-        switch (location) {
-            case "main0":
-                receiveList = vinService.queryCategoryReceiveinMain0(category);
-                break;
-            case "main1":
-                receiveList = vinService.queryCategoryReceiveinMain1(category);
-                break;
-            case "main2":
-                receiveList = vinService.queryCategoryReceiveinMain2(category);
-                break;
-            case "shop1":
-                receiveList = vinService.queryCategoryReceiveinShop1(category);
-                break;
-            case "shop2":
-                receiveList = vinService.queryCategoryReceiveinShop2(category);
-                break;
-            case "shop3":
-                receiveList = vinService.queryCategoryReceiveinShop3(category);
-                break;
-            case "shop4":
-                receiveList = vinService.queryCategoryReceiveinShop4(category);
-                break;
-            case "shop5":
-                receiveList = vinService.queryCategoryReceiveinShop5(category);
-                break;
-            case "shop6":
-                receiveList = vinService.queryCategoryReceiveinShop6(category);
-                break;
-            case "shop7":
-                receiveList = vinService.queryCategoryReceiveinShop7(category);
-                break;
-            case "shop8":
-                receiveList = vinService.queryCategoryReceiveinShop8(category);
-                break;
-            case "shop9":
-                receiveList = vinService.queryCategoryReceiveinShop9(category);
-                break;
-            case "shop10":
-                receiveList = vinService.queryCategoryReceiveinShop10(category);
-                break;
-            case "shop11":
-                receiveList = vinService.queryCategoryReceiveinShop11(category);
-                break;
-            case "shop12":
-                receiveList = vinService.queryCategoryReceiveinShop12(category);
-                break;
-        }
-
+        List<VinLog> receiveList = receiveControllerService.queryReceiveByCategory(location, category);
         return receiveList;
-
-
     }
 
     @RequestMapping("/list")
@@ -524,56 +473,6 @@ public class RecieveController extends HttpServlet {
         }
     }
 
-    public void deleteLog(String location, String logid) {
-        switch (location) {
-            case "main0":
-                vinService.deleteLoginMain0byLogid(logid);
-                break;
-            case "main1":
-                vinService.deleteLoginMain1byLogid(logid);
-                break;
-            case "main2":
-                vinService.deleteLoginMain2byLogid(logid);
-                break;
-            case "shop1":
-                vinService.deleteLoginShop1byLogid(logid);
-                break;
-            case "shop2":
-                vinService.deleteLoginShop2byLogid(logid);
-                break;
-            case "shop3":
-                vinService.deleteLoginShop3byLogid(logid);
-                break;
-            case "shop4":
-                vinService.deleteLoginShop4byLogid(logid);
-                break;
-            case "shop5":
-                vinService.deleteLoginShop5byLogid(logid);
-                break;
-            case "shop6":
-                vinService.deleteLoginShop6byLogid(logid);
-                break;
-            case "shop7":
-                vinService.deleteLoginShop7byLogid(logid);
-                break;
-            case "shop8":
-                vinService.deleteLoginShop8byLogid(logid);
-                break;
-            case "shop9":
-                vinService.deleteLoginShop9byLogid(logid);
-                break;
-            case "shop10":
-                vinService.deleteLoginShop10byLogid(logid);
-                break;
-            case "shop11":
-                vinService.deleteLoginShop11byLogid(logid);
-                break;
-            case "shop12":
-                vinService.deleteLoginShop12byLogid(logid);
-                break;
-        }
-    }
-
     @RequestMapping("/inputVinItem")
     public String inputVinItem(@RequestParam String logid, @RequestParam String location, @RequestParam String id, @RequestParam String category) throws InterruptedException {
         //更新ReceiveError
@@ -638,7 +537,7 @@ public class RecieveController extends HttpServlet {
         vinService.updateReceiveErrorifComplete(logid, true);
 
         //刪除log
-        deleteLog(location, logid);
+        logService.deleteLog(location, logid);
         cacheService.decreaseNotReceiveCount(location);
 
         return "redirect:/receive/error?location=" + location;
