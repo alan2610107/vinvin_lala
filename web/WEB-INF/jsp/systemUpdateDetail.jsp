@@ -23,6 +23,13 @@
 <div class="container">
     <div class="col-md-12 column">
         <br><br>
+        <h5>2021/05/11</h5>
+        <ul>
+            <li>新增深圳光明富森</li>
+        </ul>
+    </div>
+    <div class="col-md-12 column">
+        <br><br>
         <h5>2021/05/09</h5>
         <ul>
             <li>Fix : 刪除一個倉的物料會刪除所有倉的該物料的問題（緩存問題）</li>
