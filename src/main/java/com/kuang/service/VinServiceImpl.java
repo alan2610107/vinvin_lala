@@ -7445,7 +7445,8 @@ public class VinServiceImpl implements VinService{
     public void checkIfExistandAddinAllItem(VinItem vinItem){
         String itemName = vinItem.getItemName();
         String[] s = itemName.split("领用标准");
-        String mainItemName = s[0].trim();
+        String mainItemName = s[0].trim(); //除去空格的影響
+        mainItemName = mainItemName.split(",|，")[0]; //除去逗號的影響
         int ifExist = ifExistinAllItem(mainItemName);
         int ifExistNameinSupplier = ifExistNameinSupplier(vinItem.getBrand());
         log.warn("ifExist==>"+ifExist);
@@ -7463,7 +7464,8 @@ public class VinServiceImpl implements VinService{
             item.setSingleprice(0);
             if(ifExistNameinSupplier == 0){
                 log.warn("add supplier");
-                String supplierID = UUID.randomUUID().toString().replace("-","");
+//                String supplierID = UUID.randomUUID().toString().replace("-","");
+                String supplierID = getUUID();
                 Supplier supplier = new Supplier(supplierID,vinItem.getBrand(),null,null,null);
                 addSupplier(supplier);
                 item.setSupplierID(supplierID);
