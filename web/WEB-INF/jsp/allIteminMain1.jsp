@@ -280,7 +280,7 @@
                             <th>總價</th>
                         </c:if>
                         <th>详情</th>
-                        <th></th>
+                        <th>圖片</th>
                         <th>操作</th>
 
                     </tr>
@@ -308,7 +308,16 @@
 
                                 <td>${listItem.memo}</td>
                                 <td>
-                                    <a class="btn btn-success" href="${pageContext.request.contextPath}${ToolFilePathMap[listItem.id]}" role="button"  style="padding-top: 0px !important;padding-bottom: 0px !important;padding-right: 1px;padding-left: 1px;" target="_blank">截圖</a>
+                                    <c:if test="${!ToolFilePathMap[listItem.id].equals('/no_filepath')}">
+                                        <a target="_blank" href="${pageContext.request.contextPath}${ToolFilePathMap[listItem.id]}">
+                                            <img src="${pageContext.request.contextPath}${ToolFilePathMap[listItem.id]}" style="width: 155px !important;">
+                                        </a>
+                                    </c:if>
+                                    <c:if test="${ToolFilePathMap[listItem.id].equals('/no_filepath')}">
+                                        無圖片
+                                    </c:if>
+
+<%--                                    <a class="btn btn-success" href="${pageContext.request.contextPath}${ToolFilePathMap[listItem.id]}" role="button"  style="padding-top: 0px !important;padding-bottom: 0px !important;padding-right: 1px;padding-left: 1px;" target="_blank">截圖</a>--%>
                                 </td>
                                 <td>
                                     <div class="dropdown">
@@ -353,7 +362,15 @@
 
                                 <td>${listItem.memo}</td>
                                 <td>
-                                    <a class="btn btn-success" href="${pageContext.request.contextPath}${ToolFilePathMap[listItem.id]}" role="button" style="padding-top: 0px !important;padding-bottom: 0px !important;padding-right: 1px;padding-left: 1px;" target="_blank">截圖</a>
+                                    <c:if test="${!ToolFilePathMap[listItem.id].equals('/no_filepath')}">
+                                        <a target="_blank" href="${pageContext.request.contextPath}${ToolFilePathMap[listItem.id]}">
+                                            <img src="${pageContext.request.contextPath}${ToolFilePathMap[listItem.id]}" style="width: 155px !important;">
+                                        </a>
+                                    </c:if>
+                                    <c:if test="${ToolFilePathMap[listItem.id].equals('/no_filepath')}">
+                                        無圖片
+                                    </c:if>
+<%--                                    <a class="btn btn-success" href="${pageContext.request.contextPath}${ToolFilePathMap[listItem.id]}" role="button" style="padding-top: 0px !important;padding-bottom: 0px !important;padding-right: 1px;padding-left: 1px;" target="_blank">截圖</a>--%>
                                 </td>
                                 <td>
                                     <div class="dropdown">
@@ -397,7 +414,15 @@
 
                                 <td class="table-customize2">${listItem.memo}</td>
                                 <td class="table-customize2">
-                                    <a class="btn btn-success" href="${pageContext.request.contextPath}${ToolFilePathMap[listItem.id]}" role="button" style="padding-top: 0px !important;padding-bottom: 0px !important;padding-right: 1px;padding-left: 1px;" target="_blank">截圖</a>
+                                    <c:if test="${!ToolFilePathMap[listItem.id].equals('/no_filepath')}">
+                                        <a target="_blank" href="${pageContext.request.contextPath}${ToolFilePathMap[listItem.id]}">
+                                            <img src="${pageContext.request.contextPath}${ToolFilePathMap[listItem.id]}" style="width: 155px !important;">
+                                        </a>
+                                    </c:if>
+                                    <c:if test="${ToolFilePathMap[listItem.id].equals('/no_filepath')}">
+                                        無圖片
+                                    </c:if>
+<%--                                    <a class="btn btn-success" href="${pageContext.request.contextPath}${ToolFilePathMap[listItem.id]}" role="button" style="padding-top: 0px !important;padding-bottom: 0px !important;padding-right: 1px;padding-left: 1px;" target="_blank">截圖</a>--%>
                                 </td>
                                 <td class="table-customize2">
                                     <div class="dropdown">
@@ -463,7 +488,7 @@
                             <th>總價</th>
                         </c:if>
                         <th>详情</th>
-                        <th></th>
+                        <th>圖片</th>
                         <th>操作</th>
 
                     </tr>
@@ -489,7 +514,18 @@
                                 </c:if>
                                 <td>${listFood.memo}</td>
                                 <td>
-                                    <a class="btn btn-success" href="${pageContext.request.contextPath}${FoodFilePathMap[listFood.id]}" role="button" style="padding-top: 0px !important;padding-bottom: 0px !important;padding-right: 1px;padding-left: 1px;" target="_blank">截圖</a>
+                                    <c:if test="${!FoodFilePathMap[listFood.id].equals('/no_filepath')}">
+                                        <a target="_blank" href="${pageContext.request.contextPath}${FoodFilePathMap[listFood.id]}">
+                                            <img src="${pageContext.request.contextPath}${FoodFilePathMap[listFood.id]}" style="width: 155px !important;">
+                                        </a>
+                                    </c:if>
+                                    <c:if test="${FoodFilePathMap[listFood.id].equals('/no_filepath')}">
+                                        無圖片
+                                    </c:if>
+<%--                                    <a target="_blank" href="${pageContext.request.contextPath}${FoodFilePathMap[listFood.id]}">--%>
+<%--                                        <img src="${pageContext.request.contextPath}${FoodFilePathMap[listFood.id]}" style="width: 155px !important;">--%>
+<%--                                    </a>--%>
+<%--                                    <a class="btn btn-success" href="${pageContext.request.contextPath}${FoodFilePathMap[listFood.id]}" role="button" style="padding-top: 0px !important;padding-bottom: 0px !important;padding-right: 1px;padding-left: 1px;" target="_blank">截圖</a>--%>
                                 </td>
                                 <td>
                                     <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButtonfood" data-bs-toggle="dropdown" aria-expanded="false" style="padding-top: 0px !important;padding-bottom: 0px !important;padding-right: 1px;padding-left: 1px;">
@@ -532,7 +568,18 @@
                                 </c:if>
                                 <td>${listFood.memo}</td>
                                 <td>
-                                    <a class="btn btn-success" href="${pageContext.request.contextPath}${FoodFilePathMap[listFood.id]}" role="button" style="padding-top: 0px !important;padding-bottom: 0px !important;padding-right: 1px;padding-left: 1px;" target="_blank">截圖</a>
+                                    <c:if test="${!FoodFilePathMap[listFood.id].equals('/no_filepath')}">
+                                        <a target="_blank" href="${pageContext.request.contextPath}${FoodFilePathMap[listFood.id]}">
+                                            <img src="${pageContext.request.contextPath}${FoodFilePathMap[listFood.id]}" style="width: 155px !important;">
+                                        </a>
+                                    </c:if>
+                                    <c:if test="${FoodFilePathMap[listFood.id].equals('/no_filepath')}">
+                                        無圖片
+                                    </c:if>
+<%--                                    <a target="_blank" href="${pageContext.request.contextPath}${FoodFilePathMap[listFood.id]}">--%>
+<%--                                        <img src="${pageContext.request.contextPath}${FoodFilePathMap[listFood.id]}" style="width: 155px !important;">--%>
+<%--                                    </a>--%>
+<%--                                    <a class="btn btn-success" href="${pageContext.request.contextPath}${FoodFilePathMap[listFood.id]}" role="button" style="padding-top: 0px !important;padding-bottom: 0px !important;padding-right: 1px;padding-left: 1px;" target="_blank">截圖</a>--%>
                                 </td>
                                 <td>
                                     <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButtonfood" data-bs-toggle="dropdown" aria-expanded="false" style="padding-top: 0px !important;padding-bottom: 0px !important;padding-right: 1px;padding-left: 1px;">
@@ -574,7 +621,18 @@
                                 </c:if>
                                 <td class="table-customize2">${listFood.memo}</td>
                                 <td class="table-customize2">
-                                    <a class="btn btn-success" href="${pageContext.request.contextPath}${FoodFilePathMap[listFood.id]}" role="button" style="padding-top: 0px !important;padding-bottom: 0px !important;padding-right: 1px;padding-left: 1px;" target="_blank">截圖</a>
+                                    <c:if test="${!FoodFilePathMap[listFood.id].equals('/no_filepath')}">
+                                        <a target="_blank" href="${pageContext.request.contextPath}${FoodFilePathMap[listFood.id]}">
+                                            <img src="${pageContext.request.contextPath}${FoodFilePathMap[listFood.id]}" style="width: 155px !important;">
+                                        </a>
+                                    </c:if>
+                                    <c:if test="${FoodFilePathMap[listFood.id].equals('/no_filepath')}">
+                                        無圖片
+                                    </c:if>
+<%--                                    <a target="_blank" href="${pageContext.request.contextPath}${FoodFilePathMap[listFood.id]}">--%>
+<%--                                        <img src="${pageContext.request.contextPath}${FoodFilePathMap[listFood.id]}" style="width: 155px !important;">--%>
+<%--                                    </a>--%>
+<%--                                    <a class="btn btn-success" href="${pageContext.request.contextPath}${FoodFilePathMap[listFood.id]}" role="button" style="padding-top: 0px !important;padding-bottom: 0px !important;padding-right: 1px;padding-left: 1px;" target="_blank">截圖</a>--%>
                                 </td>
                                 <td class="table-customize2">
                                     <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButtonfood" data-bs-toggle="dropdown" aria-expanded="false" style="padding-top: 0px !important;padding-bottom: 0px !important;padding-right: 1px;padding-left: 1px;">
@@ -635,7 +693,7 @@
                             <th>總價</th>
                         </c:if>
                         <th>详情</th>
-                        <th></th>
+                        <th>圖片</th>
                         <th>操作</th>
 
                     </tr>
@@ -661,7 +719,18 @@
                                 </c:if>
                                 <td>${listSmallItem.memo}</td>
                                 <td>
-                                    <a class="btn btn-success" href="${pageContext.request.contextPath}${SmallItemFilePathMap[listSmallItem.id]}" role="button" style="padding-top: 0px !important;padding-bottom: 0px !important;padding-right: 1px;padding-left: 1px;" target="_blank">截圖</a>
+                                    <c:if test="${!SmallItemFilePathMap[listSmallItem.id].equals('/no_filepath')}">
+                                        <a target="_blank" href="${pageContext.request.contextPath}${SmallItemFilePathMap[listSmallItem.id]}">
+                                            <img src="${pageContext.request.contextPath}${SmallItemFilePathMap[listSmallItem.id]}" style="width: 155px !important;">
+                                        </a>
+                                    </c:if>
+                                    <c:if test="${SmallItemFilePathMap[listSmallItem.id].equals('/no_filepath')}">
+                                        無圖片
+                                    </c:if>
+<%--                                    <a target="_blank" href="${pageContext.request.contextPath}${SmallItemFilePathMap[listSmallItem.id]}">--%>
+<%--                                        <img src="${pageContext.request.contextPath}${SmallItemFilePathMap[listSmallItem.id]}" style="width: 155px !important;">--%>
+<%--                                    </a>--%>
+<%--                                    <a class="btn btn-success" href="${pageContext.request.contextPath}${SmallItemFilePathMap[listSmallItem.id]}" role="button" style="padding-top: 0px !important;padding-bottom: 0px !important;padding-right: 1px;padding-left: 1px;" target="_blank">截圖</a>--%>
                                 </td>
                                 <td>
                                     <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButtonsmalltool" data-bs-toggle="dropdown" aria-expanded="false" style="padding-top: 0px !important;padding-bottom: 0px !important;padding-right: 1px;padding-left: 1px;">
@@ -704,7 +773,18 @@
                                 </c:if>
                                 <td>${listSmallItem.memo}</td>
                                 <td>
-                                    <a class="btn btn-success" href="${pageContext.request.contextPath}${SmallItemFilePathMap[listSmallItem.id]}" role="button" style="padding-top: 0px !important;padding-bottom: 0px !important;padding-right: 1px;padding-left: 1px;" target="_blank">截圖</a>
+                                    <c:if test="${!SmallItemFilePathMap[listSmallItem.id].equals('/no_filepath')}">
+                                        <a target="_blank" href="${pageContext.request.contextPath}${SmallItemFilePathMap[listSmallItem.id]}">
+                                            <img src="${pageContext.request.contextPath}${SmallItemFilePathMap[listSmallItem.id]}" style="width: 155px !important;">
+                                        </a>
+                                    </c:if>
+                                    <c:if test="${SmallItemFilePathMap[listSmallItem.id].equals('/no_filepath')}">
+                                        無圖片
+                                    </c:if>
+<%--                                    <a target="_blank" href="${pageContext.request.contextPath}${SmallItemFilePathMap[listSmallItem.id]}">--%>
+<%--                                        <img src="${pageContext.request.contextPath}${SmallItemFilePathMap[listSmallItem.id]}" style="width: 155px !important;">--%>
+<%--                                    </a>--%>
+<%--                                    <a class="btn btn-success" href="${pageContext.request.contextPath}${SmallItemFilePathMap[listSmallItem.id]}" role="button" style="padding-top: 0px !important;padding-bottom: 0px !important;padding-right: 1px;padding-left: 1px;" target="_blank">截圖</a>--%>
                                 </td>
                                 <td>
                                     <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButtonsmalltool" data-bs-toggle="dropdown" aria-expanded="false" style="padding-top: 0px !important;padding-bottom: 0px !important;padding-right: 1px;padding-left: 1px;">
@@ -745,7 +825,18 @@
                                 </c:if>
                                 <td class="table-customize2">${listSmallItem.memo}</td>
                                 <td class="table-customize2">
-                                    <a class="btn btn-success" href="${pageContext.request.contextPath}${SmallItemFilePathMap[listSmallItem.id]}" role="button" style="padding-top: 0px !important;padding-bottom: 0px !important;padding-right: 1px;padding-left: 1px;" target="_blank">截圖</a>
+                                    <c:if test="${!SmallItemFilePathMap[listSmallItem.id].equals('/no_filepath')}">
+                                        <a target="_blank" href="${pageContext.request.contextPath}${SmallItemFilePathMap[listSmallItem.id]}">
+                                            <img src="${pageContext.request.contextPath}${SmallItemFilePathMap[listSmallItem.id]}" style="width: 155px !important;">
+                                        </a>
+                                    </c:if>
+                                    <c:if test="${SmallItemFilePathMap[listSmallItem.id].equals('/no_filepath')}">
+                                        無圖片
+                                    </c:if>
+<%--                                    <a target="_blank" href="${pageContext.request.contextPath}${SmallItemFilePathMap[listSmallItem.id]}">--%>
+<%--                                        <img src="${pageContext.request.contextPath}${SmallItemFilePathMap[listSmallItem.id]}" style="width: 155px !important;">--%>
+<%--                                    </a>--%>
+<%--                                    <a class="btn btn-success" href="${pageContext.request.contextPath}${SmallItemFilePathMap[listSmallItem.id]}" role="button" style="padding-top: 0px !important;padding-bottom: 0px !important;padding-right: 1px;padding-left: 1px;" target="_blank">截圖</a>--%>
                                 </td>
                                 <td class="table-customize2">
                                     <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButtonsmalltool" data-bs-toggle="dropdown" aria-expanded="false" style="padding-top: 0px !important;padding-bottom: 0px !important;padding-right: 1px;padding-left: 1px;">
@@ -804,7 +895,7 @@
                             <th>總價</th>
                         </c:if>
                         <th>详情</th>
-                        <th></th>
+                        <th>圖片</th>
                         <th>操作</th>
 
                     </tr>
@@ -830,7 +921,18 @@
                                 </c:if>
                                 <td>${listCommercialItem.memo}</td>
                                 <td>
-                                    <a class="btn btn-success" href="${pageContext.request.contextPath}${CommercialFilePathMap[listCommercialItem.id]}" role="button" style="padding-top: 0px !important;padding-bottom: 0px !important;padding-right: 1px;padding-left: 1px;" target="_blank">截圖</a>
+                                    <c:if test="${!CommercialFilePathMap[listCommercialItem.id].equals('/no_filepath')}">
+                                        <a target="_blank" href="${pageContext.request.contextPath}${CommercialFilePathMap[listCommercialItem.id]}">
+                                            <img src="${pageContext.request.contextPath}${CommercialFilePathMap[listCommercialItem.id]}" style="width: 155px !important;">
+                                        </a>
+                                    </c:if>
+                                    <c:if test="${CommercialFilePathMap[listCommercialItem.id].equals('/no_filepath')}">
+                                        無圖片
+                                    </c:if>
+<%--                                    <a target="_blank" href="${pageContext.request.contextPath}${CommercialFilePathMap[listCommercialItem.id]}">--%>
+<%--                                        <img src="${pageContext.request.contextPath}${CommercialFilePathMap[listCommercialItem.id]}" style="width: 155px !important;">--%>
+<%--                                    </a>--%>
+<%--                                    <a class="btn btn-success" href="${pageContext.request.contextPath}${CommercialFilePathMap[listCommercialItem.id]}" role="button" style="padding-top: 0px !important;padding-bottom: 0px !important;padding-right: 1px;padding-left: 1px;" target="_blank">截圖</a>--%>
                                 </td>
                                 <td>
                                     <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButtoncommercial" data-bs-toggle="dropdown" aria-expanded="false" style="padding-top: 0px !important;padding-bottom: 0px !important;padding-right: 1px;padding-left: 1px;">
@@ -871,8 +973,18 @@
                                     <td>${listCommercialItem.totalPrice}</td>
                                 </c:if>
                                 <td>${listCommercialItem.memo}</td>
-                                <td>
-                                    <a class="btn btn-success" href="${pageContext.request.contextPath}${CommercialFilePathMap[listCommercialItem.id]}" role="button" style="padding-top: 0px !important;padding-bottom: 0px !important;padding-right: 1px;padding-left: 1px;" target="_blank">截圖</a>
+                                <td><c:if test="${!CommercialFilePathMap[listCommercialItem.id].equals('/no_filepath')}">
+                                    <a target="_blank" href="${pageContext.request.contextPath}${CommercialFilePathMap[listCommercialItem.id]}">
+                                        <img src="${pageContext.request.contextPath}${CommercialFilePathMap[listCommercialItem.id]}" style="width: 155px !important;">
+                                    </a>
+                                </c:if>
+                                    <c:if test="${CommercialFilePathMap[listCommercialItem.id].equals('/no_filepath')}">
+                                        無圖片
+                                    </c:if>
+<%--                                    <a target="_blank" href="${pageContext.request.contextPath}${CommercialFilePathMap[listCommercialItem.id]}">--%>
+<%--                                        <img src="${pageContext.request.contextPath}${CommercialFilePathMap[listCommercialItem.id]}" style="width: 155px !important;">--%>
+<%--                                    </a>--%>
+<%--                                    <a class="btn btn-success" href="${pageContext.request.contextPath}${CommercialFilePathMap[listCommercialItem.id]}" role="button" style="padding-top: 0px !important;padding-bottom: 0px !important;padding-right: 1px;padding-left: 1px;" target="_blank">截圖</a>--%>
                                 </td>
                                 <td>
                                     <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButtoncommercial" data-bs-toggle="dropdown" aria-expanded="false" style="padding-top: 0px !important;padding-bottom: 0px !important;padding-right: 1px;padding-left: 1px;">
@@ -913,7 +1025,18 @@
                                 </c:if>
                                 <td class="table-customize2">${listCommercialItem.memo}</td>
                                 <td class="table-customize2">
-                                    <a class="btn btn-success" href="${pageContext.request.contextPath}${CommercialFilePathMap[listCommercialItem.id]}" role="button" style="padding-top: 0px !important;padding-bottom: 0px !important;padding-right: 1px;padding-left: 1px;" target="_blank">截圖</a>
+                                    <c:if test="${!CommercialFilePathMap[listCommercialItem.id].equals('/no_filepath')}">
+                                        <a target="_blank" href="${pageContext.request.contextPath}${CommercialFilePathMap[listCommercialItem.id]}">
+                                            <img src="${pageContext.request.contextPath}${CommercialFilePathMap[listCommercialItem.id]}" style="width: 155px !important;">
+                                        </a>
+                                    </c:if>
+                                    <c:if test="${CommercialFilePathMap[listCommercialItem.id].equals('/no_filepath')}">
+                                        無圖片
+                                    </c:if>
+<%--                                    <a target="_blank" href="${pageContext.request.contextPath}${CommercialFilePathMap[listCommercialItem.id]}">--%>
+<%--                                        <img src="${pageContext.request.contextPath}${CommercialFilePathMap[listCommercialItem.id]}" style="width: 155px !important;">--%>
+<%--                                    </a>--%>
+<%--                                    <a class="btn btn-success" href="${pageContext.request.contextPath}${CommercialFilePathMap[listCommercialItem.id]}" role="button" style="padding-top: 0px !important;padding-bottom: 0px !important;padding-right: 1px;padding-left: 1px;" target="_blank">截圖</a>--%>
                                 </td>
                                 <td class="table-customize2">
                                     <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButtoncommercial" data-bs-toggle="dropdown" aria-expanded="false" style="padding-top: 0px !important;padding-bottom: 0px !important;padding-right: 1px;padding-left: 1px;">
@@ -973,7 +1096,7 @@
                             <th>總價</th>
                         </c:if>
                         <th>详情</th>
-                        <th></th>
+                        <th>圖片</th>
                         <th>操作</th>
 
                     </tr>
@@ -999,7 +1122,18 @@
                                 </c:if>
                                 <td>${listothers.memo}</td>
                                 <td>
-                                    <a class="btn btn-success" href="${pageContext.request.contextPath}${OthersFilePathMap[listothers.id]}" role="button" style="padding-top: 0px !important;padding-bottom: 0px !important;padding-right: 1px;padding-left: 1px;" target="_blank">截圖</a>
+                                    <c:if test="${!OthersFilePathMap[listothers.id].equals('/no_filepath')}">
+                                        <a target="_blank" href="${pageContext.request.contextPath}${OthersFilePathMap[listothers.id]}">
+                                            <img src="${pageContext.request.contextPath}${OthersFilePathMap[listothers.id]}" style="width: 155px !important;">
+                                        </a>
+                                    </c:if>
+                                    <c:if test="${OthersFilePathMap[listothers.id].equals('/no_filepath')}">
+                                        無圖片
+                                    </c:if>
+<%--                                    <a target="_blank" href="${pageContext.request.contextPath}${OthersFilePathMap[listothers.id]}">--%>
+<%--                                        <img src="${pageContext.request.contextPath}${OthersFilePathMap[listothers.id]}" style="width: 155px !important;">--%>
+<%--                                    </a>--%>
+<%--                                    <a class="btn btn-success" href="${pageContext.request.contextPath}${OthersFilePathMap[listothers.id]}" role="button" style="padding-top: 0px !important;padding-bottom: 0px !important;padding-right: 1px;padding-left: 1px;" target="_blank">截圖</a>--%>
                                 </td>
                                 <td>
                                     <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButtonother" data-bs-toggle="dropdown" aria-expanded="false" style="padding-top: 0px !important;padding-bottom: 0px !important;padding-right: 1px;padding-left: 1px;">
@@ -1041,7 +1175,18 @@
                                 </c:if>
                                 <td>${listothers.memo}</td>
                                 <td>
-                                    <a class="btn btn-success" href="${pageContext.request.contextPath}${OthersFilePathMap[listothers.id]}" role="button" style="padding-top: 0px !important;padding-bottom: 0px !important;padding-right: 1px;padding-left: 1px;" target="_blank">截圖</a>
+                                    <c:if test="${!OthersFilePathMap[listothers.id].equals('/no_filepath')}">
+                                        <a target="_blank" href="${pageContext.request.contextPath}${OthersFilePathMap[listothers.id]}">
+                                            <img src="${pageContext.request.contextPath}${OthersFilePathMap[listothers.id]}" style="width: 155px !important;">
+                                        </a>
+                                    </c:if>
+                                    <c:if test="${OthersFilePathMap[listothers.id].equals('/no_filepath')}">
+                                        無圖片
+                                    </c:if>
+<%--                                    <a target="_blank" href="${pageContext.request.contextPath}${OthersFilePathMap[listothers.id]}">--%>
+<%--                                        <img src="${pageContext.request.contextPath}${OthersFilePathMap[listothers.id]}" style="width: 155px !important;">--%>
+<%--                                    </a>--%>
+<%--                                    <a class="btn btn-success" href="${pageContext.request.contextPath}${OthersFilePathMap[listothers.id]}" role="button" style="padding-top: 0px !important;padding-bottom: 0px !important;padding-right: 1px;padding-left: 1px;" target="_blank">截圖</a>--%>
                                 </td>
                                 <td>
                                     <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButtonother" data-bs-toggle="dropdown" aria-expanded="false" style="padding-top: 0px !important;padding-bottom: 0px !important;padding-right: 1px;padding-left: 1px;">
@@ -1082,7 +1227,18 @@
                                 </c:if>
                                 <td class="table-customize2">${listothers.memo}</td>
                                 <td class="table-customize2">
-                                    <a class="btn btn-success" href="${pageContext.request.contextPath}${OthersFilePathMap[listothers.id]}" role="button" style="padding-top: 0px !important;padding-bottom: 0px !important;padding-right: 1px;padding-left: 1px;" target="_blank">截圖</a>
+                                    <c:if test="${!OthersFilePathMap[listothers.id].equals('/no_filepath')}">
+                                        <a target="_blank" href="${pageContext.request.contextPath}${OthersFilePathMap[listothers.id]}">
+                                            <img src="${pageContext.request.contextPath}${OthersFilePathMap[listothers.id]}" style="width: 155px !important;">
+                                        </a>
+                                    </c:if>
+                                    <c:if test="${OthersFilePathMap[listothers.id].equals('/no_filepath')}">
+                                        無圖片
+                                    </c:if>
+<%--                                    <a target="_blank" href="${pageContext.request.contextPath}${OthersFilePathMap[listothers.id]}">--%>
+<%--                                        <img src="${pageContext.request.contextPath}${OthersFilePathMap[listothers.id]}" style="width: 155px !important;">--%>
+<%--                                    </a>--%>
+<%--                                    <a class="btn btn-success" href="${pageContext.request.contextPath}${OthersFilePathMap[listothers.id]}" role="button" style="padding-top: 0px !important;padding-bottom: 0px !important;padding-right: 1px;padding-left: 1px;" target="_blank">截圖</a>--%>
                                 </td>
                                 <td class="table-customize2">
                                     <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButtonother" data-bs-toggle="dropdown" aria-expanded="false" style="padding-top: 0px !important;padding-bottom: 0px !important;padding-right: 1px;padding-left: 1px;">
