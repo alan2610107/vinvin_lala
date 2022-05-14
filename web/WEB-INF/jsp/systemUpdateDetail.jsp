@@ -23,6 +23,13 @@
 <div class="container">
     <div class="col-md-12 column">
         <br><br>
+        <h5>2021/05/14</h5>
+        <ul>
+            <li>顯示物料圖片</li>
+        </ul>
+    </div>
+    <div class="col-md-12 column">
+        <br><br>
         <h5>2021/05/11</h5>
         <ul>
             <li>新增深圳光明富森</li>
