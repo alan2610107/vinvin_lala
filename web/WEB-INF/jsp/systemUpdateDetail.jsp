@@ -24,21 +24,28 @@
 <div class="container">
     <div class="col-md-12 column">
         <br><br>
-        <h5>2021/05/14</h5>
+        <h5>2022/05/26</h5>
+        <ul>
+            <li>Fix : Bootstrap domain</li>
+        </ul>
+    </div>
+    <div class="col-md-12 column">
+        <br><br>
+        <h5>2022/05/14</h5>
         <ul>
             <li>顯示物料圖片</li>
         </ul>
     </div>
     <div class="col-md-12 column">
         <br><br>
-        <h5>2021/05/11</h5>
+        <h5>2022/05/11</h5>
         <ul>
             <li>新增深圳光明富森</li>
         </ul>
     </div>
     <div class="col-md-12 column">
         <br><br>
-        <h5>2021/05/09</h5>
+        <h5>2022/05/09</h5>
         <ul>
             <li>Fix : 刪除一個倉的物料會刪除所有倉的該物料的問題（緩存問題）</li>
             <li>Make code cleaner</li>
@@ -46,7 +53,7 @@
     </div>
     <div class="col-md-12 column">
         <br><br>
-        <h5>2021/05/08</h5>
+        <h5>2022/05/08</h5>
         <ul>
             <li>優化物料按定義排序</li>
             <li>新增調整物料順序模塊</li>
@@ -55,21 +62,21 @@
     </div>
     <div class="col-md-12 column">
         <br><br>
-        <h5>2021/05/01</h5>
+        <h5>2022/05/01</h5>
         <ul>
             <li>Fix : 物料按定義排序</li>
         </ul>
     </div>
     <div class="col-md-12 column">
         <br><br>
-        <h5>2021/04/29</h5>
+        <h5>2022/04/29</h5>
         <ul>
             <li>Fix : 新增庫存物料重複項問題(insert ignore)</li>
         </ul>
     </div>
     <div class="col-md-12 column">
         <br><br>
-        <h5>2021/04/15</h5>
+        <h5>2022/04/15</h5>
         <ul>
             <li>Fix : 自己轉移給自己的問題</li>
             <li>Fix : 查詢庫存時id可能為空的問題</li>
@@ -77,7 +84,7 @@
     </div>
     <div class="col-md-12 column">
         <br><br>
-        <h5>2021/04/08</h5>
+        <h5>2022/04/08</h5>
         <ul>
             <li>加入东莞广发金融和深圳豪方天际到庫存警戒</li>
             <li>深圳豪方天际庫存錄入</li>
@@ -86,21 +93,21 @@
     </div>
     <div class="col-md-12 column">
         <br><br>
-        <h5>2021/04/01</h5>
+        <h5>2022/04/01</h5>
         <ul>
             <li>加入防抖機制</li>
         </ul>
     </div>
     <div class="col-md-12 column">
         <br><br>
-        <h5>2021/03/30</h5>
+        <h5>2022/03/30</h5>
         <ul>
             <li>新增东莞广发金融客如雲</li>
         </ul>
     </div>
     <div class="col-md-12 column">
         <br><br>
-        <h5>2021/03/26</h5>
+        <h5>2022/03/26</h5>
         <ul>
             <li>新增东莞广发金融</li>
             <li>新增深圳豪方天际</li>
@@ -109,7 +116,7 @@
     </div>
     <div class="col-md-12 column">
         <br><br>
-        <h5>2021/03/24</h5>
+        <h5>2022/03/24</h5>
         <ul>
             <li>簡化新增轉移審核模塊代碼</li>
             <li>Fix : Todo-List數字不精確</li>
@@ -117,28 +124,28 @@
     </div>
     <div class="col-md-12 column">
         <br><br>
-        <h5>2021/03/22</h5>
+        <h5>2022/03/22</h5>
         <ul>
             <li>簡化待入庫清單模塊代碼</li>
         </ul>
     </div>
     <div class="col-md-12 column">
         <br><br>
-        <h5>2021/03/20</h5>
+        <h5>2022/03/20</h5>
         <ul>
             <li>Spring AOP 分布式鎖</li>
         </ul>
     </div>
     <div class="col-md-12 column">
         <br><br>
-        <h5>2021/03/17</h5>
+        <h5>2022/03/17</h5>
         <ul>
             <li>Fix : Todo-List數字不精確</li>
         </ul>
     </div>
     <div class="col-md-12 column">
         <br><br>
-        <h5>2021/03/16</h5>
+        <h5>2022/03/16</h5>
         <ul>
             <li>Fix : 待入庫例外無法顯示問題</li>
             <li>Fix : 物料審核採購無法顯示問題</li>
@@ -148,21 +155,21 @@
     </div>
     <div class="col-md-12 column">
         <br><br>
-        <h5>2021/03/14</h5>
+        <h5>2022/03/14</h5>
         <ul>
             <li>權限控制模塊化</li>
         </ul>
     </div>
     <div class="col-md-12 column">
         <br><br>
-        <h5>2021/03/11</h5>
+        <h5>2022/03/11</h5>
         <ul>
             <li>系統優化</li>
         </ul>
     </div>
     <div class="col-md-12 column">
         <br><br>
-        <h5>2021/03/09</h5>
+        <h5>2022/03/09</h5>
         <ul>
             <li>優化庫存頁面的截圖顯示效率</li>
             <li>新增：日盤下載的格式改成Excel格式</li>
@@ -170,7 +177,7 @@
     </div>
     <div class="col-md-12 column">
         <br><br>
-        <h5>2021/03/07</h5>
+        <h5>2022/03/07</h5>
         <ul>
             <li>Fix cache big</li>
             <li>新增：上傳圖片自動壓縮</li>
@@ -178,21 +185,21 @@
     </div>
     <div class="col-md-12 column">
         <br><br>
-        <h5>2021/03/06</h5>
+        <h5>2022/03/06</h5>
         <ul>
             <li>放棄Jedis，改用Lettuce</li>
         </ul>
     </div>
     <div class="col-md-12 column">
         <br><br>
-        <h5>2021/03/04</h5>
+        <h5>2022/03/04</h5>
         <ul>
             <li>新增物料圖片</li>
         </ul>
     </div>
     <div class="col-md-12 column">
         <br><br>
-        <h5>2021/03/03</h5>
+        <h5>2022/03/03</h5>
         <ul>
             <li>庫存數量為0停用出庫、轉移、報廢</li>
             <li>庫存不能自己轉移給自己</li>
@@ -203,7 +210,7 @@
     </div>
     <div class="col-md-12 column">
         <br><br>
-        <h5>2021/03/02</h5>
+        <h5>2022/03/02</h5>
         <ul>
             <li>修正Todo-List數字變負的問題</li>
             <li>待入庫清單中文化</li>
@@ -211,7 +218,7 @@
     </div>
     <div class="col-md-12 column">
         <br><br>
-        <h5>2021/02/17</h5>
+        <h5>2022/02/17</h5>
         <ul>
             <li>物料審核採購上線</li>
             <li>缺區代帳號密碼</li>
@@ -220,7 +227,7 @@
     </div>
     <div class="col-md-12 column">
         <br><br>
-        <h5>2021/01/04</h5>
+        <h5>2022/01/04</h5>
         <ul>
             <li>優化庫存警戒處理速度</li>
             <li>優化水果運單頁面</li>
@@ -228,7 +235,7 @@
     </div>
     <div class="col-md-12 column">
         <br><br>
-        <h5>2021/01/03</h5>
+        <h5>2022/01/03</h5>
         <ul>
             <li>日盤結果模塊高併發</li>
             <li>倉庫名緩存</li>
