@@ -3,6 +3,7 @@ package com.kuang.controller;
 import com.alibaba.fastjson.JSONArray;
 import com.kuang.pojo.*;
 import com.kuang.service.*;
+import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -193,68 +194,69 @@ public class RecieveController extends HttpServlet {
 
     @RequestMapping("/doreceive")
     public String doReceive(@RequestParam("items[]") String items, @RequestParam String itemtype, @RequestParam String location) throws InterruptedException {
-        log.warn("Receive Category : " + itemtype);
-        log.warn("Receive Location : " + location);
-        log.warn("Receive Items : " + items);
+        if(!items.equals("[]")){
+            log.warn("Receive Category : " + itemtype);
+            log.warn("Receive Location : " + location);
+            log.warn("Receive Items : " + items);
 //        List<String> logidsList = new ArrayList<>();
 //        List<String> receiveItemCountsList = new ArrayList<>();
-        Map<String,String> receiveMap = new HashMap<>();
-        JSONArray jsonarray = JSONArray.parseArray(items);
-        for (int i = 0; i < jsonarray.size(); i++) {
-            String logid = JSONArray.parseArray(jsonarray.getString(i).toLowerCase(Locale.ROOT)).get(1).toString();
-            String receiveItemCount = JSONArray.parseArray(jsonarray.getString(i).toLowerCase(Locale.ROOT)).get(5).toString();
-            receiveMap.put(logid,receiveItemCount);
+            Map<String,String> receiveMap = new HashMap<>();
+            JSONArray jsonarray = JSONArray.parseArray(items);
+            for (int i = 0; i < jsonarray.size(); i++) {
+                String logid = JSONArray.parseArray(jsonarray.getString(i).toLowerCase(Locale.ROOT)).get(1).toString();
+                String receiveItemCount = JSONArray.parseArray(jsonarray.getString(i).toLowerCase(Locale.ROOT)).get(5).toString();
+                receiveMap.put(logid,receiveItemCount);
 //            logidsList.add(JSONArray.parseArray(jsonarray.getString(i).toLowerCase(Locale.ROOT)).get(1).toString());
 //            receiveItemCountsList.add(JSONArray.parseArray(jsonarray.getString(i).toLowerCase(Locale.ROOT)).get(5).toString());
-        }
+            }
 
-        for (String logid : receiveMap.keySet()) {
-            if (cacheService.ifDobyLogid(logid, "receive")) {
-                log.warn("=====Allow to do=====");
-                int recieveItemCount = Integer.parseInt(receiveMap.get(logid));//收到的數
-                System.out.println("recieveItemCount==>" + recieveItemCount);
-                VinLog originVinLog = logService.getLogbylogid(location, logid);//原始紀錄
-                VinLog vinLogInput = new VinLog(originVinLog);
+            for (String logid : receiveMap.keySet()) {
+                if (cacheService.ifDobyLogid(logid, "receive")) {
+                    log.warn("=====Allow to do=====");
+                    int recieveItemCount = Integer.parseInt(receiveMap.get(logid));//收到的數
+                    System.out.println("recieveItemCount==>" + recieveItemCount);
+                    VinLog originVinLog = logService.getLogbylogid(location, logid);//原始紀錄
+                    VinLog vinLogInput = new VinLog(originVinLog);
 
-                if (originVinLog.getItemCount() == recieveItemCount) {
-                    originVinLog.setIfComplete(true);
-                    cacheService.decreaseNotReceiveCount(location);
+                    if (originVinLog.getItemCount() == recieveItemCount) {
+                        originVinLog.setIfComplete(true);
+                        cacheService.decreaseNotReceiveCount(location);
 //                    cacheService.deleteRedisLock(distributionKeyLog);
 //                    cacheService.waitRedisLock(distributionKeyLog);
 //                    String distributionKeyLog = location + "," + itemtype + "," + vinLog.getLogid();
 //                    if (cacheService.setRedisLock(distributionKeyLog, new VinItem())) {
 //
 //                    }
-                } else if (originVinLog.getItemCount() > recieveItemCount) {
-                    vinLogInput.setItemCount(recieveItemCount);
-                    VinLog newVinlog = new VinLog(originVinLog);
-                    int totalItemCount = originVinLog.getItemCount();
-                    originVinLog.setItemCount(recieveItemCount);
-                    originVinLog.setIfComplete(true);
-                    originVinLog.setTotalPrice(Math.round(recieveItemCount * originVinLog.getSinglePrice() * 100.0) / 100.0);
-                    addNewLog(newVinlog, location, totalItemCount, recieveItemCount);
-                } else {
-                    VinLog newvinlog = new VinLog(originVinLog);
-                    int totalItemCount = originVinLog.getItemCount();
-                    VinLog newVinLog = addNewLog(newvinlog, location, totalItemCount, recieveItemCount);
-                    originVinLog.setIfComplete(true);
-                    ReceiveError receiveError = new ReceiveError(newVinLog);
-                    receiveError.setItemCount(recieveItemCount - originVinLog.getItemCount());
-                    receiveError.setLocation(location);
-                    receiveError.setLogid(newvinlog.getLogid());
-                    vinService.addReceiveError(receiveError);
-                }
-                VinItem inputVinItem = new VinItem(vinLogInput);
-                vinMainControllerService.doInputVinItem(inputVinItem,location,itemtype);
-                receiveControllerService.addExpiredDateItem(inputVinItem,itemtype,location);
+                    } else if (originVinLog.getItemCount() > recieveItemCount) {
+                        vinLogInput.setItemCount(recieveItemCount);
+                        VinLog newVinlog = new VinLog(originVinLog);
+                        int totalItemCount = originVinLog.getItemCount();
+                        originVinLog.setItemCount(recieveItemCount);
+                        originVinLog.setIfComplete(true);
+                        originVinLog.setTotalPrice(Math.round(recieveItemCount * originVinLog.getSinglePrice() * 100.0) / 100.0);
+                        addNewLog(newVinlog, location, totalItemCount, recieveItemCount);
+                    } else {
+                        VinLog newvinlog = new VinLog(originVinLog);
+                        int totalItemCount = originVinLog.getItemCount();
+                        VinLog newVinLog = addNewLog(newvinlog, location, totalItemCount, recieveItemCount);
+                        originVinLog.setIfComplete(true);
+                        ReceiveError receiveError = new ReceiveError(newVinLog);
+                        receiveError.setItemCount(recieveItemCount - originVinLog.getItemCount());
+                        receiveError.setLocation(location);
+                        receiveError.setLogid(newvinlog.getLogid());
+                        vinService.addReceiveError(receiveError);
+                    }
+                    VinItem inputVinItem = new VinItem(vinLogInput);
+                    vinMainControllerService.doInputVinItem(inputVinItem,location,itemtype);
+                    receiveControllerService.addExpiredDateItem(inputVinItem,itemtype,location);
 //                input(vinLogInput, itemtype, location);//入庫
-                logService.updateLogbylogid(location, originVinLog);//更新紀錄
+                    logService.updateLogbylogid(location, originVinLog);//更新紀錄
 //                String distributionCacheKey = location + "," + itemtype + "," + vinLogInput.getId();
 //                cacheService.waitRedisLock(distributionCacheKey);
-            } else {
-                log.warn("=====Not allow to do=====");
+                } else {
+                    log.warn("=====Not allow to do=====");
+                }
             }
-        }
 
 //        for (int i = 0; i < logidsList.size(); i++) {
 //            String logid = logidsList.get(i);
@@ -301,6 +303,11 @@ public class RecieveController extends HttpServlet {
 //                log.warn("=====Not allow to do=====");
 //            }
 //        }
+        }else {
+            log.warn("item is null");
+        }
+
+
 
         return "redirect:/receive/list?location=" + location;
     }
