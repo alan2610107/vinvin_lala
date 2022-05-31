@@ -175,7 +175,7 @@
 
                 </div>
                 <div class="col-md-4 column">
-                    <a class="btn btn-success" role="button" href="${pageContext.request.contextPath}/dailycheck/result?location=${logLocation}">日盤結果</a>
+                    <a class="btn btn-success" role="button" href="${pageContext.request.contextPath}/dailycheck/result?location=${location}">日盤結果</a>
                 </div>
             </div>
 
