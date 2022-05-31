@@ -125,8 +125,9 @@ public class DailycheckControllerService {
         Warehouse warehouse = vinService.queryRealWarehouseName(location);
         String realname = warehouse.getRealname();
         model.addAttribute("warehouse", realname + "日盤");
-        model.addAttribute("logLocation", location);
+        model.addAttribute("logLocation", "toDailyCheck?location=" + location);
         model.addAttribute("mainWarehouse", "dailycheck");
+        model.addAttribute("location", location);
 //        System.out.println("model" + model);
         System.out.println("映射完畢");
 
@@ -171,7 +172,7 @@ public class DailycheckControllerService {
         Warehouse warehouse = vinService.queryRealWarehouseName(location);
         String realname = warehouse.getRealname();
         model.addAttribute("warehouse", realname + "日盤結果");
-        model.addAttribute("logLocation", "dailycheckresult" + location);
+        model.addAttribute("logLocation", "result?location=" + location);
         model.addAttribute("mainWarehouse", "dailycheck");
         model.addAttribute("location", location);
 
