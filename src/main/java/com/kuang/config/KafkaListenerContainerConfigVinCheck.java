@@ -10,11 +10,13 @@ import org.springframework.kafka.core.ConsumerFactory;
 import org.springframework.kafka.listener.ConcurrentMessageListenerContainer;
 import org.springframework.kafka.listener.ContainerProperties;
 
+import javax.annotation.Resource;
+
 @Configuration
 @EnableKafka
 public class KafkaListenerContainerConfigVinCheck {
 
-    @Autowired
+    @Resource
     private ConsumerFactory consumerFactoryVinCheck;
 
     @Bean

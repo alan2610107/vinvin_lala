@@ -1,6 +1,7 @@
 package com.kuang.config;
 
 import com.kuang.serializer.VinItemSerializer;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
@@ -12,10 +13,13 @@ import org.springframework.kafka.core.ConsumerFactory;
 import org.springframework.kafka.listener.ConcurrentMessageListenerContainer;
 import org.springframework.kafka.listener.ContainerProperties;
 
+import javax.annotation.Resource;
+
 @Configuration
 @EnableKafka
+@Slf4j
 public class KafkaListenerContainerConfigVinItem {
-    @Autowired
+    @Resource
     private ConsumerFactory consumerFactoryVinItem;
 
     @Bean
