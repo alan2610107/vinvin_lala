@@ -10,7 +10,6 @@ import scala.concurrent.impl.Promise;
 import java.util.*;
 
 @Component
-
 public class AOPTool {
 
     /**

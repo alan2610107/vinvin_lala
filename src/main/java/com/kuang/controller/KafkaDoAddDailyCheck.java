@@ -197,6 +197,16 @@ public class KafkaDoAddDailyCheck {
                         }
                         break;
                     }
+                    case "shop14": {
+                        List<VinCheck> vinCheckfromDatabase = null;
+                        vinCheckfromDatabase = vinService.queryCheckwithTimeandIdinShop14(vinCheck.getCategory(), vinCheck.getTime(), vinCheck.getId());
+                        if (vinCheckfromDatabase.size() == 0) {
+                            vinService.addCheckinShop14(vinCheck);
+                        } else {
+                            vinService.updateCheckinShop14byid(vinCheck);
+                        }
+                        break;
+                    }
                 }
             }catch (Exception e){
                 log.error("======SomeError======"+vinCheck);

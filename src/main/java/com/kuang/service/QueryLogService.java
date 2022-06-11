@@ -70,6 +70,8 @@ public class QueryLogService{
                         return vinService.queryCategoryLoginShop12(category);
                     case "shop13":
                         return vinService.queryCategoryLoginShop13(category);
+                    case "shop14":
+                        return vinService.queryCategoryLoginShop14(category);
                 }
                 return null;
             }else if(ifComplete.equals("false")){
@@ -106,6 +108,8 @@ public class QueryLogService{
                         return vinService.queryCategoryandIfCompleteLoginShop12(category,false);
                     case "shop13":
                         return vinService.queryCategoryandIfCompleteLoginShop13(category,false);
+                    case "shop14":
+                        return vinService.queryCategoryandIfCompleteLoginShop14(category,false);
                 }
                 return null;
             }else if(ifComplete.equals("true")){
@@ -142,6 +146,8 @@ public class QueryLogService{
                         return vinService.queryCategoryandIfCompleteLoginShop12(category,true);
                     case "shop13":
                         return vinService.queryCategoryandIfCompleteLoginShop13(category,true);
+                    case "shop14":
+                        return vinService.queryCategoryandIfCompleteLoginShop14(category,true);
                 }
                 return null;
             }else {

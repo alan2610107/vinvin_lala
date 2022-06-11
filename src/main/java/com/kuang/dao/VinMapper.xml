@@ -4727,6 +4727,328 @@
     </delete>
 
 
+    <!--shop14-->
+    <insert id="addIteminShop14" parameterType="VinItem">
+        insert ignore into vinvin.shopWarehouse14_tool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+    </insert>
+
+    <insert id="addSmallIteminShop14" parameterType="VinItem">
+        insert ignore into vinvin.shopWarehouse14_smallTool(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+    </insert>
+
+    <insert id="addFoodinShop14" parameterType="VinItem">
+        insert ignore into vinvin.shopWarehouse14_food(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+    </insert>
+
+    <insert id="addcommercialIteminShop14" parameterType="VinItem">
+        insert ignore into vinvin.shopWarehouse14_commercialItem(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+    </insert>
+
+    <insert id="addothersinShop14" parameterType="VinItem">
+        insert ignore into vinvin.shopWarehouse14_others(id, itemCount, singlePrice, totalPrice, memo) value (#{id},#{itemCount},#{singlePrice},#{totalPrice},#{memo});
+    </insert>
+
+    <delete id="deleteIteminShop14byId" parameterType="String">
+        delete from vinvin.shopWarehouse14_tool where id=#{id};
+    </delete>
+
+    <delete id="deleteSmallIteminShop14byId" parameterType="String">
+        delete from vinvin.shopWarehouse14_smallTool where id=#{id};
+    </delete>
+
+    <delete id="deleteFoodinShop14byId" parameterType="String">
+        delete from vinvin.shopWarehouse14_food where id=#{id};
+    </delete>
+
+    <delete id="deletecommercialIteminShop14byId" parameterType="String">
+        delete from vinvin.shopWarehouse14_commercialItem where id=#{id};
+    </delete>
+
+    <delete id="deleteothersinShop14byId" parameterType="String">
+        delete from vinvin.shopWarehouse14_others where id=#{id};
+    </delete>
+
+    <update id="updateIteminShop14" parameterType="VinItem">
+        update vinvin.shopWarehouse14_tool set itemCount=#{itemCount},memo=#{memo},singlePrice=#{singlePrice},totalPrice=#{totalPrice}
+        where id=#{id};
+    </update>
+
+    <update id="updateSmallIteminShop14" parameterType="VinItem">
+        update vinvin.shopWarehouse14_smallTool set itemCount=#{itemCount},memo=#{memo},singlePrice=#{singlePrice},totalPrice=#{totalPrice}
+        where id=#{id};
+    </update>
+
+    <update id="updateFoodinShop14" parameterType="VinItem">
+        update vinvin.shopWarehouse14_food set itemCount=#{itemCount},memo=#{memo},singlePrice=#{singlePrice},totalPrice=#{totalPrice}
+        where id=#{id};
+    </update>
+
+    <update id="updatecommercialIteminShop14" parameterType="VinItem">
+        update vinvin.shopWarehouse14_commercialItem set itemCount=#{itemCount},memo=#{memo},singlePrice=#{singlePrice},totalPrice=#{totalPrice}
+        where id=#{id};
+    </update>
+
+    <update id="updateothersinShop14" parameterType="VinItem">
+        update vinvin.shopWarehouse14_others set itemCount=#{itemCount},memo=#{memo},singlePrice=#{singlePrice},totalPrice=#{totalPrice}
+        where id=#{id};
+    </update>
+
+    <update id="sendIteminShop14" parameterType="VinItem">
+        update vinvin.shopWarehouse14_tool set itemCount=#{itemCount}
+        where id=#{id};
+    </update>
+
+    <update id="sendSmallIteminShop14" parameterType="VinItem">
+        update vinvin.shopWarehouse14_smallTool set itemCount=#{itemCount}
+        where id=#{id};
+    </update>
+
+    <update id="sendFoodinShop14" parameterType="VinItem">
+        update vinvin.shopWarehouse14_food set itemCount=#{itemCount}
+        where id=#{id};
+    </update>
+
+    <update id="sendcommercialIteminShop14" parameterType="VinItem">
+        update vinvin.shopWarehouse14_commercialItem set itemCount=#{itemCount}
+        where id=#{id};
+    </update>
+
+    <update id="sendothersinShop14" parameterType="VinItem">
+        update vinvin.shopWarehouse14_others set itemCount=#{itemCount}
+        where id=#{id};
+    </update>
+
+    <select id="queryIteminShop14byId" resultType="VinItem">
+        select * from vinvin.shopWarehouse14_tool where id=#{id};
+    </select>
+
+    <select id="querySmallIteminShop14byId" resultType="VinItem">
+        select * from vinvin.shopWarehouse14_smallTool where id=#{id};
+    </select>
+
+    <select id="queryFoodinShop14byId" resultType="VinItem">
+        select * from vinvin.shopWarehouse14_food where id=#{id};
+    </select>
+
+    <select id="querycommercialIteminShop14byId" resultType="VinItem">
+        select * from vinvin.shopWarehouse14_commercialItem where id=#{id};
+    </select>
+
+    <select id="queryothersinShop14byId" resultType="VinItem">
+        select warehouse.*,item.itemName,supplier.supplierName brand from vinvin.shopWarehouse14_others warehouse left join vinvin.item item on itemID=warehouse.id left join vinvin.supplier supplier on item.supplierID=supplier.supplierID where id=#{id};
+    </select>
+
+    <select id="queryItemNuminShop14byId" resultType="int">
+        select itemCount from vinvin.shopWarehouse14_tool where id=#{id}
+    </select>
+
+    <select id="querySmallItemNuminShop14byId" resultType="int">
+        select itemCount from vinvin.shopWarehouse14_smallTool where id=#{id}
+    </select>
+
+    <select id="queryFoodNuminShop14byId" resultType="int">
+        select itemCount from vinvin.shopWarehouse14_food where id=#{id}
+    </select>
+
+    <select id="querycommercialItemNuminShop14byId" resultType="int">
+        select itemCount from vinvin.shopWarehouse14_commercialItem where id=#{id}
+    </select>
+
+    <select id="queryothersNuminShop14byId" resultType="int">
+        select itemCount from vinvin.shopWarehouse14_others where id=#{id}
+    </select>
+
+    <select id="queryAllIteminShop14" resultType="VinItem">
+        select warehouse.*,supplier.supplierName brand,item.itemName from vinvin.shopWarehouse14_tool warehouse left join vinvin.item item on item.itemID=warehouse.id left join vinvin.supplier supplier on supplier.supplierID=item.supplierID;
+    </select>
+
+    <select id="queryAllSmallIteminShop14" resultType="VinItem">
+        select warehouse.*,supplier.supplierName brand,item.itemName from vinvin.shopWarehouse14_smallTool warehouse left join vinvin.item item on item.itemID=warehouse.id left join vinvin.supplier supplier on supplier.supplierID=item.supplierID;
+    </select>
+
+    <select id="queryAllFoodinShop14" resultType="VinItem">
+        select warehouse.*,supplier.supplierName brand,item.itemName from vinvin.shopWarehouse14_food warehouse left join vinvin.item item on item.itemID=warehouse.id left join vinvin.supplier supplier on supplier.supplierID=item.supplierID;
+    </select>
+
+    <select id="queryAllcommercialIteminShop14" resultType="VinItem">
+        select warehouse.*,supplier.supplierName brand,item.itemName from vinvin.shopWarehouse14_commercialItem warehouse left join vinvin.item item on item.itemID=warehouse.id left join vinvin.supplier supplier on supplier.supplierID=item.supplierID;
+    </select>
+
+    <select id="queryAllothersinShop14" resultType="VinItem">
+        select warehouse.*,supplier.supplierName brand,item.itemName from vinvin.shopWarehouse14_others warehouse left join vinvin.item item on item.itemID=warehouse.id left join vinvin.supplier supplier on supplier.supplierID=item.supplierID;
+    </select>
+
+    <!--    <select id="queryIteminShop14ByName" resultType="VinItem" parameterType="String">-->
+    <!--        SELECT * from vinvin.shopWarehouse14_tool where itemName=#{itemName};-->
+    <!--    </select>-->
+
+    <!--    <select id="querySmallIteminShop14ByName" resultType="VinItem" parameterType="String">-->
+    <!--        SELECT * from vinvin.shopWarehouse14_smallTool where itemName=#{itemName};-->
+    <!--    </select>-->
+
+    <!--    <select id="queryFoodinShop14ByName" resultType="VinItem" parameterType="String">-->
+    <!--        SELECT * from vinvin.shopWarehouse14_food where itemName=#{itemName};-->
+    <!--    </select>-->
+
+    <!--    <select id="querycommercialIteminShop14ByName" resultType="VinItem" parameterType="String">-->
+    <!--        SELECT * from vinvin.shopWarehouse14_commercialItem where itemName=#{itemName};-->
+    <!--    </select>-->
+
+    <!--    <select id="queryothersinShop14ByName" resultType="VinItem" parameterType="String">-->
+    <!--        SELECT * from vinvin.shopWarehouse14_others where itemName=#{itemName};-->
+    <!--    </select>-->
+
+    <!--    <select id="queryItemNuminShop14byID" resultType="VinItem" parameterType="String">-->
+    <!--        select * from vinvin.shopWarehouse14_tool where id=#{id};-->
+    <!--    </select>-->
+
+    <!--    <select id="querySmallItemNuminShop14byID" resultType="VinItem" parameterType="String">-->
+    <!--        select * from vinvin.shopWarehouse14_smallTool where id=#{id};-->
+    <!--    </select>-->
+
+    <!--    <select id="queryFoodNuminShop14byID" resultType="VinItem" parameterType="String">-->
+    <!--        select * from vinvin.shopWarehouse14_food where id=#{id};-->
+    <!--    </select>-->
+
+    <!--    <select id="querycommercialItemNuminShop14byID" resultType="VinItem" parameterType="String">-->
+    <!--        select * from vinvin.shopWarehouse14_commercialItem where id=#{id};-->
+    <!--    </select>-->
+
+    <!--    <select id="queryothersNuminShop14byID" resultType="VinItem" parameterType="String">-->
+    <!--        select * from vinvin.shopWarehouse14_others where id=#{id};-->
+    <!--    </select>-->
+
+    <select id="ifItemExistinShop14" resultType="int">
+        select count(*) from vinvin.shopWarehouse14_tool where id=#{id} limit 1;
+    </select>
+
+    <select id="ifSmallItemExistinShop14" resultType="int">
+        select count(*) from vinvin.shopWarehouse14_smallTool where id=#{id} limit 1;
+    </select>
+
+    <select id="ifFoodExistinShop14" resultType="int">
+        select count(*) from vinvin.shopWarehouse14_food where id=#{id} limit 1;
+    </select>
+
+    <select id="ifcommercialItemExistinShop14" resultType="int">
+        select count(*) from vinvin.shopWarehouse14_commercialItem where id=#{id} limit 1;
+    </select>
+
+    <select id="ifothersExistinShop14" resultType="int">
+        select count(*) from vinvin.shopWarehouse14_others where id=#{id} limit 1;
+    </select>
+
+    <update id="updateItembySendfromShop14" parameterType="VinItem">
+        update vinvin.shopWarehouse14_tool set itemCount=#{itemCount},singlePrice=#{singlePrice},totalPrice=#{totalPrice} where id=#{id};
+    </update>
+
+    <update id="updateSmallItembySendfromShop14" parameterType="VinItem">
+        update vinvin.shopWarehouse14_smallTool set itemCount=#{itemCount},singlePrice=#{singlePrice},totalPrice=#{totalPrice} where id=#{id};
+    </update>
+
+    <update id="updateFoodbySendfromShop14" parameterType="VinItem">
+        update vinvin.shopWarehouse14_food set itemCount=#{itemCount},singlePrice=#{singlePrice},totalPrice=#{totalPrice} where id=#{id};
+    </update>
+
+    <update id="updatecommercialItembySendfromShop14" parameterType="VinItem">
+        update vinvin.shopWarehouse14_commercialItem set itemCount=#{itemCount},singlePrice=#{singlePrice},totalPrice=#{totalPrice} where id=#{id};
+    </update>
+
+    <update id="updateothersbySendfromShop14" parameterType="VinItem">
+        update vinvin.shopWarehouse14_others set itemCount=#{itemCount},singlePrice=#{singlePrice},totalPrice=#{totalPrice} where id=#{id};
+    </update>
+
+    <insert id="addloginShop14" parameterType="VinLog">
+        insert into vinvin.shop14WarehouseInputlog(vinvin.shop14WarehouseInputlog.logid,vinvin.shop14WarehouseInputlog.id, vinvin.shop14WarehouseInputlog.itemName, vinvin.shop14WarehouseInputlog.brand, vinvin.shop14WarehouseInputlog.itemCount, vinvin.shop14WarehouseInputlog.singlePrice, vinvin.shop14WarehouseInputlog.totalPrice, vinvin.shop14WarehouseInputlog.memo, vinvin.shop14WarehouseInputlog.time, vinvin.shop14WarehouseInputlog.category, vinvin.shop14WarehouseInputlog.action,vinvin.shop14WarehouseInputlog.from,vinvin.shop14WarehouseInputlog.to,vinvin.shop14WarehouseInputlog.ifComplete,vinvin.shop14WarehouseInputlog.ifConfirm) value (#{logid},#{id},#{itemName},#{brand},#{itemCount},#{singlePrice},#{totalPrice},#{memo},#{time},#{category},#{action},#{from},#{to},#{ifComplete},#{ifConfirm});
+    </insert>
+
+    <select id="queryCategoryLoginShop14" resultType="VinLog">
+        select * from vinvin.shop14WarehouseInputlog where category=#{category} order by time DESC;
+    </select>
+
+    <select id="queryCategoryandIfCompleteLoginShop14" resultType="VinLog">
+        select * from vinvin.shop14WarehouseInputlog where category=#{category} and ifComplete=#{ifComplete} order by time DESC;
+    </select>
+
+    <select id="queryCategoryReceiveinShop14" resultType="VinLog">
+        select * from vinvin.shop14WarehouseInputlog where category=#{category} and ifComplete=false and ifConfirm=true;
+    </select>
+
+    <select id="countCategoryReceiveinShop14" resultType="int">
+        select count(*) from vinvin.shop14WarehouseInputlog where category=#{category} and ifComplete=false and ifConfirm=true;
+    </select>
+
+    <select id="queryCategoryConfirminShop14" resultType="VinLog">
+        select * from vinvin.shop14WarehouseInputlog where category=#{category} and ifComplete=false and ifConfirm=false and (action=#{action} or action=#{action2});
+    </select>
+
+    <select id="countCategoryConfirminShop14" resultType="int">
+        select count(*) from vinvin.shop14WarehouseInputlog where category=#{category} and ifComplete=false and ifConfirm=false and (action=#{action} or action=#{action2});
+    </select>
+
+    <select id="queryLoginshop14byid" resultType="VinLog">
+        select * from vinvin.shop14WarehouseInputlog where logid=#{logid}
+    </select>
+
+    <update id="updateLoginshop14byid" parameterType="VinLog">
+        update vinvin.shop14WarehouseInputlog set itemCount=#{itemCount},ifComplete=#{ifComplete},ifConfirm=#{ifConfirm},totalPrice=#{totalPrice},action=#{action}
+        where logid=#{logid};
+    </update>
+
+    <insert id="addCheckinShop14" parameterType="VinCheck">
+        insert into vinvin.WarehouseDailyChecklogshop14(logid, id, itemName, brand, checkitemCount, realitemCount, ifmatch, time, category, difference) value (#{logid},#{id},#{itemName},#{brand},#{checkitemCount},#{realitemCount},#{ifmatch},#{time},#{category}, #{difference});
+    </insert>
+
+    <select id="queryCheckinShop14" resultType="VinCheck">
+        select * from vinvin.WarehouseDailyChecklogshop14 where category=#{category} order by time DESC limit 800;
+    </select>
+
+    <select id="queryCheckwithTimeinShop14" resultType="VinCheck">
+        select * from vinvin.WarehouseDailyChecklogshop14 where category=#{category} and time=#{time};
+    </select>
+
+    <select id="queryCheckwithTimeandIdinShop14" resultType="VinCheck">
+        select * from vinvin.WarehouseDailyChecklogshop14 where category=#{category} and time=#{time} and id=#{id};
+    </select>
+
+    <update id="updateCheckinShop14byid" parameterType="VinCheck">
+        update vinvin.WarehouseDailyChecklogshop14 set itemName=#{itemName},checkitemCount=#{checkitemCount},ifmatch=#{ifmatch},difference=#{difference},realitemCount=#{realitemCount}
+        where id=#{id} and category=#{category} and time=#{time};
+    </update>
+
+    <select id="queryCheckinShop14byID" resultType="VinCheck">
+        select * from vinvin.WarehouseDailyChecklogshop14 where id=#{id};
+    </select>
+
+    <select id="querySumitemCountbytimeinShop14" resultType="VinItemSimple">
+        select id,any_value(sum(itemCount)) as itemCount,any_value(category) as category from vinvin.shop14WarehouseInputlog where time>=#{time} and action='output' group by id;
+    </select>
+
+    <insert id="addSumitemCountinShop14" parameterType="VinAlert">
+        insert into vinvin.shop14WarehouseOutputSum(logid, id, count_week, count_month, ifalert_week, ifalert_month, time, category) VALUE (#{logid},#{id},#{count_week},#{count_month},#{ifalert_week},#{ifalert_month},#{time}, #{category})
+    </insert>
+
+    <select id="queryifAlertinShop14" resultType="VinAlert" parameterType="String">
+        select outputSum.*,item.itemName,supplier.supplierName brand from vinvin.shop14WarehouseOutputSum outputSum left join vinvin.item item on item.itemID = outputSum.id left join vinvin.supplier supplier on item.supplierID = supplier.supplierID where time=#{time} order by category;
+    </select>
+
+    <select id="queryLoginshop14byItemid" resultType="VinLog">
+        select * from vinvin.shop14WarehouseInputlog where id=#{id} limit 1;
+    </select>
+
+    <select id="queryAllLoginshop14byItemid" resultType="VinLog">
+        select * from vinvin.shop14WarehouseInputlog where id=#{id} order by time;
+    </select>
+
+    <update id="updateItemNameAllLogbyidinShop14" parameterType="VinLog">
+        update vinvin.shop14WarehouseInputlog set itemName=#{itemName} where logid=#{logid};
+    </update>
+
+    <delete id="deleteLoginShop14byLogid">
+        delete from vinvin.shop14WarehouseInputlog where logid=#{logid};
+    </delete>
+
+
 
 
 
@@ -4744,18 +5066,68 @@
         insert into vinvin.kryOrderDetail(orderId, uuid, dishCode, dishId, dishName, price, quantity, unitName, amount, dishProperties, dishPropertyName, dishCookingWay, childNodes, itemId, addDishWaiter, giveDishWaiter, category, warehouse, orderTime) VALUE (#{orderId}, #{uuid}, #{dishCode}, #{dishId}, #{dishName}, #{price}, #{quantity}, #{unitName}, #{amount}, #{dishProperties}, #{dishPropertyName}, #{dishCookingWay}, #{childNodes}, #{itemId}, #{addDishWaiter}, #{giveDishWaiter}, #{category}, #{warehouse}, #{orderTime});
     </insert>
 
-    <insert id="addApplyItem" parameterType="ApplyItem">
-        insert ignore into vinvin.applyItem (logID, applyTime, location, itemName, count, applyName, status, shipID, singlePrice, totalPrice, purchaseTime, confirm, confirmResult, month) VALUE (#{logID}, #{applyTime}, #{location}, #{itemName}, #{count}, #{applyName}, #{status}, #{shipID}, #{singlePrice}, #{totalPrice}, #{purchaseTime}, #{confirm}, #{confirmResult}, #{month});
+    <insert id="addApplyItem" parameterType="applyItem">
+        insert ignore into vinvin.applyItem (logID, applyTime, location, itemID, itemName, count, applyName, status, shipID, singlePrice, totalPrice, purchaseTime, confirm, confirmResult, month) VALUE (#{logID}, #{applyTime}, #{location}, #{itemID}, #{itemName}, #{count}, #{applyName}, #{status}, #{shipID}, #{singlePrice}, #{totalPrice}, #{purchaseTime}, #{confirm}, #{confirmResult}, #{month});
     </insert>
-    <select id="queryApplyItembyLocation" resultType="ApplyItem">
+    <select id="queryApplyItembyLocation" resultType="applyItem">
         select * from vinvin.applyItem where location=#{location} order by applyTime desc;
     </select>
-    <select id="queryApplyItembyLogID" resultType="ApplyItem">
+    <select id="queryApplyItembyLogID" resultType="applyItem">
         select * from vinvin.applyItem where logID=#{logID};
     </select>
     <delete id="deleteApplyItem" parameterType="String">
         delete from vinvin.applyItem where logID=#{logID};
     </delete>
+    <insert id="addApplyItemRefuseReason" parameterType="String">
+        insert ignore into vinvin.applyItem (refuseReason) VALUE (#{refuseReason});
+    </insert>
+
+    <insert id="addApplyItemConfirmLogID">
+        insert ignore into vinvin.applyItemConfirm (logID) value (#{logID});
+    </insert>
+    <insert id="addApplyItemConfirmResult">
+        insert ignore into vinvin.applyItemConfirm (confirmResult) value (#{confirmResult});
+    </insert>
+    <delete id="deleteApplyItemConfirm">
+        delete from vinvin.applyItemConfirm where logID=#{logID}
+    </delete>
+    <select id="queryApplyItemConfirm" resultType="itemConfirm">
+        select * from vinvin.applyItemConfirm;
+    </select>
+    <select id="queryApplyItemConfirmNeeded" resultType="itemConfirm">
+        select * from vinvin.applyItemConfirm where IsEmpty(confirmResult);
+    </select>
+    <select id="queryApplyItemConfirmFinished" resultType="itemConfirm">
+        select * from vinvin.applyItemConfirm where !IsEmpty(confirmResult);
+    </select>
+
+
+
+
+    <insert id="addApplyFinanceConfirmLogID">
+        insert ignore into vinvin.applyFinanceConfirm (logID) value (#{logID});
+    </insert>
+    <insert id="addApplyFinanceConfirmResult">
+        insert ignore into vinvin.applyFinanceConfirm (confirmResult) value (#{confirmResult});
+    </insert>
+    <delete id="deleteApplyFinanceConfirm">
+        delete from vinvin.applyFinanceConfirm where logID=#{logID}
+    </delete>
+    <select id="queryApplyFinanceConfirm" resultType="itemConfirm">
+        select * from vinvin.applyFinanceConfirm;
+    </select>
+    <select id="queryApplyFinanceConfirmNeeded" resultType="itemConfirm">
+        select * from vinvin.applyFinanceConfirm where IsEmpty(confirmResult);
+    </select>
+    <select id="queryApplyFinanceConfirmFinished" resultType="itemConfirm">
+        select * from vinvin.applyFinanceConfirm where !IsEmpty(confirmResult);
+    </select>
+
+
+
+
+
+
 
 
     <update id="updateApplyItem" parameterType="ApplyItem">
@@ -4864,26 +5236,6 @@
     <delete id="deleteItemToolSet">
         delete from vinvin.itemToolSet where itemID=#{itemID};
     </delete>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 </mapper>

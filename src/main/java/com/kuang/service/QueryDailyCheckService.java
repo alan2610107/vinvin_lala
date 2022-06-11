@@ -89,6 +89,9 @@ public class QueryDailyCheckService{
                 case "shop13":
                     dailyCheck = vinService.queryCheckinShop13(category);
                     break;
+                case "shop14":
+                    dailyCheck = vinService.queryCheckinShop14(category);
+                    break;
             }
             return dailyCheck;
         });

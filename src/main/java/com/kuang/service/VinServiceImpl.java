@@ -5981,6 +5981,323 @@ public class VinServiceImpl implements VinService{
         return vinMapper.updateItemNameAllLogbyidinShop13(vinLog);
     }
 
+    //shop14
+    @Override
+    public int addIteminShop14(VinItem items) {
+        return vinMapper.addIteminShop14(items);
+    }
+    @Override
+    public int addFoodinShop14(VinItem items) {
+        return vinMapper.addFoodinShop14(items);
+    }
+    @Override
+    public int addcommercialIteminShop14(VinItem items) {
+        return vinMapper.addcommercialIteminShop14(items);
+    }
+    @Override
+    public int addothersinShop14(VinItem items) {
+        return vinMapper.addothersinShop14(items);
+    }
+    @Override
+    public int addSmallIteminShop14(VinItem items) {
+        return vinMapper.addSmallIteminShop14(items);
+    }
+    @Override
+    public int deleteIteminShop14byId(String id) {
+        return vinMapper.deleteIteminShop14byId(id);
+    }
+    @Override
+    public int deleteSmallIteminShop14byId(String id) {
+        return vinMapper.deleteSmallIteminShop14byId(id);
+    }
+    @Override
+    public int deleteFoodinShop14byId(String id) {
+        return vinMapper.deleteFoodinShop14byId(id);
+    }
+    @Override
+    public int deletecommercialIteminShop14byId(String id) {
+        return vinMapper.deletecommercialIteminShop14byId(id);
+    }
+    @Override
+    public int deleteothersinShop14byId(String id) {
+        return vinMapper.deleteothersinShop14byId(id);
+    }
+    @Override
+    public int updateIteminShop14(VinItem items) {
+        return vinMapper.updateIteminShop14(items);
+    }
+    @Override
+    public int updateSmallIteminShop14(VinItem items) {
+        return vinMapper.updateSmallIteminShop14(items);
+    }
+    @Override
+    public int updateFoodinShop14(VinItem items) {
+        return vinMapper.updateFoodinShop14(items);
+    }
+    @Override
+    public int updatecommercialIteminShop14(VinItem items) {
+        return vinMapper.updatecommercialIteminShop14(items);
+    }
+    @Override
+    public int updateothersinShop14(VinItem items) {
+        return vinMapper.updateothersinShop14(items);
+    }
+    @Override
+    public int sendIteminShop14(VinItem items) {
+        return vinMapper.sendIteminShop14(items);
+    }
+    @Override
+    public int sendSmallIteminShop14(VinItem items) {
+        return vinMapper.sendSmallIteminShop14(items);
+    }
+    @Override
+    public int sendFoodinShop14(VinItem items) {
+        return vinMapper.sendFoodinShop14(items);
+    }
+    @Override
+    public int sendcommercialIteminShop14(VinItem items) {
+        return vinMapper.sendcommercialIteminShop14(items);
+    }
+    @Override
+    public int sendothersinShop14(VinItem items) {
+        return vinMapper.sendothersinShop14(items);
+    }
+    @Override
+    public VinItem queryIteminShop14byId(String id) {
+        return vinMapper.queryIteminShop14byId(id);
+    }
+    @Override
+    public VinItem querySmallIteminShop14byId(String id) {
+        return vinMapper.querySmallIteminShop14byId(id);
+    }
+    @Override
+    public VinItem queryFoodinShop14byId(String id) {
+        return vinMapper.queryFoodinShop14byId(id);
+    }
+    @Override
+    public VinItem querycommercialIteminShop14byId(String id) {
+        return vinMapper.querycommercialIteminShop14byId(id);
+    }
+    @Override
+    public VinItem queryothersinShop14byId(String id) {
+        return vinMapper.queryothersinShop14byId(id);
+    }
+    @Override
+    public int queryItemNuminShop14byId(String id) {
+        return vinMapper.queryItemNuminShop14byId(id);
+    }
+    @Override
+    public int querySmallItemNuminShop14byId(String id) {
+        return vinMapper.querySmallItemNuminShop14byId(id);
+    }
+    @Override
+    public int queryFoodNuminShop14byId(String id) {
+        return vinMapper.queryFoodNuminShop14byId(id);
+    }
+    @Override
+    public int querycommercialItemNuminShop14byId(String id) {
+        return vinMapper.querycommercialItemNuminShop14byId(id);
+    }
+    @Override
+    public int queryothersNuminShop14byId(String id) {
+        return vinMapper.queryothersNuminShop14byId(id);
+    }
+    @Override
+    public List<VinItem> queryAllIteminShop14() {
+        return vinMapper.queryAllIteminShop14();
+    }
+    @Override
+    public List<VinItem> queryAllSmallIteminShop14() {
+        return vinMapper.queryAllSmallIteminShop14();
+    }
+    @Override
+    public List<VinItem> queryAllFoodinShop14() {
+        return vinMapper.queryAllFoodinShop14();
+    }
+    @Override
+    public List<VinItem> queryAllcommercialIteminShop14() {
+        return vinMapper.queryAllcommercialIteminShop14();
+    }
+    @Override
+    public List<VinItem> queryAllothersinShop14() {
+        return vinMapper.queryAllothersinShop14();
+    }
+    //    @Override
+//    public VinItem queryIteminShop14ByName(String itemName) {
+//        return vinMapper.queryIteminShop14ByName(itemName);
+//    }
+//    @Override
+//    public VinItem querySmallIteminShop14ByName(String itemName) {
+//        return vinMapper.querySmallIteminShop14ByName(itemName);
+//    }
+//    @Override
+//    public VinItem queryFoodinShop14ByName(String itemName) {
+//        return vinMapper.queryFoodinShop14ByName(itemName);
+//    }
+//    @Override
+//    public VinItem querycommercialIteminShop14ByName(String itemName) {
+//        return vinMapper.querycommercialIteminShop14ByName(itemName);
+//    }
+//    @Override
+//    public VinItem queryothersinShop14ByName(String itemName) {
+//        return vinMapper.queryothersinShop14ByName(itemName);
+//    }
+//    @Override
+//    public VinItem queryItemNuminShop14byID(String id) {
+//        return vinMapper.queryItemNuminShop14byID(id);
+//    }
+//    @Override
+//    public VinItem querySmallItemNuminShop14byID(String id) {
+//        return vinMapper.querySmallItemNuminShop14byID(id);
+//    }
+//    @Override
+//    public VinItem queryFoodNuminShop14byID(String id) {
+//        return vinMapper.queryFoodNuminShop14byID(id);
+//    }
+//    @Override
+//    public VinItem querycommercialItemNuminShop14byID(String id) {
+//        return vinMapper.querycommercialItemNuminShop14byID(id);
+//    }
+//    @Override
+//    public VinItem queryothersNuminShop14byID(String id) {
+//        return vinMapper.queryothersNuminShop14byID(id);
+//    }
+    @Override
+    public int ifItemExistinShop14(String id) {
+        return vinMapper.ifItemExistinShop14(id);
+    }
+    @Override
+    public int ifSmallItemExistinShop14(String id) {
+        return vinMapper.ifSmallItemExistinShop14(id);
+    }
+    @Override
+    public int ifFoodExistinShop14(String id) {
+        return vinMapper.ifFoodExistinShop14(id);
+    }
+    @Override
+    public int ifcommercialItemExistinShop14(String id) {
+        return vinMapper.ifcommercialItemExistinShop14(id);
+    }
+    @Override
+    public int ifothersExistinShop14(String id) {
+        return vinMapper.ifothersExistinShop14(id);
+    }
+    @Override
+    public int updateItembySendfromShop14(VinItem items) {
+        return vinMapper.updateItembySendfromShop14(items);
+    }
+    @Override
+    public int updateSmallItembySendfromShop14(VinItem items) {
+        return vinMapper.updateSmallItembySendfromShop14(items);
+    }
+    @Override
+    public int updateFoodbySendfromShop14(VinItem items) {
+        return vinMapper.updateFoodbySendfromShop14(items);
+    }
+    @Override
+    public int updatecommercialItembySendfromShop14(VinItem items) {
+        return vinMapper.updatecommercialItembySendfromShop14(items);
+    }
+    @Override
+    public int updateothersbySendfromShop14(VinItem items) {
+        return vinMapper.updateothersbySendfromShop14(items);
+    }
+    @Override
+    public int addloginShop14(VinLog log) {
+        return vinMapper.addloginShop14(log);
+    }
+    @Override
+    public List<VinLog> queryCategoryLoginShop14(String category) {
+        return vinMapper.queryCategoryLoginShop14(category);
+    }
+    @Override
+    public List<VinLog> queryCategoryandIfCompleteLoginShop14(String category, boolean ifComplete) {
+        return vinMapper.queryCategoryandIfCompleteLoginShop14(category,ifComplete);
+    }
+    @Override
+    public List<VinLog> queryCategoryReceiveinShop14(String category) {
+        return vinMapper.queryCategoryReceiveinShop14(category);
+    }
+    @Override
+    public int countCategoryReceiveinShop14(String category) {
+        return vinMapper.countCategoryReceiveinShop14(category);
+    }
+    @Override
+    public List<VinLog> queryCategoryConfirminShop14(String category, String action, String action2) {
+        return vinMapper.queryCategoryConfirminShop14(category,action,action2);
+    }
+    @Override
+    public int countCategoryConfirminShop14(String category, String action, String action2) {
+        return vinMapper.countCategoryConfirminShop14(category,action,action2);
+    }
+    @Override
+    public VinLog queryLoginshop14byid(String logid) {
+        return vinMapper.queryLoginshop14byid(logid);
+    }
+    @Override
+    public int updateLoginshop14byid(VinLog vinLog) {
+        return vinMapper.updateLoginshop14byid(vinLog);
+    }
+    @Override
+    public int deleteLoginShop14byLogid(String logid) {
+        return vinMapper.deleteLoginShop14byLogid(logid);
+    }
+    @Override
+    public int addCheckinShop14(VinCheck vinCheck) {
+        return vinMapper.addCheckinShop14(vinCheck);
+    }
+    @Override
+    public List<VinCheck> queryCheckinShop14(String category) {
+        return vinMapper.queryCheckinShop14(category);
+    }
+    @Override
+    public List<VinCheck> queryCheckwithTimeinShop14(String category, String time) {
+        return vinMapper.queryCheckwithTimeinShop14(category,time);
+    }
+    @Override
+    public List<VinCheck> queryCheckwithTimeandIdinShop14(String category, String time, String id) {
+        return vinMapper.queryCheckwithTimeandIdinShop14(category,time,id);
+    }
+    @Override
+    public int updateCheckinShop14byid(VinCheck vinCheck) {
+        return vinMapper.updateCheckinShop14byid(vinCheck);
+    }
+    @Override
+    public List<VinCheck> queryCheckinShop14byID(String id) {
+        return vinMapper.queryCheckinShop14byID(id);
+    }
+    @Override
+    public List<VinItemSimple> querySumitemCountbytimeinShop14(String time) {
+        return vinMapper.querySumitemCountbytimeinShop14(time);
+    }
+
+    @Override
+    @CacheEvict(value = { "cutelittlepiggyCache" },key="'ifAlertinShop14List'")
+    public int addSumitemCountinShop14(VinAlert vinAlert) {
+        return vinMapper.addSumitemCountinShop14(vinAlert);
+    }
+
+    @Override
+    public List<VinAlert> queryifAlertinShop14(String time) {
+        return vinMapper.queryifAlertinShop14(time);
+    }
+    @Override
+    public VinLog queryLoginshop14byItemid(String id) {
+        return vinMapper.queryLoginshop14byItemid(id);
+    }
+    @Override
+    public List<VinLog> queryAllLoginshop14byItemid(String id) {
+        return vinMapper.queryAllLoginshop14byItemid(id);
+    }
+    @Override
+    public int updateItemNameAllLogbyidinShop14(VinLog vinLog) {
+        return vinMapper.updateItemNameAllLogbyidinShop14(vinLog);
+    }
+
+
+
+
+
 
     @Override
     public int addDumpItem(Dumplist dumplist) {
@@ -6184,8 +6501,73 @@ public class VinServiceImpl implements VinService{
     }
 
     @Override
+    public int addApplyItemRefuseReason(String refuseReason) {
+        return vinMapper.addApplyItemRefuseReason(refuseReason);
+    }
+
+    @Override
     public int updateApplyItem(ApplyItem applyItem) {
         return vinMapper.updateApplyItem(applyItem);
+    }
+
+    @Override
+    public int addApplyItemConfirmLogID(String logID) {
+        return vinMapper.addApplyItemConfirmLogID(logID);
+    }
+
+    @Override
+    public int addApplyItemConfirmResult(boolean confirmResult) {
+        return vinMapper.addApplyItemConfirmResult(confirmResult);
+    }
+
+    @Override
+    public int deleteApplyItemConfirm(String logID) {
+        return vinMapper.deleteApplyItemConfirm(logID);
+    }
+
+    @Override
+    public List<ItemConfirm> queryApplyItemConfirm() {
+        return vinMapper.queryApplyItemConfirm();
+    }
+
+    @Override
+    public List<ItemConfirm> queryApplyItemConfirmNeeded() {
+        return vinMapper.queryApplyItemConfirmNeeded();
+    }
+
+    @Override
+    public List<ItemConfirm> queryApplyItemConfirmFinished() {
+        return vinMapper.queryApplyItemConfirmFinished();
+    }
+
+    @Override
+    public int addApplyFinanceConfirmLogID(String logID) {
+        return vinMapper.addApplyFinanceConfirmLogID(logID);
+    }
+
+    @Override
+    public int addApplyFinanceConfirmResult(boolean confirmResult) {
+        return vinMapper.addApplyFinanceConfirmResult(confirmResult);
+    }
+
+    @Override
+    public int deleteApplyFinanceConfirm(String logID) {
+        return vinMapper.deleteApplyFinanceConfirm(logID);
+    }
+
+    @Override
+    public List<ItemConfirm> queryApplyFinanceConfirm() {
+        return vinMapper.queryApplyFinanceConfirm();
+    }
+
+    @Override
+    public List<ItemConfirm> queryApplyFinanceConfirmNeeded() {
+        return vinMapper.queryApplyFinanceConfirmNeeded();
+    }
+
+    @Override
+    public List<ItemConfirm> queryApplyFinanceConfirmFinished() {
+        return vinMapper.queryApplyFinanceConfirmFinished();
     }
 
     @Override
@@ -6355,9 +6737,12 @@ public class VinServiceImpl implements VinService{
                 user.getLevel() == 10 && location.equals("shop10") ||
                 user.getLevel() == 11 && location.equals("shop11") ||
                 user.getLevel() == 12 && location.equals("shop12") ||
-                user.getLevel() == 13 && location.equals("shop13");
-        boolean condition2 = user.getLevel() == 500 && (location.equals("main2") || location.equals("shop1") || location.equals("shop2") || location.equals("shop3") || location.equals("shop8") || location.equals("shop9") || location.equals("shop10") || location.equals("shop11"))
-                || user.getLevel() == 501 && (location.equals("main1") || location.equals("shop4") || location.equals("shop5") || location.equals("shop6") || location.equals("shop7") || location.equals("shop3") || location.equals("shop12") || location.equals("shop13"));
+                user.getLevel() == 13 && location.equals("shop13") ||
+                user.getLevel() == 14 && location.equals("shop14");
+        boolean condition2 = user.getLevel() == 500 && (location.equals("main2") || location.equals("shop1") || location.equals("shop2") ||
+                location.equals("shop3") || location.equals("shop8") || location.equals("shop9") || location.equals("shop10") || location.equals("shop11"))
+                || user.getLevel() == 501 && (location.equals("main1") || location.equals("shop4") || location.equals("shop5") ||
+                location.equals("shop6") || location.equals("shop7") || location.equals("shop3") || location.equals("shop12") || location.equals("shop13") || location.equals("shop14"));
         return condition1 || condition2;
     }
 
@@ -6465,6 +6850,9 @@ public class VinServiceImpl implements VinService{
                     case "shop13":
                         ifexist = ifItemExistinShop13(id);
                         break;
+                    case "shop14":
+                        ifexist = ifItemExistinShop14(id);
+                        break;
                 }
                 break;
             case "smalltool":
@@ -6516,6 +6904,9 @@ public class VinServiceImpl implements VinService{
                         break;
                     case "shop13":
                         ifexist = ifSmallItemExistinShop13(id);
+                        break;
+                    case "shop14":
+                        ifexist = ifSmallItemExistinShop14(id);
                         break;
                 }
                 break;
@@ -6569,6 +6960,9 @@ public class VinServiceImpl implements VinService{
                     case "shop13":
                         ifexist = ifFoodExistinShop13(id);
                         break;
+                    case "shop14":
+                        ifexist = ifFoodExistinShop14(id);
+                        break;
                 }
                 break;
             case "commercialthing":
@@ -6621,6 +7015,9 @@ public class VinServiceImpl implements VinService{
                     case "shop13":
                         ifexist = ifcommercialItemExistinShop13(id);
                         break;
+                    case "shop14":
+                        ifexist = ifcommercialItemExistinShop14(id);
+                        break;
                 }
                 break;
             case "other":
@@ -6672,6 +7069,9 @@ public class VinServiceImpl implements VinService{
                         break;
                     case "shop13":
                         ifexist = ifothersExistinShop13(id);
+                        break;
+                    case "shop14":
+                        ifexist = ifothersExistinShop14(id);
                         break;
                 }
                 break;
@@ -6735,6 +7135,9 @@ public class VinServiceImpl implements VinService{
                     case "shop13":
                         deleteIteminShop13byId(itemID);
                         break;
+                    case "shop14":
+                        deleteIteminShop14byId(itemID);
+                        break;
                 }
                 break;
             case "smalltool":
@@ -6786,6 +7189,9 @@ public class VinServiceImpl implements VinService{
                         break;
                     case "shop13":
                         deleteSmallIteminShop13byId(itemID);
+                        break;
+                    case "shop14":
+                        deleteSmallIteminShop14byId(itemID);
                         break;
 
                 }
@@ -6839,6 +7245,9 @@ public class VinServiceImpl implements VinService{
                         break;
                     case "shop13":
                         deleteFoodinShop13byId(itemID);
+                        break;
+                    case "shop14":
+                        deleteFoodinShop14byId(itemID);
                         break;
 
                 }
@@ -6894,6 +7303,9 @@ public class VinServiceImpl implements VinService{
                     case "shop13":
                         deletecommercialIteminShop13byId(itemID);
                         break;
+                    case "shop14":
+                        deletecommercialIteminShop14byId(itemID);
+                        break;
 
                 }
                 break;
@@ -6946,6 +7358,9 @@ public class VinServiceImpl implements VinService{
                         break;
                     case "shop13":
                         deleteothersinShop13byId(itemID);
+                        break;
+                    case "shop14":
+                        deleteothersinShop14byId(itemID);
                         break;
                 }
                 break;
@@ -7014,6 +7429,9 @@ public class VinServiceImpl implements VinService{
                     case "shop13":
                         addIteminShop13(vinItem);
                         break;
+                    case "shop14":
+                        addIteminShop14(vinItem);
+                        break;
                 }
                 break;
             case "smalltool":
@@ -7065,6 +7483,9 @@ public class VinServiceImpl implements VinService{
                         break;
                     case "shop13":
                         addSmallIteminShop13(vinItem);
+                        break;
+                    case "shop14":
+                        addSmallIteminShop14(vinItem);
                         break;
 
                 }
@@ -7118,6 +7539,9 @@ public class VinServiceImpl implements VinService{
                         break;
                     case "shop13":
                         addFoodinShop13(vinItem);
+                        break;
+                    case "shop14":
+                        addFoodinShop14(vinItem);
                         break;
 
                 }
@@ -7173,6 +7597,9 @@ public class VinServiceImpl implements VinService{
                     case "shop13":
                         addcommercialIteminShop13(vinItem);
                         break;
+                    case "shop14":
+                        addcommercialIteminShop14(vinItem);
+                        break;
 
                 }
                 break;
@@ -7226,6 +7653,10 @@ public class VinServiceImpl implements VinService{
                     case "shop13":
                         addothersinShop13(vinItem);
                         break;
+                    case "shop14":
+                        addothersinShop14(vinItem);
+                        break;
+
                 }
                 break;
         }
@@ -7282,6 +7713,9 @@ public class VinServiceImpl implements VinService{
                 break;
             case "shop13":
                 count = countCategoryConfirminShop13(category,action1,action2);
+                break;
+            case "shop14":
+                count = countCategoryConfirminShop14(category,action1,action2);
                 break;
 
         }
@@ -7340,6 +7774,9 @@ public class VinServiceImpl implements VinService{
                 break;
             case "shop13":
                 count = countCategoryReceiveinShop13(category);
+                break;
+            case "shop14":
+                count = countCategoryReceiveinShop14(category);
                 break;
 
         }
@@ -7586,6 +8023,9 @@ public class VinServiceImpl implements VinService{
                     case "shop13":
                         vinItem = vinMapper.queryIteminShop13byId(id);
                         break;
+                    case "shop14":
+                        vinItem = vinMapper.queryIteminShop14byId(id);
+                        break;
 
                 }
 
@@ -7639,6 +8079,9 @@ public class VinServiceImpl implements VinService{
                         break;
                     case "shop13":
                         vinItem = vinMapper.querySmallIteminShop13byId(id);
+                        break;
+                    case "shop14":
+                        vinItem = vinMapper.querySmallIteminShop14byId(id);
                         break;
 
                 }
@@ -7694,6 +8137,9 @@ public class VinServiceImpl implements VinService{
                     case "shop13":
                         vinItem = vinMapper.queryFoodinShop13byId(id);
                         break;
+                    case "shop14":
+                        vinItem = vinMapper.queryFoodinShop14byId(id);
+                        break;
                 }
 
                 break;
@@ -7746,6 +8192,9 @@ public class VinServiceImpl implements VinService{
                         break;
                     case "shop13":
                         vinItem = vinMapper.querycommercialIteminShop13byId(id);
+                        break;
+                    case "shop14":
+                        vinItem = vinMapper.querycommercialIteminShop14byId(id);
                         break;
 
                 }
@@ -7800,6 +8249,9 @@ public class VinServiceImpl implements VinService{
                         break;
                     case "shop13":
                         vinItem = vinMapper.queryothersinShop13byId(id);
+                        break;
+                    case "shop14":
+                        vinItem = vinMapper.queryothersinShop14byId(id);
                         break;
                 }
 
@@ -8151,6 +8603,25 @@ public class VinServiceImpl implements VinService{
                         break;
                 }
                 break;
+            case "shop14":
+                switch (category) {
+                    case "tool":
+                        vinItemList = vinMapper.queryAllIteminShop14();
+                        break;
+                    case "smalltool":
+                        vinItemList = vinMapper.queryAllSmallIteminShop14();
+                        break;
+                    case "food":
+                        vinItemList = vinMapper.queryAllFoodinShop14();
+                        break;
+                    case "commercialthing":
+                        vinItemList = vinMapper.queryAllcommercialIteminShop14();
+                        break;
+                    case "other":
+                        vinItemList = vinMapper.queryAllothersinShop14();
+                        break;
+                }
+                break;
         }
 
         return vinItemList;
@@ -8207,6 +8678,9 @@ public class VinServiceImpl implements VinService{
                 break;
             case "shop13":
                 vinAlertList = queryifAlertinShop13(date);
+                break;
+            case "shop14":
+                vinAlertList = queryifAlertinShop14(date);
                 break;
         }
         return vinAlertList;
@@ -8572,6 +9046,26 @@ public class VinServiceImpl implements VinService{
                         break;
                 }
                 break;
+            case "shop14":
+                switch (category) {
+                    case "tool":
+                        itemCount = queryItemNuminShop14byId(id);
+                        break;
+                    case "smalltool":
+                        itemCount = querySmallItemNuminShop14byId(id);
+                        break;
+                    case "food":
+                        itemCount = queryFoodNuminShop14byId(id);
+                        break;
+                    case "commercial":
+                    case "commercialthing":
+                        itemCount = querycommercialItemNuminShop14byId(id);
+                        break;
+                    case "other":
+                        itemCount = queryothersNuminShop14byId(id);
+                        break;
+                }
+                break;
         }
         return itemCount;
     }
@@ -8641,6 +9135,9 @@ public class VinServiceImpl implements VinService{
             case "shop13":
                 vinAlerts = queryifAlertinShop13(date);
                 break;
+            case "shop14":
+                vinAlerts = queryifAlertinShop14(date);
+                break;
         }
 
         return vinAlerts;
@@ -8699,6 +9196,9 @@ public class VinServiceImpl implements VinService{
                     case "shop13":
                         updateIteminShop13(vinItem);
                         break;
+                    case "shop14":
+                        updateIteminShop14(vinItem);
+                        break;
                 }
                 break;
             case "smalltool":
@@ -8750,6 +9250,9 @@ public class VinServiceImpl implements VinService{
                         break;
                     case "shop13":
                         updateSmallIteminShop13(vinItem);
+                        break;
+                    case "shop14":
+                        updateSmallIteminShop14(vinItem);
                         break;
                 }
                 break;
@@ -8803,6 +9306,9 @@ public class VinServiceImpl implements VinService{
                     case "shop13":
                         updateFoodinShop13(vinItem);
                         break;
+                    case "shop14":
+                        updateFoodinShop14(vinItem);
+                        break;
                 }
                 break;
             case "commercial":
@@ -8855,6 +9361,9 @@ public class VinServiceImpl implements VinService{
                     case "shop13":
                         updatecommercialIteminShop13(vinItem);
                         break;
+                    case "shop14":
+                        updatecommercialIteminShop14(vinItem);
+                        break;
                 }
                 break;
             case "other":
@@ -8906,6 +9415,9 @@ public class VinServiceImpl implements VinService{
                         break;
                     case "shop13":
                         updateothersinShop13(vinItem);
+                        break;
+                    case "shop14":
+                        updateothersinShop14(vinItem);
                         break;
                 }
                 break;

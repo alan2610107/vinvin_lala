@@ -80,6 +80,9 @@ public class LogService {
             case "shop13":
                 vinLog = vinService.queryLoginshop13byid(logid);
                 break;
+            case "shop14":
+                vinLog = vinService.queryLoginshop14byid(logid);
+                break;
         }
 
         return vinLog;
@@ -136,6 +139,9 @@ public class LogService {
                 break;
             case "shop13":
                 vinService.updateLoginshop13byid(vinLog);
+                break;
+            case "shop14":
+                vinService.updateLoginshop14byid(vinLog);
                 break;
         }
     }
@@ -358,6 +364,9 @@ public class LogService {
             case "shop13":
                 vinService.addloginShop13(newVinLog);
                 break;
+            case "shop14":
+                vinService.addloginShop14(newVinLog);
+                break;
         }
     }
 
@@ -418,6 +427,9 @@ public class LogService {
             case "shop13":
                 vinLogList = vinService.queryAllLoginshop13byItemid(id);
                 break;
+            case "shop14":
+                vinLogList = vinService.queryAllLoginshop14byItemid(id);
+                break;
         }
         return vinLogList;
     }
@@ -476,6 +488,9 @@ public class LogService {
                 break;
             case "shop13":
                 vinService.deleteLoginShop13byLogid(logid);
+                break;
+            case "shop14":
+                vinService.deleteLoginShop14byLogid(logid);
                 break;
         }
     }

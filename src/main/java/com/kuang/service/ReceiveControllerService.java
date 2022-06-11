@@ -117,6 +117,9 @@ public class ReceiveControllerService {
             case "shop13":
                 receiveList = vinService.queryCategoryReceiveinShop13(category);
                 break;
+            case "shop14":
+                receiveList = vinService.queryCategoryReceiveinShop14(category);
+                break;
         }
         return receiveList;
     }

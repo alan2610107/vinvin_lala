@@ -1429,6 +1429,90 @@ public interface VinMapper {
 
 
 
+    //shop14
+    int addIteminShop14(VinItem items);
+    int addFoodinShop14(VinItem items);
+    int addcommercialIteminShop14(VinItem items);
+    int addothersinShop14(VinItem items);
+    int addSmallIteminShop14(VinItem items);
+    int deleteIteminShop14byId(String id);
+    int deleteSmallIteminShop14byId(String id);
+    int deleteFoodinShop14byId(String id);
+    int deletecommercialIteminShop14byId(String id);
+    int deleteothersinShop14byId(String id);
+    int updateIteminShop14(VinItem items);
+    int updateSmallIteminShop14(VinItem items);
+    int updateFoodinShop14(VinItem items);
+    int updatecommercialIteminShop14(VinItem items);
+    int updateothersinShop14(VinItem items);
+    int sendIteminShop14(VinItem items);
+    int sendSmallIteminShop14(VinItem items);
+    int sendFoodinShop14(VinItem items);
+    int sendcommercialIteminShop14(VinItem items);
+    int sendothersinShop14(VinItem items);
+    VinItem queryIteminShop14byId(@Param("id")String id);
+    VinItem querySmallIteminShop14byId(@Param("id")String id);
+    VinItem queryFoodinShop14byId(@Param("id")String id);
+    VinItem querycommercialIteminShop14byId(@Param("id")String id);
+    VinItem queryothersinShop14byId(@Param("id")String id);
+    int queryItemNuminShop14byId(@Param("id")String id);
+    int querySmallItemNuminShop14byId(@Param("id")String id);
+    int queryFoodNuminShop14byId(@Param("id")String id);
+    int querycommercialItemNuminShop14byId(@Param("id")String id);
+    int queryothersNuminShop14byId(@Param("id")String id);
+    List<VinItem> queryAllIteminShop14();
+    List<VinItem> queryAllSmallIteminShop14();
+    List<VinItem> queryAllFoodinShop14();
+    List<VinItem> queryAllcommercialIteminShop14();
+    List<VinItem> queryAllothersinShop14();
+    //    VinItem queryIteminShop14ByName(@Param("itemName")String itemName);
+//    VinItem querySmallIteminShop14ByName(@Param("itemName")String itemName);
+//    VinItem queryFoodinShop14ByName(@Param("itemName")String itemName);
+//    VinItem querycommercialIteminShop14ByName(@Param("itemName")String itemName);
+//    VinItem queryothersinShop14ByName(@Param("itemName")String itemName);
+//    VinItem queryItemNuminShop14byID(@Param("id")String id);
+//    VinItem querySmallItemNuminShop14byID(@Param("id")String id);
+//    VinItem queryFoodNuminShop14byID(@Param("id")String id);
+//    VinItem querycommercialItemNuminShop14byID(@Param("id")String id);
+//    VinItem queryothersNuminShop14byID(@Param("id")String id);
+    int ifItemExistinShop14(@Param("id") String id);
+    int ifSmallItemExistinShop14(@Param("id") String id);
+    int ifFoodExistinShop14(@Param("id") String id);
+    int ifcommercialItemExistinShop14(@Param("id") String id);
+    int ifothersExistinShop14(@Param("id") String id);
+    int updateItembySendfromShop14(VinItem items);
+    int updateSmallItembySendfromShop14(VinItem items);
+    int updateFoodbySendfromShop14(VinItem items);
+    int updatecommercialItembySendfromShop14(VinItem items);
+    int updateothersbySendfromShop14(VinItem items);
+    int addloginShop14(VinLog log);
+    List<VinLog> queryCategoryLoginShop14(@Param("category") String category);
+    List<VinLog> queryCategoryandIfCompleteLoginShop14(@Param("category") String category, @Param("ifComplete") boolean ifComplete);
+    List<VinLog> queryCategoryReceiveinShop14(@Param("category") String category);
+    int countCategoryReceiveinShop14(@Param("category") String category);
+    List<VinLog> queryCategoryConfirminShop14(@Param("category") String category, @Param("action") String action, @Param("action2") String action2);
+    int countCategoryConfirminShop14(@Param("category") String category, @Param("action") String action, @Param("action2") String action2);
+    VinLog queryLoginshop14byid(@Param("logid") String logid);
+    int updateLoginshop14byid(VinLog vinLog);
+    int deleteLoginShop14byLogid(@Param("logid") String logid);
+    int addCheckinShop14(VinCheck vinCheck);
+    List<VinCheck> queryCheckinShop14(@Param("category") String category);
+    List<VinCheck> queryCheckwithTimeinShop14(@Param("category") String category, @Param("time") String time);
+    List<VinCheck> queryCheckwithTimeandIdinShop14(@Param("category") String category, @Param("time") String time, @Param("id") String id);
+    int updateCheckinShop14byid(VinCheck vinCheck);
+    List<VinCheck> queryCheckinShop14byID(@Param("id") String id);
+    List<VinItemSimple> querySumitemCountbytimeinShop14(@Param("time") String time);
+    int addSumitemCountinShop14(VinAlert vinAlert);
+
+    @Cacheable(value = { "cutelittlepiggyCache" },key="'ifAlertinShop14List'")
+    List<VinAlert> queryifAlertinShop14(@Param("time") String time);
+    VinLog queryLoginshop14byItemid(@Param("id") String id);
+    List<VinLog> queryAllLoginshop14byItemid(@Param("id") String id);
+    int updateItemNameAllLogbyidinShop14(VinLog vinLog);
+
+
+
+
 
 
 
@@ -1481,7 +1565,21 @@ public interface VinMapper {
     List<ApplyItem> queryApplyItembyLocation(String location);
     ApplyItem queryApplyItembyLogID(String logID);
     int deleteApplyItem(String logID);
+    int addApplyItemRefuseReason(String refuseReason);
     int updateApplyItem(ApplyItem applyItem);
+    int addApplyItemConfirmLogID(String logID);
+    int addApplyItemConfirmResult(boolean confirmResult);
+    int deleteApplyItemConfirm(String logID);
+    List<ItemConfirm> queryApplyItemConfirm();
+    List<ItemConfirm> queryApplyItemConfirmNeeded();
+    List<ItemConfirm> queryApplyItemConfirmFinished();
+
+    int addApplyFinanceConfirmLogID(String logID);
+    int addApplyFinanceConfirmResult(boolean confirmResult);
+    int deleteApplyFinanceConfirm(String logID);
+    List<ItemConfirm> queryApplyFinanceConfirm();
+    List<ItemConfirm> queryApplyFinanceConfirmNeeded();
+    List<ItemConfirm> queryApplyFinanceConfirmFinished();
 
     List<ApplyItemSec> queryApplyItemSecbyMonth(String month);
     ApplyItemSec queryApplyItemSecbyID(String id);

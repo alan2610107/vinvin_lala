@@ -18,9 +18,7 @@ import org.springframework.stereotype.Component;
 
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @Component
 public class KryApi {
@@ -178,34 +176,48 @@ public class KryApi {
 //    @Scheduled(cron = "0 32 18 * * ?") //每天凌晨一點執行
     public void getKryData(){
         System.out.println("============getKryData===========");
-        List<String> warehouseList = new ArrayList<>();
-        List<Long> shopIdList = new ArrayList<>();
-        warehouseList.add("shop1");
-        warehouseList.add("shop2");
-        warehouseList.add("shop3");
-        warehouseList.add("shop4");
-        warehouseList.add("shop5");
-        warehouseList.add("shop6");
-        warehouseList.add("shop7");
-        warehouseList.add("shop8");
-        warehouseList.add("shop9");
-        warehouseList.add("shop10");
-        warehouseList.add("shop11");
-        warehouseList.add("shop12");
-        warehouseList.add("shop13");
-        shopIdList.add(870305696L);
-        shopIdList.add(870305697L);
-        shopIdList.add(870331916L);
-        shopIdList.add(870270864L);
-        shopIdList.add(870085652L);
-        shopIdList.add(870365186L);
-        shopIdList.add(870387574L);
-        shopIdList.add(870387578L);
-        shopIdList.add(870387582L);
-        shopIdList.add(870387577L);
-        shopIdList.add(870387585L);
-        shopIdList.add(870387576L);
-        shopIdList.add(870387583L);
+        Map<String, Long> KRYMap = new HashMap<>();
+        KRYMap.put("shop1", 870305696L);
+        KRYMap.put("shop2", 870305697L);
+        KRYMap.put("shop3", 870331916L);
+        KRYMap.put("shop4", 870270864L);
+        KRYMap.put("shop5", 870085652L);
+        KRYMap.put("shop6", 870365186L);
+        KRYMap.put("shop7", 870387574L);
+        KRYMap.put("shop8", 870387578L);
+        KRYMap.put("shop9", 870387582L);
+        KRYMap.put("shop10", 870387577L);
+        KRYMap.put("shop11", 870387585L);
+        KRYMap.put("shop12", 870387576L);
+        KRYMap.put("shop13", 870387583L);
+//        List<String> warehouseList = new ArrayList<>();
+//        List<Long> shopIdList = new ArrayList<>();
+//        warehouseList.add("shop1");
+//        warehouseList.add("shop2");
+//        warehouseList.add("shop3");
+//        warehouseList.add("shop4");
+//        warehouseList.add("shop5");
+//        warehouseList.add("shop6");
+//        warehouseList.add("shop7");
+//        warehouseList.add("shop8");
+//        warehouseList.add("shop9");
+//        warehouseList.add("shop10");
+//        warehouseList.add("shop11");
+//        warehouseList.add("shop12");
+//        warehouseList.add("shop13");
+//        shopIdList.add(870305696L);
+//        shopIdList.add(870305697L);
+//        shopIdList.add(870331916L);
+//        shopIdList.add(870270864L);
+//        shopIdList.add(870085652L);
+//        shopIdList.add(870365186L);
+//        shopIdList.add(870387574L);
+//        shopIdList.add(870387578L);
+//        shopIdList.add(870387582L);
+//        shopIdList.add(870387577L);
+//        shopIdList.add(870387585L);
+//        shopIdList.add(870387576L);
+//        shopIdList.add(870387583L);
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
         Date now=new Date();
@@ -214,11 +226,14 @@ public class KryApi {
 //        long startTime = endTime - 86400000L + 1000L;
         System.out.println("startTime==>"+formatter.format(startTime));
         System.out.println("endTime==>"+formatter.format(endTime));
-        for (int i = 0; i < warehouseList.size(); i++) {
-            String warehouse = warehouseList.get(i);
-            Long shopId = shopIdList.get(i);
-            getOrders(shopId,warehouse,startTime,endTime);
+        for (String warehouse : KRYMap.keySet()) {
+            getOrders(KRYMap.get(warehouse),warehouse,startTime,endTime);
         }
+//        for (int i = 0; i < warehouseList.size(); i++) {
+//            String warehouse = warehouseList.get(i);
+//            Long shopId = shopIdList.get(i);
+//            getOrders(shopId,warehouse,startTime,endTime);
+//        }
 
 
 
