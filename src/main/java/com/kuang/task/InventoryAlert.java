@@ -2300,6 +2300,148 @@ public class InventoryAlert {
 
                 }
                 break;
+            case "shop14":
+                System.out.println("=====addSumitemCount.shop14=====");
+                vinItemWeekMap = new HashMap<>();
+                vinItemMonthMap = new HashMap<>();
+                vinItemMonthSize = listvinItemMonth.size();
+                vinItemWeekSize = listvinItemWeek.size();
+                for (int i = 0; i < vinItemMonthSize; i++) {
+                    vinItemMonthMap.put(listvinItemMonth.get(i).getId(), listvinItemMonth.get(i));
+                }
+                for (int i = 0; i < vinItemWeekSize; i++) {
+                    vinItemWeekMap.put(listvinItemWeek.get(i).getId(), listvinItemWeek.get(i));
+                }
+                for (String id : vinItemMonthMap.keySet()) {
+                    VinAlert vinAlert = new VinAlert();
+                    String logid = UUID.randomUUID().toString().replace("-","");
+                    vinAlert.setLogid(logid);
+                    vinAlert.setId(id);
+                    vinAlert.setTime(today);
+                    VinItemSimple vinItemMonth = vinItemMonthMap.get(id);
+                    vinAlert.setCount_month(vinItemMonth.getItemCount());
+
+                    String category = vinItemMonth.getCategory();
+                    vinAlert.setCategory(category);
+                    int numinWarehouse = 0;
+                    int ifExist = 0;
+                    switch (category){
+                        case "tool":
+                            ifExist = vinService.ifItemExistinShop14(id);
+                            if(ifExist>0){
+                                numinWarehouse = vinService.queryItemNuminShop14byId(id);
+                            }
+                            break;
+                        case "smalltool":
+                            ifExist = vinService.ifSmallItemExistinShop14(id);
+                            if(ifExist>0){
+                                numinWarehouse = vinService.querySmallItemNuminShop14byId(id);
+                            }
+                            break;
+                        case "food":
+                            ifExist = vinService.ifFoodExistinShop14(id);
+                            if(ifExist>0) {
+                                numinWarehouse = vinService.queryFoodNuminShop14byId(id);
+                            }
+                            break;
+                        case "commercialthing":
+                            System.out.println("=====commercialthing=====");
+                            ifExist = vinService.ifcommercialItemExistinShop14(id);
+                            if(ifExist>0) {
+                                numinWarehouse = vinService.querycommercialItemNuminShop14byId(id);
+                            }
+                            break;
+                        case "other":
+                            ifExist = vinService.ifothersExistinShop14(id);
+                            if(ifExist>0) {
+                                numinWarehouse = vinService.queryothersNuminShop14byId(id);
+                            }
+                            break;
+                    }
+
+                    if(vinItemWeekMap.containsKey(id)){
+                        VinItemSimple vinItemWeek = vinItemWeekMap.get(id);
+                        vinAlert.setCount_week(vinItemWeek.getItemCount());
+                        if(numinWarehouse <= vinItemWeek.getItemCount()){
+                            vinAlert.setIfalert_week(true);
+                        }else {
+                            vinAlert.setIfalert_week(false);
+                        }
+
+                    }else {
+                        vinAlert.setCount_week(0);
+                        vinAlert.setIfalert_week(false);//不一定，要看看
+                    }
+
+                    if(numinWarehouse <= vinItemMonth.getItemCount()){
+                        vinAlert.setIfalert_month(true);
+                    }else {
+                        vinAlert.setIfalert_month(false);
+                    }
+
+                    vinService.addSumitemCountinShop14(vinAlert);
+
+                }
+
+                for (String id : vinItemWeekMap.keySet()) {
+                    if(!vinItemMonthMap.containsKey(id)){
+                        VinAlert vinAlert = new VinAlert();
+                        String logid = UUID.randomUUID().toString().replace("-","");
+                        vinAlert.setLogid(logid);
+                        vinAlert.setId(id);
+                        vinAlert.setTime(today);
+                        VinItemSimple vinItemWeek = vinItemWeekMap.get(id);
+                        vinAlert.setCount_week(vinItemWeek.getItemCount());
+                        vinAlert.setCount_month(0);
+                        String category = vinItemWeek.getCategory();
+                        vinAlert.setCategory(category);
+                        int numinWarehouse = 0;
+                        int ifExist = 0;
+                        switch (category){
+                            case "tool":
+                                ifExist = vinService.ifItemExistinShop14(id);
+                                if(ifExist>0){
+                                    numinWarehouse = vinService.queryItemNuminShop14byId(id);
+                                }
+                                break;
+                            case "smalltool":
+                                ifExist = vinService.ifSmallItemExistinShop14(id);
+                                if(ifExist>0){
+                                    numinWarehouse = vinService.querySmallItemNuminShop14byId(id);
+                                }
+                                break;
+                            case "food":
+                                ifExist = vinService.ifFoodExistinShop14(id);
+                                if(ifExist>0) {
+                                    numinWarehouse = vinService.queryFoodNuminShop14byId(id);
+                                }
+                                break;
+                            case "commercialthing":
+                                System.out.println("=====commercialthing=====");
+                                ifExist = vinService.ifcommercialItemExistinShop14(id);
+                                if(ifExist>0) {
+                                    numinWarehouse = vinService.querycommercialItemNuminShop14byId(id);
+                                }
+                                break;
+                            case "other":
+                                ifExist = vinService.ifothersExistinShop14(id);
+                                if(ifExist>0) {
+                                    numinWarehouse = vinService.queryothersNuminShop14byId(id);
+                                }
+                                break;
+                        }
+                        if(numinWarehouse <= vinItemWeek.getItemCount()){
+                            vinAlert.setIfalert_week(true);
+                            vinAlert.setIfalert_month(true);
+                        }else {
+                            vinAlert.setIfalert_week(false);
+                            vinAlert.setIfalert_month(false);
+                        }
+                        vinService.addSumitemCountinShop14(vinAlert);
+                    }
+
+                }
+                break;
 
         }
 
@@ -2404,6 +2546,12 @@ public class InventoryAlert {
                 List<VinItemSimple> vinItemMonthshop13 = vinService.querySumitemCountbytimeinShop13(lastmonth);
                 addSumitemCount(vinItemWeekshop13,vinItemMonthshop13,"shop13",today);
                 break;
+            case "shop14":
+                System.out.println("=====shop14=====");
+                List<VinItemSimple> vinItemWeekshop14 = vinService.querySumitemCountbytimeinShop14(lastweek);
+                List<VinItemSimple> vinItemMonthshop14 = vinService.querySumitemCountbytimeinShop14(lastmonth);
+                addSumitemCount(vinItemWeekshop14,vinItemMonthshop14,"shop14",today);
+                break;
         }
     }
 
@@ -2472,6 +2620,9 @@ public class InventoryAlert {
 
         System.out.println("=====querySumitemCountbytime.shop13=====");
         querySumitemCountbytime("shop13",lastweek,lastmonth,today);
+
+        System.out.println("=====querySumitemCountbytime.shop14=====");
+        querySumitemCountbytime("shop14",lastweek,lastmonth,today);
 
         System.out.println("========觸發InventoryAlert結束=======" + today);
 
