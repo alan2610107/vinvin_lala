@@ -85,6 +85,9 @@ public class DailycheckControllerService {
             case "shop13":
                 vinCheck = vinService.queryCheckwithTimeinShop13(category, downloadDate);
                 break;
+            case "shop14":
+                vinCheck = vinService.queryCheckwithTimeinShop14(category, downloadDate);
+                break;
         }
 
         return vinCheck;
@@ -125,7 +128,7 @@ public class DailycheckControllerService {
         Warehouse warehouse = vinService.queryRealWarehouseName(location);
         String realname = warehouse.getRealname();
         model.addAttribute("warehouse", realname + "日盤");
-        model.addAttribute("logLocation", "toDailyCheck?location=" + location);
+        model.addAttribute("logLocation", location);
         model.addAttribute("mainWarehouse", "dailycheck");
         model.addAttribute("location", location);
 //        System.out.println("model" + model);
