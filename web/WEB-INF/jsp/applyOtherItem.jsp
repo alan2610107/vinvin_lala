@@ -35,6 +35,7 @@
                 <input type="text" name="applyTime" value="${applyTime}" hidden>
                 <input type="text" name="applyName" value="${applyName}" hidden>
                 <input type="text" name="month" value="${month}" hidden>
+                <input type="text" name="itemID" value="0" hidden>
                 <div class="mb-3">
                     <label for="Inputitemname" class="form-label">物料名稱：</label>
                     <input type="text" class="form-control" id="Inputitemname" name="itemName" required>

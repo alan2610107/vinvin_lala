@@ -23,10 +23,11 @@ public class ApplyControllerService {
 
     public HashMap<String,String> getStatusMap(){
         HashMap<String,String> statusMap = new HashMap<>();
-        statusMap.put("NOT_SHIP","未動作");
+        statusMap.put("PROCESSING","處理中");
         statusMap.put("BUY","已採購");
+        statusMap.put("SHIP","已配送");
         statusMap.put("ARRIVE","已送達");
-
+        statusMap.put("REFUSE","沒過審核或其他狀況");
         return statusMap;
     }
     public HashMap<String,String> getConfirmResultMap(){
@@ -37,26 +38,26 @@ public class ApplyControllerService {
         return confirmResultMap;
     }
 
-    public void autoAddApplyItemSec(ApplyItem applyItem){
-        taskExecutor.submit(() -> {
-            String month = applyItem.getMonth();
-            String store = applyItem.getLocation();
-            String id = store + "_" + month;
-            int ifExist = 0;
-            ifExist = vinService.ifExistApplyItemSec(id);
-            if(ifExist > 0){
-                ApplyItemSec applyItemSec = vinService.queryApplyItemSecbyID(id);
-                applyItemSec.setTotalPrice(applyItemSec.getTotalPrice() + applyItem.getTotalPrice());
-                vinService.updateApplyItemSec(applyItemSec);
-            }else {
-                ApplyItemSec applyItemSec = new ApplyItemSec();
-                applyItemSec.setId(id);
-                applyItemSec.setMonth(month);
-                applyItemSec.setStore(store);
-                applyItemSec.setTotalPrice(applyItem.getTotalPrice());
-                vinService.addApplyItemSec(applyItemSec);
-            }
-
-        });
-    }
+//    public void autoAddApplyItemSec(ApplyItem applyItem){
+//        taskExecutor.submit(() -> {
+//            String month = applyItem.getMonth();
+//            String store = applyItem.getLocation();
+//            String id = store + "_" + month;
+//            int ifExist = 0;
+//            ifExist = vinService.ifExistApplyItemSec(id);
+//            if(ifExist > 0){
+//                ApplyItemSec applyItemSec = vinService.queryApplyItemSecbyID(id);
+//                applyItemSec.setTotalPrice(applyItemSec.getTotalPrice() + applyItem.getTotalPrice());
+//                vinService.updateApplyItemSec(applyItemSec);
+//            }else {
+//                ApplyItemSec applyItemSec = new ApplyItemSec();
+//                applyItemSec.setId(id);
+//                applyItemSec.setMonth(month);
+//                applyItemSec.setStore(store);
+//                applyItemSec.setTotalPrice(applyItem.getTotalPrice());
+//                vinService.addApplyItemSec(applyItemSec);
+//            }
+//
+//        });
+//    }
 }

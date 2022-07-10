@@ -3222,6 +3222,12 @@ public class VinServiceImpl implements VinService{
     }
 
     @Override
+    @Cacheable(value = { "cutelittlepiggyCache" },key="'queryAreaRealWarehouseName_'+#area")
+    public List<Warehouse> queryAreaRealWarehouseName(String area) {
+        return vinMapper.queryAreaRealWarehouseName(area);
+    }
+
+    @Override
     public int addCheckinMain1(VinCheck vinCheck) {
         return vinMapper.addCheckinMain1(vinCheck);
     }
@@ -6486,7 +6492,7 @@ public class VinServiceImpl implements VinService{
     }
 
     @Override
-    public List<ApplyItem> queryApplyItembyLocation(String location) {
+    public List<ApplyItemShow> queryApplyItembyLocation(String location) {
         return vinMapper.queryApplyItembyLocation(location);
     }
 
@@ -6500,10 +6506,10 @@ public class VinServiceImpl implements VinService{
         return vinMapper.deleteApplyItem(logID);
     }
 
-    @Override
-    public int addApplyItemRefuseReason(String refuseReason) {
-        return vinMapper.addApplyItemRefuseReason(refuseReason);
-    }
+//    @Override
+//    public int addApplyItemRefuseReason(String refuseReason) {
+//        return vinMapper.addApplyItemRefuseReason(refuseReason);
+//    }
 
     @Override
     public int updateApplyItem(ApplyItem applyItem) {
@@ -6526,18 +6532,43 @@ public class VinServiceImpl implements VinService{
     }
 
     @Override
-    public List<ItemConfirm> queryApplyItemConfirm() {
+    public List<ApplyItemConfirm> queryApplyItemConfirm() {
         return vinMapper.queryApplyItemConfirm();
     }
 
     @Override
-    public List<ItemConfirm> queryApplyItemConfirmNeeded() {
-        return vinMapper.queryApplyItemConfirmNeeded();
+    public List<ApplyItemConfirm> queryApplyItemConfirmNeeded(String location) {
+        return vinMapper.queryApplyItemConfirmNeeded(location);
     }
 
     @Override
-    public List<ItemConfirm> queryApplyItemConfirmFinished() {
+    public List<ApplyItemConfirm> queryApplyItemConfirmFinished() {
         return vinMapper.queryApplyItemConfirmFinished();
+    }
+
+    @Override
+    public ApplyItemConfirm queryApplyItemConfirmByLogID(String logID) {
+        return vinMapper.queryApplyItemConfirmByLogID(logID);
+    }
+
+    @Override
+    public int updateApplyItemConfirmAreaByLogID(ApplyItemConfirm applyItemConfirm) {
+        return vinMapper.updateApplyItemConfirmAreaByLogID(applyItemConfirm);
+    }
+
+    @Override
+    public int updateApplyItemConfirmCenterByLogID(ApplyItemConfirm applyItemConfirm) {
+        return vinMapper.updateApplyItemConfirmCenterByLogID(applyItemConfirm);
+    }
+
+    @Override
+    public int updateApplyItemConfirmFinanceByLogID(ApplyItemConfirm applyItemConfirm) {
+        return vinMapper.updateApplyItemConfirmFinanceByLogID(applyItemConfirm);
+    }
+
+    @Override
+    public int addApplyItemConfirm(ApplyItemConfirm applyItemConfirm) {
+        return vinMapper.addApplyItemConfirm(applyItemConfirm);
     }
 
     @Override
@@ -6718,6 +6749,41 @@ public class VinServiceImpl implements VinService{
     @Override
     public int deleteItemToolSet(String itemID) {
         return vinMapper.deleteItemToolSet(itemID);
+    }
+
+    @Override
+    public String getConfirmStatusTrans(String statusEN) {
+        return vinMapper.getConfirmStatusTrans(statusEN);
+    }
+
+    @Override
+    public List<ConfirmStatusTrans> queryAllConfirmStatusTrans() {
+        return vinMapper.queryAllConfirmStatusTrans();
+    }
+
+    @Override
+    public int insertPurchaseItem(PurchaseItem purchaseItem) {
+        return vinMapper.insertPurchaseItem(purchaseItem);
+    }
+
+    @Override
+    public PurchaseItem queryPurchaseItemByLogID(String logID) {
+        return vinMapper.queryPurchaseItemByLogID(logID);
+    }
+
+    @Override
+    public List<PurchaseItem> queryPurchaseItemByLocation(String location) {
+        return vinMapper.queryPurchaseItemByLocation(location);
+    }
+
+    @Override
+    public int updatePurchaseItemByLogID(PurchaseItem purchaseItem) {
+        return vinMapper.updatePurchaseItemByLogID(purchaseItem);
+    }
+
+    @Override
+    public List<PurchaseItem> queryPurchaseItem() {
+        return vinMapper.queryPurchaseItem();
     }
 
 

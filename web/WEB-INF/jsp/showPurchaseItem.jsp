@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>物料申請清單</title>
+    <title>物料採購清單</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -182,40 +182,37 @@
                     <thead class="table-customize">
                     <tr>
                         <th>物料名稱</th>
-                        <th hidden>物料ID</th>
                         <th>數量</th>
+                        <th>採購狀態</th>
                         <th>申請人</th>
                         <th>申請日期</th>
-                        <th>審核</th>
-<%--                        <th>審核狀態</th>--%>
-<%--                        <th>單價</th>--%>
-<%--                        <th>總價</th>--%>
+                        <th>單價</th>
+                        <th>總價</th>
                         <th>採購日期</th>
                         <th>運單號</th>
-<%--                        <th></th>--%>
+                        <th></th>
                     </tr>
                     </thead>
 
                     <tbody >
                     <c:set var="headCount" value="0"/>
-                    <c:forEach var="applyItem" items="${applyItemList}">
+                    <c:forEach var="purchaseItem" items="${purchaseItemList}">
                         <c:set var="headCount" value="${headCount + 1}"/>
                         <tr>
-                            <th class="table-customize" scope="row">${headCount}. ${applyItem.itemName}</th>
-                            <th class="table-customize2" hidden>${applyItem.itemID}</th>
-                            <td class="table-customize2">${applyItem.count}</td>
-                            <td class="table-customize2">${applyItem.applyName}</td>
-                            <td class="table-customize2">${applyItem.applyTime}</td>
-                            <td class="table-customize2">${confirmStatusMap.get(itemConfirmStatusMap.get(applyItem.logID))}</td>
-<%--                            <td class="table-customize2">${applyItem.confirmResult}</td>--%>
-<%--                            <td class="table-customize2">${applyItem.singlePrice}</td>--%>
-<%--                            <td class="table-customize2">${applyItem.totalPrice}</td>--%>
-                            <td class="table-customize2">${applyItem.purchaseTime}</td>
-                            <td class="table-customize2">${applyItem.shipID}</td>
-<%--                            <td class="table-customize2">--%>
-<%--                                <a href="${pageContext.request.contextPath}/receive/list?location=${location}">採購</a>--%>
-<%--                            </td>--%>
-
+                            <th class="table-customize" scope="row">${headCount}. ${purchaseItem.itemName}</th>
+                            <td class="table-customize2">${purchaseItem.count}</td>
+                            <td class="table-customize2">${statusMap.get(purchaseItem.purchaseStatus)}</td>
+                            <td class="table-customize2">${purchaseItem.applyName}</td>
+                            <td class="table-customize2">${purchaseItem.applyTime}</td>
+                            <td class="table-customize2">${purchaseItem.singlePrice}</td>
+                            <td class="table-customize2">${purchaseItem.totalPrice}</td>
+                            <td class="table-customize2">${purchaseItem.purchaseTime}</td>
+                            <td class="table-customize2">${purchaseItem.shipID}</td>
+                            <td class="table-customize2">
+                                <a href="${pageContext.request.contextPath}/purchase/toPurchaseApplyConfirmItem?logID=${purchaseItem.logID}" role="button" class="btn btn-success" style="padding: 1px !important;">
+                                    採購
+                                </a>
+                            </td>
                         </tr>
                     </c:forEach>
                     </tbody>

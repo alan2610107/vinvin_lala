@@ -580,62 +580,143 @@
                 </li>
             </ul>
         </li>
+<%--        <c:if test="${user.level==1000}">--%>
+<%--            <li class="nav-item dropdown">--%>
+<%--                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">--%>
+<%--                    報貨--%>
+<%--                </a>--%>
+<%--                <ul class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdown-menu">--%>
+<%--                    <li><a class="dropdown-item"--%>
+<%--                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=main0">*总仓*</a>--%>
+<%--                    </li>--%>
+<%--                    <li><a class="dropdown-item"--%>
+<%--                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=main1">东莞总部</a>--%>
+<%--                    </li>--%>
+<%--                    <li><a class="dropdown-item"--%>
+<%--                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=main2">深圳自贸中心</a>--%>
+<%--                    </li>--%>
+<%--                    <li><a class="dropdown-item"--%>
+<%--                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop1">深圳南山尚美科技</a>--%>
+<%--                    </li>--%>
+<%--                    <li><a class="dropdown-item"--%>
+<%--                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop2">深圳罗湖鼎丰</a>--%>
+<%--                    </li>--%>
+<%--                    <li><a class="dropdown-item"--%>
+<%--                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop3">深圳罗湖振业</a>--%>
+<%--                    </li>--%>
+<%--                    <li><a class="dropdown-item"--%>
+<%--                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop4">东莞南城ucc</a>--%>
+<%--                    </li>--%>
+<%--                    <li><a class="dropdown-item"--%>
+<%--                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop5">东莞南城天安</a>--%>
+<%--                    </li>--%>
+<%--                    <li><a class="dropdown-item"--%>
+<%--                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop6">东莞南城保利</a>--%>
+<%--                    </li>--%>
+<%--                    <li><a class="dropdown-item"--%>
+<%--                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop7">东莞琥珀台</a>--%>
+<%--                    </li>--%>
+<%--                    <li><a class="dropdown-item"--%>
+<%--                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop8">深圳动漫大厦</a>--%>
+<%--                    </li>--%>
+<%--                    <li><a class="dropdown-item"--%>
+<%--                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop9">深圳荣德时代</a>--%>
+<%--                    </li>--%>
+<%--                    <li><a class="dropdown-item"--%>
+<%--                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop10">深圳正中时代</a>--%>
+<%--                    </li>--%>
+<%--                    <li><a class="dropdown-item"--%>
+<%--                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop11">东莞广发金融</a>--%>
+<%--                    </li>--%>
+<%--                    <li><a class="dropdown-item"--%>
+<%--                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop12">深圳豪方天际</a>--%>
+<%--                    </li>--%>
+<%--                    <li><a class="dropdown-item"--%>
+<%--                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop13">深圳光明富森</a>--%>
+<%--                    </li>--%>
+<%--                    <li><a class="dropdown-item"--%>
+<%--                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop14">深圳创新智慧</a>--%>
+<%--                    </li>--%>
+<%--                </ul>--%>
+<%--            </li>--%>
+<%--        </c:if>--%>
         <c:if test="${user.level==1000}">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    報貨
+                    採購中心
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdown-menu">
                     <li><a class="dropdown-item"
-                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=main0">*总仓*</a>
+                           href="${pageContext.request.contextPath}/purchase/showPurchaseItem?location=main0">*总仓*</a>
                     </li>
                     <li><a class="dropdown-item"
-                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=main1">东莞总部</a>
+                           href="${pageContext.request.contextPath}/purchase/showPurchaseItem?location=main1">东莞总部</a>
                     </li>
                     <li><a class="dropdown-item"
-                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=main2">深圳自贸中心</a>
+                           href="${pageContext.request.contextPath}/purchase/showPurchaseItem?location=main2">深圳自贸中心</a>
                     </li>
                     <li><a class="dropdown-item"
-                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop1">深圳南山尚美科技</a>
+                           href="${pageContext.request.contextPath}/purchase/showPurchaseItem?location=shop1">深圳南山尚美科技</a>
                     </li>
                     <li><a class="dropdown-item"
-                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop2">深圳罗湖鼎丰</a>
+                           href="${pageContext.request.contextPath}/purchase/showPurchaseItem?location=shop2">深圳罗湖鼎丰</a>
                     </li>
                     <li><a class="dropdown-item"
-                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop3">深圳罗湖振业</a>
+                           href="${pageContext.request.contextPath}/purchase/showPurchaseItem?location=shop3">深圳罗湖振业</a>
                     </li>
                     <li><a class="dropdown-item"
-                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop4">东莞南城ucc</a>
+                           href="${pageContext.request.contextPath}/purchase/showPurchaseItem?location=shop4">东莞南城ucc</a>
                     </li>
                     <li><a class="dropdown-item"
-                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop5">东莞南城天安</a>
+                           href="${pageContext.request.contextPath}/purchase/showPurchaseItem?location=shop5">东莞南城天安</a>
                     </li>
                     <li><a class="dropdown-item"
-                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop6">东莞南城保利</a>
+                           href="${pageContext.request.contextPath}/purchase/showPurchaseItem?location=shop6">东莞南城保利</a>
                     </li>
                     <li><a class="dropdown-item"
-                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop7">东莞琥珀台</a>
+                           href="${pageContext.request.contextPath}/purchase/showPurchaseItem?location=shop7">东莞琥珀台</a>
                     </li>
                     <li><a class="dropdown-item"
-                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop8">深圳动漫大厦</a>
+                           href="${pageContext.request.contextPath}/purchase/showPurchaseItem?location=shop8">深圳动漫大厦</a>
                     </li>
                     <li><a class="dropdown-item"
-                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop9">深圳荣德时代</a>
+                           href="${pageContext.request.contextPath}/purchase/showPurchaseItem?location=shop9">深圳荣德时代</a>
                     </li>
                     <li><a class="dropdown-item"
-                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop10">深圳正中时代</a>
+                           href="${pageContext.request.contextPath}/purchase/showPurchaseItem?location=shop10">深圳正中时代</a>
                     </li>
                     <li><a class="dropdown-item"
-                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop11">东莞广发金融</a>
+                           href="${pageContext.request.contextPath}/purchase/showPurchaseItem?location=shop11">东莞广发金融</a>
                     </li>
                     <li><a class="dropdown-item"
-                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop12">深圳豪方天际</a>
+                           href="${pageContext.request.contextPath}/purchase/showPurchaseItem?location=shop12">深圳豪方天际</a>
                     </li>
                     <li><a class="dropdown-item"
-                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop13">深圳光明富森</a>
+                           href="${pageContext.request.contextPath}/purchase/showPurchaseItem?location=shop13">深圳光明富森</a>
                     </li>
                     <li><a class="dropdown-item"
-                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop14">深圳创新智慧</a>
+                           href="${pageContext.request.contextPath}/purchase/showPurchaseItem?location=shop14">深圳创新智慧</a>
+                    </li>
+                </ul>
+            </li>
+        </c:if>
+        <c:if test="${user.level==1000 || user.level == 500 || user.level == 501}">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    報貨審核
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdown-menu">
+                    <li><a class="dropdown-item"
+                           href="${pageContext.request.contextPath}/confirm/showApplyItemConfirm?show=need&level=CONFIRM_AREA&area=SZ">深圳區代</a>
+                    </li>
+                    <li><a class="dropdown-item"
+                           href="${pageContext.request.contextPath}/confirm/showApplyItemConfirm?show=need&level=CONFIRM_AREA&area=DG">東莞區代</a>
+                    </li>
+                    <li><a class="dropdown-item"
+                           href="${pageContext.request.contextPath}/confirm/showApplyItemConfirm?show=need&level=CONFIRM_CENTER&area=CENTER">中央</a>
+                    </li>
+                    <li><a class="dropdown-item"
+                           href="${pageContext.request.contextPath}/confirm/showApplyItemConfirm?show=need&level=CONFIRM_FINANCE&area=CENTER">財務</a>
                     </li>
                 </ul>
             </li>

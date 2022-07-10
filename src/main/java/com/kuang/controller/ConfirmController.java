@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONArray;
 import com.kuang.pojo.*;
 import com.kuang.service.*;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -37,135 +39,146 @@ public class ConfirmController {
     @Resource
     private VinMainControllerService vinMainControllerService;
 
-    public HashMap<String, List<VinLog>> getConfirm(String location){
-        List<VinLog> confirmListTool = null;
-        List<VinLog> confirmListSmallTool = null;
-        List<VinLog> confirmListFood = null;
-        List<VinLog> confirmListCommercial = null;
-        List<VinLog> confirmListOther = null;
-        HashMap<String, List<VinLog>> confirmMap = new HashMap<>();
-        switch (location){
-            case "main0":
-                confirmListTool = vinService.queryCategoryConfirminMain0("tool", "newinput", "input");
-                confirmListFood = vinService.queryCategoryConfirminMain0("food", "newinput", "input");
-                confirmListSmallTool = vinService.queryCategoryConfirminMain0("smalltool", "newinput", "input");
-                confirmListCommercial = vinService.queryCategoryConfirminMain0("commercialthing", "newinput", "input");
-                confirmListOther = vinService.queryCategoryConfirminMain0("other", "newinput", "input");
-                break;
-            case "main1":
-                confirmListTool = vinService.queryCategoryConfirminMain1("tool", "newinput", "input");
-                confirmListFood = vinService.queryCategoryConfirminMain1("food", "newinput", "input");
-                confirmListSmallTool = vinService.queryCategoryConfirminMain1("smalltool", "newinput", "input");
-                confirmListCommercial = vinService.queryCategoryConfirminMain1("commercialthing", "newinput", "input");
-                confirmListOther = vinService.queryCategoryConfirminMain1("other", "newinput", "input");
-                break;
-            case "main2":
-                confirmListTool = vinService.queryCategoryConfirminMain2("tool", "newinput", "input");
-                confirmListFood = vinService.queryCategoryConfirminMain2("food", "newinput", "input");
-                confirmListSmallTool = vinService.queryCategoryConfirminMain2("smalltool", "newinput", "input");
-                confirmListCommercial = vinService.queryCategoryConfirminMain2("commercialthing", "newinput", "input");
-                confirmListOther = vinService.queryCategoryConfirminMain2("other", "newinput", "input");
-                break;
-            case "shop1":
-                confirmListTool = vinService.queryCategoryConfirminShop1("tool", "newinput", "input");
-                confirmListFood = vinService.queryCategoryConfirminShop1("food", "newinput", "input");
-                confirmListSmallTool = vinService.queryCategoryConfirminShop1("smalltool", "newinput", "input");
-                confirmListCommercial = vinService.queryCategoryConfirminShop1("commercialthing", "newinput", "input");
-                confirmListOther = vinService.queryCategoryConfirminShop1("other", "newinput", "input");
-                break;
-            case "shop2":
-                confirmListTool = vinService.queryCategoryConfirminShop2("tool", "newinput", "input");
-                confirmListFood = vinService.queryCategoryConfirminShop2("food", "newinput", "input");
-                confirmListSmallTool = vinService.queryCategoryConfirminShop2("smalltool", "newinput", "input");
-                confirmListCommercial = vinService.queryCategoryConfirminShop2("commercialthing", "newinput", "input");
-                confirmListOther = vinService.queryCategoryConfirminShop2("other", "newinput", "input");
-                break;
-            case "shop3":
-                confirmListTool = vinService.queryCategoryConfirminShop3("tool", "newinput", "input");
-                confirmListFood = vinService.queryCategoryConfirminShop3("food", "newinput", "input");
-                confirmListSmallTool = vinService.queryCategoryConfirminShop3("smalltool", "newinput", "input");
-                confirmListCommercial = vinService.queryCategoryConfirminShop3("commercialthing", "newinput", "input");
-                confirmListOther = vinService.queryCategoryConfirminShop3("other", "newinput", "input");
-                break;
-            case "shop4":
-                confirmListTool = vinService.queryCategoryConfirminShop4("tool", "newinput", "input");
-                confirmListFood = vinService.queryCategoryConfirminShop4("food", "newinput", "input");
-                confirmListSmallTool = vinService.queryCategoryConfirminShop4("smalltool", "newinput", "input");
-                confirmListCommercial = vinService.queryCategoryConfirminShop4("commercialthing", "newinput", "input");
-                confirmListOther = vinService.queryCategoryConfirminShop4("other", "newinput", "input");
-                break;
-            case "shop5":
-                confirmListTool = vinService.queryCategoryConfirminShop5("tool", "newinput", "input");
-                confirmListFood = vinService.queryCategoryConfirminShop5("food", "newinput", "input");
-                confirmListSmallTool = vinService.queryCategoryConfirminShop5("smalltool", "newinput", "input");
-                confirmListCommercial = vinService.queryCategoryConfirminShop5("commercialthing", "newinput", "input");
-                confirmListOther = vinService.queryCategoryConfirminShop5("other", "newinput", "input");
-                break;
-            case "shop6":
-                confirmListTool = vinService.queryCategoryConfirminShop6("tool", "newinput", "input");
-                confirmListFood = vinService.queryCategoryConfirminShop6("food", "newinput", "input");
-                confirmListSmallTool = vinService.queryCategoryConfirminShop6("smalltool", "newinput", "input");
-                confirmListCommercial = vinService.queryCategoryConfirminShop6("commercialthing", "newinput", "input");
-                confirmListOther = vinService.queryCategoryConfirminShop6("other", "newinput", "input");
-                break;
-            case "shop7":
-                confirmListTool = vinService.queryCategoryConfirminShop7("tool", "newinput", "input");
-                confirmListFood = vinService.queryCategoryConfirminShop7("food", "newinput", "input");
-                confirmListSmallTool = vinService.queryCategoryConfirminShop7("smalltool", "newinput", "input");
-                confirmListCommercial = vinService.queryCategoryConfirminShop7("commercialthing", "newinput", "input");
-                confirmListOther = vinService.queryCategoryConfirminShop7("other", "newinput", "input");
-                break;
-            case "shop8":
-                confirmListTool = vinService.queryCategoryConfirminShop8("tool", "newinput", "input");
-                confirmListFood = vinService.queryCategoryConfirminShop8("food", "newinput", "input");
-                confirmListSmallTool = vinService.queryCategoryConfirminShop8("smalltool", "newinput", "input");
-                confirmListCommercial = vinService.queryCategoryConfirminShop8("commercialthing", "newinput", "input");
-                confirmListOther = vinService.queryCategoryConfirminShop8("other", "newinput", "input");
-                break;
-            case "shop9":
-                confirmListTool = vinService.queryCategoryConfirminShop9("tool", "newinput", "input");
-                confirmListFood = vinService.queryCategoryConfirminShop9("food", "newinput", "input");
-                confirmListSmallTool = vinService.queryCategoryConfirminShop9("smalltool", "newinput", "input");
-                confirmListCommercial = vinService.queryCategoryConfirminShop9("commercialthing", "newinput", "input");
-                confirmListOther = vinService.queryCategoryConfirminShop9("other", "newinput", "input");
-                break;
-            case "shop10":
-                confirmListTool = vinService.queryCategoryConfirminShop10("tool", "newinput", "input");
-                confirmListFood = vinService.queryCategoryConfirminShop10("food", "newinput", "input");
-                confirmListSmallTool = vinService.queryCategoryConfirminShop10("smalltool", "newinput", "input");
-                confirmListCommercial = vinService.queryCategoryConfirminShop10("commercialthing", "newinput", "input");
-                confirmListOther = vinService.queryCategoryConfirminShop10("other", "newinput", "input");
-                break;
-            case "shop11":
-                confirmListTool = vinService.queryCategoryConfirminShop11("tool", "newinput", "input");
-                confirmListFood = vinService.queryCategoryConfirminShop11("food", "newinput", "input");
-                confirmListSmallTool = vinService.queryCategoryConfirminShop11("smalltool", "newinput", "input");
-                confirmListCommercial = vinService.queryCategoryConfirminShop11("commercialthing", "newinput", "input");
-                confirmListOther = vinService.queryCategoryConfirminShop11("other", "newinput", "input");
-                break;
-            case "shop12":
-                confirmListTool = vinService.queryCategoryConfirminShop12("tool", "newinput", "input");
-                confirmListFood = vinService.queryCategoryConfirminShop12("food", "newinput", "input");
-                confirmListSmallTool = vinService.queryCategoryConfirminShop12("smalltool", "newinput", "input");
-                confirmListCommercial = vinService.queryCategoryConfirminShop12("commercialthing", "newinput", "input");
-                confirmListOther = vinService.queryCategoryConfirminShop12("other", "newinput", "input");
-                break;
-            case "shop13":
-                confirmListTool = vinService.queryCategoryConfirminShop13("tool", "newinput", "input");
-                confirmListFood = vinService.queryCategoryConfirminShop13("food", "newinput", "input");
-                confirmListSmallTool = vinService.queryCategoryConfirminShop13("smalltool", "newinput", "input");
-                confirmListCommercial = vinService.queryCategoryConfirminShop13("commercialthing", "newinput", "input");
-                confirmListOther = vinService.queryCategoryConfirminShop13("other", "newinput", "input");
-                break;
-        }
-        confirmMap.put("confirmListTool", confirmListTool);
-        confirmMap.put("confirmListSmallTool", confirmListSmallTool);
-        confirmMap.put("confirmListFood", confirmListFood);
-        confirmMap.put("confirmListCommercial", confirmListCommercial);
-        confirmMap.put("confirmListOther", confirmListOther);
+    @Resource
+    private ConfirmControllerService confirmControllerService;
 
-        return confirmMap;
-    }
+//    public HashMap<String, List<VinLog>> getConfirm(String location){
+//        List<VinLog> confirmListTool = null;
+//        List<VinLog> confirmListSmallTool = null;
+//        List<VinLog> confirmListFood = null;
+//        List<VinLog> confirmListCommercial = null;
+//        List<VinLog> confirmListOther = null;
+//        HashMap<String, List<VinLog>> confirmMap = new HashMap<>();
+//        switch (location){
+//            case "main0":
+//                confirmListTool = vinService.queryCategoryConfirminMain0("tool", "newinput", "input");
+//                confirmListFood = vinService.queryCategoryConfirminMain0("food", "newinput", "input");
+//                confirmListSmallTool = vinService.queryCategoryConfirminMain0("smalltool", "newinput", "input");
+//                confirmListCommercial = vinService.queryCategoryConfirminMain0("commercialthing", "newinput", "input");
+//                confirmListOther = vinService.queryCategoryConfirminMain0("other", "newinput", "input");
+//                break;
+//            case "main1":
+//                confirmListTool = vinService.queryCategoryConfirminMain1("tool", "newinput", "input");
+//                confirmListFood = vinService.queryCategoryConfirminMain1("food", "newinput", "input");
+//                confirmListSmallTool = vinService.queryCategoryConfirminMain1("smalltool", "newinput", "input");
+//                confirmListCommercial = vinService.queryCategoryConfirminMain1("commercialthing", "newinput", "input");
+//                confirmListOther = vinService.queryCategoryConfirminMain1("other", "newinput", "input");
+//                break;
+//            case "main2":
+//                confirmListTool = vinService.queryCategoryConfirminMain2("tool", "newinput", "input");
+//                confirmListFood = vinService.queryCategoryConfirminMain2("food", "newinput", "input");
+//                confirmListSmallTool = vinService.queryCategoryConfirminMain2("smalltool", "newinput", "input");
+//                confirmListCommercial = vinService.queryCategoryConfirminMain2("commercialthing", "newinput", "input");
+//                confirmListOther = vinService.queryCategoryConfirminMain2("other", "newinput", "input");
+//                break;
+//            case "shop1":
+//                confirmListTool = vinService.queryCategoryConfirminShop1("tool", "newinput", "input");
+//                confirmListFood = vinService.queryCategoryConfirminShop1("food", "newinput", "input");
+//                confirmListSmallTool = vinService.queryCategoryConfirminShop1("smalltool", "newinput", "input");
+//                confirmListCommercial = vinService.queryCategoryConfirminShop1("commercialthing", "newinput", "input");
+//                confirmListOther = vinService.queryCategoryConfirminShop1("other", "newinput", "input");
+//                break;
+//            case "shop2":
+//                confirmListTool = vinService.queryCategoryConfirminShop2("tool", "newinput", "input");
+//                confirmListFood = vinService.queryCategoryConfirminShop2("food", "newinput", "input");
+//                confirmListSmallTool = vinService.queryCategoryConfirminShop2("smalltool", "newinput", "input");
+//                confirmListCommercial = vinService.queryCategoryConfirminShop2("commercialthing", "newinput", "input");
+//                confirmListOther = vinService.queryCategoryConfirminShop2("other", "newinput", "input");
+//                break;
+//            case "shop3":
+//                confirmListTool = vinService.queryCategoryConfirminShop3("tool", "newinput", "input");
+//                confirmListFood = vinService.queryCategoryConfirminShop3("food", "newinput", "input");
+//                confirmListSmallTool = vinService.queryCategoryConfirminShop3("smalltool", "newinput", "input");
+//                confirmListCommercial = vinService.queryCategoryConfirminShop3("commercialthing", "newinput", "input");
+//                confirmListOther = vinService.queryCategoryConfirminShop3("other", "newinput", "input");
+//                break;
+//            case "shop4":
+//                confirmListTool = vinService.queryCategoryConfirminShop4("tool", "newinput", "input");
+//                confirmListFood = vinService.queryCategoryConfirminShop4("food", "newinput", "input");
+//                confirmListSmallTool = vinService.queryCategoryConfirminShop4("smalltool", "newinput", "input");
+//                confirmListCommercial = vinService.queryCategoryConfirminShop4("commercialthing", "newinput", "input");
+//                confirmListOther = vinService.queryCategoryConfirminShop4("other", "newinput", "input");
+//                break;
+//            case "shop5":
+//                confirmListTool = vinService.queryCategoryConfirminShop5("tool", "newinput", "input");
+//                confirmListFood = vinService.queryCategoryConfirminShop5("food", "newinput", "input");
+//                confirmListSmallTool = vinService.queryCategoryConfirminShop5("smalltool", "newinput", "input");
+//                confirmListCommercial = vinService.queryCategoryConfirminShop5("commercialthing", "newinput", "input");
+//                confirmListOther = vinService.queryCategoryConfirminShop5("other", "newinput", "input");
+//                break;
+//            case "shop6":
+//                confirmListTool = vinService.queryCategoryConfirminShop6("tool", "newinput", "input");
+//                confirmListFood = vinService.queryCategoryConfirminShop6("food", "newinput", "input");
+//                confirmListSmallTool = vinService.queryCategoryConfirminShop6("smalltool", "newinput", "input");
+//                confirmListCommercial = vinService.queryCategoryConfirminShop6("commercialthing", "newinput", "input");
+//                confirmListOther = vinService.queryCategoryConfirminShop6("other", "newinput", "input");
+//                break;
+//            case "shop7":
+//                confirmListTool = vinService.queryCategoryConfirminShop7("tool", "newinput", "input");
+//                confirmListFood = vinService.queryCategoryConfirminShop7("food", "newinput", "input");
+//                confirmListSmallTool = vinService.queryCategoryConfirminShop7("smalltool", "newinput", "input");
+//                confirmListCommercial = vinService.queryCategoryConfirminShop7("commercialthing", "newinput", "input");
+//                confirmListOther = vinService.queryCategoryConfirminShop7("other", "newinput", "input");
+//                break;
+//            case "shop8":
+//                confirmListTool = vinService.queryCategoryConfirminShop8("tool", "newinput", "input");
+//                confirmListFood = vinService.queryCategoryConfirminShop8("food", "newinput", "input");
+//                confirmListSmallTool = vinService.queryCategoryConfirminShop8("smalltool", "newinput", "input");
+//                confirmListCommercial = vinService.queryCategoryConfirminShop8("commercialthing", "newinput", "input");
+//                confirmListOther = vinService.queryCategoryConfirminShop8("other", "newinput", "input");
+//                break;
+//            case "shop9":
+//                confirmListTool = vinService.queryCategoryConfirminShop9("tool", "newinput", "input");
+//                confirmListFood = vinService.queryCategoryConfirminShop9("food", "newinput", "input");
+//                confirmListSmallTool = vinService.queryCategoryConfirminShop9("smalltool", "newinput", "input");
+//                confirmListCommercial = vinService.queryCategoryConfirminShop9("commercialthing", "newinput", "input");
+//                confirmListOther = vinService.queryCategoryConfirminShop9("other", "newinput", "input");
+//                break;
+//            case "shop10":
+//                confirmListTool = vinService.queryCategoryConfirminShop10("tool", "newinput", "input");
+//                confirmListFood = vinService.queryCategoryConfirminShop10("food", "newinput", "input");
+//                confirmListSmallTool = vinService.queryCategoryConfirminShop10("smalltool", "newinput", "input");
+//                confirmListCommercial = vinService.queryCategoryConfirminShop10("commercialthing", "newinput", "input");
+//                confirmListOther = vinService.queryCategoryConfirminShop10("other", "newinput", "input");
+//                break;
+//            case "shop11":
+//                confirmListTool = vinService.queryCategoryConfirminShop11("tool", "newinput", "input");
+//                confirmListFood = vinService.queryCategoryConfirminShop11("food", "newinput", "input");
+//                confirmListSmallTool = vinService.queryCategoryConfirminShop11("smalltool", "newinput", "input");
+//                confirmListCommercial = vinService.queryCategoryConfirminShop11("commercialthing", "newinput", "input");
+//                confirmListOther = vinService.queryCategoryConfirminShop11("other", "newinput", "input");
+//                break;
+//            case "shop12":
+//                confirmListTool = vinService.queryCategoryConfirminShop12("tool", "newinput", "input");
+//                confirmListFood = vinService.queryCategoryConfirminShop12("food", "newinput", "input");
+//                confirmListSmallTool = vinService.queryCategoryConfirminShop12("smalltool", "newinput", "input");
+//                confirmListCommercial = vinService.queryCategoryConfirminShop12("commercialthing", "newinput", "input");
+//                confirmListOther = vinService.queryCategoryConfirminShop12("other", "newinput", "input");
+//                break;
+//            case "shop13":
+//                confirmListTool = vinService.queryCategoryConfirminShop13("tool", "newinput", "input");
+//                confirmListFood = vinService.queryCategoryConfirminShop13("food", "newinput", "input");
+//                confirmListSmallTool = vinService.queryCategoryConfirminShop13("smalltool", "newinput", "input");
+//                confirmListCommercial = vinService.queryCategoryConfirminShop13("commercialthing", "newinput", "input");
+//                confirmListOther = vinService.queryCategoryConfirminShop13("other", "newinput", "input");
+//                break;
+//            case "shop14":
+//                confirmListTool = vinService.queryCategoryConfirminShop14("tool", "newinput", "input");
+//                confirmListFood = vinService.queryCategoryConfirminShop14("food", "newinput", "input");
+//                confirmListSmallTool = vinService.queryCategoryConfirminShop14("smalltool", "newinput", "input");
+//                confirmListCommercial = vinService.queryCategoryConfirminShop14("commercialthing", "newinput", "input");
+//                confirmListOther = vinService.queryCategoryConfirminShop14("other", "newinput", "input");
+//                break;
+//        }
+//        confirmMap.put("confirmListTool", confirmListTool);
+//        confirmMap.put("confirmListSmallTool", confirmListSmallTool);
+//        confirmMap.put("confirmListFood", confirmListFood);
+//        confirmMap.put("confirmListCommercial", confirmListCommercial);
+//        confirmMap.put("confirmListOther", confirmListOther);
+//
+//        return confirmMap;
+//    }
+    //之後要改成item photo
     public Map<String,String> getFilePathMap(List<VinLog> vinLogList){
         Map<String,String> filePathMap = new HashMap<>();
         for (VinLog vinLog : vinLogList) {
@@ -185,7 +198,7 @@ public class ConfirmController {
     public String listNotpassConfirm(Model model, HttpSession session, @RequestParam String location){
         User user = (User) session.getAttribute("user");
         if(user.getLevel() == 1000){
-            HashMap<String, List<VinLog>> confirmMap = getConfirm(location);
+            HashMap<String, List<VinLog>> confirmMap = confirmControllerService.getConfirm(location);
             List<VinLog> confirmListTool = confirmMap.get("confirmListTool");
             List<VinLog> confirmListFood = confirmMap.get("confirmListFood");
             List<VinLog> confirmListSmallTool = confirmMap.get("confirmListSmallTool");
@@ -277,8 +290,6 @@ public class ConfirmController {
             log.warn("=====Not allow to do=====");
         }
 
-
-
         return "redirect:/confirm/listnotpass?location="+location;
     }
 
@@ -320,7 +331,105 @@ public class ConfirmController {
 
     }
 
+    /**
+     *
+     * @param model
+     * @param session
+     * @param show
+     * @param level CONFIRM_AREA, CONFIRM_CENTER, CONFIRM_FINANCE
+     * @param area SZ, DG, CENTER
+     * @return
+     */
+    @RequestMapping("/showApplyItemConfirm")
+    public String showApplyItemConfirm(Model model, HttpSession session, @RequestParam String show, @RequestParam String level, @RequestParam String area){
+        User user = (User) session.getAttribute("user");
+        if(user.getLevel() == 1000 || user.getLevel() == 500 || user.getLevel() == 501){
+            List<ApplyItemConfirm> applyItemConfirmList = new ArrayList<>();
+            log.warn("Area: " + area);
+            log.warn("Level: " + level);
+            List<Warehouse> warehouseList = null;
+            if(area.equals("SZ") || area.equals("DG")){
+                warehouseList = vinService.queryAreaRealWarehouseName(area);
+            }else {
+                warehouseList = vinService.queryAllRealWarehouseName();
+            }
 
+            if(show.equals("need")){
+                for (Warehouse warehouse : warehouseList) {
+                    String location = warehouse.getNickname();
+                    if (location != null) {
+                        List<ApplyItemConfirm> applyItemConfirmListTmp = vinService.queryApplyItemConfirmNeeded(location);
+                        if(applyItemConfirmListTmp != null) {
+                            for (ApplyItemConfirm applyItemConfirm: applyItemConfirmListTmp) {
+                                String logID = applyItemConfirm.getLogID();
+                                String itemConfirmStatus = confirmControllerService.getItemConfirm(logID);
+                                if(itemConfirmStatus != null && itemConfirmStatus.equals(level)){
+                                    applyItemConfirmList.add(applyItemConfirm);
+                                }
+                            }
+//                            log.warn(String.valueOf(applyItemConfirmList));
+                        }
+                    }
+                }
+            }else if(show.equals("finished")){
+                applyItemConfirmList = vinService.queryApplyItemConfirmFinished();
+            }else if(show.equals("all")){
+                applyItemConfirmList = vinService.queryApplyItemConfirm();
+            }
+            String pageName = null;
+            switch (level){
+                case "CONFIRM_AREA":
+                    pageName = "區代審核";
+                    break;
+                case "CONFIRM_CENTER":
+                    pageName = "中央審核";
+                    break;
+                case "CONFIRM_FINANCE":
+                    pageName = "財務審核";
+                    break;
+            }
+
+            model.addAttribute("warehouse", pageName);
+            model.addAttribute("mainWarehouse", "confirm");
+            model.addAttribute("logLocation", "showApplyItemConfirm?show="+show);
+            model.addAttribute("applyItemConfirmList", applyItemConfirmList);
+            model.addAttribute("level", level);
+            model.addAttribute("area", area);
+            model.addAttribute("warehouseMap", vinService.getWarehouseMap());
+            return "showApplyItemConfirm";
+//            model.addAttribute("logLocation", location);
+        }else {
+            model.addAttribute("msg", "哭哭！沒有權限！");
+            return "login";
+        }
+    }
+
+//    public void setApplyItemConfirm(boolean itemConfirmRes, String logID, String level){
+//        ApplyItemConfirm applyItemConfirm = vinService.queryApplyItemConfirmByLogID(logID);
+//        if(applyItemConfirm != null){
+//            if(level.equals("CONFIRM_AREA")){
+//                applyItemConfirm.setConfirm_area(itemConfirmRes);
+//                applyItemConfirm.setConfirm_area_date(vinService.getDateTime());
+//                vinService.updateApplyItemConfirmAreaByLogID(applyItemConfirm);
+//            }else if(level.equals("CONFIRM_CENTER")){
+//                applyItemConfirm.setConfirm_center(itemConfirmRes);
+//                applyItemConfirm.setConfirm_center_date(vinService.getDateTime());
+//                vinService.updateApplyItemConfirmCenterByLogID(applyItemConfirm);
+//            }else if(level.equals("CONFIRM_FINANCE")){
+//                applyItemConfirm.setConfirm_finance(itemConfirmRes);
+//                applyItemConfirm.setConfirm_finance_date(vinService.getDateTime());
+//                vinService.updateApplyItemConfirmFinanceByLogID(applyItemConfirm);
+//            }else {
+//                log.warn("No_Level");
+//            }
+//        }
+//    }
+
+    @RequestMapping("/applyItemConfirm")
+    public String applyItemConfirm(@RequestParam boolean itemConfirmRes, @RequestParam String logID, @RequestParam String level, @RequestParam String area){
+        confirmControllerService.setApplyItemConfirm(itemConfirmRes, logID, level);
+        return "redirect:/confirm/showApplyItemConfirm?show=need&level=" + level + "&area=" + area;
+    }
 
 
 

@@ -4,7 +4,6 @@ import com.alibaba.fastjson.JSONObject;
 import com.kuang.pojo.*;
 import com.kuang.service.VinService;
 import lombok.extern.slf4j.Slf4j;
-import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -13,21 +12,21 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 @Slf4j
 @Controller
 @RequestMapping("/alert")
-public class AlertConteoller {
+public class AlertController {
     @Autowired
     @Qualifier("VinServiceImpl")
     private VinService vinService;
 
-    @Autowired
+    @Resource
     private RedisTemplate redisTemplate;
 
     @RequestMapping("/showAlert")

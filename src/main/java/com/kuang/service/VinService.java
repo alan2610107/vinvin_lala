@@ -1149,6 +1149,7 @@ public interface VinService {
 
     Warehouse queryRealWarehouseName(String nickname);
     List<Warehouse> queryAllRealWarehouseName();
+    List<Warehouse> queryAreaRealWarehouseName(String area);
 
     int addCheckinMain1(VinCheck vinCheck);
 
@@ -2065,18 +2066,24 @@ public interface VinService {
     int addKryOrderDetail(KryDishInfo kryDishInfo);
 
     int addApplyItem(ApplyItem applyItem);
-    List<ApplyItem> queryApplyItembyLocation(String location);
+    List<ApplyItemShow> queryApplyItembyLocation(String location);
     ApplyItem queryApplyItembyLogID(String logID);
     int deleteApplyItem(String logID);
-    int addApplyItemRefuseReason(String refuseReason);
+//    int addApplyItemRefuseReason(String refuseReason);
     int updateApplyItem(ApplyItem applyItem);
 
     int addApplyItemConfirmLogID(String logID);
     int addApplyItemConfirmResult(boolean confirmResult);
     int deleteApplyItemConfirm(String logID);
-    List<ItemConfirm> queryApplyItemConfirm();
-    List<ItemConfirm> queryApplyItemConfirmNeeded();
-    List<ItemConfirm> queryApplyItemConfirmFinished();
+    List<ApplyItemConfirm> queryApplyItemConfirm();
+    List<ApplyItemConfirm> queryApplyItemConfirmNeeded(String location);
+    List<ApplyItemConfirm> queryApplyItemConfirmFinished();
+    ApplyItemConfirm queryApplyItemConfirmByLogID(String logID);
+    int updateApplyItemConfirmAreaByLogID(ApplyItemConfirm applyItemConfirm);
+    int updateApplyItemConfirmCenterByLogID(ApplyItemConfirm applyItemConfirm);
+    int updateApplyItemConfirmFinanceByLogID(ApplyItemConfirm applyItemConfirm);
+
+    int addApplyItemConfirm(ApplyItemConfirm applyItemConfirm);
 
     int addApplyFinanceConfirmLogID(String logID);
     int addApplyFinanceConfirmResult(boolean confirmResult);
@@ -2119,6 +2126,15 @@ public interface VinService {
     int deleteItemOthersSet(String itemID);
     int deleteItemSmallToolSet(String itemID);
     int deleteItemToolSet(String itemID);
+
+    String getConfirmStatusTrans(String statusEN);
+    List<ConfirmStatusTrans> queryAllConfirmStatusTrans();
+
+    int insertPurchaseItem(PurchaseItem purchaseItem);
+    PurchaseItem queryPurchaseItemByLogID(String logID);
+    List<PurchaseItem> queryPurchaseItemByLocation(String location);
+    int updatePurchaseItemByLogID(PurchaseItem purchaseItem);
+    List<PurchaseItem> queryPurchaseItem();
 
 
     //////////////////////////工具類!////////////////////////////////////////////////////////////////////////////////////////////////

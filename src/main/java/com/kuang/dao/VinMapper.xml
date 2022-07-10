@@ -1965,6 +1965,9 @@
     <select id="queryAllRealWarehouseName" resultType="Warehouse">
         select * from vinvin.realWarehouseName;
     </select>
+    <select id="queryAreaRealWarehouseName" resultType="warehouse" parameterType="string">
+        select * from vinvin.realWarehouseName where area=#{area};
+    </select>
 
 
     <insert id="addCheckinMain1" parameterType="VinCheck">
@@ -5067,10 +5070,10 @@
     </insert>
 
     <insert id="addApplyItem" parameterType="applyItem">
-        insert ignore into vinvin.applyItem (logID, applyTime, location, itemID, itemName, count, applyName, status, shipID, singlePrice, totalPrice, purchaseTime, confirm, confirmResult, month) VALUE (#{logID}, #{applyTime}, #{location}, #{itemID}, #{itemName}, #{count}, #{applyName}, #{status}, #{shipID}, #{singlePrice}, #{totalPrice}, #{purchaseTime}, #{confirm}, #{confirmResult}, #{month});
+        insert ignore into vinvin.applyItem (logID, applyTime, location, itemID, itemName, count, applyName, month) VALUE (#{logID}, #{applyTime}, #{location}, #{itemID}, #{itemName}, #{count}, #{applyName}, #{month});
     </insert>
-    <select id="queryApplyItembyLocation" resultType="applyItem">
-        select * from vinvin.applyItem where location=#{location} order by applyTime desc;
+    <select id="queryApplyItembyLocation" resultType="applyItemShow">
+        select * from vinvin.applyItem applyItem left join vinvin.purchaseItem purchaseItem on applyItem.logID = purchaseItem.logID where applyItem.location=#{location} order by applyItem.applyTime desc;
     </select>
     <select id="queryApplyItembyLogID" resultType="applyItem">
         select * from vinvin.applyItem where logID=#{logID};
@@ -5086,20 +5089,47 @@
         insert ignore into vinvin.applyItemConfirm (logID) value (#{logID});
     </insert>
     <insert id="addApplyItemConfirmResult">
-        insert ignore into vinvin.applyItemConfirm (confirmResult) value (#{confirmResult});
+        insert ignore into vinvin.applyItemConfirm (confirm_area) value (#{confirmResult});
     </insert>
     <delete id="deleteApplyItemConfirm">
         delete from vinvin.applyItemConfirm where logID=#{logID}
     </delete>
-    <select id="queryApplyItemConfirm" resultType="itemConfirm">
+    <select id="queryApplyItemConfirm" resultType="applyItemConfirm">
         select * from vinvin.applyItemConfirm;
     </select>
-    <select id="queryApplyItemConfirmNeeded" resultType="itemConfirm">
-        select * from vinvin.applyItemConfirm where IsEmpty(confirmResult);
+    <select id="queryApplyItemConfirmNeeded" resultType="applyItemConfirm" parameterType="string">
+        select * from vinvin.applyItemConfirm itemConfirm right join vinvin.applyItem applyItem on applyItem.logID = itemConfirm.logID where applyItem.location=#{location};
     </select>
-    <select id="queryApplyItemConfirmFinished" resultType="itemConfirm">
-        select * from vinvin.applyItemConfirm where !IsEmpty(confirmResult);
+    <select id="queryApplyItemConfirmFinished" resultType="applyItemConfirm">
+        select * from vinvin.applyItemConfirm where !IsEmpty(confirm_area);
     </select>
+    <select id="queryApplyItemConfirmByLogID" resultType="applyItemConfirm">
+        select * from vinvin.applyItemConfirm where logID=#{logID};
+    </select>
+    <update id="updateApplyItemConfirmAreaByLogID" parameterType="applyItemConfirm">
+        update vinvin.applyItemConfirm set confirm_area=#{confirm_area},confirm_area_date=#{confirm_area_date} where logID=#{logID};
+    </update>
+    <update id="updateApplyItemConfirmCenterByLogID" parameterType="applyItemConfirm">
+        update vinvin.applyItemConfirm set confirm_center=#{confirm_center},confirm_center_date=#{confirm_center_date} where logID=#{logID};
+    </update>
+    <update id="updateApplyItemConfirmFinanceByLogID" parameterType="applyItemConfirm">
+        update vinvin.applyItemConfirm set confirm_finance=#{confirm_finance},confirm_finance_date=#{confirm_finance_date} where logID=#{logID};
+    </update>
+
+
+
+
+
+
+    <insert id="addApplyItemConfirm">
+        insert ignore into vinvin.applyItemConfirm(logID, confirm_area, confirm_area_date, confirm_center, confirm_center_date, confirm_finance, confirm_finance_date) VALUE (#{logID},
+                                                                                                                                                                              #{confirm_area},
+                                                                                                                                                                              #{confirm_area_date},
+                                                                                                                                                                              #{confirm_center},
+                                                                                                                                                                              #{confirm_center_date},
+                                                                                                                                                                              #{confirm_finance},
+                                                                                                                                                                              #{confirm_finance_date})
+    </insert>
 
 
 
@@ -5184,6 +5214,7 @@
     <update id="updateItemToolSet">
         update vinvin.itemToolSet set id = id + 1 where id>=#{id} order by id desc;
     </update>
+
     <insert id="addItemToolSet">
         insert ignore into vinvin.itemToolSet(id, itemID) VALUE (#{id}, #{itemID});
     </insert>
@@ -5236,6 +5267,38 @@
     <delete id="deleteItemToolSet">
         delete from vinvin.itemToolSet where itemID=#{itemID};
     </delete>
+
+    <select id="getConfirmStatusTrans" resultType="string">
+        select statusCH from vinvin.confirmStatusTrans where statusEN=#{statusEN};
+    </select>
+    <select id="queryAllConfirmStatusTrans" resultType="confirmStatusTrans">
+        select * from vinvin.confirmStatusTrans;
+    </select>
+
+    <insert id="insertPurchaseItem" parameterType="purchaseItem">
+        insert ignore into vinvin.purchaseItem(logID, purchaseStatus, shipID, purchaseTime, purchaseMonth, singlePrice, totalPrice) VALUES (#{logID},
+                                                                                                                                                      #{purchaseStatus},
+                                                                                                                                                      #{shipID},
+                                                                                                                                                      #{purchaseTime},
+                                                                                                                                                      #{purchaseMonth},
+                                                                                                                                                      #{singlePrice},
+                                                                                                                                                      #{totalPrice});
+    </insert>
+    <select id="queryPurchaseItemByLogID" resultType="purchaseItem">
+        select * from vinvin.purchaseItem purchaseItem left join vinvin.applyItem applyItem on purchaseItem.logID = applyItem.logID where purchaseItem.logID=#{logID};
+    </select>
+    <select id="queryPurchaseItemByLocation" resultType="purchaseItem">
+        select purchaseItem.*, applyItem.applyName, applyItem.itemName, applyItem.count, applyItem.location, applyItem.applyTime from vinvin.purchaseItem purchaseItem left join vinvin.applyItem applyItem on purchaseItem.logID = applyItem.logID where applyItem.location=#{location};
+    </select>
+    <update id="updatePurchaseItemByLogID" parameterType="purchaseItem">
+        update vinvin.purchaseItem set purchaseStatus=#{purchaseStatus}, shipID=#{shipID}, singlePrice=#{singlePrice}, totalPrice=#{totalPrice}, purchaseTime=#{purchaseTime}, purchaseMonth=#{purchaseMonth} where logID=#{logID};
+    </update>
+    <select id="queryPurchaseItem" resultType="purchaseItem">
+        select * from vinvin.purchaseItem purchaseItem left join vinvin.applyItem applyItem on purchaseItem.logID = applyItem.logID;
+    </select>
+
+
+
 
 
 </mapper>

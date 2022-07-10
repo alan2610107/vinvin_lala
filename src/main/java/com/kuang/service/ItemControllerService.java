@@ -1,10 +1,19 @@
 package com.kuang.service;
 
+import com.kuang.pojo.Item;
 import com.kuang.pojo.ItemSet;
+import com.kuang.pojo.VinItem;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.kafka.common.protocol.types.Field;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 @Service
 @Slf4j
@@ -12,6 +21,12 @@ public class ItemControllerService {
     @Autowired
     @Qualifier("VinServiceImpl")
     private VinService vinService;
+
+    @Resource
+    private RedisTemplate redisTemplate;
+
+    @Resource
+    private CacheService cacheService;
 
     public void addItemSetByCategory(ItemSet itemSet, String category){
         switch (category){
@@ -43,4 +58,10 @@ public class ItemControllerService {
                 break;
         }
     }
+
+    public List<Item> getVinItemByCategory(String category){
+        return cacheService.getItemByCategory(category);
+    }
+
+
 }

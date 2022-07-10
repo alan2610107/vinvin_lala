@@ -234,12 +234,12 @@
                                href="${pageContext.request.contextPath}/apply/toApplyItem?location=${mainWarehouseEN}&category=food">物料申請</a>
                         </li>
                         <li><a class="dropdown-item"
-                               href="${pageContext.request.contextPath}/apply/showApplyItem?location=${mainWarehouseEN}">申請查詢</a>
-
+                               href="${pageContext.request.contextPath}/apply/showApplyItem?location=${mainWarehouseEN}">報貨紀錄</a>
                         </li>
 
                     </ul>
                 </div>
+
 <%--                <a class="btn btn-info" role="button" href="${pageContext.request.contextPath}/apply/toApplyItem?location=${mainWarehouseEN}" style="color: white">物料申請</a>--%>
 
             </div>

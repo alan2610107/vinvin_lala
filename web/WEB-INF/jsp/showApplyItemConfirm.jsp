@@ -162,12 +162,17 @@
     </style>
 </head>
 <body>
+<%--<div class="alert alert-danger" style="padding-top: 5px !important; padding-bottom: 5px !important; margin-bottom: 0px !important;" role="alert">--%>
+<%--    確認庫存警戒！！！--%>
+<%--</div>--%>
 <jsp:include page="navwithSearch.jsp"/>
 
 <div class="container">
 
     <div class="row clearfix">
         <div class="col-md-12 column">
+<%--            <br><br><br>--%>
+<%--            <a class="btn btn-success" role="button" href="${pageContext.request.contextPath}/invoice/toAdd?location=${location}">上傳水果運單</a>--%>
         </div>
 
         <div class="col-md-12 column">
@@ -182,40 +187,91 @@
                     <thead class="table-customize">
                     <tr>
                         <th>物料名稱</th>
-                        <th hidden>物料ID</th>
                         <th>數量</th>
+                        <th>門店</th>
                         <th>申請人</th>
                         <th>申請日期</th>
-                        <th>審核</th>
-<%--                        <th>審核狀態</th>--%>
-<%--                        <th>單價</th>--%>
-<%--                        <th>總價</th>--%>
-                        <th>採購日期</th>
-                        <th>運單號</th>
-<%--                        <th></th>--%>
+                        <th>區代審核狀態</th>
+                        <th>中央審核狀態</th>
+                        <th>財務審核狀態</th>
                     </tr>
                     </thead>
 
                     <tbody >
                     <c:set var="headCount" value="0"/>
-                    <c:forEach var="applyItem" items="${applyItemList}">
+                    <c:forEach var="applyItemConfirm" items="${applyItemConfirmList}">
                         <c:set var="headCount" value="${headCount + 1}"/>
                         <tr>
-                            <th class="table-customize" scope="row">${headCount}. ${applyItem.itemName}</th>
-                            <th class="table-customize2" hidden>${applyItem.itemID}</th>
-                            <td class="table-customize2">${applyItem.count}</td>
-                            <td class="table-customize2">${applyItem.applyName}</td>
-                            <td class="table-customize2">${applyItem.applyTime}</td>
-                            <td class="table-customize2">${confirmStatusMap.get(itemConfirmStatusMap.get(applyItem.logID))}</td>
-<%--                            <td class="table-customize2">${applyItem.confirmResult}</td>--%>
-<%--                            <td class="table-customize2">${applyItem.singlePrice}</td>--%>
-<%--                            <td class="table-customize2">${applyItem.totalPrice}</td>--%>
-                            <td class="table-customize2">${applyItem.purchaseTime}</td>
-                            <td class="table-customize2">${applyItem.shipID}</td>
-<%--                            <td class="table-customize2">--%>
-<%--                                <a href="${pageContext.request.contextPath}/receive/list?location=${location}">採購</a>--%>
-<%--                            </td>--%>
+                            <th class="table-customize" scope="row">${headCount}. ${applyItemConfirm.itemName}</th>
+                            <td class="table-customize2">${applyItemConfirm.count}</td>
+                            <td class="table-customize2">${warehouseMap.get(applyItemConfirm.location)}</td>
+                            <td class="table-customize2">${applyItemConfirm.applyName}</td>
+                            <td class="table-customize2">${applyItemConfirm.applyTime}</td>
+<%----------------------------------------------------------------------------------------------------------------------------------------------------------------%>
+                            <c:if test="${level.equals('CONFIRM_AREA') && applyItemConfirm.confirm_area == null}">
+                                <td class="table-customize2">
+                                    <a role="button" class="btn btn-primary" style="padding-bottom: 0px !important; padding-top: 0px !important;" href="${pageContext.request.contextPath}/confirm/applyItemConfirm?itemConfirmRes=true&logID=${applyItemConfirm.logID}&level=${level}&area=${area}">
+                                        通過
+                                    </a>
+                                    <a role="button" class="btn btn-danger" style="padding-bottom: 0px !important; padding-top: 0px !important;" href="${pageContext.request.contextPath}/confirm/applyItemConfirm?itemConfirmRes=false&logID=${applyItemConfirm.logID}&level=${level}&area=${area}">
+                                        拒絕
+                                    </a>
+                                </td>
+                            </c:if>
+                            <c:if test="${applyItemConfirm.confirm_area != null || !level.equals('CONFIRM_AREA')}">
+                                <c:if test="${applyItemConfirm.confirm_area == true}">
+                                    <td class="table-customize2">通過</td>
+                                </c:if>
+                                <c:if test="${applyItemConfirm.confirm_area == false}">
+                                    <td class="table-customize2">拒絕</td>
+                                </c:if>
+                            </c:if>
+<%---------------------------------------------------------------------------------------------------------------------------------------------------%>
+                            <c:if test="${level.equals('CONFIRM_CENTER') && applyItemConfirm.confirm_center == null}">
+                                <td class="table-customize2">
+                                    <a role="button" class="btn btn-primary" style="padding-bottom: 0px !important; padding-top: 0px !important;" href="${pageContext.request.contextPath}/confirm/applyItemConfirm?itemConfirmRes=true&logID=${applyItemConfirm.logID}&level=${level}&area=${area}">
+                                        通過
+                                    </a>
+                                    <a role="button" class="btn btn-danger" style="padding-bottom: 0px !important; padding-top: 0px !important;" href="${pageContext.request.contextPath}/confirm/applyItemConfirm?itemConfirmRes=false&logID=${applyItemConfirm.logID}&level=${level}&area=${area}">
+                                        拒絕
+                                    </a>
+                                </td>
+                            </c:if>
+                            <c:if test="${!level.equals('CONFIRM_CENTER') && applyItemConfirm.confirm_center == null}">
+                                <td class="table-customize2"></td>
+                            </c:if>
 
+
+                            <c:if test="${applyItemConfirm.confirm_center != null || !level.equals('CONFIRM_CENTER')}">
+                                <c:if test="${applyItemConfirm.confirm_center == true}">
+                                    <td class="table-customize2">通過</td>
+                                </c:if>
+                                <c:if test="${applyItemConfirm.confirm_center == false}">
+                                    <td class="table-customize2">拒絕</td>
+                                </c:if>
+                            </c:if>
+<%----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------%>
+                            <c:if test="${level.equals('CONFIRM_FINANCE') && applyItemConfirm.confirm_finance == null}">
+                                <td class="table-customize2">
+                                    <a role="button" class="btn btn-primary" style="padding-bottom: 0px !important; padding-top: 0px !important;" href="${pageContext.request.contextPath}/confirm/applyItemConfirm?itemConfirmRes=true&logID=${applyItemConfirm.logID}&level=${level}&area=${area}">
+                                        通過
+                                    </a>
+                                    <a role="button" class="btn btn-danger" style="padding-bottom: 0px !important; padding-top: 0px !important;" href="${pageContext.request.contextPath}/confirm/applyItemConfirm?itemConfirmRes=false&logID=${applyItemConfirm.logID}&level=${level}&area=${area}">
+                                        拒絕
+                                    </a>
+                                </td>
+                            </c:if>
+                            <c:if test="${!level.equals('CONFIRM_FINANCE') && applyItemConfirm.confirm_finance == null}">
+                                <td class="table-customize2"></td>
+                            </c:if>
+                            <c:if test="${applyItemConfirm.confirm_finance != null || !level.equals('CONFIRM_FINANCE')}">
+                                <c:if test="${applyItemConfirm.confirm_finance == true}">
+                                    <td class="table-customize2">通過</td>
+                                </c:if>
+                                <c:if test="${applyItemConfirm.confirm_finance == false}">
+                                    <td class="table-customize2">拒絕</td>
+                                </c:if>
+                            </c:if>
                         </tr>
                     </c:forEach>
                     </tbody>
