@@ -32,7 +32,7 @@ public class FileUploadService {
             //上传路径保存设置
             //用了虛擬路徑，上傳位置需要填實際位置
             //String path = request.getServletContext().getRealPath(pathLocation);
-            String path = "/usr/local/myTomcat" + pathLocation;
+            String path = "/usr/local/tomcat/webapps/erp" + pathLocation;
             System.out.println(file);
             File realPath = new File(path);
             if (!realPath.exists()){
