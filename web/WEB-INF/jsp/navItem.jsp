@@ -37,49 +37,49 @@
                        href="${pageContext.request.contextPath}/warehouse/allItem?location=main1">东莞总部</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/warehouse/allItem?location=main2">深圳自贸中心</a>
+                       href="${pageContext.request.contextPath}/warehouse/allItem?location=main2">深圳1</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/warehouse/allItem?location=shop1">深圳南山尚美科技</a>
+                       href="${pageContext.request.contextPath}/warehouse/allItem?location=shop1">深圳2</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/warehouse/allItem?location=shop2">深圳罗湖鼎丰</a>
+                       href="${pageContext.request.contextPath}/warehouse/allItem?location=shop2">深圳7</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/warehouse/allItem?location=shop3">深圳罗湖振业</a>
+                       href="${pageContext.request.contextPath}/warehouse/allItem?location=shop3">深圳8</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/warehouse/allItem?location=shop4">东莞南城ucc</a>
+                       href="${pageContext.request.contextPath}/warehouse/allItem?location=shop4">东莞2</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/warehouse/allItem?location=shop5">东莞南城天安</a>
+                       href="${pageContext.request.contextPath}/warehouse/allItem?location=shop5">东莞3</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/warehouse/allItem?location=shop6">东莞南城保利</a>
+                       href="${pageContext.request.contextPath}/warehouse/allItem?location=shop6">东莞4</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/warehouse/allItem?location=shop7">东莞琥珀台</a>
+                       href="${pageContext.request.contextPath}/warehouse/allItem?location=shop7">东莞5</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/warehouse/allItem?location=shop8">深圳动漫大厦</a>
+                       href="${pageContext.request.contextPath}/warehouse/allItem?location=shop8">深圳9</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/warehouse/allItem?location=shop9">深圳荣德时代</a>
+                       href="${pageContext.request.contextPath}/warehouse/allItem?location=shop9">深圳10</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/warehouse/allItem?location=shop10">深圳正中时代</a>
+                       href="${pageContext.request.contextPath}/warehouse/allItem?location=shop10">深圳3</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/warehouse/allItem?location=shop11">东莞广发金融</a>
+                       href="${pageContext.request.contextPath}/warehouse/allItem?location=shop11">东莞1</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/warehouse/allItem?location=shop12">深圳豪方天际</a>
+                       href="${pageContext.request.contextPath}/warehouse/allItem?location=shop12">深圳4</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/warehouse/allItem?location=shop13">深圳光明富森</a>
+                       href="${pageContext.request.contextPath}/warehouse/allItem?location=shop13">深圳5</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/warehouse/allItem?location=shop14">深圳创新智慧</a>
+                       href="${pageContext.request.contextPath}/warehouse/allItem?location=shop14">深圳6</a>
                 </li>
             </ul>
         </li>
@@ -95,49 +95,49 @@
                        href="${pageContext.request.contextPath}/log/warehouse?location=main1">东莞总部</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/log/warehouse?location=main2">深圳自贸中心</a>
+                       href="${pageContext.request.contextPath}/log/warehouse?location=main2">深圳1</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/log/warehouse?location=shop1">深圳南山尚美科技</a>
+                       href="${pageContext.request.contextPath}/log/warehouse?location=shop1">深圳2</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/log/warehouse?location=shop2">深圳罗湖鼎丰</a>
+                       href="${pageContext.request.contextPath}/log/warehouse?location=shop2">深圳7</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/log/warehouse?location=shop3">深圳罗湖振业</a>
+                       href="${pageContext.request.contextPath}/log/warehouse?location=shop3">深圳8</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/log/warehouse?location=shop4">东莞南城ucc</a>
+                       href="${pageContext.request.contextPath}/log/warehouse?location=shop4">东莞2</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/log/warehouse?location=shop5">东莞南城天安</a>
+                       href="${pageContext.request.contextPath}/log/warehouse?location=shop5">东莞3</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/log/warehouse?location=shop6">东莞南城保利</a>
+                       href="${pageContext.request.contextPath}/log/warehouse?location=shop6">东莞4</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/log/warehouse?location=shop7">东莞琥珀台</a>
+                       href="${pageContext.request.contextPath}/log/warehouse?location=shop7">东莞5</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/log/warehouse?location=shop8">深圳动漫大厦</a>
+                       href="${pageContext.request.contextPath}/log/warehouse?location=shop8">深圳9</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/log/warehouse?location=shop9">深圳荣德时代</a>
+                       href="${pageContext.request.contextPath}/log/warehouse?location=shop9">深圳10</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/log/warehouse?location=shop10">深圳正中时代</a>
+                       href="${pageContext.request.contextPath}/log/warehouse?location=shop10">深圳3</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/log/warehouse?location=shop11">东莞广发金融</a>
+                       href="${pageContext.request.contextPath}/log/warehouse?location=shop11">东莞1</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/log/warehouse?location=shop12">深圳豪方天际</a>
+                       href="${pageContext.request.contextPath}/log/warehouse?location=shop12">深圳4</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/log/warehouse?location=shop13">深圳光明富森</a>
+                       href="${pageContext.request.contextPath}/log/warehouse?location=shop13">深圳5</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/log/warehouse?location=shop14">深圳创新智慧</a>
+                       href="${pageContext.request.contextPath}/log/warehouse?location=shop14">深圳6</a>
                 </li>
             </ul>
         </li>
@@ -154,49 +154,49 @@
                        href="${pageContext.request.contextPath}/receive/list?location=main1">东莞总部</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/receive/list?location=main2">深圳自贸中心</a>
+                       href="${pageContext.request.contextPath}/receive/list?location=main2">深圳1</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/receive/list?location=shop1">深圳南山尚美科技</a>
+                       href="${pageContext.request.contextPath}/receive/list?location=shop1">深圳2</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/receive/list?location=shop2">深圳罗湖鼎丰</a>
+                       href="${pageContext.request.contextPath}/receive/list?location=shop2">深圳7</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/receive/list?location=shop3">深圳罗湖振业</a>
+                       href="${pageContext.request.contextPath}/receive/list?location=shop3">深圳8</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/receive/list?location=shop4">东莞南城ucc</a>
+                       href="${pageContext.request.contextPath}/receive/list?location=shop4">东莞2</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/receive/list?location=shop5">东莞南城天安</a>
+                       href="${pageContext.request.contextPath}/receive/list?location=shop5">东莞3</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/receive/list?location=shop6">东莞南城保利</a>
+                       href="${pageContext.request.contextPath}/receive/list?location=shop6">东莞4</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/receive/list?location=shop7">东莞琥珀台</a>
+                       href="${pageContext.request.contextPath}/receive/list?location=shop7">东莞5</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/receive/list?location=shop8">深圳动漫大厦</a>
+                       href="${pageContext.request.contextPath}/receive/list?location=shop8">深圳9</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/receive/list?location=shop9">深圳荣德时代</a>
+                       href="${pageContext.request.contextPath}/receive/list?location=shop9">深圳10</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/receive/list?location=shop10">深圳正中时代</a>
+                       href="${pageContext.request.contextPath}/receive/list?location=shop10">深圳3</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/receive/list?location=shop11">东莞广发金融</a>
+                       href="${pageContext.request.contextPath}/receive/list?location=shop11">东莞1</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/receive/list?location=shop12">深圳豪方天际</a>
+                       href="${pageContext.request.contextPath}/receive/list?location=shop12">深圳4</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/receive/list?location=shop13">深圳光明富森</a>
+                       href="${pageContext.request.contextPath}/receive/list?location=shop13">深圳5</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/receive/list?location=shop14">深圳创新智慧</a>
+                       href="${pageContext.request.contextPath}/receive/list?location=shop14">深圳6</a>
                 </li>
             </ul>
         </li>
@@ -210,28 +210,28 @@
         <%--                               href="${pageContext.request.contextPath}/receive/error?location=main1">东莞总部</a>--%>
         <%--                        </li>--%>
         <%--                        <li><a class="dropdown-item"--%>
-        <%--                               href="${pageContext.request.contextPath}/receive/error?location=main2">深圳自贸中心</a>--%>
+        <%--                               href="${pageContext.request.contextPath}/receive/error?location=main2">深圳1</a>--%>
         <%--                        </li>--%>
         <%--                        <li><a class="dropdown-item"--%>
-        <%--                               href="${pageContext.request.contextPath}/receive/error?location=shop1">深圳南山尚美科技</a>--%>
+        <%--                               href="${pageContext.request.contextPath}/receive/error?location=shop1">深圳2</a>--%>
         <%--                        </li>--%>
         <%--                        <li><a class="dropdown-item"--%>
-        <%--                               href="${pageContext.request.contextPath}/receive/error?location=shop2">深圳罗湖鼎丰</a>--%>
+        <%--                               href="${pageContext.request.contextPath}/receive/error?location=shop2">深圳7</a>--%>
         <%--                        </li>--%>
         <%--                        <li><a class="dropdown-item"--%>
-        <%--                               href="${pageContext.request.contextPath}/receive/error?location=shop3">深圳罗湖振业</a>--%>
+        <%--                               href="${pageContext.request.contextPath}/receive/error?location=shop3">深圳8</a>--%>
         <%--                        </li>--%>
         <%--                        <li><a class="dropdown-item"--%>
-        <%--                               href="${pageContext.request.contextPath}/receive/error?location=shop4">东莞南城ucc</a>--%>
+        <%--                               href="${pageContext.request.contextPath}/receive/error?location=shop4">东莞2</a>--%>
         <%--                        </li>--%>
         <%--                        <li><a class="dropdown-item"--%>
-        <%--                               href="${pageContext.request.contextPath}/receive/error?location=shop5">东莞南城天安</a>--%>
+        <%--                               href="${pageContext.request.contextPath}/receive/error?location=shop5">东莞3</a>--%>
         <%--                        </li>--%>
         <%--                        <li><a class="dropdown-item"--%>
-        <%--                               href="${pageContext.request.contextPath}/receive/error?location=shop6">东莞南城保利</a>--%>
+        <%--                               href="${pageContext.request.contextPath}/receive/error?location=shop6">东莞4</a>--%>
         <%--                        </li>--%>
         <%--                        <li><a class="dropdown-item"--%>
-        <%--                               href="${pageContext.request.contextPath}/receive/error?location=shop7">东莞琥珀台</a>--%>
+        <%--                               href="${pageContext.request.contextPath}/receive/error?location=shop7">东莞5</a>--%>
         <%--                        </li>--%>
 
         <%--                    </ul>--%>
@@ -248,49 +248,49 @@
                        href="${pageContext.request.contextPath}/dailycheck/toDailyCheck?location=main1">东莞总部</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/dailycheck/toDailyCheck?location=main2">深圳自贸中心</a>
+                       href="${pageContext.request.contextPath}/dailycheck/toDailyCheck?location=main2">深圳1</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/dailycheck/toDailyCheck?location=shop1">深圳南山尚美科技</a>
+                       href="${pageContext.request.contextPath}/dailycheck/toDailyCheck?location=shop1">深圳2</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/dailycheck/toDailyCheck?location=shop2">深圳罗湖鼎丰</a>
+                       href="${pageContext.request.contextPath}/dailycheck/toDailyCheck?location=shop2">深圳7</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/dailycheck/toDailyCheck?location=shop3">深圳罗湖振业</a>
+                       href="${pageContext.request.contextPath}/dailycheck/toDailyCheck?location=shop3">深圳8</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/dailycheck/toDailyCheck?location=shop4">东莞南城ucc</a>
+                       href="${pageContext.request.contextPath}/dailycheck/toDailyCheck?location=shop4">东莞2</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/dailycheck/toDailyCheck?location=shop5">东莞南城天安</a>
+                       href="${pageContext.request.contextPath}/dailycheck/toDailyCheck?location=shop5">东莞3</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/dailycheck/toDailyCheck?location=shop6">东莞南城保利</a>
+                       href="${pageContext.request.contextPath}/dailycheck/toDailyCheck?location=shop6">东莞4</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/dailycheck/toDailyCheck?location=shop7">东莞琥珀台</a>
+                       href="${pageContext.request.contextPath}/dailycheck/toDailyCheck?location=shop7">东莞5</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/dailycheck/toDailyCheck?location=shop8">深圳动漫大厦</a>
+                       href="${pageContext.request.contextPath}/dailycheck/toDailyCheck?location=shop8">深圳9</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/dailycheck/toDailyCheck?location=shop9">深圳荣德时代</a>
+                       href="${pageContext.request.contextPath}/dailycheck/toDailyCheck?location=shop9">深圳10</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/dailycheck/toDailyCheck?location=shop10">深圳正中时代</a>
+                       href="${pageContext.request.contextPath}/dailycheck/toDailyCheck?location=shop10">深圳3</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/dailycheck/toDailyCheck?location=shop11">东莞广发金融</a>
+                       href="${pageContext.request.contextPath}/dailycheck/toDailyCheck?location=shop11">东莞1</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/dailycheck/toDailyCheck?location=shop12">深圳豪方天际</a>
+                       href="${pageContext.request.contextPath}/dailycheck/toDailyCheck?location=shop12">深圳4</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/dailycheck/toDailyCheck?location=shop13">深圳光明富森</a>
+                       href="${pageContext.request.contextPath}/dailycheck/toDailyCheck?location=shop13">深圳5</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/dailycheck/toDailyCheck?location=shop14">深圳创新智慧</a>
+                       href="${pageContext.request.contextPath}/dailycheck/toDailyCheck?location=shop14">深圳6</a>
                 </li>
             </ul>
         </li>
@@ -306,49 +306,49 @@
                        href="${pageContext.request.contextPath}/confirm/listnotpass?location=main1">东莞总部</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/confirm/listnotpass?location=main2">深圳自贸中心</a>
+                       href="${pageContext.request.contextPath}/confirm/listnotpass?location=main2">深圳1</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/confirm/listnotpass?location=shop1">深圳南山尚美科技</a>
+                       href="${pageContext.request.contextPath}/confirm/listnotpass?location=shop1">深圳2</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/confirm/listnotpass?location=shop2">深圳罗湖鼎丰</a>
+                       href="${pageContext.request.contextPath}/confirm/listnotpass?location=shop2">深圳7</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/confirm/listnotpass?location=shop3">深圳罗湖振业</a>
+                       href="${pageContext.request.contextPath}/confirm/listnotpass?location=shop3">深圳8</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/confirm/listnotpass?location=shop4">东莞南城ucc</a>
+                       href="${pageContext.request.contextPath}/confirm/listnotpass?location=shop4">东莞2</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/confirm/listnotpass?location=shop5">东莞南城天安</a>
+                       href="${pageContext.request.contextPath}/confirm/listnotpass?location=shop5">东莞3</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/confirm/listnotpass?location=shop6">东莞南城保利</a>
+                       href="${pageContext.request.contextPath}/confirm/listnotpass?location=shop6">东莞4</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/confirm/listnotpass?location=shop7">东莞琥珀台</a>
+                       href="${pageContext.request.contextPath}/confirm/listnotpass?location=shop7">东莞5</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/confirm/listnotpass?location=shop8">深圳动漫大厦</a>
+                       href="${pageContext.request.contextPath}/confirm/listnotpass?location=shop8">深圳9</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/confirm/listnotpass?location=shop9">深圳荣德时代</a>
+                       href="${pageContext.request.contextPath}/confirm/listnotpass?location=shop9">深圳10</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/confirm/listnotpass?location=shop10">深圳正中时代</a>
+                       href="${pageContext.request.contextPath}/confirm/listnotpass?location=shop10">深圳3</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/confirm/listnotpass?location=shop11">东莞广发金融</a>
+                       href="${pageContext.request.contextPath}/confirm/listnotpass?location=shop11">东莞1</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/confirm/listnotpass?location=shop12">深圳豪方天际</a>
+                       href="${pageContext.request.contextPath}/confirm/listnotpass?location=shop12">深圳4</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/confirm/listnotpass?location=shop13">深圳光明富森</a>
+                       href="${pageContext.request.contextPath}/confirm/listnotpass?location=shop13">深圳5</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/confirm/listnotpass?location=shop14">深圳创新智慧</a>
+                       href="${pageContext.request.contextPath}/confirm/listnotpass?location=shop14">深圳6</a>
                 </li>
 
             </ul>
@@ -362,28 +362,28 @@
         <%--                               href="${pageContext.request.contextPath}/dailycheck/result?location=main1">东莞总部</a>--%>
         <%--                        </li>--%>
         <%--                        <li><a class="dropdown-item"--%>
-        <%--                               href="${pageContext.request.contextPath}/dailycheck/result?location=main2">深圳自贸中心</a>--%>
+        <%--                               href="${pageContext.request.contextPath}/dailycheck/result?location=main2">深圳1</a>--%>
         <%--                        </li>--%>
         <%--                        <li><a class="dropdown-item"--%>
-        <%--                               href="${pageContext.request.contextPath}/dailycheck/result?location=shop1">深圳南山尚美科技</a>--%>
+        <%--                               href="${pageContext.request.contextPath}/dailycheck/result?location=shop1">深圳2</a>--%>
         <%--                        </li>--%>
         <%--                        <li><a class="dropdown-item"--%>
-        <%--                               href="${pageContext.request.contextPath}/dailycheck/result?location=shop2">深圳罗湖鼎丰</a>--%>
+        <%--                               href="${pageContext.request.contextPath}/dailycheck/result?location=shop2">深圳7</a>--%>
         <%--                        </li>--%>
         <%--                        <li><a class="dropdown-item"--%>
-        <%--                               href="${pageContext.request.contextPath}/dailycheck/result?location=shop3">深圳罗湖振业</a>--%>
+        <%--                               href="${pageContext.request.contextPath}/dailycheck/result?location=shop3">深圳8</a>--%>
         <%--                        </li>--%>
         <%--                        <li><a class="dropdown-item"--%>
-        <%--                               href="${pageContext.request.contextPath}/dailycheck/result?location=shop4">东莞南城ucc</a>--%>
+        <%--                               href="${pageContext.request.contextPath}/dailycheck/result?location=shop4">东莞2</a>--%>
         <%--                        </li>--%>
         <%--                        <li><a class="dropdown-item"--%>
-        <%--                               href="${pageContext.request.contextPath}/dailycheck/result?location=shop5">东莞南城天安</a>--%>
+        <%--                               href="${pageContext.request.contextPath}/dailycheck/result?location=shop5">东莞3</a>--%>
         <%--                        </li>--%>
         <%--                        <li><a class="dropdown-item"--%>
-        <%--                               href="${pageContext.request.contextPath}/dailycheck/result?location=shop6">东莞南城保利</a>--%>
+        <%--                               href="${pageContext.request.contextPath}/dailycheck/result?location=shop6">东莞4</a>--%>
         <%--                        </li>--%>
         <%--                        <li><a class="dropdown-item"--%>
-        <%--                               href="${pageContext.request.contextPath}/dailycheck/result?location=shop7">东莞琥珀台</a>--%>
+        <%--                               href="${pageContext.request.contextPath}/dailycheck/result?location=shop7">东莞5</a>--%>
         <%--                        </li>--%>
         <%--                    </ul>--%>
         <%--                </li>--%>
@@ -396,28 +396,28 @@
         <%--                               href="${pageContext.request.contextPath}/alert/main1">东莞总部</a>--%>
         <%--                        </li>--%>
         <%--                        <li><a class="dropdown-item"--%>
-        <%--                               href="${pageContext.request.contextPath}/alert/main2">深圳自贸中心</a>--%>
+        <%--                               href="${pageContext.request.contextPath}/alert/main2">深圳1</a>--%>
         <%--                        </li>--%>
         <%--                        <li><a class="dropdown-item"--%>
-        <%--                               href="${pageContext.request.contextPath}/alert/shop1">深圳南山尚美科技</a>--%>
+        <%--                               href="${pageContext.request.contextPath}/alert/shop1">深圳2</a>--%>
         <%--                        </li>--%>
         <%--                        <li><a class="dropdown-item"--%>
-        <%--                               href="${pageContext.request.contextPath}/alert/shop2">深圳罗湖鼎丰</a>--%>
+        <%--                               href="${pageContext.request.contextPath}/alert/shop2">深圳7</a>--%>
         <%--                        </li>--%>
         <%--                        <li><a class="dropdown-item"--%>
-        <%--                               href="${pageContext.request.contextPath}/alert/shop3">深圳罗湖振业</a>--%>
+        <%--                               href="${pageContext.request.contextPath}/alert/shop3">深圳8</a>--%>
         <%--                        </li>--%>
         <%--                        <li><a class="dropdown-item"--%>
-        <%--                               href="${pageContext.request.contextPath}/alert/shop4">东莞南城ucc</a>--%>
+        <%--                               href="${pageContext.request.contextPath}/alert/shop4">东莞2</a>--%>
         <%--                        </li>--%>
         <%--                        <li><a class="dropdown-item"--%>
-        <%--                               href="${pageContext.request.contextPath}/alert/shop5">东莞南城天安</a>--%>
+        <%--                               href="${pageContext.request.contextPath}/alert/shop5">东莞3</a>--%>
         <%--                        </li>--%>
         <%--                        <li><a class="dropdown-item"--%>
-        <%--                               href="${pageContext.request.contextPath}/alert/shop6">东莞南城保利</a>--%>
+        <%--                               href="${pageContext.request.contextPath}/alert/shop6">东莞4</a>--%>
         <%--                        </li>--%>
         <%--                        <li><a class="dropdown-item"--%>
-        <%--                               href="${pageContext.request.contextPath}/alert/shop7">东莞琥珀台</a>--%>
+        <%--                               href="${pageContext.request.contextPath}/alert/shop7">东莞5</a>--%>
         <%--                        </li>--%>
         <%--                    </ul>--%>
         <%--                </li>--%>
@@ -443,49 +443,49 @@
                        href="${pageContext.request.contextPath}/dump/showdumplog?location=main1&function=notpass">东莞总部</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/dump/showdumplog?location=main2&function=notpass">深圳自贸中心</a>
+                       href="${pageContext.request.contextPath}/dump/showdumplog?location=main2&function=notpass">深圳1</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/dump/showdumplog?location=shop1&function=notpass">深圳南山尚美科技</a>
+                       href="${pageContext.request.contextPath}/dump/showdumplog?location=shop1&function=notpass">深圳2</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/dump/showdumplog?location=shop2&function=notpass">深圳罗湖鼎丰</a>
+                       href="${pageContext.request.contextPath}/dump/showdumplog?location=shop2&function=notpass">深圳7</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/dump/showdumplog?location=shop3&function=notpass">深圳罗湖振业</a>
+                       href="${pageContext.request.contextPath}/dump/showdumplog?location=shop3&function=notpass">深圳8</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/dump/showdumplog?location=shop4&function=notpass">东莞南城ucc</a>
+                       href="${pageContext.request.contextPath}/dump/showdumplog?location=shop4&function=notpass">东莞2</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/dump/showdumplog?location=shop5&function=notpass">东莞南城天安</a>
+                       href="${pageContext.request.contextPath}/dump/showdumplog?location=shop5&function=notpass">东莞3</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/dump/showdumplog?location=shop6&function=notpass">东莞南城保利</a>
+                       href="${pageContext.request.contextPath}/dump/showdumplog?location=shop6&function=notpass">东莞4</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/dump/showdumplog?location=shop7&function=notpass">东莞琥珀台</a>
+                       href="${pageContext.request.contextPath}/dump/showdumplog?location=shop7&function=notpass">东莞5</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/dump/showdumplog?location=shop8&function=notpass">深圳动漫大厦</a>
+                       href="${pageContext.request.contextPath}/dump/showdumplog?location=shop8&function=notpass">深圳9</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/dump/showdumplog?location=shop9&function=notpass">深圳荣德时代</a>
+                       href="${pageContext.request.contextPath}/dump/showdumplog?location=shop9&function=notpass">深圳10</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/dump/showdumplog?location=shop10&function=notpass">深圳正中时代</a>
+                       href="${pageContext.request.contextPath}/dump/showdumplog?location=shop10&function=notpass">深圳3</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/dump/showdumplog?location=shop11&function=notpass">东莞广发金融</a>
+                       href="${pageContext.request.contextPath}/dump/showdumplog?location=shop11&function=notpass">东莞1</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/dump/showdumplog?location=shop12&function=notpass">深圳豪方天际</a>
+                       href="${pageContext.request.contextPath}/dump/showdumplog?location=shop12&function=notpass">深圳4</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/dump/showdumplog?location=shop13&function=notpass">深圳光明富森</a>
+                       href="${pageContext.request.contextPath}/dump/showdumplog?location=shop13&function=notpass">深圳5</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/dump/showdumplog?location=shop14&function=notpass">深圳创新智慧</a>
+                       href="${pageContext.request.contextPath}/dump/showdumplog?location=shop14&function=notpass">深圳6</a>
                 </li>
             </ul>
         </li>
@@ -498,28 +498,28 @@
         <%--                               href="${pageContext.request.contextPath}/invoice/toAdd?location=main1">东莞总部</a>--%>
         <%--                        </li>--%>
         <%--                        <li><a class="dropdown-item"--%>
-        <%--                               href="${pageContext.request.contextPath}/invoice/toAdd?location=main2">深圳自贸中心</a>--%>
+        <%--                               href="${pageContext.request.contextPath}/invoice/toAdd?location=main2">深圳1</a>--%>
         <%--                        </li>--%>
         <%--                        <li><a class="dropdown-item"--%>
-        <%--                               href="${pageContext.request.contextPath}/invoice/toAdd?location=shop1">深圳南山尚美科技</a>--%>
+        <%--                               href="${pageContext.request.contextPath}/invoice/toAdd?location=shop1">深圳2</a>--%>
         <%--                        </li>--%>
         <%--                        <li><a class="dropdown-item"--%>
-        <%--                               href="${pageContext.request.contextPath}/invoice/toAdd?location=shop2">深圳罗湖鼎丰</a>--%>
+        <%--                               href="${pageContext.request.contextPath}/invoice/toAdd?location=shop2">深圳7</a>--%>
         <%--                        </li>--%>
         <%--                        <li><a class="dropdown-item"--%>
-        <%--                               href="${pageContext.request.contextPath}/invoice/toAdd?location=shop3">深圳罗湖振业</a>--%>
+        <%--                               href="${pageContext.request.contextPath}/invoice/toAdd?location=shop3">深圳8</a>--%>
         <%--                        </li>--%>
         <%--                        <li><a class="dropdown-item"--%>
-        <%--                               href="${pageContext.request.contextPath}/invoice/toAdd?location=shop4">东莞南城ucc</a>--%>
+        <%--                               href="${pageContext.request.contextPath}/invoice/toAdd?location=shop4">东莞2</a>--%>
         <%--                        </li>--%>
         <%--                        <li><a class="dropdown-item"--%>
-        <%--                               href="${pageContext.request.contextPath}/invoice/toAdd?location=shop5">东莞南城天安</a>--%>
+        <%--                               href="${pageContext.request.contextPath}/invoice/toAdd?location=shop5">东莞3</a>--%>
         <%--                        </li>--%>
         <%--                        <li><a class="dropdown-item"--%>
-        <%--                               href="${pageContext.request.contextPath}/invoice/toAdd?location=shop6">东莞南城保利</a>--%>
+        <%--                               href="${pageContext.request.contextPath}/invoice/toAdd?location=shop6">东莞4</a>--%>
         <%--                        </li>--%>
         <%--                        <li><a class="dropdown-item"--%>
-        <%--                               href="${pageContext.request.contextPath}/invoice/toAdd?location=shop7">东莞琥珀台</a>--%>
+        <%--                               href="${pageContext.request.contextPath}/invoice/toAdd?location=shop7">东莞5</a>--%>
         <%--                        </li>--%>
         <%--                    </ul>--%>
         <%--                </li>--%>
@@ -534,49 +534,49 @@
                             href="${pageContext.request.contextPath}/invoice/show?location=main1">东莞总部</a>
             </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/invoice/show?location=main2">深圳自贸中心</a>
+                       href="${pageContext.request.contextPath}/invoice/show?location=main2">深圳1</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/invoice/show?location=shop1">深圳南山尚美科技</a>
+                       href="${pageContext.request.contextPath}/invoice/show?location=shop1">深圳2</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/invoice/show?location=shop2">深圳罗湖鼎丰</a>
+                       href="${pageContext.request.contextPath}/invoice/show?location=shop2">深圳7</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/invoice/show?location=shop3">深圳罗湖振业</a>
+                       href="${pageContext.request.contextPath}/invoice/show?location=shop3">深圳8</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/invoice/show?location=shop4">东莞南城ucc</a>
+                       href="${pageContext.request.contextPath}/invoice/show?location=shop4">东莞2</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/invoice/show?location=shop5">东莞南城天安</a>
+                       href="${pageContext.request.contextPath}/invoice/show?location=shop5">东莞3</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/invoice/show?location=shop6">东莞南城保利</a>
+                       href="${pageContext.request.contextPath}/invoice/show?location=shop6">东莞4</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/invoice/show?location=shop7">东莞琥珀台</a>
+                       href="${pageContext.request.contextPath}/invoice/show?location=shop7">东莞5</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/invoice/show?location=shop8">深圳动漫大厦</a>
+                       href="${pageContext.request.contextPath}/invoice/show?location=shop8">深圳9</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/invoice/show?location=shop9">深圳荣德时代</a>
+                       href="${pageContext.request.contextPath}/invoice/show?location=shop9">深圳10</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/invoice/show?location=shop10">深圳正中时代</a>
+                       href="${pageContext.request.contextPath}/invoice/show?location=shop10">深圳3</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/invoice/show?location=shop11">东莞广发金融</a>
+                       href="${pageContext.request.contextPath}/invoice/show?location=shop11">东莞1</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/invoice/show?location=shop12">深圳豪方天际</a>
+                       href="${pageContext.request.contextPath}/invoice/show?location=shop12">深圳4</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/invoice/show?location=shop13">深圳光明富森</a>
+                       href="${pageContext.request.contextPath}/invoice/show?location=shop13">深圳5</a>
                 </li>
                 <li><a class="dropdown-item"
-                       href="${pageContext.request.contextPath}/invoice/show?location=shop14">深圳创新智慧</a>
+                       href="${pageContext.request.contextPath}/invoice/show?location=shop14">深圳6</a>
                 </li>
             </ul>
         </li>
@@ -593,49 +593,49 @@
 <%--                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=main1">东莞总部</a>--%>
 <%--                    </li>--%>
 <%--                    <li><a class="dropdown-item"--%>
-<%--                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=main2">深圳自贸中心</a>--%>
+<%--                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=main2">深圳1</a>--%>
 <%--                    </li>--%>
 <%--                    <li><a class="dropdown-item"--%>
-<%--                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop1">深圳南山尚美科技</a>--%>
+<%--                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop1">深圳2</a>--%>
 <%--                    </li>--%>
 <%--                    <li><a class="dropdown-item"--%>
-<%--                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop2">深圳罗湖鼎丰</a>--%>
+<%--                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop2">深圳7</a>--%>
 <%--                    </li>--%>
 <%--                    <li><a class="dropdown-item"--%>
-<%--                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop3">深圳罗湖振业</a>--%>
+<%--                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop3">深圳8</a>--%>
 <%--                    </li>--%>
 <%--                    <li><a class="dropdown-item"--%>
-<%--                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop4">东莞南城ucc</a>--%>
+<%--                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop4">东莞2</a>--%>
 <%--                    </li>--%>
 <%--                    <li><a class="dropdown-item"--%>
-<%--                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop5">东莞南城天安</a>--%>
+<%--                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop5">东莞3</a>--%>
 <%--                    </li>--%>
 <%--                    <li><a class="dropdown-item"--%>
-<%--                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop6">东莞南城保利</a>--%>
+<%--                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop6">东莞4</a>--%>
 <%--                    </li>--%>
 <%--                    <li><a class="dropdown-item"--%>
-<%--                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop7">东莞琥珀台</a>--%>
+<%--                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop7">东莞5</a>--%>
 <%--                    </li>--%>
 <%--                    <li><a class="dropdown-item"--%>
-<%--                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop8">深圳动漫大厦</a>--%>
+<%--                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop8">深圳9</a>--%>
 <%--                    </li>--%>
 <%--                    <li><a class="dropdown-item"--%>
-<%--                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop9">深圳荣德时代</a>--%>
+<%--                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop9">深圳10</a>--%>
 <%--                    </li>--%>
 <%--                    <li><a class="dropdown-item"--%>
-<%--                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop10">深圳正中时代</a>--%>
+<%--                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop10">深圳3</a>--%>
 <%--                    </li>--%>
 <%--                    <li><a class="dropdown-item"--%>
-<%--                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop11">东莞广发金融</a>--%>
+<%--                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop11">东莞1</a>--%>
 <%--                    </li>--%>
 <%--                    <li><a class="dropdown-item"--%>
-<%--                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop12">深圳豪方天际</a>--%>
+<%--                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop12">深圳4</a>--%>
 <%--                    </li>--%>
 <%--                    <li><a class="dropdown-item"--%>
-<%--                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop13">深圳光明富森</a>--%>
+<%--                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop13">深圳5</a>--%>
 <%--                    </li>--%>
 <%--                    <li><a class="dropdown-item"--%>
-<%--                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop14">深圳创新智慧</a>--%>
+<%--                           href="${pageContext.request.contextPath}/apply/showApplyItem?location=shop14">深圳6</a>--%>
 <%--                    </li>--%>
 <%--                </ul>--%>
 <%--            </li>--%>
@@ -653,49 +653,49 @@
                            href="${pageContext.request.contextPath}/purchase/showPurchaseItem?location=main1">东莞总部</a>
                     </li>
                     <li><a class="dropdown-item"
-                           href="${pageContext.request.contextPath}/purchase/showPurchaseItem?location=main2">深圳自贸中心</a>
+                           href="${pageContext.request.contextPath}/purchase/showPurchaseItem?location=main2">深圳1</a>
                     </li>
                     <li><a class="dropdown-item"
-                           href="${pageContext.request.contextPath}/purchase/showPurchaseItem?location=shop1">深圳南山尚美科技</a>
+                           href="${pageContext.request.contextPath}/purchase/showPurchaseItem?location=shop1">深圳2</a>
                     </li>
                     <li><a class="dropdown-item"
-                           href="${pageContext.request.contextPath}/purchase/showPurchaseItem?location=shop2">深圳罗湖鼎丰</a>
+                           href="${pageContext.request.contextPath}/purchase/showPurchaseItem?location=shop2">深圳7</a>
                     </li>
                     <li><a class="dropdown-item"
-                           href="${pageContext.request.contextPath}/purchase/showPurchaseItem?location=shop3">深圳罗湖振业</a>
+                           href="${pageContext.request.contextPath}/purchase/showPurchaseItem?location=shop3">深圳8</a>
                     </li>
                     <li><a class="dropdown-item"
-                           href="${pageContext.request.contextPath}/purchase/showPurchaseItem?location=shop4">东莞南城ucc</a>
+                           href="${pageContext.request.contextPath}/purchase/showPurchaseItem?location=shop4">东莞2</a>
                     </li>
                     <li><a class="dropdown-item"
-                           href="${pageContext.request.contextPath}/purchase/showPurchaseItem?location=shop5">东莞南城天安</a>
+                           href="${pageContext.request.contextPath}/purchase/showPurchaseItem?location=shop5">东莞3</a>
                     </li>
                     <li><a class="dropdown-item"
-                           href="${pageContext.request.contextPath}/purchase/showPurchaseItem?location=shop6">东莞南城保利</a>
+                           href="${pageContext.request.contextPath}/purchase/showPurchaseItem?location=shop6">东莞4</a>
                     </li>
                     <li><a class="dropdown-item"
-                           href="${pageContext.request.contextPath}/purchase/showPurchaseItem?location=shop7">东莞琥珀台</a>
+                           href="${pageContext.request.contextPath}/purchase/showPurchaseItem?location=shop7">东莞5</a>
                     </li>
                     <li><a class="dropdown-item"
-                           href="${pageContext.request.contextPath}/purchase/showPurchaseItem?location=shop8">深圳动漫大厦</a>
+                           href="${pageContext.request.contextPath}/purchase/showPurchaseItem?location=shop8">深圳9</a>
                     </li>
                     <li><a class="dropdown-item"
-                           href="${pageContext.request.contextPath}/purchase/showPurchaseItem?location=shop9">深圳荣德时代</a>
+                           href="${pageContext.request.contextPath}/purchase/showPurchaseItem?location=shop9">深圳10</a>
                     </li>
                     <li><a class="dropdown-item"
-                           href="${pageContext.request.contextPath}/purchase/showPurchaseItem?location=shop10">深圳正中时代</a>
+                           href="${pageContext.request.contextPath}/purchase/showPurchaseItem?location=shop10">深圳3</a>
                     </li>
                     <li><a class="dropdown-item"
-                           href="${pageContext.request.contextPath}/purchase/showPurchaseItem?location=shop11">东莞广发金融</a>
+                           href="${pageContext.request.contextPath}/purchase/showPurchaseItem?location=shop11">东莞1</a>
                     </li>
                     <li><a class="dropdown-item"
-                           href="${pageContext.request.contextPath}/purchase/showPurchaseItem?location=shop12">深圳豪方天际</a>
+                           href="${pageContext.request.contextPath}/purchase/showPurchaseItem?location=shop12">深圳4</a>
                     </li>
                     <li><a class="dropdown-item"
-                           href="${pageContext.request.contextPath}/purchase/showPurchaseItem?location=shop13">深圳光明富森</a>
+                           href="${pageContext.request.contextPath}/purchase/showPurchaseItem?location=shop13">深圳5</a>
                     </li>
                     <li><a class="dropdown-item"
-                           href="${pageContext.request.contextPath}/purchase/showPurchaseItem?location=shop14">深圳创新智慧</a>
+                           href="${pageContext.request.contextPath}/purchase/showPurchaseItem?location=shop14">深圳6</a>
                     </li>
                 </ul>
             </li>

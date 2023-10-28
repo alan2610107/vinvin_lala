@@ -34,13 +34,13 @@ public class DistributionCacheAOP {
     @Before("execution(* *..VinMainControllerService.do*(..))")
     public void vinItemLockUp(JoinPoint joinPoint) throws Throwable {
         String distributionCacheKey = aopTool.setDistributionCacheKey(aopTool.getParameterNames(joinPoint));
-//        log.warn("Lock Up : " + distributionCacheKey);
+        log.warn("Lock Up : " + distributionCacheKey);
         cacheService.setRedisLock(distributionCacheKey, new VinItem());
     }
     @After("execution(* *..VinMainControllerService.do*(..))")
     public void waitForVinItemUnlock(JoinPoint joinPoint) throws InterruptedException {
         String distributionCacheKey = aopTool.setDistributionCacheKey(aopTool.getParameterNames(joinPoint));
-//        log.warn("Wait for Unlock " + distributionCacheKey);
+        log.warn("Wait for Unlock " + distributionCacheKey);
         cacheService.waitRedisLock(distributionCacheKey);
     }
 

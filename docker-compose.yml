@@ -1,0 +1,94 @@
+version: '3'
+services:
+  erp:
+    restart: always
+    image: erp1_image:latest
+    container_name: erp1
+    ports:
+      - 8080:8080
+    depends_on:
+      - mysqldbserver
+      - redis
+      - kafka
+    networks:
+      - server
+
+  mysqldbserver:
+    platform: linux/amd64
+    image: mysql:latest
+    container_name: mysqldbserver
+    command:
+      --default-authentication-plugin=mysql_native_password
+      --character-set-server=utf8mb4
+      --collation-server=utf8mb4_general_ci
+    restart: unless-stopped
+    environment:
+#      MYSQL_DATABASE: vinvin
+      MYSQL_ROOT_PASSWORD: Justforawhile0822
+#      MYSQL_USER: lala
+#      MYSQL_PASSWORD: Justforawhile0822
+      MYSQL_INITDB_SKIP_TZINFO: "Asia/Taipei"
+
+    ports:
+      - 3306:3306
+    volumes:
+      - ~/docker/mysql/data:/var/lib/mysql
+      - ~/docker/mysql/conf:/etc/mysql/conf.d
+      - ~/docker/mysql/logs:/logs
+      - ./buildVinvin.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - server
+
+
+
+  redis:
+#    platform: linux/amd64
+    image: redis:latest
+    command: ["redis-server", "--bind", "redis", "--port", "6379"]
+    container_name: redis
+    environment:
+#      protected-mode: no
+      PROTECTED-MODE: no
+    volumes:
+      - ./redis.conf:/etc/redis/redis.conf
+      - ./data:/data
+    ports:
+      - 6379:6379
+    networks:
+        - server
+
+
+  kafka:
+    image: bitnami/kafka
+    container_name: kafka
+#    environment:
+#      KAFKA_ADVERTISED_HOST_NAME: 192.168.0.1
+    ports:
+      - 9092:9092
+    environment:
+      - KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper:2181
+    depends_on:
+      - zookeeper
+    networks:
+      - server
+
+
+  zookeeper:
+    image: zookeeper
+    container_name: zookeeper
+    ports:
+      - 2181:2181
+    networks:
+      - server
+
+
+
+volumes:
+  mysql-data:
+
+networks:
+  server:
+    driver:
+      bridge
+
+
